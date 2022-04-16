@@ -1,22 +1,5 @@
 <?php include "./frontend/header.php"; ?>
 
-<!-- Breadcrumb Area Start -->
-<div class="section breadcrumb-area bg-name-bright">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="breadcrumb-wrapper">
-                        <h2 class="breadcrumb-title">Liên hệ</h2>
-                        <ul>
-                            <li><a href="index.html">Trang chủ</a></li>
-                            <li>Liên hệ với tôi</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Area End -->
 <!-- Contact Us Section Start -->
 <div class="section section-margin">
         <div class="container">

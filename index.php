@@ -55,12 +55,10 @@
                 <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
                     <!-- Single CTA Wrapper Start -->
                     <div class="single-cta-wrapper">
-
-                        <!-- CTA Icon Start -->
                         <div class="cta-icon">
                             <i class="ti-truck"></i>
                         </div>
-                        <!-- CTA Icon End -->
+
 
                         <!-- CTA Content Start -->
                         <div class="cta-content">
