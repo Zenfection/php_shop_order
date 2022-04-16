@@ -1,0 +1,1 @@
+$('.header-search-input').attr('width', '175px !important');

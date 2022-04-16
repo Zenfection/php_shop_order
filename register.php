@@ -1,5 +1,5 @@
 <?php include "./frontend/header.php" ?>
-
+    
     <!-- Breadcrumb Area Start -->
     <div class="section breadcrumb-area bg-name-bright">
         <div class="container">
@@ -19,6 +19,12 @@
     <!-- Breadcrumb Area End -->
 
     <!-- Register Section Start -->
+    <?php
+        if(isset($_SESSION['add'])){
+            echo $_SESSION['add'];
+            unset($_SESSION['add']);
+        }
+    ?>
     <form method="POST">
     <div class="section section-margin">
         <div class="container">
@@ -36,19 +42,19 @@
                         <form action="#" method="post" autocomplete="">
 
                             <div class="single-input-item m-b-10">
-                                <input type="text" placeholder="FullName">
+                                <input type="text" placeholder="FullName" name="full_name">
                             </div>
 
                             <div class="single-input-item m-b-10">
-                                <input type="text" placeholder="Username">
+                                <input type="text" placeholder="Username" name="username">
                             </div>
 
                             <div class="single-input-item m-b-10">
-                                <input type="email" placeholder="Email">
+                                <input type="email" placeholder="Email" name="email">
                             </div>
 
                             <div class="single-input-item m-b-10">
-                                <input type="password" placeholder="Password">
+                                <input type="password" placeholder="Password" name="password">
                             </div>
 
                             <!-- Button/Forget Password Start -->
@@ -74,16 +80,17 @@
 
 <?php 
     if(isset($_POST['submit'])){
-        $fullname = $_POST['fullname'];
+        $full_name = $_POST['full_name'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = md5($_POST['password']); //mã hoá chuẩn md5
 
-        $sql = "INSERT INTO `tb_customer` (fullname, username, email, password) 
-                VALUES ('$fullname', '$username', '$email', '$password')";
+        $id = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_customer`")) + 1;
 
-        $query = mysqli_query($conn, $sql)
-            or die("Không thể thêm dữ liệu vào bảng người dùng");
+        $sql = "INSERT INTO `tb_customer` (id_customer, full_name, username, email, password) 
+                VALUES ($id, '$full_name', '$username', '$email', '$password')";
+
+        $query = mysqli_query($conn, $sql);
 
         if($query){
             echo "<script>alert('Đăng ký thành công');</script>";
