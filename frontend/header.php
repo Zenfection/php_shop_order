@@ -1,4 +1,4 @@
-<?php include "./config/header.php" ?>
+<?php include "./config/connect.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
     <title>Shop Order</title>
 </head>
@@ -24,7 +25,7 @@
                         <!-- Header Logo Start -->
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="header-logo">
-                                <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                                <a href="index.php"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
                             </div>
                         </div>
                         <!-- Header Logo End -->
@@ -36,14 +37,14 @@
                                     <li class="has-children">
                                         <a href="/index.php">Trang chủ</a>
                                     </li>
-                                    <li class="has-children position-static">
+                                    <li><a href="/about.php">About</a></li>
+                                    <li class="has-children">
                                         <a href="/category.php">Category</a>
                                     </li>
                                     <li class="has-children">
                                         <a href="/product.php">Product</a>
                                     </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="/contact.php">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -75,3 +76,5 @@
                 </div>
             </div>
         </div>
+</div>
+</div>

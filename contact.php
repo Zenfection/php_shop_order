@@ -1,0 +1,91 @@
+<?php include "./frontend/header.php"; ?>
+
+<!-- Breadcrumb Area Start -->
+<div class="section breadcrumb-area bg-name-bright">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="breadcrumb-wrapper">
+                        <h2 class="breadcrumb-title">Liên hệ</h2>
+                        <ul>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li>Liên hệ với tôi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End -->
+<!-- Contact Us Section Start -->
+<div class="section section-margin">
+        <div class="container">
+
+            <div class="row m-b-n50">
+                <div class="col-12 col-lg-6 m-b-50 order-2 order-lg-1" data-aos="fade-up" data-aos-duration="1000">
+
+                    <!-- Section Title Start -->
+                    <div class="contact-title p-b-15">
+                        <h2 class="title">Gửi yêu cầu</h2>
+                    </div>
+                    <!-- Section Title End -->
+
+                    <!-- Contact Form Wrapper Start -->
+                    <div class="contact-form-wrapper contact-form">
+                        <form action="assets/php/amber.php" id="contact-form" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-area m-b-20">
+                                                <input class="input-item" type="text" placeholder="Họ Tên *" name="name">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="input-area m-b-20">
+                                                <input class="input-item" type="email" placeholder="Email *" name="email">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="input-area m-b-20">
+                                                <input class="input-item" type="text" placeholder="Chủ đề *" name="subject">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="input-area m-b-40">
+                                                <textarea cols="30" rows="5" class="textarea-item" name="message" placeholder="Tin nhắn"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <button type="submit" id="submit" name="submit" class="btn btn-primary btn-hover-dark">Submit</button>
+                                        </div>
+                                        <p class="col-8 form-message mb-0"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="form-messege"></p>
+                    </div>
+                    <!-- Contact Form Wrapper End -->
+
+                </div>
+                <div class="col-12 col-lg-6 m-b-50 order-1 order-lg-2" data-aos="fade-up" data-aos-duration="1500">
+                    <!-- Section Title End -->
+                    <!-- Google Map Area Start -->
+        <div class="google-map-area w-100" data-aos="fade-up" data-aos-duration="1000" style="border-radius: 30px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841518408663!2d105.76842661447657!3d10.029933692830634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2zxJDhuqFpIGjhu41jIEPhuqduIFRoxqE!5e0!3m2!1svi!2s!4v1650011390597!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Google Map Area Start -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Contact us Section End -->
+
+<?php include "./frontend/footer.php"?>
