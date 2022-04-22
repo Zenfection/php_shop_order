@@ -43,7 +43,7 @@
                                     <a href="/category.php">Category</a>
                                 </li>
                                 <li class="has-children">
-                                    <a href="/product.php">Product</a>
+                                    <a href="/shop.php">Shop</a>
                                 </li>
                                 <li><a href="/contact.php">Contact</a></li>
                             </ul>
@@ -61,7 +61,7 @@
                             </a>
                             <?php include "cart.php" ?>
                             <!-- Scroll Top Start -->
-                            <a href="#" class="scroll-top show" id="scroll-top">
+                            <a href="#" class="scroll-top show rounded" id="scroll-top">
                                 <i class="arrow-top ti-angle-double-up"></i>
                                 <i class="arrow-bottom ti-angle-double-up"></i>
                             </a>

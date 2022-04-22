@@ -14,7 +14,7 @@
                             <h5 class="sub-title">We keep pets for pleasure.</h5>
                             <h2 class="title m-0">Vitamins For all Pets</h2>
                             <p class="ms-0">We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            <a href="/category.php" class="btn btn-dark btn-hover-primary">Shop Now</a>
+                            <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                             <h5 class="sub-title">We keep pets for pleasure.</h5>
                             <h2 class="title m-0">Vitamins For all Pets</h2>
                             <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            <a href="/category.php" class="btn btn-dark btn-hover-primary">Shop Now</a>
+                            <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                         </div>
                     </div>
                 </div>
@@ -163,6 +163,111 @@
         </div>
     </div>
     <!-- Category Section End -->
+
+    <!-- Product Section Start -->
+    <div class="section position-relative">
+        <div class="container">
+
+            <!-- Section Title & Tab Start -->
+            <div class="row" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Tab Start -->
+                <div class="col-12">
+                    <ul class="product-tab-nav nav justify-content-center m-b-n15 p-b-40 title-border-bottom">
+                        <li class="nav-item m-b-15"><a class="nav-link active" data-bs-toggle="tab" href="#top-product-ranking">Đánh giá cao</a></li>
+                        <li class="nav-item m-b-15"><a class="nav-link" data-bs-toggle="tab" href="#top-product-discount">Giảm giá nhiều</a></li>
+                        <li class="nav-item m-b-15"><a class="nav-link" data-bs-toggle="tab" href="#top-product-seller">Sản phẩm mua nhiều</a></li>
+                    </ul>
+                </div>
+                <!-- Tab End -->
+            </div>
+            <!-- Section Title & Tab End -->
+
+            <!-- Products Tab Start -->
+                
+            <div class="row" data-aos="fade-up" data-aos-duration="1100">
+                <div class="col-12">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="top-product-ranking">
+                            <div class="row m-b-n40">
+                    <?php
+                        $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`ranking` DESC LIMIT 8";
+                        $result = mysqli_query($conn, $sql);
+                        $count = mysqli_num_rows($result);
+                        if($count > 0){
+                            while($row=mysqli_fetch_assoc($result)){
+                                $id = $row['id'];
+                                $name = $row['name'];
+                                $description = $row['description'];
+                                $price = $row['price'];
+                                $discount = $row['discount'];
+                                $image = $row['picture'];
+                                $ranking = $row['ranking'];
+                                $quantity = $row['quantity'];
+                                ?>
+                                <?php include "product.php"?>
+                                <?php
+                            }
+                        }
+                    ?>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="top-product-discount">
+                    <div class="row m-b-n40">
+                        <?php
+                            $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`discount` DESC LIMIT 8";
+                            $result = mysqli_query($conn, $sql);
+                            $count = mysqli_num_rows($result);
+                            if($count > 0){
+                                while($row=mysqli_fetch_assoc($result)){
+                                    $id = $row['id'];
+                                    $name = $row['name'];
+                                    $description = $row['description'];
+                                    $price = $row['price'];
+                                    $discount = $row['discount'];
+                                    $image = $row['picture'];
+                                    $ranking = $row['ranking'];
+                                    $quantity = $row['quantity'];
+                                    ?>
+                                    <?php include "product.php"?>
+                                    <?php
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="top-product-seller">
+                    <div class="row m-b-n40">
+                        <?php
+                            $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`quantity` ASC LIMIT 8";
+                            $result = mysqli_query($conn, $sql);
+                            $count = mysqli_num_rows($result);
+                            if($count > 0){
+                                while($row=mysqli_fetch_assoc($result)){
+                                    $id = $row['id'];
+                                    $name = $row['name'];
+                                    $description = $row['description'];
+                                    $price = $row['price'];
+                                    $discount = $row['discount'];
+                                    $image = $row['picture'];
+                                    $ranking = $row['ranking'];
+                                    $quantity = $row['quantity'];
+                                    ?>
+                                    <?php include "product.php"?>
+                                    <?php
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <!-- Products Tab End -->
+            
+        </div>
+    </div>
+    
+    <!-- Product Section End -->
 
 <?php include "./frontend/footer.php"?>
 
