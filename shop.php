@@ -107,12 +107,12 @@
                                             <?php
                                             if ($discount > 0) {
                                             ?>
-                                                <span class="new">$<?php echo $discount_price ?></span>;
-                                                <span class="old">$<?php echo $price ?></span>;
+                                                <span class="new">$<?php echo $discount_price ?></span>
+                                                <span class="old">$<?php echo $price ?></span>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class='new'>$<?php echo $price ?></span>;
+                                                <span class='new'>$<?php echo $price ?></span>
                                             <?php
                                             }
                                             ?>
