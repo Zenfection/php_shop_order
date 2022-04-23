@@ -15,11 +15,11 @@
                             <button data-role="grid_list" type="button" class="btn-list" title="List"><i class="ti-align-justify"></i></button>
                         </div>
                         <div class="shop-top-show">
-                            <?php 
-                                $sql = "SELECT * FROM `tb_product`";
-                                $result = $conn->query($sql);
-                                $total = $result->num_rows;
-                                echo "<span>Tổng cộng có $total sản phẩm</span>";
+                            <?php
+                            $sql = "SELECT * FROM `tb_product`";
+                            $result = $conn->query($sql);
+                            $total = $result->num_rows;
+                            echo "<span>Tổng cộng có $total sản phẩm</span>";
                             ?>
                         </div>
 
@@ -50,19 +50,24 @@
                 <!-- Shop Wrapper Start -->
                 <div class="row shop_wrapper grid_4">
                     <?php
-                    $sql = "SELECT * FROM `tb_product` LIMIT 12";
-                    $result = mysqli_query($conn, $sql);
-                    $count = mysqli_num_rows($result);
-                    if ($count > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $id = $row['id_product'];
-                            $name = $row['name'];
-                            $description = $row['description'];
-                            $price = $row['price'];
-                            $discount = $row['discount'];
-                            $image = $row['picture'];
-                            $ranking = $row['ranking'];
-                            $quantity = $row['quantity'];
+                    require_once "./class/paginator.php";
+                    $limit = (isset($_GET['limit'])) ? $_GET['limit'] : 8;
+                    $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+                    $links = (isset($_GET['links'])) ? $_GET['links'] : 7;
+                    $sql = "SELECT * FROM `tb_product`";
+                    $paginator = new Paginator($conn, $sql);
+                    $results = $paginator->getData($limit, $page);
+
+                    if ($limit > 0) {
+                        for ($i = 0; $i < $limit; $i++) {
+                            $id = $results->data[$i]['id_product'];
+                            $name = $results->data[$i]['name'];
+                            $description = $results->data[$i]['description'];
+                            $price = $results->data[$i]['price'];
+                            $image = $results->data[$i]['picture'];
+                            $discount = $results->data[$i]['discount'];
+                            $ranking = $results->data[$i]['ranking'];
+                            $quantity = $results->data[$i]['quantity'];
                     ?>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
                                 <div class="product-inner">
@@ -90,7 +95,7 @@
                                         <h5 class="title"><a href="single-product.html"><?php echo $name ?></a></h5>
                                         <span class="rating">
                                             <?php
-                                            for ($i = 0; $i < 5; $i++) {
+                                            for ($j = 0; $j < 5; $j++) {
                                                 if ($ranking > 2) {
                                                     echo "<i class='fa fa-star'></i>";
                                                     $ranking -= 2;
@@ -118,7 +123,7 @@
                                             ?>
                                         </span>
                                         <?php
-                                            echo "<p>$description</p>"
+                                        echo "<p>$description</p>"
                                         ?>
                                         <!-- Cart Button Start -->
                                         <div class="cart-btn action-btn">
@@ -143,27 +148,42 @@
 
                 <!--shop toolbar start-->
                 <div class="shop_toolbar_wrapper justify-content-center m-t-50">
-
                     <!-- Shopt Top Bar Right Start -->
                     <div class="shop-top-bar-right">
                         <nav>
                             <ul class="pagination">
-                                <?php 
-                                    $numPage = ceil($total / 12);
-                                    for($i = 1; $i <= $numPage; $i++){
-                                        echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
-                                    }
-                                ?>
-                                <li class="page-item">
-                                    <a class="page-link rounded-0" href="#/" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
+                                <?php
+                                $numPage = ceil($total / 8);
+                                if($page > 1){
+                                    ?>
+                                    <li class="page-item">
+                                    <a class="page-link rounded-0" href="?<?php echo 'page='.$page+1?>" aria-label="Prev">
+                                        <span aria-hidden="true">
+                                            <i class="ti-arrow-circle-left"></i>
+                                        </span>
                                     </a>
-                                </li>
+                                    </li>
+                                    <?php
+                                }
+                                for ($i = 1; $i <= $numPage; $i++) {
+                                    echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
+                                }
+                                if($page < $numPage){
+                                    ?>
+                                    <li class="page-item">
+                                    <a class="page-link rounded-0" href="?<?php echo 'page='.$page+1?>" aria-label="Next">
+                                        <span aria-hidden="true">
+                                            <i class="ti-arrow-circle-right"></i>
+                                        </span>
+                                    </a>
+                                    </li>
+                                <?php
+                                }
+                                ?>
                             </ul>
                         </nav>
                     </div>
                     <!-- Shopt Top Bar Right End -->
-
                 </div>
                 <!--shop toolbar end-->
 

@@ -26,7 +26,7 @@ if (isset($_SESSION['no-login-message'])) {
                     <form action="#" method="POST">
                         <!-- Input Email  -->
                         <div class="single-input-item m-b-10">
-                            <input type="email" placeholder="Email / Username">
+                            <input type="text" placeholder="Email / Username">
                         </div>
 
                         <!-- Input Passwordv  -->
