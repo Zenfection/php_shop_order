@@ -1,5 +1,12 @@
 <?php include "./frontend/header.php"; ?>
 
+<?php
+    if(isset($_SESSION['login'])){
+        echo $_SESSION['login'];
+        unset($_SESSION['login']);
+    }
+?>
+
 <!-- Hero/Intro Slider Start -->
 <div class="section">
         <div class="hero-slider swiper-container">
@@ -7,7 +14,7 @@
 
                 <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="assets/images/slider/1.png" alt="Slider Image" />
+                        <img src="/assets/images/slider/1.png" alt="Slider Image" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-start">
@@ -21,7 +28,7 @@
 
                 <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="assets/images/slider/2.png" alt="Slider Image" />
+                        <img src="/assets/images/slider/2.png" alt="Slider Image" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -117,13 +124,6 @@
         </div>
     </div>
 
-    <?php 
-        if(isset($_SESSION['order']))
-        {
-            echo $_SESSION['order'];
-            unset($_SESSION['order']);
-        }
-    ?>
     <!-- Category Section Start -->
     <div class="section section-margin">
         <div class="container">
@@ -136,9 +136,9 @@
                     $count = mysqli_num_rows($result);
                     if($count > 0){
                         while($row=mysqli_fetch_assoc($result)){
-                            $id = $row['id'];
+                            $id = $row['id_category'];
                             $title = $row['title'];
-                            $image = $row['image_url'];
+                            $image = $row['image'];
                         ?>
                         <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
                             <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>" class="banner hover-style">
@@ -200,7 +200,7 @@
                                 $description = $row['description'];
                                 $price = $row['price'];
                                 $discount = $row['discount'];
-                                $image = $row['picture'];
+                                $image = $row['image'];
                                 $ranking = $row['ranking'];
                                 $quantity = $row['quantity'];
                                 ?>
@@ -225,7 +225,7 @@
                                     $description = $row['description'];
                                     $price = $row['price'];
                                     $discount = $row['discount'];
-                                    $image = $row['picture'];
+                                    $image = $row['image'];
                                     $ranking = $row['ranking'];
                                     $quantity = $row['quantity'];
                                     ?>
@@ -250,7 +250,7 @@
                                     $description = $row['description'];
                                     $price = $row['price'];
                                     $discount = $row['discount'];
-                                    $image = $row['picture'];
+                                    $image = $row['image'];
                                     $ranking = $row['ranking'];
                                     $quantity = $row['quantity'];
                                     ?>
@@ -266,7 +266,7 @@
             
         </div>
     </div>
-                        </div>
+</div>
     <!-- Product Section End -->
 
 <?php include "./frontend/footer.php"?>

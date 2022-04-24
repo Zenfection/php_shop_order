@@ -64,7 +64,7 @@
                             $name = $results->data[$i]['name'];
                             $description = $results->data[$i]['description'];
                             $price = $results->data[$i]['price'];
-                            $image = $results->data[$i]['picture'];
+                            $image = $results->data[$i]['image'];
                             $discount = $results->data[$i]['discount'];
                             $ranking = $results->data[$i]['ranking'];
                             $quantity = $results->data[$i]['quantity'];

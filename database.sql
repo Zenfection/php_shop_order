@@ -5,7 +5,8 @@ USE `shop_order`;
 CREATE TABLE tb_cart
 (
   username   varchar(255) NOT NULL,
-  id_product int(11)      NOT NULL
+  id_product int(11)      NOT NULL,
+  amount     int          NOT NULL
 );
 
 CREATE TABLE tb_category
@@ -13,6 +14,7 @@ CREATE TABLE tb_category
   id_category char(25)     NOT NULL,
   title       varchar(50)  NOT NULL,
   image       varchar(255) NOT NULL,
+  active      tinyint(1)   NOT NULL,
   PRIMARY KEY (id_category)
 );
 

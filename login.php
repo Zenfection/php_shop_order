@@ -75,7 +75,9 @@ if (isset($_POST['submit'])) {
         echo "<script>window.location.href='/index.php'</script>";
     } else {
         $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
-        session_unset(); // xoá hết dữ liệu
+        // xoá session user và id
+        unset($_SESSION['user']);
+        unset($_SESSION['id']);
         echo "<script>window.location.href = '/login.php';</script>";
     }
 }
