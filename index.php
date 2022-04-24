@@ -1,4 +1,4 @@
-<?php $page="home"; include "./frontend/header.php"; ?>
+<?php include "./frontend/header.php"; ?>
 
 <!-- Hero/Intro Slider Start -->
 <div class="section">
@@ -11,9 +11,9 @@
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-start">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p class="ms-0">We know your concerns when you are looking for a chewing treat for your dog.</p>
+                            <h5 class="sub-title">Thực phẩm đa dạng.</h5>
+                            <h2 class="title m-0">KHÔNG CHẤT BẢO QUẢN</h2>
+                            <p class="ms-0">Tất cả được làm bằng 100% thiên nhiên không chất phụ gia.</p>
                             <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                         </div>
                     </div>
@@ -25,9 +25,9 @@
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
+                            <h5 class="sub-title">Giao nhận nhanh chóng.</h5>
+                            <h2 class="title m-0">FREESHIP TOÀN HÀNG</h2>
+                            <p>Các đơn hàng có giá trị trên 200k sẽ được freeship.</p>
                             <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                         </div>
                     </div>
@@ -62,8 +62,8 @@
 
                         <!-- CTA Content Start -->
                         <div class="cta-content">
-                            <h4 class="title">Free Shipping</h4>
-                            <p>Free shipping on all order</p>
+                            <h4 class="title">Miễn phí vận chuyển</h4>
+                            <p>Áp dụng cho tất cả đơn hàng</p>
                         </div>
                         <!-- CTA Content End -->
 
@@ -83,8 +83,8 @@
 
                         <!-- CTA Content Start -->
                         <div class="cta-content">
-                            <h4 class="title">Online Support</h4>
-                            <p>Online live support 24/7</p>
+                            <h4 class="title">Hỗ trợ 24/7</h4>
+                            <p>Gọi Hotline hoặc Email</p>
                         </div>
                         <!-- CTA Content End -->
 
@@ -104,8 +104,8 @@
 
                         <!-- CTA Content Start -->
                         <div class="cta-content">
-                            <h4 class="title">Money Return</h4>
-                            <p>Back guarantee under 5 days</p>
+                            <h4 class="title">Hoàn tiền</h4>
+                            <p>Hoàn tiền nếu bạn chưa nhận</p>
                         </div>
                         <!-- CTA Content End -->
 
@@ -266,7 +266,7 @@
             
         </div>
     </div>
-    
+                        </div>
     <!-- Product Section End -->
 
 <?php include "./frontend/footer.php"?>

@@ -1,4 +1,7 @@
-<?php include "./config/connect.php" ?>
+<?php 
+include "./config/connect.php";
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,12 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="/assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
 
     <title>Shop Order</title>
 </head>
@@ -26,7 +29,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-lg-3 col-md-4 col-6">
                         <div class="header-logo">
-                            <a href="index.php"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="<?php echo SITEURL; ?>index.php"><img src="/assets/images/logo/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -36,16 +39,16 @@
                         <div class="main-menu">
                             <ul>
                                 <li class="has-children">
-                                    <a href="/index.php">Home</a>
+                                    <a href="<?php echo SITEURL; ?>index.php">Home</a>
                                 </li>
-                                <li><a href="/about.php">About</a></li>
+                                <li><a href="<?php echo SITEURL; ?>about.php">About</a></li>
                                 <li class="has-children">
-                                    <a href="/category.php">Category</a>
+                                    <a href="<?php echo SITEURL; ?>category.php">Category</a>
                                 </li>
                                 <li class="has-children">
-                                    <a href="/shop.php">Shop</a>
+                                    <a href="<?php echo SITEURL; ?>shop.php">Shop</a>
                                 </li>
-                                <li><a href="/contact.php">Contact</a></li>
+                                <li><a href="<?php echo SITEURL; ?>contact.php">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -56,7 +59,7 @@
                         <div class="header-actions">
                             <?php include "search.php" ?>
                             <!-- account login -->
-                            <a href="/dashboard/login-check.php" class="header-action-btn header-action-btn-wishlist">
+                            <a href="/config/login-check.php" class="header-action-btn header-action-btn-wishlist">
                                 <i class="icon-user icons"></i>
                             </a>
                             <?php include "cart.php" ?>

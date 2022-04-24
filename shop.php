@@ -159,13 +159,17 @@
                                     <li class="page-item">
                                     <a class="page-link rounded-0" href="?<?php echo 'page='.$page+1?>" aria-label="Prev">
                                         <span aria-hidden="true">
-                                            <i class="ti-arrow-circle-left"></i>
+                                            <i class="fa fa-arrow-left"></i>
                                         </span>
                                     </a>
                                     </li>
                                     <?php
                                 }
                                 for ($i = 1; $i <= $numPage; $i++) {
+                                    if($page == $i){
+                                        echo "<li class='page-item'><a class='page-link active' href='?page=$i'>$i</a></li>";
+                                        continue;
+                                    }
                                     echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
                                 }
                                 if($page < $numPage){
@@ -173,7 +177,7 @@
                                     <li class="page-item">
                                     <a class="page-link rounded-0" href="?<?php echo 'page='.$page+1?>" aria-label="Next">
                                         <span aria-hidden="true">
-                                            <i class="ti-arrow-circle-right"></i>
+                                            <i class="fa fa-arrow-right"></i>
                                         </span>
                                     </a>
                                     </li>

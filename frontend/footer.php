@@ -79,13 +79,13 @@
         <!-- Footer Bottom End -->
     </footer>
     <!-- Footer Section End -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
+    <script src="/assets/js/vendor.min.js"></script>
+    <script src="/assets/js/plugins.min.js"></script>
 
     <!--Main JS-->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     
-    <script src="assets/js/custom.js"></script>
+    <script src="/assets/js/custom.js"></script>
 
 </body>
 </html>

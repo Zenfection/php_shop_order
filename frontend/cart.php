@@ -1,3 +1,8 @@
+<?php 
+    echo $_SESSION['user'];
+    echo $_SESSION['id'];
+?>
+
 <!-- Header Action Button Start -->
 <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
     <a class="cart-visible" href="javascript:void(0)">
@@ -17,7 +22,7 @@
                 <!-- Single Cart Product Start -->
                 <div class="single-cart-product">
                     <div class="cart-product-thumb">
-                        <a href="single-product.html"><img src="assets/images/header/header-cart/1.png" alt="Cart Product"></a>
+                        <a href="single-product.html"><img src="/assets/images/header/header-cart/1.png" alt="Cart Product"></a>
                     </div>
                     <div class="cart-product-content">
                         <h3 class="title"><a href="single-product.html">Basic Dog Trainning</a></h3>
@@ -46,7 +51,7 @@
                 <!-- Single Cart Product Start -->
                 <div class="single-cart-product">
                     <div class="cart-product-thumb">
-                        <a href="single-product.html"><img src="assets/images/header/header-cart/2.png" alt="Cart Product"></a>
+                        <a href="single-product.html"><img src="/assets/images/header/header-cart/2.png" alt="Cart Product"></a>
                     </div>
                     <div class="cart-product-content">
                         <h3 class="title"><a href="single-product.html">Wait, You Need This</a></h3>
