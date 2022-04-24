@@ -1,15 +1,14 @@
-<?php
-echo $_SESSION['user'];
-?>
+
 
 <!-- Header Action Button Start -->
 <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
     <a class="cart-visible" href="javascript:void(0)">
         <i class="icon-handbag icons"></i>
         <?php
-        $sql = "SELECT * FROM `tb_cart` WHERE username = '" . $_SESSION['user'] . "'";
-        $count = mysqli_num_rows(mysqli_query($conn, $sql));
-        echo "<span class='header-action-num'>" . $count . "</span>";
+            $user = $_SESSION['user'];
+            $sql = "SELECT * FROM `tb_cart` WHERE username = '$user'";
+            $count = mysqli_num_rows(mysqli_query($conn, $sql));
+            echo "<span class='header-action-num'>" . $count . "</span>";
         ?>
     </a>
 

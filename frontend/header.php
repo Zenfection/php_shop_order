@@ -1,5 +1,5 @@
 <?php 
-include "./config/connect.php";
+    include "./config/connect.php";
 ?>
 
 
@@ -29,7 +29,7 @@ include "./config/connect.php";
                     <!-- Header Logo Start -->
                     <div class="col-lg-3 col-md-4 col-6">
                         <div class="header-logo">
-                            <a href="<?php echo SITEURL; ?>index.php"><img src="/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="/index.php"><img src="/assets/images/logo/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -39,16 +39,16 @@ include "./config/connect.php";
                         <div class="main-menu">
                             <ul>
                                 <li class="has-children">
-                                    <a href="<?php echo SITEURL; ?>index.php">Home</a>
+                                    <a href="/index.php">Home</a>
                                 </li>
-                                <li><a href="<?php echo SITEURL; ?>about.php">About</a></li>
+                                <li><a href="/about.php">About</a></li>
                                 <li class="has-children">
-                                    <a href="<?php echo SITEURL; ?>category.php">Category</a>
+                                    <a href="/category.php">Category</a>
                                 </li>
                                 <li class="has-children">
-                                    <a href="<?php echo SITEURL; ?>shop.php">Shop</a>
+                                    <a href="/shop.php">Shop</a>
                                 </li>
-                                <li><a href="<?php echo SITEURL; ?>contact.php">Contact</a></li>
+                                <li><a href="/contact.php">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ include "./config/connect.php";
                         <div class="header-actions">
                             <?php include "search.php" ?>
                             <!-- account login -->
-                            <a href="/config/login-check.php" class="header-action-btn header-action-btn-wishlist">
+                            <a href="/dashboard/login-check.php?user=<?php echo $_SESSION['user']?>" class="header-action-btn header-action-btn-wishlist">
                                 <i class="icon-user icons"></i>
                             </a>
                             <?php include "cart.php" ?>

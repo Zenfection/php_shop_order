@@ -63,7 +63,7 @@
                 <div class="row align-items-center m-b-n20">
                     <div class="col-md-6 text-center text-md-start order-2 order-md-1 m-b-20">
                         <div class="copyright-content">
-                            <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/">HasThemes.</a></p>
+                            <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="#">HasThemes.</a></p>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
@@ -84,7 +84,7 @@
 
     <!--Main JS-->
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/custom.js"></script>
+
 
 </body>
 </html>

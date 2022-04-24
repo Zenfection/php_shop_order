@@ -1,18 +1,13 @@
 <?php include "./frontend/header.php" ?>
 
+
 <!-- Login Section Start -->
 <div class="section section-margin login">
-    <?php
-    if (isset($_SESSION['no-login-message'])) {
-        echo $_SESSION['no-login-message'];
-        unset($_SESSION['no-login-message']);
-    }
-    ?>
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-8 m-auto">
                 <div class="login-wrapper">
-
+                    
                     <!-- Login Title & Content -->
                     <div class="section-content text-center m-b-30">
                         <h2 class="title m-b-10">Đăng nhập</h2>
