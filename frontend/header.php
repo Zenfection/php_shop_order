@@ -59,9 +59,17 @@
                         <div class="header-actions">
                             <?php include "search.php" ?>
                             <!-- account login -->
-                            <a href="/dashboard/login-check.php?user=<?php echo $_SESSION['user']?>" class="header-action-btn header-action-btn-wishlist">
+                            <?php 
+                                if(isset($_SESSION['user'])) {
+                                    echo "<a href='/account.php' class='header-action-btn header-action-btn-wishlist'>
+                                    <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
+                                } else {
+                                    echo "<a href='/login.php' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                                }
+                            ?>
+                            <!-- <a href="/backend/login-check.php?user=<?php echo $_SESSION['user']?>" class="header-action-btn header-action-btn-wishlist">
                                 <i class="icon-user icons"></i>
-                            </a>
+                            </a> -->
                             <?php include "cart.php" ?>
                             <!-- Scroll Top Start -->
                             <a href="#" class="scroll-top show rounded" id="scroll-top">
