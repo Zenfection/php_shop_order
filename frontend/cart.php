@@ -27,7 +27,7 @@ echo $_SESSION['user'];
             $count = mysqli_num_rows($result);
             if ($count > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $id_product = $row['id_product'];
+                    $id = $row['id_product'];
                     $name = $row['name'];
                     $amount = $row['amount'];
                     $image = $row['image'];
@@ -67,7 +67,8 @@ echo $_SESSION['user'];
 
                         <!-- Product Remove Start -->
                         <div class="cart-product-remove">
-                            <a href="/backend/delete_product_cart.php?id_product=<?php echo $id_product;?>"><i class="icon-close"></i></a>
+                            <a href="/backend/delete_product_cart.php?id_product=<?php echo $id;?>" class="remove-cart"><i class="fa fa-trash-o"></i></a>
+                            <!-- <a href="javascript:void(0)" class="remove-cart" onclick="delete_cart(<?php echo $id;?>)"><i class="fa fa-trash-o"></i></a> -->
                         </div>
                         <!-- Product Remove End -->
 
