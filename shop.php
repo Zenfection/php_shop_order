@@ -72,7 +72,7 @@
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
                                 <div class="product-inner">
                                     <div class="thumb">
-                                        <a href="single-product.html" class="image">
+                                        <a href="/detail_product.php?id=<?php echo $id?>" class="image">
                                             <img class="fit-image" src="assets/images/products/<?php echo $image ?>" alt="Product" width="270" height="270" />
                                         </a>
                                         <?php
@@ -88,11 +88,11 @@
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
                                             <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                                            <a href="/viewcart.php" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title"><a href="single-product.html"><?php echo $name ?></a></h5>
+                                        <h5 class="title"><a href="/detail_product.php?id=<?php echo $id?>"><?php echo $name ?></a></h5>
                                         <span class="rating">
                                             <?php
                                             for ($j = 0; $j < 5; $j++) {
@@ -129,7 +129,7 @@
                                         <div class="cart-btn action-btn">
                                             <div class="action-cart-btn-wrapper d-flex">
                                                 <div class="add-to_cart">
-                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="cart.html">Add to cart</a>
+                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/viewcart.php">Add to cart</a>
                                                 </div>
                                                 <a href="wishlist.html" title="Wishlist" class="action"><i class="ti-heart"></i></a>
                                                 <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>

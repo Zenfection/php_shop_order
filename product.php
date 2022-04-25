@@ -3,7 +3,7 @@
     <div class="product">
         <!-- Thumb Start  -->
         <div class="thumb">
-            <a href="single-product.html" class="image">
+            <a href="/frontend/detail_product.php" class="image">
                 <img class="fit-image rounded" src="assets/images/products/<?php echo $image ?>" alt="Product" width="270" height="270" />
             </a>
             <?php
@@ -20,7 +20,7 @@
                 <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
                 
                 <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                <a href="/viewcart.php" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
             </div>
         </div>
         <!-- Thumb End  -->

@@ -7,7 +7,7 @@
             $user = $_SESSION['user'];
             $sql = "SELECT * FROM `tb_cart` WHERE username = '$user'";
             $count = mysqli_num_rows(mysqli_query($conn, $sql));
-            echo "<span class='header-action-num'>" . $count . "</span>";
+            echo "<span class='header-action-num' id='count-cart'>" . $count . "</span>";
         ?>
     </a>
 
@@ -34,16 +34,16 @@
                     $discount_price = $price - ($price * $discount / 100);
             ?>
                     <!-- Cart Product/Price Start -->
-                    <div class="cart-product-inner p-b-20 m-b-20 border-bottom">
+                    <div class="cart-product-inner p-b-20 m-b-20 border-bottom" id="product_id<?php echo $id?>">
                         <!-- Single Cart Product Start -->
                         <div class="single-cart-product">
                             <div class="cart-product-thumb">
-                                <a href="single-product.html"><img src="/assets/images/products/<?php echo $image?>" alt="Cart Product" class="rounded"></a>
+                                <a href="/frontend/detail_product.php"><img src="/assets/images/products/<?php echo $image?>" alt="Cart Product" class="rounded"></a>
                             </div>
                             <div class="cart-product-content">
-                                <h3 class="title"><a href="single-product.html"><?php echo $name?></a></h3>
+                                <h3 class="title"><a href="/frontend/detail_product.php"><?php echo $name?></a></h3>
                                 <div class="product-quty-price">
-                                    <span class="cart-quantity">Số lượng: <strong> <?php echo $amount?> </strong></span>
+                                    <span class="cart-quantity" id="quantity<?php echo $id?>">Số lượng: <strong> <?php echo $amount?> </strong></span>
                                     <span class="price">
                                             <?php
                                             if ($discount > 0) {
@@ -65,8 +65,7 @@
 
                         <!-- Product Remove Start -->
                         <div class="cart-product-remove">
-                            <a href="/backend/delete_product_cart.php?id_product=<?php echo $id;?>" class="remove-cart"><i class="fa fa-trash-o"></i></a>
-                            <!-- <a href="javascript:void(0)" class="remove-cart" onclick="delete_cart(<?php echo $id;?>)"><i class="fa fa-trash-o"></i></a> -->
+                            <a class="remove-cart" id="product<?php echo $id?>"><i class="fa fa-trash-o"></i></a>
                         </div>
                         <!-- Product Remove End -->
 
@@ -81,7 +80,7 @@
 
         <!-- Cart Product Total Start -->
         <div class="cart-product-total p-b-20 m-b-20 border-bottom">
-            <span class="value">Total</span>
+            <span class="value">Tổng tiền</span>
             <?php
             $sql = "SELECT * 
                         FROM `tb_cart` as c, `tb_product` as p
@@ -98,7 +97,9 @@
                     $discount_price = $price - ($price * $discount / 100);
                     $total += $discount_price * $amount;
                 }
-                echo "<span class='value'>" . $total . "$</span>";
+                echo "<span class='value' id='totalmoney'>" . $total . "$</span>";
+            } else {
+                echo "<span class='value' id='totalmoney'>0.00$</span>";
             }
             ?>
         </div>
@@ -106,7 +107,7 @@
 
         <!-- Cart Product Button Start -->
         <div class="cart-product-btn m-t-20">
-            <a href="cart.html" class="btn btn-outline-light btn-hover-primary w-100">View cart</a>
+            <a href="/viewcart.php" class="btn btn-outline-light btn-hover-primary w-100">View cart</a>
             <a href="checkout.html" class="btn btn-outline-light btn-hover-primary w-100 m-t-20">Checkout</a>
         </div>
         <!-- Cart Product Button End -->
