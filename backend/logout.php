@@ -1,6 +1,6 @@
 <?php 
-    include('../config/connect.php');
-    echo $_SESSION['user'];
+    include('./config/connect.php');
+    session_start();
     if(isset($_SESSION['user'])){
         unset($_SESSION['user']);
         $_SESSION['logout'] = "<div class='alert-success text-center'>Đăng xuất thành công</div>";  
@@ -8,5 +8,4 @@
     }else{
         echo "Lỗi đăng xuất";
     }
-    
 ?>

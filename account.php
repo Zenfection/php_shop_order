@@ -21,7 +21,7 @@ if (!isset($_SESSION['user'])) {
                                 <a href="#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Thanh Toán</a>
                                 <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Chi Tiết</a>
                                 <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-key"></i> Mật Khẩu</a>
-                                <a href="/backend/logout.php"><i class="fa fa-sign-out"></i> Đăng Xuất</a>
+                                <a href="./backend/logout.php"><i class="fa fa-sign-out"></i> Đăng Xuất</a>
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->

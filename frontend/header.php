@@ -67,9 +67,6 @@
                                     echo "<a href='/login.php' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
                                 }
                             ?>
-                            <!-- <a href="/backend/login-check.php?user=<?php echo $_SESSION['user']?>" class="header-action-btn header-action-btn-wishlist">
-                                <i class="icon-user icons"></i>
-                            </a> -->
                             <?php include "cart.php" ?>
                             <!-- Scroll Top Start -->
                             <a href="#" class="scroll-top show rounded" id="scroll-top">

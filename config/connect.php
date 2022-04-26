@@ -1,7 +1,8 @@
 <?php
     session_start();
-    require_once './vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    define ('PATH', $_SERVER['DOCUMENT_ROOT']);
+    require (PATH.'/vendor/autoload.php');
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
     $dotenv->load();
     
     $DB_HOST = $_ENV['DB_HOST'];
