@@ -141,7 +141,7 @@
                             $image = $row['image'];
                         ?>
                         <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
-                            <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>" class="banner hover-style">
+                            <a href="/category-foods.php?category_id=<?php echo $id; ?>" class="banner hover-style">
                                 <?php
                                     if($image == ""){
                                         echo "<div class='error'>Image not Available</div>";

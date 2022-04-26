@@ -108,7 +108,7 @@
         <!-- Cart Product Button Start -->
         <div class="cart-product-btn m-t-20">
             <a href="/viewcart.php" class="btn btn-outline-light btn-hover-primary w-100">View cart</a>
-            <a href="checkout.html" class="btn btn-outline-light btn-hover-primary w-100 m-t-20">Checkout</a>
+            <a href="/checkout.php" class="btn btn-outline-light btn-hover-primary w-100 m-t-20">Checkout</a>
         </div>
         <!-- Cart Product Button End -->
 

@@ -94,11 +94,11 @@
 
         if($query){
             echo "<script>alert('Đăng ký thành công');</script>";
-            header("location:".SITEURL.'login.php');
+            echo "<script>window.location.href='/login.php';</script>";
         }
         else{
             echo "<script>alert('Đăng ký thất bại');</script>";
-            header("location:".SITEURL.'register.php');
+            echo "<script>window.location.href='/register.php';</script>";
         }
     }
 ?>

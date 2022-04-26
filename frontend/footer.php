@@ -45,10 +45,10 @@
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Quick Menu</h2>
                             <ul class="widget-list">
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="my-account.html">My-Account</a></li>
+                                <li><a href="/login.php">Login</a></li>
+                                <li><a href="/my-account.php">My-Account</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="/checkout.php">Checkout</a></li>
                             </ul>
                         </div>
                     </div>

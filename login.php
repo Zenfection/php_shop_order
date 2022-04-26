@@ -70,13 +70,11 @@ if (isset($_POST['submit'])) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
         $_SESSION['user'] = $row['username'];
-        $_SESSION['id'] = $row['id'];
         echo "<script>window.location.href='/index.php'</script>";
     } else {
         $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
         // xoá session user và id
         unset($_SESSION['user']);
-        unset($_SESSION['id']);
         echo "<script>window.location.href = '/login.php';</script>";
     }
 }
