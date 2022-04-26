@@ -447,7 +447,7 @@
                       success: function () {
                         let total = parseFloat($('#totalmoney').text().replace('$', ''));
                         let amount = parseInt($('#count-cart').text());
-                        let qty = $('#quantity${id}').text().replace(/\\D/g, '');
+                        let qty = $('#quantity${id}').text().replace(/\\D/g, '');c
                         let money = parseFloat('${newprice}'.replace('$', ''));
                         let totalMoney = parseFloat(total - money * qty).toFixed(2);
                         console.log(money);
@@ -475,9 +475,57 @@
   });
 
   /*-------------------------
+      Ajax Clear Cart
+  ---------------------------*/  
+  $('#clear-cart').on('click', function(){
+    $.ajax({
+      type: 'post',
+      url: '/backend/clear_cart.php',
+      success: function(){
+        $('#table-cart').fadeOut("normal", function(){
+          $(this).remove();
+        });
+        $('.cart-product-wrapper').fadeOut("normal", function(){
+          $(this).remove();
+        });
+        $('#count-cart').text('0');
+        $('#totalmoney').text('0.00$');
+      }
+    });
+  })
+
+  /*-------------------------
+      Ajax Remove Product View Cart 
+  ---------------------------*/
+  $('.pro-remove > a').on('click', function(){
+    let id = $(this).closest('tr').attr('id').replace('view_cart_product', '');
+    $.ajax({
+      type: 'post',
+      url: '/backend/delete_product_cart.php',
+      data: { delete_id: id },
+      success: function(){
+        let money = parseFloat($('#product_id' + id + " .price .new").text().replace('$', ''));
+        let total = parseFloat($('#totalmoney').text().replace('$', ''));
+        let amount = parseInt($('#count-cart').text());
+        let qty = parseInt($('#quantity' + id).text().replace(/\D/g, ''));
+        console.log(money, total, amount, qty);
+        $('#view_cart_product'+id).fadeOut('normal', function(){
+          $(this).remove();
+        });
+        let totalMoney = (total - money * qty).toFixed(2);
+        console.log(totalMoney);
+        $('#totalmoney').text(totalMoney + '$');
+        $('#count-cart').text(amount - 1);
+        $('#product_id' + id).hide('normal', function () {
+          $(this).remove();
+        });
+      }
+    });
+  });
+  /*-------------------------
       Ajax Remove Product Cart 
   ---------------------------*/
-  $('.remove-cart').bind('click', function () {
+  $('.remove-cart').on('click', function () {
     let id = $(this).attr('id').replace('product', '');
     $.ajax({
       type: 'post',
@@ -486,15 +534,11 @@
         delete_id: id
       },
       success: function () {
-        let money = $('#product_id' + id + " .price .new").text().replace('$', '');
-        let total = $('#totalmoney').text().replace('$', '');
-        let amount = $('#count-cart').text();
-        let qty = $('#quantity' + id).text().replace(/\D/g, '');
-        parseFloat(money).toFixed(2);
-        parseFloat(total).toFixed(2);
-        parseInt(amount);
-        parseFloat(qty);
-        let totalMoney = parseFloat(total - money * qty).toFixed(2);
+        let money = parseFloat($('#product_id' + id + " .price .new").text().replace('$', ''));
+        let total = parseFloat($('#totalmoney').text().replace('$', ''));
+        let amount = parseInt($('#count-cart').text());
+        let qty = parseInt($('#quantity' + id).text().replace(/\D/g, ''));
+        let totalMoney = (total - money * qty).toFixed(2);
         $('#totalmoney').text(totalMoney + '$');
         $('#count-cart').text(amount - 1);
         $('#product_id' + id).hide('normal', function () {

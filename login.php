@@ -1,6 +1,7 @@
 <?php include "./frontend/header.php" ?>
 
 <!-- Login Section Start -->
+
 <div class="section section-margin login">
     <?php
     if (isset($_SESSION['no-login-message'])) {
@@ -70,7 +71,7 @@ if (isset($_POST['submit'])) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
         $_SESSION['user'] = $row['username'];
-        echo "<script>window.location.href='/index.php'</script>";
+        echo "<script>window.location.href='/index.php'</>";
     } else {
         $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
         // xoá session user và id

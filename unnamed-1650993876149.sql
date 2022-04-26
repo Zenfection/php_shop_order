@@ -1,12 +1,8 @@
-DROP DATABASE IF EXISTS `shop_order`;
-CREATE DATABASE `shop_order`;
-USE `shop_order`;
-
 
 CREATE TABLE tb_cart
 (
   username   varchar(255) NOT NULL,
-  id_product int(11)      NOT NULL UNIQUE,
+  id_product int(11)      NOT NULL,
   amount     int          NOT NULL
 );
 
@@ -52,11 +48,12 @@ CREATE TABLE tb_order_details
   id_order   char(10) NOT NULL,
   id_product int(11)  NOT NULL,
   amount     int      NOT NULL,
+  price      float    NOT NULL
 );
 
 CREATE TABLE tb_product
 (
-  id_product  int(11)       NOT NULL AUTO_INCREMENT,
+  id_product  int(11)       NOT NULL,
   name        varchar(50)   NOT NULL,
   description varchar(255)  NOT NULL,
   price       float         NOT NULL,

@@ -25,7 +25,7 @@
                         <!-- Table Head End -->
 
                         <!-- Table Body Start -->
-                        <tbody>
+                        <tbody id="table-cart">
                             <?php
                             $sql = "SELECT * 
                                             FROM `tb_cart` as c, `tb_product` as p
@@ -46,9 +46,9 @@
                                     } else {
                                         $price = $row['price'];
                                     }
-                                    $totalMoney += $price * $quantity;
+                                    $totalMoney += ((float)$price * (int)$quantity);
                             ?>
-                                    <tr>
+                                    <tr id="view_cart_product<?php echo $id?>">
                                         <td class="pro-thumbnail">
                                             <img class="fit-image rounded" src="assets/images/products/<?php echo $image ?>" alt="Product" />
                                         </td>
@@ -69,7 +69,7 @@
                                             <span><?php echo $price * $quantity?>$</span>
                                         </td>
                                         <td class="pro-remove">
-                                            <a href="#">
+                                            <a>
                                                 <i class="ti-trash"></i>
                                             </a>
                                         </td>
@@ -97,7 +97,7 @@
                     <!-- Cart Button left Side End -->
 
                     <!-- Cart Button Right Side Start -->
-                    <div class="cart-btn-right-right m-b-20">
+                    <div class="cart-btn-right-right m-b-20" id="clear-cart">
                         <a href="#" class="btn btn btn-gray-deep btn-hover-primary">Xoá Hết Giỏ Hàng</a>
                     </div>
                     <!-- Cart Button Right Side End -->

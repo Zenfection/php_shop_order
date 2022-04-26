@@ -149,7 +149,7 @@ if (!isset($_SESSION['user'])) {
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
-                                                                <label for="full-name" class="required m-b-10">FullName</label>
+                                                                <label for="full-name" class="required m-b-10">Họ và Tên</label>
                                                                 <?php
                                                                 echo "<input type='text' id='full-name' placeholder='$fullname'/>";
                                                                 ?>
