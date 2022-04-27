@@ -4,6 +4,10 @@
 
 <div class="section section-margin login">
     <?php
+    session_start();
+    if(isset($_SESSION['user'])){
+        echo "<script>window.location.href='/index.php'</script>";
+    }
     if (isset($_SESSION['no-login-message'])) {
         echo $_SESSION['no-login-message'];
         unset($_SESSION['no-login-message']);
@@ -73,14 +77,14 @@ if (isset($_POST['submit'])) {
     $count = mysqli_num_rows($result);
     if ($count == 1) {
         $row = mysqli_fetch_assoc($result);
-        $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
         $_SESSION['user'] = $row['username'];
-        echo "<script>window.location.href='/index.php'</>";
+        $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
+        echo "<script>window.location.href='/index.php'</script>";
     } else {
         $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
         // xoá session user và id
         unset($_SESSION['user']);
-        echo "<script>window.location.href = '/login.php';</script>";
+        echo "<script>window.location.href = '/login.php';</>";
     }
 }
 ?>

@@ -1,5 +1,5 @@
-<?php 
-    include "./config/connect.php";
+<?php
+include "./config/connect.php";
 ?>
 
 
@@ -35,37 +35,34 @@
                     <!-- Header Logo End -->
 
                     <!-- Header Menu Start -->
-                    <div class="col-lg-6 d-none d-lg-block">
+                    <div class="col-lg-5 d-none d-lg-block">
                         <div class="main-menu">
                             <ul>
-                                <li class="has-children">
-                                    <a href="/index.php">Home</a>
+                                <li>
+                                    <a href="/index.php">Trang Chủ</a>
                                 </li>
-                                <li><a href="/about.php">About</a></li>
-                                <li class="has-children">
-                                    <a href="/category.php">Category</a>
-                                </li>
-                                <li class="has-children">
+                                <li><a href="/about.php">Giới Thiệu</a></li>
+                                <li>
                                     <a href="/shop.php">Shop</a>
                                 </li>
-                                <li><a href="/contact.php">Contact</a></li>
+                                <li><a href="/contact.php">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
                     <!-- Header Menu End -->
 
                     <!-- Header Action Start -->
-                    <div class="col-lg-3 col-md-8 col-6">
+                    <div class="col-lg-4 col-md-8 col-6">
                         <div class="header-actions">
                             <?php include "search.php" ?>
                             <!-- account login -->
-                            <?php 
-                                if(isset($_SESSION['user'])) {
-                                    echo "<a href='/account.php' class='header-action-btn header-action-btn-wishlist'>
+                            <?php
+                            if (isset($_SESSION['user'])) {
+                                echo "<a href='/account.php' class='header-action-btn header-action-btn-wishlist'>
                                     <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
-                                } else {
-                                    echo "<a href='/login.php' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
-                                }
+                            } else {
+                                echo "<a href='/login.php' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                            }
                             ?>
                             <?php include "cart.php" ?>
                             <!-- Scroll Top Start -->

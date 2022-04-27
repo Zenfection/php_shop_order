@@ -1,7 +1,7 @@
 <?php include "./frontend/header.php" ?>
 
 <!-- Shop Section Start -->
-<div class="section section-margin">
+<div class="section section-margin" data-aos="fade-up">
     <div class="container">
         <div class="row">
             <div class="col-12">
