@@ -54,19 +54,25 @@ if (!isset($_SESSION['user'])) {
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade" id="orders" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3 class="title">Orders</h3>
+                                        <h3 class="title">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                            Đơn Hàng
+                                        </h3>
                                         <div class="myaccount-table table-responsive text-center">
                                             <table class="table table-bordered">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th>Order</th>
-                                                        <th>Date</th>
-                                                        <th>Status</th>
-                                                        <th>Total</th>
-                                                        <th>Action</th>
+                                                        <th>Mã Đơn</th>
+                                                        <th>Ngày Đặt Hàng</th>
+                                                        <th>Trạng Thái</th>
+                                                        <th>Tổng Tiền</th>
+                                                        <th>Chi Tiết</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <?php
+                                                        $sql = "SELECT * FROM `tb_order` WHERE ";
+                                                    ?>
                                                     <tr>
                                                         <td>1</td>
                                                         <td>Aug 22, 2018</td>

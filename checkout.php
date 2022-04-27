@@ -205,7 +205,21 @@ if (isset($_POST['submit'])) {
             (`id_order`, `username`, `name_customer`, `phone_customer`, `address_customer`, `email_customer`, `city_customer`, `province_customer`, `status`, `order_date`) 
             VALUES 
             ('$id_order', '$user', '$fullname', '$phone', '$address', '$email', '$city', '$province', '$status', '$order_date')";
-    $result = mysqli_query($conn, $sql);
+    $sql2 = "SELECT * 
+            FROM `tb_cart` as c, `tb_product` as p
+            WHERE username = '$user'
+            AND c.id_product = p.id_product";
+    mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql2);
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            $id_product = $row['id_product'];
+            $amount = $row['amount'];
+            mysqli_query($conn, "INSERT INTO `tb_order_details` 
+                                (id_order, id_product, amount)
+                                VALUES('$id_order', '$id_product', '$amount')");
+        }
+    }        
     include "./backend/clear_cart.php";
     $_SESSION['order'] = "<div class='alert-success text-center'>Đặt hàng thành công, vui lòng kiểm tra tại <a href='./account.php'></a></div>";
     echo "<script>window.location.href='/index.php';</script>";
