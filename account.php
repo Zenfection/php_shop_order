@@ -36,7 +36,7 @@ if (!isset($_SESSION['user'])) {
                                         <h3 class="title">Dashboard</h3>
                                         <div class="welcome">
                                             <?php
-                                            $sql = "SELECT * FROM `tb_customer`
+                                            $sql = "SELECT * FROM `tb_user`
                                                     WHERE username =  '" . $_SESSION['user'] . "'";
                                             $result = $conn->query($sql);
                                             $row = $result->fetch_assoc();
@@ -204,7 +204,7 @@ if (isset($_POST['submit'])) {
     $fullname = $_POST['fullname'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
-    $sql = "UPDATE `tb_customer` 
+    $sql = "UPDATE `tb_user` 
                 SET fullname = '$fullname', phone = '$phone', email = '$email' 
                 WHERE username = '$user'";
     $query = mysqli_query($conn, $sql);

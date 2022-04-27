@@ -29,7 +29,7 @@ VALUES
 ("Khô Mực", "Khô mực ngon loại 1 cao cấp, đóng gói hút chân không", 40, 3, "kho_4.jpg", 30, 9, "kho");
 
 -- customer
-INSERT INTO `tb_customer` 
+INSERT INTO `tb_user` 
 (`username`, `fullname`, `email`, `password`, `phone`, `address`)
 VALUES
 ("kietgolx65234", "Lê Tuấn Kiệt", "kietgolx65234@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "0123456789","3/2 Đại học Cần Thơ");

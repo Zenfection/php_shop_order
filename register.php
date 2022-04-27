@@ -70,12 +70,12 @@
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = mysqli_real_escape_string($conn, md5($_POST['password'])); //mã hoá chuẩn md5
-        $count = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_customer` WHERE username = '$username'"));  
+        $count = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user` WHERE username = '$username'"));  
         if($count > 0){
             $_SESSION['register'] = "<div class='alert-warning text-center'>Tài khoản đã tồn tại</div>";
             echo "<script>window.location.href='/register.php';</script>";
         } else{
-            $sql = "INSERT INTO `tb_customer` (username, fullname, email, password) 
+            $sql = "INSERT INTO `tb_user` (username, fullname, email, password) 
                     VALUES ('$username', '$fullname', '$email', '$password')";
             $query = mysqli_query($conn, $sql);
     

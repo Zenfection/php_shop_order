@@ -19,7 +19,7 @@ CREATE TABLE tb_category
   PRIMARY KEY (id_category)
 );
 
-CREATE TABLE tb_customer
+CREATE TABLE tb_user
 (
   username varchar(255) NOT NULL,
   fullname varchar(255) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE tb_order_details
 (
   id_order   char(10) NOT NULL,
   id_product int(11)  NOT NULL,
-  amount     int      NOT NULL,
+  amount     int      NOT NULL
 );
 
 CREATE TABLE tb_product
@@ -84,14 +84,14 @@ ALTER TABLE tb_order_details
     REFERENCES tb_product (id_product);
 
 ALTER TABLE tb_order
-  ADD CONSTRAINT FK_tb_customer_TO_tb_order
+  ADD CONSTRAINT FK_tb_user_TO_tb_order
     FOREIGN KEY (username)
-    REFERENCES tb_customer (username);
+    REFERENCES tb_user (username);
 
 ALTER TABLE tb_cart
-  ADD CONSTRAINT FK_tb_customer_TO_tb_cart
+  ADD CONSTRAINT FK_tb_user_TO_tb_cart
     FOREIGN KEY (username)
-    REFERENCES tb_customer (username);
+    REFERENCES tb_user (username);
 
 ALTER TABLE tb_cart
   ADD CONSTRAINT FK_tb_product_TO_tb_cart

@@ -15,7 +15,7 @@
                         <div class="row">
                             <?php
                             $user = $_SESSION['user'];
-                            $sql = "SELECT * FROM `tb_customer` WHERE username = '$user'";
+                            $sql = "SELECT * FROM `tb_user` WHERE username = '$user'";
                             $result = mysqli_query($conn, $sql);
                             $row = mysqli_fetch_assoc($result);
                             $fullname = $row['fullname'];

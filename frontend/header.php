@@ -29,7 +29,7 @@ include "./config/connect.php";
                     <!-- Header Logo Start -->
                     <div class="col-lg-3 col-md-4 col-6">
                         <div class="header-logo">
-                            <a href="/index.php"><img src="/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="/index.php"><img src="/assets/images/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->

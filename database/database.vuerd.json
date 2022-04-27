@@ -666,7 +666,7 @@
         "id": "5871a492-bb0f-4916-975a-2eb298439fae"
       },
       {
-        "name": "tb_customer",
+        "name": "tb_user",
         "comment": "",
         "columns": [
           {
@@ -1097,7 +1097,7 @@
           "y": 534.6388,
           "direction": "top"
         },
-        "constraintName": "fk_tb_customer_to_tb_order",
+        "constraintName": "fk_tb_user_to_tb_order",
         "visible": true,
         "id": "962bcaee-4fbb-4221-87ab-52d498608cad"
       },
@@ -1123,7 +1123,7 @@
           "y": 80.25,
           "direction": "left"
         },
-        "constraintName": "fk_tb_customer_to_cart",
+        "constraintName": "fk_tb_user_to_cart",
         "visible": true,
         "id": "78cd996b-6734-479b-87e0-22636ce789ff"
       },
