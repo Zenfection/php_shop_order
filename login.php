@@ -8,6 +8,10 @@
         echo $_SESSION['no-login-message'];
         unset($_SESSION['no-login-message']);
     }
+    if (isset($_SESSION['register'])){
+        echo $_SESSION['register'];
+        unset($_SESSION['register']);
+    }
     ?>
     <div class="container">
         <div class="row">

@@ -1,28 +1,11 @@
 <?php include "./frontend/header.php" ?>
     
-    <!-- Breadcrumb Area Start -->
-    <div class="section breadcrumb-area bg-name-bright">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="breadcrumb-wrapper">
-                        <h2 class="breadcrumb-title">Tạo tài khoản</h2>
-                        <ul>
-                            <li><a href="index.html">Trang chủ</a></li>
-                            <li>Tạo tài khoản</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Area End -->
 
     <!-- Register Section Start -->
     <?php
-        if(isset($_SESSION['add'])){
-            echo $_SESSION['add'];
-            unset($_SESSION['add']);
+        if(isset($_SESSION['register'])){
+            echo $_SESSION['register'];
+            unset($_SESSION['register']);
         }
     ?>
     <form method="POST">
@@ -42,7 +25,11 @@
                         <form action="#" method="post" autocomplete="">
 
                             <div class="single-input-item m-b-10">
-                                <input type="text" placeholder="FullName" name="full_name">
+                                <input type="text" placeholder="Họ và Tên" name="fullname">
+                            </div>
+                            
+                            <div class="single-input-item m-b-10">
+                                <input type="email" placeholder="Email" name="email">
                             </div>
 
                             <div class="single-input-item m-b-10">
@@ -50,11 +37,7 @@
                             </div>
 
                             <div class="single-input-item m-b-10">
-                                <input type="email" placeholder="Email" name="email">
-                            </div>
-
-                            <div class="single-input-item m-b-10">
-                                <input type="password" placeholder="Password" name="password">
+                                <input type="password" placeholder="Mật Khẩu" name="password">
                             </div>
 
                             <!-- Button/Forget Password Start -->
@@ -80,25 +63,28 @@
 
 <?php 
     if(isset($_POST['submit'])){
-        $full_name = $_POST['full_name'];
+        $fullname = $_POST['fullname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $password = md5($_POST['password']); //mã hoá chuẩn md5
-
-        $id = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_customer`")) + 1;
-
-        $sql = "INSERT INTO `tb_customer` (id_customer, full_name, username, email, password) 
-                VALUES ($id, '$full_name', '$username', '$email', '$password')";
-
-        $query = mysqli_query($conn, $sql);
-
-        if($query){
-            echo "<script>alert('Đăng ký thành công');</script>";
-            echo "<script>window.location.href='/login.php';</script>";
-        }
-        else{
-            echo "<script>alert('Đăng ký thất bại');</script>";
+        $password = mysqli_real_escape_string($conn, md5($_POST['password'])); //mã hoá chuẩn md5
+        $count = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_customer` WHERE username = '$username'"));  
+        if($count > 0){
+            $_SESSION['register'] = "<div class='alert-warning text-center'>Tài khoản đã tồn tại</div>";
             echo "<script>window.location.href='/register.php';</script>";
+        } else{
+            $sql = "INSERT INTO `tb_customer` (username, fullname, email, password) 
+                    VALUES ('$username', '$fullname', '$email', '$password')";
+            $query = mysqli_query($conn, $sql);
+    
+            if($query){
+                $_SESSION['register'] = "<div class='alert-success text-center'>Đăng ký thành công, vui lòng đăng nhập</div>";
+                echo "<script>window.location.href='/login.php';</script>";
+            }
+            else{
+                $_SESSION['register'] = "<div class='alert-warning text-center'>Đăng ký thất bại</div>";
+                echo "<script>window.location.href='/register.php';</script>";
+            }
         }
+
     }
 ?>

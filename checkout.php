@@ -206,8 +206,8 @@ if (isset($_POST['submit'])) {
             VALUES 
             ('$id_order', '$user', '$fullname', '$phone', '$address', '$email', '$city', '$province', '$status', '$order_date')";
     $result = mysqli_query($conn, $sql);
-    
-    echo "<script>alert('Đặt hàng thành công');</script>";
+    include "./backend/clear_cart.php";
+    $_SESSION['order'] = "<div class='alert-success text-center'>Đặt hàng thành công, vui lòng kiểm tra tại <a href='./account.php'></a></div>"
     echo "<script>window.location.href='/index.php';</script>";
 }
 ?>
