@@ -1,7 +1,7 @@
-<?php include "./frontend/header.php" ?>
+<?php include "./config/connect.php" ?>
 
 <!-- Shop Section Start -->
-<div class="section section-margin" data-aos="fade-up">
+<div class="section section-margin">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -72,7 +72,7 @@
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
                                 <div class="product-inner">
                                     <div class="thumb">
-                                        <a href="/detail_product.php?id=<?php echo $id?>" class="image">
+                                        <a href="/detail_product.php?id=<?php echo $id ?>" class="image">
                                             <img class="fit-image" src="assets/images/products/<?php echo $image ?>" alt="Product" width="270" height="270" />
                                         </a>
                                         <?php
@@ -86,13 +86,13 @@
                                         }
                                         ?>
                                         <div class="action-wrapper">
-                                            <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
+                                            <a href="#/" class="action quickview" id="quickview<?php echo $id?>" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
                                             <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="/viewcart.php" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title"><a href="/detail_product.php?id=<?php echo $id?>"><?php echo $name ?></a></h5>
+                                        <h5 class="title"><a href="/detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
                                         <span class="rating">
                                             <?php
                                             for ($j = 0; $j < 5; $j++) {
@@ -154,32 +154,32 @@
                             <ul class="pagination">
                                 <?php
                                 $numPage = ceil($total / 8);
-                                if($page > 1){
-                                    ?>
+                                if ($page > 1) {
+                                ?>
                                     <li class="page-item">
-                                    <a class="page-link rounded-0" href="?<?php echo 'page='.$page+1?>" aria-label="Prev">
-                                        <span aria-hidden="true">
-                                            <i class="fa fa-arrow-left"></i>
-                                        </span>
-                                    </a>
+                                        <a class="page-link rounded-0" href="?<?php echo 'page=' . $page + 1 ?>" aria-label="Prev">
+                                            <span aria-hidden="true">
+                                                <i class="fa fa-arrow-left"></i>
+                                            </span>
+                                        </a>
                                     </li>
-                                    <?php
+                                <?php
                                 }
                                 for ($i = 1; $i <= $numPage; $i++) {
-                                    if($page == $i){
+                                    if ($page == $i) {
                                         echo "<li class='page-item'><a class='page-link active' href='?page=$i'>$i</a></li>";
                                         continue;
                                     }
                                     echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
                                 }
-                                if($page < $numPage){
-                                    ?>
+                                if ($page < $numPage) {
+                                ?>
                                     <li class="page-item">
-                                    <a class="page-link rounded-0" href="?<?php echo 'page='.$page+1?>" aria-label="Next">
-                                        <span aria-hidden="true">
-                                            <i class="fa fa-arrow-right"></i>
-                                        </span>
-                                    </a>
+                                        <a class="page-link rounded-0" href="?<?php echo 'page=' . $page + 1 ?>" aria-label="Next">
+                                            <span aria-hidden="true">
+                                                <i class="fa fa-arrow-right"></i>
+                                            </span>
+                                        </a>
                                     </li>
                                 <?php
                                 }
@@ -196,5 +196,3 @@
     </div>
 </div>
 <!-- Shop Section End -->
-
-<?php include "./frontend/footer.php" ?>

@@ -522,6 +522,7 @@
       }
     });
   });
+
   /*-------------------------
       Ajax Remove Product Cart 
   ---------------------------*/
@@ -547,6 +548,74 @@
       }
     });
   });
+
+  /*-------------------------
+      Ajax Load Data Nagivation
+  ---------------------------*/
+    $('#nav-home a').on('click', function(){
+      $.ajax({
+        url: '/home.php',
+        success: function(data){
+          $('#content').html(data);
+
+        }
+      });
+    });
+    $('#nav-about a').on('click', function(){
+      $.ajax({
+        url: '/about.php',
+        success: function(data){
+          $('#content').html(data);
+
+        }
+      });
+    });
+    $('#nav-contact a').on('click', function(){
+      $.ajax({
+        url: '/contact.php',
+        success: function(data){
+          $('#content').html(data);
+          $('.contact-form-wrapper').hide().fadeIn('slow');
+          $('#mapDiv').hide().fadeIn('fast');
+        }
+      });
+    });
+    $('#nav-shop a').on('click', function(){
+      $.ajax({
+        url: '/shop.php',
+        success: function(data){
+          $('#content').html(data);
+        }
+      });
+    });
+    $('#login').on('click', function(){
+      $.ajax({
+        url: '/login.php',
+        success: function(data){
+          $('#content').html(data);
+        }
+      });
+    });
+    $('#account').on('click', function(){
+      $.ajax({
+        url: '/account.php',
+        success: function(data){
+          $('#content').html(data);
+        }
+      }); 
+    });
+
+    function nav(){
+      let pathURL = window.location.href;
+      if(pathURL.indexOf('#') == -1){
+        $('#content').load('/home.php');
+      } else {
+        let path = pathURL.split('/')[3].split('#')[1];
+        $('#content').load('/' + path + '.php');
+      }
+    }
+    nav();
+  
   /*-------------------------
       Ajax Contact Form 
   ---------------------------*/
@@ -598,6 +667,7 @@
     });
 
   });
+
   /*----------------------------------------*/
   /*  Scroll to top
   /*----------------------------------------*/

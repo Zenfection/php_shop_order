@@ -1,277 +1,177 @@
-<?php include "./frontend/header.php"; ?>
-
 <?php
-    if(isset($_SESSION['login'])){
-        echo $_SESSION['login'];
-        unset($_SESSION['login']);
-    }
-    if(isset($_SESSION['order'])){
-        echo $_SESSION['order'];
-        unset($_SESSION['order']);
-    }
+include "./config/connect.php";
 ?>
 
-<!-- Hero/Intro Slider Start -->
-<div class="section">
-        <div class="hero-slider swiper-container">
-            <div class="swiper-wrapper">
 
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="/assets/images/slider/1.png" alt="Slider Image" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-start">
-                            <h5 class="sub-title">Thực phẩm đa dạng.</h5>
-                            <h2 class="title m-0">KHÔNG CHẤT BẢO QUẢN</h2>
-                            <p class="ms-0">Tất cả được làm bằng 100% thiên nhiên không chất phụ gia.</p>
-                            <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <link rel="stylesheet" href="/assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+
+    <title>Shop Order</title>
+</head>
+
+<body>
+    <div class="header-bottom">
+        <div class="header-sticky">
+            <div class="container">
+                <div class="row align-items-center position-relative">
+                    <!-- Header Logo Start -->
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="header-logo">
+                            <a href="/index.php"><img src="/assets/images/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
-                </div>
+                    <!-- Header Logo End -->
 
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="/assets/images/slider/2.png" alt="Slider Image" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">Giao nhận nhanh chóng.</h5>
-                            <h2 class="title m-0">FREESHIP TOÀN HÀNG</h2>
-                            <p>Các đơn hàng có giá trị trên 200k sẽ được freeship.</p>
-                            <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+                    <!-- Header Menu Start -->
+                    <div class="col-lg-5 d-none d-lg-block">
+                        <div class="main-menu">
+                            <ul>
+                                <li id="nav-home"><a href="#home">Trang Chủ</a></li>
+                                <li id="nav-about"><a href="#about">Giới Thiệu</a></li>
+                                <li id="nav-shop"><a href="#shop">Shop</a></li>
+                                <li id="nav-contact"><a href="#contact">Liên Hệ</a></li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <!-- Header Menu End -->
 
-            <!-- Swiper Pagination Start -->
-            <div class="swiper-pagination d-lg-none"></div>
-            <!-- Swiper Pagination End -->
-
-            <!-- Swiper Navigation Start -->
-            <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-left"></i></div>
-            <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-right"></i></div>
-            <!-- Swiper Navigation End -->
-
-
-        </div>
-    </div>
-    <!-- Hero/Intro Slider End -->
-    
-    <div class="section section-padding">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 m-b-n30">
-
-                <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Single CTA Wrapper Start -->
-                    <div class="single-cta-wrapper">
-                        <div class="cta-icon">
-                            <i class="ti-truck"></i>
-                        </div>
-
-
-                        <!-- CTA Content Start -->
-                        <div class="cta-content">
-                            <h4 class="title">Miễn phí vận chuyển</h4>
-                            <p>Áp dụng cho tất cả đơn hàng</p>
-                        </div>
-                        <!-- CTA Content End -->
-
-                    </div>
-                    <!-- Single CTA Wrapper End -->
-                </div>
-
-                <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1100">
-                    <!-- Single CTA Wrapper Start -->
-                    <div class="single-cta-wrapper">
-
-                        <!-- CTA Icon Start -->
-                        <div class="cta-icon">
-                            <i class="ti-headphone-alt"></i>
-                        </div>
-                        <!-- CTA Icon End -->
-
-                        <!-- CTA Content Start -->
-                        <div class="cta-content">
-                            <h4 class="title">Hỗ trợ 24/7</h4>
-                            <p>Gọi Hotline hoặc Email</p>
-                        </div>
-                        <!-- CTA Content End -->
-
-                    </div>
-                    <!-- Single CTA Wrapper End -->
-                </div>
-
-                <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1200">
-                    <!-- Single CTA Wrapper Start -->
-                    <div class="single-cta-wrapper">
-
-                        <!-- CTA Icon Start -->
-                        <div class="cta-icon">
-                            <i class="ti-bar-chart"></i>
-                        </div>
-                        <!-- CTA Icon End -->
-
-                        <!-- CTA Content Start -->
-                        <div class="cta-content">
-                            <h4 class="title">Hoàn tiền</h4>
-                            <p>Hoàn tiền nếu bạn chưa nhận</p>
-                        </div>
-                        <!-- CTA Content End -->
-
-                    </div>
-                    <!-- Single CTA Wrapper End -->
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Category Section Start -->
-    <div class="section section-margin">
-        <div class="container">
-            <h2>Category</h2>
-            <!-- Banners Start -->
-            <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30">
-                <?php 
-                    $sql = "SELECT * FROM `tb_category` WHERE active = 1 LIMIT 3";
-                    $result = mysqli_query($conn, $sql);
-                    $count = mysqli_num_rows($result);
-                    if($count > 0){
-                        while($row=mysqli_fetch_assoc($result)){
-                            $id = $row['id_category'];
-                            $title = $row['title'];
-                            $image = $row['image'];
-                        ?>
-                        <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
-                            <a href="/category-foods.php?category_id=<?php echo $id; ?>" class="banner hover-style">
-                                <?php
-                                    if($image == ""){
-                                        echo "<div class='error'>Image not Available</div>";
-                                    }
-                                    else{
-                                        ?>
-                                        <img class="fit-image rounded" src="assets/images/category/<?php echo $image; ?>" alt="Banner Image" />
-                                        <?php
-                                    }
-                                ?>
+                    <!-- Header Action Start -->
+                    <div class="col-lg-4 col-md-8 col-6">
+                        <div class="header-actions">
+                            <?php include "./frontend/search.php" ?>
+                            <!-- account login -->
+                            <?php
+                            if (isset($_SESSION['user'])) {
+                                echo "<a href='#account' id='account' class='header-action-btn header-action-btn-wishlist'>
+                                    <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
+                            } else {
+                                echo "<a href='#login' id='login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                            }
+                            ?>
+                            <?php include "./frontend/cart.php" ?>
+                            <!-- Scroll Top Start -->
+                            <a href="#" class="scroll-top show rounded" id="scroll-top">
+                                <i class="arrow-top ti-angle-double-up"></i>
+                                <i class="arrow-bottom ti-angle-double-up"></i>
                             </a>
-                        </div> 
-                        <?php
-                    }
-                }
-                ?>
+                            <!-- Scroll Top End -->
+                            <!-- Mobile Menu Hambarger Action Button Start -->
+                            <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
+                                <i class="icon-menu"></i>
+                            </a>
+                            <!-- Mobile Menu Hambarger Action Button End -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Banners End -->
         </div>
     </div>
-    <!-- Category Section End -->
 
-    <!-- Product Section Start -->
-    <div class="section position-relative">
-        <div class="container">
-
-            <!-- Section Title & Tab Start -->
-            <div class="row" data-aos="fade-up" data-aos-duration="1000">
-                <!-- Tab Start -->
-                <div class="col-12">
-                    <ul class="product-tab-nav nav justify-content-center m-b-n15 p-b-40 title-border-bottom">
-                        <li class="nav-item m-b-15"><a class="nav-link active" data-bs-toggle="tab" href="#top-product-ranking">Đánh giá cao</a></li>
-                        <li class="nav-item m-b-15"><a class="nav-link" data-bs-toggle="tab" href="#top-product-discount">Giảm giá nhiều</a></li>
-                        <li class="nav-item m-b-15"><a class="nav-link" data-bs-toggle="tab" href="#top-product-seller">Sản phẩm mua nhiều</a></li>
-                    </ul>
-                </div>
-                <!-- Tab End -->
-            </div>
-            <!-- Section Title & Tab End -->
-
-            <!-- Products Tab Start -->
-                
-            <div class="row" data-aos="fade-up" data-aos-duration="1100">
-                <div class="col-12">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="top-product-ranking">
-                            <div class="row m-b-n40">
-                    <?php
-                        $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`ranking` DESC LIMIT 8";
-                        $result = mysqli_query($conn, $sql);
-                        $count = mysqli_num_rows($result);
-                        if($count > 0){
-                            while($row=mysqli_fetch_assoc($result)){
-                                $id = $row['id'];
-                                $name = $row['name'];
-                                $description = $row['description'];
-                                $price = $row['price'];
-                                $discount = $row['discount'];
-                                $image = $row['image'];
-                                $ranking = $row['ranking'];
-                                $quantity = $row['quantity'];
-                                ?>
-                                <?php include "product.php"?>
-                                <?php
-                            }
-                        }
-                    ?>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="top-product-discount">
-                    <div class="row m-b-n40">
-                        <?php
-                            $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`discount` DESC LIMIT 8";
-                            $result = mysqli_query($conn, $sql);
-                            $count = mysqli_num_rows($result);
-                            if($count > 0){
-                                while($row=mysqli_fetch_assoc($result)){
-                                    $id = $row['id'];
-                                    $name = $row['name'];
-                                    $description = $row['description'];
-                                    $price = $row['price'];
-                                    $discount = $row['discount'];
-                                    $image = $row['image'];
-                                    $ranking = $row['ranking'];
-                                    $quantity = $row['quantity'];
-                                    ?>
-                                    <?php include "product.php"?>
-                                    <?php
-                                }
-                            }
-                        ?>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="top-product-seller">
-                    <div class="row m-b-n40">
-                        <?php
-                            $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`quantity` ASC LIMIT 8";
-                            $result = mysqli_query($conn, $sql);
-                            $count = mysqli_num_rows($result);
-                            if($count > 0){
-                                while($row=mysqli_fetch_assoc($result)){
-                                    $id = $row['id'];
-                                    $name = $row['name'];
-                                    $description = $row['description'];
-                                    $price = $row['price'];
-                                    $discount = $row['discount'];
-                                    $image = $row['image'];
-                                    $ranking = $row['ranking'];
-                                    $quantity = $row['quantity'];
-                                    ?>
-                                    <?php include "product.php"?>
-                                    <?php
-                                }
-                            }
-                        ?>
-                    </div>
-                </div>
-            </div>
-            <!-- Products Tab End -->
-            
-        </div>
+    <div id="content">
+        
     </div>
-</div>
-    <!-- Product Section End -->
+    <!-- Footer Section Start -->
+    <footer class="section footer-section">
+        <!-- Footer Top Start -->
+        <div class="footer-top bg-name-bright section-padding">
+            <div class="container">
+                <div class="row m-b-n40">
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
+                        <div class="single-footer-widget">
+                            <h1 class="widget-title">About Us</h1>
+                            <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
+                            <!-- Soclial Link Start -->
+                            <div class="widget-social justify-content-start m-b-n10">
+                                <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
+                                <a title="Instagram" href="#/"><i class="icon-social-instagram"></i></a>
+                                <a title="Linkedin" href="#/"><i class="icon-social-linkedin"></i></a>
+                                <a title="Skype" href="#/"><i class="icon-social-skype"></i></a>
+                                <a title="Dribble" href="#/"><i class="icon-social-dribbble"></i></a>
+                            </div>
+                            <!-- Social Link End -->
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Useful Links</h2>
+                            <ul class="widget-list">
+                                <li><a href="wishlist.html">Help & Contact Us</a></li>
+                                <li><a href="contact.html">Returns & Refunds</a></li>
+                                <li><a href="contact.html">Online Stores</a></li>
+                                <li><a href="contact.html">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Help</h2>
+                            <ul class="widget-list">
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="contact.html">Pricing Plans</a></li>
+                                <li><a href="contact.html">Order Traking</a></li>
+                                <li><a href="contact.html">Returns</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Quick Menu</h2>
+                            <ul class="widget-list">
+                                <li><a href="/login.php">Login</a></li>
+                                <li><a href="/my-account.php">My-Account</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="/checkout.php">Checkout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Top End -->
 
-<?php include "./frontend/footer.php"?>
+        <!-- Footer Bottom Start -->
+        <div class="footer-bottom bg-name-light p-t-20 p-b-20">
+            <div class="container">
+                <div class="row align-items-center m-b-n20">
+                    <div class="col-md-6 text-center text-md-start order-2 order-md-1 m-b-20">
+                        <div class="copyright-content">
+                            <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="#">HasThemes.</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
+                        <div class="payment">
+                            <a href="#/">
+                                <img src="assets/images/payment/payment_large.png" alt="Payment">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
+    </footer>
+    <!-- Footer Section End -->
+    <?php include "./modal.php"?>
+    
+    <script src="/assets/js/vendor.min.js"></script>
+    <script src="/assets/js/plugins.min.js"></script>
 
+    <!--Main JS-->
+    <script src="/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

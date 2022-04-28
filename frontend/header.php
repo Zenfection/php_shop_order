@@ -38,14 +38,10 @@ include "./config/connect.php";
                     <div class="col-lg-5 d-none d-lg-block">
                         <div class="main-menu">
                             <ul>
-                                <li>
-                                    <a href="/index.php">Trang Chủ</a>
-                                </li>
-                                <li><a href="/about.php">Giới Thiệu</a></li>
-                                <li>
-                                    <a href="/shop.php">Shop</a>
-                                </li>
-                                <li><a href="/contact.php">Liên Hệ</a></li>
+                                <li id="nav-home"><a href="#">Trang Chủ</a></li>
+                                <li id="nav-about"><a href="#about">Giới Thiệu</a></li>
+                                <li id="nav-shop"><a href="#shop">Shop</a></li>
+                                <li id="nav-contact"><a href="#contact">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>

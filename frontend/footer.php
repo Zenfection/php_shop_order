@@ -4,7 +4,7 @@
         <div class="footer-top bg-name-bright section-padding">
             <div class="container">
                 <div class="row m-b-n40">
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
                             <h1 class="widget-title">About Us</h1>
                             <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
@@ -19,7 +19,7 @@
                             <!-- Social Link End -->
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Useful Links</h2>
                             <ul class="widget-list">
@@ -30,7 +30,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Help</h2>
                             <ul class="widget-list">
@@ -41,7 +41,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
+                    <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Quick Menu</h2>
                             <ul class="widget-list">

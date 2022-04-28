@@ -2,14 +2,14 @@
 <div class="section section-margin">
     <div class="container">
         <div class="row m-b-n30">
-            <div class="col-md-6 pe-lg-5 p-r-15 m-b-30" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-md-6 pe-lg-5 p-r-15 m-b-30">
                 <!-- About Thumb Start -->
                 <div class="about-thumb">
                     <img class="fit-image" src="assets/images/about/1.png" alt="About Image">
                 </div>
                 <!-- About Thumb End -->
             </div>
-            <div class="col-md-6 align-self-center m-b-30" data-aos="fade-up" data-aos-duration="1500">
+            <div class="col-md-6 align-self-center m-b-30">
                 <!-- About Content Start -->
                 <div class="about-content">
                     <h2 class="title">About Amber</h2>
@@ -38,7 +38,7 @@
                 <div class="testimonial-carousel">
 
                     <!-- Testimonial Gallery Top Start -->
-                    <div class="swiper-container testimonial-gallery-top" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="swiper-container testimonial-gallery-top">
                         <div class="swiper-wrapper">
 
                             <!-- Single Swiper Slide Start -->
@@ -70,7 +70,7 @@
                     <!-- Testimonial Gallery Top End -->
 
                     <!-- Testimonial Gallery Thumb Start -->
-                    <div class="swiper-container testimonial-gallery-thumbs" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="swiper-container testimonial-gallery-thumbs">
                         <div class="swiper-wrapper">
 
                             <!-- Single Swiper Slide Start -->
@@ -118,7 +118,7 @@
     <div class="container">
         <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30">
 
-            <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col m-b-30">
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
@@ -142,7 +142,7 @@
                 <!-- Single Team Wrapper End -->
             </div>
 
-            <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1500">
+            <div class="col m-b-30">
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
@@ -166,7 +166,7 @@
                 <!-- Single Team Wrapper End -->
             </div>
 
-            <div class="col m-b-30" data-aos="fade-up" data-aos-duration="2000">
+            <div class="col m-b-30">
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">

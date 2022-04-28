@@ -1,7 +1,11 @@
-<?php include "./frontend/header.php" ?>
 <?php
+include "./config/connect.php";
 if (!isset($_SESSION['user'])) {
     echo "<script>window.location.href='/login.php'</script>";
+}
+if(isset($_SESSION['change_pwd'])){
+    echo $_SESSION['change_pwd'];
+    unset($_SESSION['change_pwd']);
 }
 ?>
 <!-- My Account Section Start -->
@@ -41,6 +45,7 @@ if (!isset($_SESSION['user'])) {
                                             $result = $conn->query($sql);
                                             $row = $result->fetch_assoc();
                                             $fullname = $row['fullname'];
+                                            $user = $row['username'];
                                             $email = $row['email'];
                                             $phone = $row['phone'];
                                             echo "<p>Xin chào <strong>$fullname</strong></p>";
@@ -55,7 +60,7 @@ if (!isset($_SESSION['user'])) {
                                 <div class="tab-pane fade" id="orders" role="tabpanel">
                                     <div class="myaccount-content">
                                         <h3 class="title">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                             Đơn Hàng
                                         </h3>
                                         <div class="myaccount-table table-responsive text-center">
@@ -71,7 +76,7 @@ if (!isset($_SESSION['user'])) {
                                                 </thead>
                                                 <tbody>
                                                     <?php
-                                                        $sql = "SELECT * FROM `tb_order` WHERE ";
+                                                    $sql = "SELECT * FROM `tb_order` WHERE ";
                                                     ?>
                                                     <tr>
                                                         <td>1</td>
@@ -115,7 +120,7 @@ if (!isset($_SESSION['user'])) {
                                     <div class="myaccount-content">
                                         <h3 class="title"><i class="fa fa-user-circle" aria-hidden="true"></i> Chi Tiết Tài Khoản</h3>
                                         <div class="account-details-form">
-                                            <form action="#" method="POST">
+                                            <form action="./backend/change_info.php" method="POST">
                                                 <div class="single-input-item m-b-15">
                                                     <div class="row">
                                                         <div class="col-lg-6">
@@ -153,7 +158,7 @@ if (!isset($_SESSION['user'])) {
                                     <div class="myaccount-content">
                                         <h3 class="title"><i class="fa fa-key" aria-hidden="true"></i> Thay đổi mật khẩu</h3>
                                         <div class="account-details-form">
-                                            <form action="#">
+                                            <form action="/backend/change_password.php" method="POST">
                                                 <fieldset>
                                                     <div class="single-input-item m-b-15">
                                                         <label for="current-pwd" class="required m-b-10">Mật Khẩu Hiện tại</label>
@@ -175,7 +180,7 @@ if (!isset($_SESSION['user'])) {
                                                     </div>
                                                 </fieldset>
                                                 <div class="single-input-item single-item-button m-t-30">
-                                                    <button type="submit" name="submit2" class="btn btn btn-primary btn-hover-dark rounded-0">Lưu Thay Đổi</button>
+                                                    <button type="submit" name="submit" class="btn btn btn-primary btn-hover-dark rounded-0">Lưu Thay Đổi</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -196,33 +201,3 @@ if (!isset($_SESSION['user'])) {
     </div>
 </div>
 <!-- My Account Section End -->
-
-<?php include "./frontend/footer.php" ?>
-
-<?php
-if (isset($_POST['submit'])) {
-    $fullname = $_POST['fullname'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $sql = "UPDATE `tb_user` 
-                SET fullname = '$fullname', phone = '$phone', email = '$email' 
-                WHERE username = '$user'";
-    $query = mysqli_query($conn, $sql);
-    if ($query) {
-        echo "<script>alert('Cập nhật thành công');</script>";
-        echo "<script>window.location.href='/account.php';</script>";
-    } else {
-        echo "<script>alert('Cập nhật thất bại');</script>";
-    }
-}
-if(isset($_POST['submit2'])){
-    $current_pwd = mysqli_real_escape_string($conn, md5($_POST['current-pwd']));
-    $new_pwd = mysqli_real_escape_string($conn, md5($_POST['new-pwd']));
-    $confirm_pwd = mysqli_real_escape_string($conn, md5($_POST['confirm-pwd']));
-    if($new_pwd != $confirm_pwd){
-        $_SESSION['change_pwd'] = "<div class='modal-content'>Xác nhận sai mật khẩu</div>";
-    }else {
-        
-    }
-}
-?>
