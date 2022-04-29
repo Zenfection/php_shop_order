@@ -1,13 +1,12 @@
-
 <!-- Header Action Button Start -->
 <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
     <a class="cart-visible" href="javascript:void(0)">
         <i class="icon-handbag icons"></i>
         <?php
-            $user = $_SESSION['user'];
-            $sql = "SELECT * FROM `tb_cart` WHERE username = '$user'";
-            $count = mysqli_num_rows(mysqli_query($conn, $sql));
-            echo "<span class='header-action-num' id='count-cart'>" . $count . "</span>";
+        $user = $_SESSION['user'];
+        $sql = "SELECT * FROM `tb_cart` WHERE username = '$user'";
+        $count = mysqli_num_rows(mysqli_query($conn, $sql));
+        echo "<span class='header-action-num' id='count-cart'>" . $count . "</span>";
         ?>
     </a>
 
@@ -34,30 +33,30 @@
                     $discount_price = $price - ($price * $discount / 100);
             ?>
                     <!-- Cart Product/Price Start -->
-                    <div class="cart-product-inner p-b-20 m-b-20 border-bottom" id="product_id<?php echo $id?>">
+                    <div class="cart-product-inner p-b-20 m-b-20 border-bottom" id="product_id<?php echo $id ?>">
                         <!-- Single Cart Product Start -->
                         <div class="single-cart-product">
                             <div class="cart-product-thumb">
-                                <a href="/frontend/detail_product.php"><img src="/assets/images/products/<?php echo $image?>" alt="Cart Product" class="rounded"></a>
+                                <a href="/frontend/detail_product.php"><img src="/assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
                             </div>
                             <div class="cart-product-content">
-                                <h3 class="title"><a href="/frontend/detail_product.php"><?php echo $name?></a></h3>
+                                <h3 class="title"><a href="/frontend/detail_product.php"><?php echo $name ?></a></h3>
                                 <div class="product-quty-price">
-                                    <span class="cart-quantity" id="quantity<?php echo $id?>">Số lượng: <strong> <?php echo $amount?> </strong></span>
+                                    <span class="cart-quantity" id="quantity<?php echo $id ?>">Số lượng: <strong> <?php echo $amount ?> </strong></span>
                                     <span class="price">
-                                            <?php
-                                            if ($discount > 0) {
-                                            ?>
-                                                <span class="new">$<?php echo $discount_price ?></span>
-                                                <span class="old" style="text-decoration: line-through;color: #DC3545;opacity: 0.5;">$<?php echo $price ?></span>
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <span class='new'>$<?php echo $price ?></span>
-                                            <?php
-                                            }
-                                            ?>
-                                        </span>
+                                        <?php
+                                        if ($discount > 0) {
+                                        ?>
+                                            <span class="new">$<?php echo $discount_price ?></span>
+                                            <span class="old" style="text-decoration: line-through;color: #DC3545;opacity: 0.5;">$<?php echo $price ?></span>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <span class='new'>$<?php echo $price ?></span>
+                                        <?php
+                                        }
+                                        ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +64,7 @@
 
                         <!-- Product Remove Start -->
                         <div class="cart-product-remove">
-                            <a class="remove-cart" id="product<?php echo $id?>"><i class="fa fa-trash-o"></i></a>
+                            <a class="remove-cart" id="product<?php echo $id ?>"><i class="fa fa-trash-o"></i></a>
                         </div>
                         <!-- Product Remove End -->
 
@@ -91,9 +90,9 @@
             $total = 0;
             if ($count > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $price = $row['price'];
-                    $discount = $row['discount'];
-                    $amount = $row['amount'];
+                    $price = (float)$row['price'];
+                    $discount = (float)$row['discount'];
+                    $amount = (int)$row['amount'];
                     $discount_price = $price - ($price * $discount / 100);
                     $total += $discount_price * $amount;
                 }
@@ -114,3 +113,4 @@
 
     </div>
     <!-- Header Cart Content End -->
+</div>

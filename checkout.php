@@ -27,8 +27,8 @@
                             <!-- First Name Input Start -->
                             <div class="col-md-6">
                                 <div class="checkout-form-list">
-                                    <label for="full-name">Họ và tên <span class="required">*</span></label>
-                                    <input name="full-name" placeholder="Nhập họ và tên" type="text" value="<?php echo $fullname ?>">
+                                    <label for="fullname">Họ và tên <span class="required">*</span></label>
+                                    <input name="fullname" placeholder="Nhập họ và tên" type="text" value="<?php echo $fullname ?>">
                                 </div>
                             </div>
                             <!-- First Name Input End -->

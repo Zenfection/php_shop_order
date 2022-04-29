@@ -77,9 +77,8 @@ if (isset($_SESSION['change_pwd'])) {
                                                 <tbody>
                                                     <?php
                                                     $sql = "SELECT * 
-                                                    FROM `tb_order` as o, `tb_order_details` as d
-                                                    WHERE o.id_order = d.id_order
-                                                    AND o.username = '$user'";
+                                                    FROM `tb_order` as d
+                                                    WHERE username = '$user'";
                                                     $result = mysqli_query($conn, $sql);
                                                     $count = mysqli_num_rows($result);
                                                     if($count == 0){
@@ -96,7 +95,7 @@ if (isset($_SESSION['change_pwd'])) {
                                                                 <td><?php echo $id_order?></td>
                                                                 <td><?php echo $order_date?></td>
                                                                 <td><?php echo $status?></td>
-                                                                <td><?php echo $total_money?></td>
+                                                                <td><?php echo $total_money?>$</td>
                                                                 <td><a href="/index.php#viewcart" id="nav-viewcart" class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">Chi Tiết</a></td>
                                                             </tr>
                                                     <?php
