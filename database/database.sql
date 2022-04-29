@@ -41,6 +41,7 @@ CREATE TABLE tb_order
   city_customer     varchar(50)  NOT NULL,
   province_customer varchar(50)  NOT NULL,
   status            VARCHAR(50)  NOT NULL,
+  total_money       FLOAT        NOT NULL,
   order_date        DATE         NOT NULL,
   shipped_date      DATE         NULL    ,
   process_date      DATE         NULL    ,

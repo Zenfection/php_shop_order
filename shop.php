@@ -88,7 +88,7 @@
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" id="quickview<?php echo $id?>" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
                                             <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="/viewcart.php" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                                            <a href="/index.php#viewcart" id="nav-viewcart" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
                                     <div class="content">
@@ -129,7 +129,7 @@
                                         <div class="cart-btn action-btn">
                                             <div class="action-cart-btn-wrapper d-flex">
                                                 <div class="add-to_cart">
-                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/viewcart.php">Add to cart</a>
+                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/index.php#viewcart" id="nav-viewcart">Add to cart</a>
                                                 </div>
                                                 <a href="wishlist.html" title="Wishlist" class="action"><i class="ti-heart"></i></a>
                                                 <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>

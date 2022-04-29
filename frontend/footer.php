@@ -48,7 +48,7 @@
                                 <li><a href="/login.php">Login</a></li>
                                 <li><a href="/my-account.php">My-Account</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="/checkout.php">Checkout</a></li>
+                                <li><a href="/index.php#checkout" id="nav-checkout">Checkout</a></li>
                             </ul>
                         </div>
                     </div>

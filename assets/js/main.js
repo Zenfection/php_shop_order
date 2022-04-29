@@ -497,8 +497,7 @@
   /*-------------------------
       Ajax Remove Product View Cart 
   ---------------------------*/
-  $('.pro-remove > a').on('click', function(){
-    let id = $(this).closest('tr').attr('id').replace('view_cart_product', '');
+  function deleteProductCart(id){
     $.ajax({
       type: 'post',
       url: '/backend/delete_product_cart.php',
@@ -521,7 +520,7 @@
         });
       }
     });
-  });
+  }
 
   /*-------------------------
       Ajax Remove Product Cart 
@@ -588,6 +587,22 @@
         }
       });
     });
+    $('#nav-viewcart').on('click', function(){
+      $.ajax({
+        url: '/viewcart.php',
+        success: function(data){
+          $('#content').html(data);
+        }
+      });
+    });
+    $('#nav-checkout').on('click', function(){
+      $.ajax({
+        url: '/checkout.php',
+        success: function(data){
+          $('#content').html(data);
+        }
+      });
+    });
     $('#login').on('click', function(){
       $.ajax({
         url: '/login.php',
@@ -604,7 +619,15 @@
         }
       }); 
     });
-
+    $('#register-account').on('click', function(){
+      console.log(123);
+      $.ajax({
+        url: '/register.php',
+        success: function(data){
+          $('#content').html(data);
+        }
+      });
+    });
     function nav(){
       let pathURL = window.location.href;
       if(pathURL.indexOf('#') == -1){

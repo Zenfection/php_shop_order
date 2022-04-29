@@ -38,10 +38,10 @@ include "./config/connect.php";
                     <div class="col-lg-5 d-none d-lg-block">
                         <div class="main-menu">
                             <ul>
-                                <li id="nav-home"><a href="#home">Trang Chủ</a></li>
-                                <li id="nav-about"><a href="#about">Giới Thiệu</a></li>
-                                <li id="nav-shop"><a href="#shop">Shop</a></li>
-                                <li id="nav-contact"><a href="#contact">Liên Hệ</a></li>
+                                <li id="nav-home"><a href="/index.php#home">Trang Chủ</a></li>
+                                <li id="nav-about"><a href="/index.php#about">Giới Thiệu</a></li>
+                                <li id="nav-shop"><a href="/index.php#shop">Shop</a></li>
+                                <li id="nav-contact"><a href="/index.php#contact">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -132,7 +132,7 @@ include "./config/connect.php";
                                 <li><a href="/login.php">Login</a></li>
                                 <li><a href="/my-account.php">My-Account</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="/checkout.php">Checkout</a></li>
+                                <li><a href="/index.php#checkout" id="nav-checkout">Checkout</a></li>
                             </ul>
                         </div>
                     </div>

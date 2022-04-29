@@ -3,7 +3,7 @@ include "./config/connect.php";
 if (!isset($_SESSION['user'])) {
     echo "<script>window.location.href='/login.php'</script>";
 }
-if(isset($_SESSION['change_pwd'])){
+if (isset($_SESSION['change_pwd'])) {
     echo $_SESSION['change_pwd'];
     unset($_SESSION['change_pwd']);
 }
@@ -76,29 +76,33 @@ if(isset($_SESSION['change_pwd'])){
                                                 </thead>
                                                 <tbody>
                                                     <?php
-                                                    $sql = "SELECT * FROM `tb_order` WHERE ";
+                                                    $sql = "SELECT * 
+                                                    FROM `tb_order` as o, `tb_order_details` as d
+                                                    WHERE o.id_order = d.id_order
+                                                    AND o.username = '$user'";
+                                                    $result = mysqli_query($conn, $sql);
+                                                    $count = mysqli_num_rows($result);
+                                                    if($count == 0){
+                                                        echo "<p class='saved-message'>Hiện bạn chưa đặt đơn hàng nào !!!</p>";
+                                                    }
+                                                    else {
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                            $id_order = $row['id_order'];
+                                                            $order_date = $row['order_date'];
+                                                            $status = $row['status'];
+                                                            $total_money = $row['total_money'];
                                                     ?>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Aug 22, 2018</td>
-                                                        <td>Pending</td>
-                                                        <td>$3000</td>
-                                                        <td><a href="/viewcart.php" class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>July 22, 2018</td>
-                                                        <td>Approved</td>
-                                                        <td>$200</td>
-                                                        <td><a href="/viewcart.php" class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>June 12, 2019</td>
-                                                        <td>On Hold</td>
-                                                        <td>$990</td>
-                                                        <td><a href="/viewcart.php" class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">View</a></td>
-                                                    </tr>
+                                                            <tr>
+                                                                <td><?php echo $id_order?></td>
+                                                                <td><?php echo $order_date?></td>
+                                                                <td><?php echo $status?></td>
+                                                                <td><?php echo $total_money?></td>
+                                                                <td><a href="/index.php#viewcart" id="nav-viewcart" class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">Chi Tiết</a></td>
+                                                            </tr>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div>

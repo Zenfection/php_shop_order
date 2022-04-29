@@ -1,4 +1,4 @@
-<?php include "./frontend/header.php" ?>
+<?php include "./config/connect.php" ?>
 
 <!-- Checkout Section Start -->
 <div class="section section-margin">
@@ -11,7 +11,7 @@
                     <!-- Checkbox Form Title Start -->
                     <h3 class="title">Hoá Đơn Chi Tiết</h3>
                     <!-- Checkbox Form Title End -->
-                    <form action="#" method="POST">
+                    <form action="./backend/checkout.php" method="POST">
                         <div class="row">
                             <?php
                             $user = $_SESSION['user'];
@@ -81,7 +81,7 @@
                         </div>
                         <!-- Different Address End -->
                         <div class="order-button-payment">
-                            <button class="btn btn-primary btn-hover-dark rounded-0 w-100" type="submit" name="submit" id="clear-cart">Đặt Hàng</button>
+                            <button class="btn btn-primary btn-hover-dark rounded-0 w-100" type="submit" name="submit">Đặt Hàng</button>
                         </div>
                 </div>
                 </form>
@@ -123,18 +123,15 @@
                                 for ($i = 0; $i < $count; $i++) {
                                     $row = mysqli_fetch_assoc($result);
                                     $name = $row['name'];
-                                    $price = $row['price'];
-                                    $quantity = $row['quantity'];
-                                    if ($row['discount'] > 0) {
-                                        $total = $price * $quantity * (1 - $row['discount'] / 100);
-                                    } else {
-                                        $total = $price * $quantity;
-                                    }
+                                    $price = (float)$row['price'];
+                                    $amount = (int)$row['amount'];
+                                    $discout_price = $price * (100 - (int)$row['discount']) / 100;
+                                    $total = $discout_price * $amount;
                                     $totalMoney += $total;
                                 ?>
                                     <tr class="cart_item">
                                         <td class="cart-product-name text-start ps-0"> <?php echo $name ?>
-                                            <strong class="product-quantity"> × <?php echo $quantity ?></strong>
+                                            <strong class="product-quantity"> × <?php echo $amount ?></strong>
                                         </td>
                                         <td class="cart-product-total text-end pe-0">
                                             <span class="amount"><?php echo $total ?>$</span>
@@ -184,44 +181,4 @@
         </div>
     </div>
 </div>
-<?php include "./frontend/footer.php" ?>
 <!-- Checkout Section End -->
-<?php
-if (isset($_POST['submit'])) {
-    $fullname = $_POST['full-name'];
-    $phone = $_POST['phone'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $city = $_POST['city'];
-    $province = $_POST['province'];
-    $order_date = date('Y-m-d');
-    $status = 'pending';
-    // tạo chuỗi ID ngẫu nhiên
-    $length = 10;
-    $str = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-    $id_order = strtoupper(substr(str_shuffle($str), 0, $length));
-    // ----
-    $sql = "INSERT INTO `tb_order`
-            (`id_order`, `username`, `name_customer`, `phone_customer`, `address_customer`, `email_customer`, `city_customer`, `province_customer`, `status`, `order_date`) 
-            VALUES 
-            ('$id_order', '$user', '$fullname', '$phone', '$address', '$email', '$city', '$province', '$status', '$order_date')";
-    $sql2 = "SELECT * 
-            FROM `tb_cart` as c, `tb_product` as p
-            WHERE username = '$user'
-            AND c.id_product = p.id_product";
-    mysqli_query($conn, $sql);
-    $result = mysqli_query($conn, $sql2);
-    if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_assoc($result)){
-            $id_product = $row['id_product'];
-            $amount = $row['amount'];
-            mysqli_query($conn, "INSERT INTO `tb_order_details` 
-                                (id_order, id_product, amount)
-                                VALUES('$id_order', '$id_product', '$amount')");
-        }
-    }        
-    include "./backend/clear_cart.php";
-    $_SESSION['order'] = "<div class='alert-success text-center'>Đặt hàng thành công, vui lòng kiểm tra tại <a href='./account.php'></a></div>";
-    echo "<script>window.location.href='/index.php';</script>";
-}
-?>

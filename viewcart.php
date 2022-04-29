@@ -1,5 +1,4 @@
-<?php include "./frontend/header.php" ?>
-
+<?php include "./config/connect.php" ?>
 <!-- Shopping Cart Section Start -->
 <div class="section section-margin">
     <div class="container">
@@ -27,10 +26,11 @@
                         <!-- Table Body Start -->
                         <tbody id="table-cart">
                             <?php
+                            $user = $_SESSION['user'];
                             $sql = "SELECT * 
-                                            FROM `tb_cart` as c, `tb_product` as p
-                                            WHERE username = '$user'
-                                            AND c.id_product = p.id_product";
+                                    FROM `tb_cart` as c, `tb_product` as p
+                                    WHERE username = '$user'
+                                    AND c.id_product = p.id_product";
                             $result = mysqli_query($conn, $sql);
                             $count = mysqli_num_rows($result);
                             $totalMoney = 0;
@@ -48,7 +48,7 @@
                                     }
                                     $totalMoney += ((float)$price * (int)$quantity);
                             ?>
-                                    <tr id="view_cart_product<?php echo $id?>">
+                                    <tr id="view_cart_product<?php echo $id ?>">
                                         <td class="pro-thumbnail">
                                             <img class="fit-image rounded" src="assets/images/products/<?php echo $image ?>" alt="Product" />
                                         </td>
@@ -59,16 +59,40 @@
                                         <td class="pro-quantity">
                                             <div class="quantity">
                                                 <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="<?php echo $quantity?>" type="text">
+                                                    <input class="cart-plus-minus-box" value="<?php echo $quantity ?>" type="text">
                                                     <div class="dec qtybutton">-</div>
                                                     <div class="inc qtybutton">+</div>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="pro-subtotal">
-                                            <span><?php echo $price * $quantity?>$</span>
+                                            <span><?php echo $price * $quantity ?>$</span>
                                         </td>
-                                        <td class="pro-remove">
+                                        <td class="pro-remove" onclick="
+                                            let id = <?php echo $id ?>;
+                                            $.ajax({
+                                            type: 'post',
+                                            url: '/backend/delete_product_cart.php',
+                                            data: { delete_id: id },
+                                            success: function(){
+                                            let money = parseFloat($('#product_id' + id + ' .price .new').text().replace('$', ''));
+                                            let total = parseFloat($('#totalmoney').text().replace('$', ''));
+                                            let amount = parseInt($('#count-cart').text());
+                                            let qty = parseInt($('#quantity' + id).text().replace(/\D/g, ''));
+                                            console.log(money, total, amount, qty);
+                                            $('#view_cart_product'+id).fadeOut('normal', function(){
+                                                $(this).remove();
+                                            });
+                                            let totalMoney = (total - money * qty).toFixed(2);
+                                            console.log(totalMoney);
+                                            $('#totalmoney').text(totalMoney + '$');
+                                            $('#count-cart').text(amount - 1);
+                                            $('#product_id' + id).hide('normal', function () {
+                                                $(this).remove();
+                                            });
+                                            }
+                                        });
+                                        ">
                                             <a>
                                                 <i class="ti-trash"></i>
                                             </a>
@@ -126,7 +150,7 @@
                             <table class="table">
                                 <tr>
                                     <td>Tổng Tiền</td>
-                                    <td><?php echo $totalMoney?>$</td>
+                                    <td><?php echo $totalMoney ?>$</td>
                                 </tr>
                                 <tr>
                                     <td>Phí Ship</td>
@@ -134,7 +158,7 @@
                                 </tr>
                                 <tr class="total">
                                     <td>Tổng</td>
-                                    <td class="total-amount"><?php echo $totalMoney?>$</td>
+                                    <td class="total-amount"><?php echo $totalMoney ?>$</td>
                                 </tr>
                             </table>
                         </div>
@@ -144,7 +168,7 @@
                     <!-- Cart Calculate Items End -->
 
                     <!-- Cart Checktout Button Start -->
-                    <a href="/checkout.php" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
+                    <a href="/index.php#checkout" id="nav-checkout" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
                     <!-- Cart Checktout Button End -->
 
                 </div>
@@ -156,5 +180,3 @@
     </div>
 </div>
 <!-- Shopping Cart Section End -->
-
-<?php include "./frontend/footer.php" ?>

@@ -48,8 +48,8 @@
                         <!-- Button/Forget Password End -->
 
                         <!-- Lost Password & Creat New Account Start -->
-                        <div class="lost-password">
-                            <a href="/register.php">Tạo tài khoản</a>
+                        <div class="register">
+                            <a href="/index.php#register" id="register-account">Tạo tài khoản</a>
                         </div>
                         <!-- Lost Password & Creat New Account End -->
 

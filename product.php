@@ -20,7 +20,7 @@
                 <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
                 
                 <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                <a href="/viewcart.php" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                <a href="/index.php#viewcart" id="nav-viewcart" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
             </div>
         </div>
         <!-- Thumb End  -->
