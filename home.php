@@ -15,7 +15,7 @@ if (isset($_SESSION['order'])) {
     <div class="hero-slider swiper-container">
         <div class="swiper-wrapper">
 
-            <div class="hero-slide-item swiper-slide">
+            <div class="hero-slide-item swiper-slide" data-aos="fade-up" data-aos-duration="1000">
                 <div class="hero-slide-bg">
                     <img src="/assets/images/slider/1.png" alt="Slider Image" />
                 </div>
@@ -29,7 +29,7 @@ if (isset($_SESSION['order'])) {
                 </div>
             </div>
 
-            <div class="hero-slide-item swiper-slide">
+            <div class="hero-slide-item swiper-slide" data-aos="fade-up" data-aos-duration="1500">
                 <div class="hero-slide-bg">
                     <img src="/assets/images/slider/2.png" alt="Slider Image" />
                 </div>

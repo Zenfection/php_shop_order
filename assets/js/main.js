@@ -33,7 +33,7 @@
       Header Cart Toggle
   --------------------- */
 
-  $(".cart-visible").on('click', function () {
+  $(document).on('click','.cart-visible', function () {
     $(".header-cart-content").slideToggle("slow");
   });
 
@@ -41,12 +41,12 @@
     Off Canvas Mobile Menu
   -------------------------------------------*/
 
-  $(".header-action-btn-menu").on('click', function () {
+  $(document).on('click','.header-action-btn-menu', function () {
     $("body").addClass('fix');
     $(".mobile-menu-wrapper").addClass('open');
   });
 
-  $(".offcanvas-btn-close,.offcanvas-overlay").on('click', function () {
+  $(document).on('click', '.offcanvas-btn-close,.offcanvas-overlay', function () {
     $("body").removeClass('fix');
     $(".mobile-menu-wrapper").removeClass('open');
   });
@@ -56,20 +56,20 @@
   /*----------------------------------------*/
 
   // showlogin toggle
-  $('#showlogin').on('click', function () {
+  $(document).on('click','#showlogin', function () {
     $('#checkout-login').slideToggle(500);
   });
   // showlogin toggle
-  $('#showcoupon').on('click', function () {
+  $(document).on('click','#showcoupon', function () {
     $('#checkout_coupon').slideToggle(500);
   });
   // showlogin toggle
-  $('#cbox').on('click', function () {
+  $(document).on('click','#cbox', function () {
     $('#cbox-info').slideToggle(500);
   });
 
   // Ship box toggle
-  $('#ship-box').on('click', function () {
+  $(document).on('click','#ship-box', function () {
     $('#ship-box-info').slideToggle(1000);
   });
 
@@ -271,7 +271,7 @@
   /*  Shop Grid Activation
   /*----------------------------------------*/
 
-  $('.shop_toolbar_btn > button').on('click', function (e) {
+  $(document).on('click', '.shop_toolbar_btn > button', function (e) {
 
     e.preventDefault();
 
@@ -298,7 +298,6 @@
     }
 
   });
-
   /*----------------------------------------*/
   /*  Countdown
   /*----------------------------------------*/
@@ -318,7 +317,7 @@
   $('.cart-plus-minus').append(
     '<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>'
   );
-  $('.qtybutton').on('click', function () {
+  $(document).on('click','.qtybutton', function () {
     var $button = $(this);
     var oldValue = $button.parent().find('input').val();
     if ($button.hasClass('inc')) {
@@ -378,7 +377,7 @@
     }
     return false
   }
-  $('.add-to_cart').on('click', function () {
+  $(document).on('click','.add-to_cart', function () {
     let qty = parseInt($('.cart-plus-minus-box').val());
     let id = $(this).attr('id').replace('product', '');
     $.ajax({
@@ -477,7 +476,7 @@
   /*-------------------------
       Ajax Clear Cart
   ---------------------------*/  
-  $('#clear-cart').on('click', function(){
+  $(document).on('click','#clear-cart', function(){
     $.ajax({
       type: 'post',
       url: '/backend/clear_cart.php',
@@ -523,9 +522,49 @@
   }
 
   /*-------------------------
+      Ajax Next/Previous Product Cart
+  ---------------------------*/
+  $(document).on('click', '.page-item a[aria-label="Next"]', function(){
+    let id = $(this).attr('name').split('page=')[1];
+    id = parseInt(id);
+    $.ajax({
+      type: 'get',
+      url: '/shop.php',
+      data: {page: id + 1},
+      success: function(data){
+        $('#content').html(data);
+      }
+    });
+  });
+  $(document).on('click', '.page-item a[aria-label="Prev"]', function(){
+    let id = $(this).attr('name').split('page=')[1];
+    id = parseInt(id);
+    $.ajax({
+      type: 'get',
+      url: '/shop.php',
+      data: {page: id - 1},
+      success: function(data){
+        $('#content').html(data);
+      }
+    });
+  });
+  $(document).on('click', '#page-choose', function(){
+    let id = $(this).attr('name').split('page=')[1];
+    id = parseInt(id);
+    $.ajax({
+      type: 'get',
+      url: '/shop.php',
+      data: {page: id},
+      success: function(data){
+        $('#content').html(data);
+      }
+    });
+  });
+
+  /*-------------------------
       Ajax Remove Product Cart 
   ---------------------------*/
-  $('.remove-cart').on('click', function () {
+  $(document).on('click','.remove-cart', function () {
     let id = $(this).attr('id').replace('product', '');
     $.ajax({
       type: 'post',
@@ -549,9 +588,18 @@
   });
 
   /*-------------------------
+      Ajax KeyDown
+  ---------------------------*/
+  // $(document).on('keydown', '#shop-page', function (event) {
+  //   if(event.keyCode == 39) { 
+  //     console.log(123);
+  //   }
+  // });
+  /*-------------------------
       Ajax Load Data Nagivation
   ---------------------------*/
-    $('#nav-home a').on('click', function(){
+  
+    $(document).on('click', '#nav-home a', function(){
       $.ajax({
         url: '/home.php',
         success: function(data){
@@ -560,78 +608,83 @@
         }
       });
     });
-    $('#nav-about a').on('click', function(){
+    $(document).on('click', '#nav-about', function(){
       $.ajax({
         url: '/about.php',
         success: function(data){
-          $('#content').html(data);
-
+            $('#content').html(data);
+            AOS.init();
         }
       });
     });
-    $('#nav-contact a').on('click', function(){
+    $(document).on('click', '#nav-contact', function(){
       $.ajax({
         url: '/contact.php',
         success: function(data){
           $('#content').html(data);
-          $('.contact-form-wrapper').hide().fadeIn('slow');
-          $('#mapDiv').hide().fadeIn('fast');
+          AOS.init();
         }
       });
     });
-    $('#nav-shop a').on('click', function(){
+    $(document).on('click', '#nav-shop', function(){
       $.ajax({
         url: '/shop.php',
         success: function(data){
           $('#content').html(data);
+          AOS.init();
         }
       });
     });
-    $('#nav-viewcart').on('click', function(){
+    $(document).on('click', '#nav-viewcart', function(){
       $.ajax({
         url: '/viewcart.php',
         success: function(data){
           $('#content').html(data);
+          AOS.init();
         }
       });
     });
-    $('#nav-checkout').on('click', function(){
+    $(document).on("click", '#nav-checkout', function(e) { 
       $.ajax({
         url: '/checkout.php',
         success: function(data){
           $('#content').html(data);
+          AOS.init();
         }
       });
     });
-    $('#login').on('click', function(){
+
+    $(document).on('click', '#login', function(e){
       $.ajax({
         url: '/login.php',
         success: function(data){
           $('#content').html(data);
+          AOS.init();
         }
       });
     });
-    $('#account').on('click', function(){
+    $(document).on('click','#account', function(){
       $.ajax({
         url: '/account.php',
         success: function(data){
           $('#content').html(data);
+          AOS.init();
         }
       }); 
     });
-    $('#register-account').on('click', function(){
-      console.log(123);
+    $(document).on('click', '#register-account',function(){
       $.ajax({
         url: '/register.php',
         success: function(data){
           $('#content').html(data);
+          AOS.init();
         }
       });
     });
     function nav(){
       let pathURL = window.location.href;
       if(pathURL.indexOf('#') == -1){
-        $('#content').load('/home.php');
+        // $('#content').load('/home.php');
       } else {
         let path = pathURL.split('/')[3].split('#')[1];
         $('#content').load('/' + path + '.php');

@@ -1,5 +1,4 @@
 <?php include "./frontend/header.php"; ?>
-<?php include "./"?>
 
 <!-- Single Product Section Start -->
 <div class="section section-margin">

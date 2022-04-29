@@ -38,10 +38,10 @@ include "./config/connect.php";
                     <div class="col-lg-5 d-none d-lg-block">
                         <div class="main-menu">
                             <ul>
-                                <li id="nav-home"><a href="/index.php#home">Trang Chủ</a></li>
-                                <li id="nav-about"><a href="/index.php#about">Giới Thiệu</a></li>
-                                <li id="nav-shop"><a href="/index.php#shop">Shop</a></li>
-                                <li id="nav-contact"><a href="/index.php#contact">Liên Hệ</a></li>
+                                <li><a href="/index.php">Trang Chủ</a></li>
+                                <li><a id="nav-about" href="/index.php#about">Giới Thiệu</a></li>
+                                <li><a id="nav-shop" href="/index.php#shop">Shop</a></li>
+                                <li><a id="nav-contact" href="/index.php#contact">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ include "./config/connect.php";
     </div>
 
     <div id="content">
-        
+        <?php include "./home.php"?>
     </div>
     <!-- Footer Section Start -->
     <footer class="section footer-section">
@@ -163,7 +163,7 @@ include "./config/connect.php";
         <!-- Footer Bottom End -->
     </footer>
     <!-- Footer Section End -->
-    <?php include "./modal.php"?>
+
     
     <script src="/assets/js/vendor.min.js"></script>
     <script src="/assets/js/plugins.min.js"></script>

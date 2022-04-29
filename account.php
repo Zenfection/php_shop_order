@@ -12,7 +12,7 @@ if (isset($_SESSION['change_pwd'])) {
 <div class="section section-margin">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12" data-aos="fade-in" data-aos-duration="1000">
                 <!-- My Account Page Start -->
                 <div class="myaccount-page-wrapper">
                     <div class="row">

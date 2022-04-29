@@ -168,7 +168,7 @@
                     <!-- Cart Calculate Items End -->
 
                     <!-- Cart Checktout Button Start -->
-                    <a href="/index.php#checkout" id="nav-checkout" class="btn btn btn-gray-deep btn-hover-primary m-t-30" onclick="window.location.href('/index.php#checkout')">Tiến Hành Thanh Toán</a>
+                    <a href="/index.php#checkout" id="nav-checkout" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
                     <!-- Cart Checktout Button End -->
 
                 </div>

@@ -4,7 +4,7 @@
 <div class="section section-margin">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
                 <!--shop toolbar start-->
                 <div class="shop_toolbar_wrapper flex-column flex-md-row p-2 m-b-40 border">
 
@@ -88,7 +88,13 @@
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" id="quickview<?php echo $id?>" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
                                             <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="/index.php#viewcart" id="nav-viewcart" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                                            <a href="/index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
+                                                type: 'post',
+                                                url: '/viewcart.php',
+                                                success: function(data){
+                                                    $('#content').html(data);
+                                                }
+                                            });"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
                                     <div class="content">
@@ -129,7 +135,7 @@
                                         <div class="cart-btn action-btn">
                                             <div class="action-cart-btn-wrapper d-flex">
                                                 <div class="add-to_cart">
-                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/index.php#viewcart" id="nav-viewcart">Add to cart</a>
+                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/viewcart.php">Add to cart</a>
                                                 </div>
                                                 <a href="wishlist.html" title="Wishlist" class="action"><i class="ti-heart"></i></a>
                                                 <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
@@ -157,7 +163,7 @@
                                 if ($page > 1) {
                                 ?>
                                     <li class="page-item">
-                                        <a class="page-link rounded-0" href="?<?php echo 'page=' . $page + 1 ?>" aria-label="Prev">
+                                        <a class="page-link rounded-0" href="#shop" name="page=<?php echo $page?>" aria-label="Prev">
                                             <span aria-hidden="true">
                                                 <i class="fa fa-arrow-left"></i>
                                             </span>
@@ -167,15 +173,15 @@
                                 }
                                 for ($i = 1; $i <= $numPage; $i++) {
                                     if ($page == $i) {
-                                        echo "<li class='page-item'><a class='page-link active' href='?page=$i'>$i</a></li>";
+                                        echo "<li class='page-item'><a class='page-link active'>$i</a></li>";
                                         continue;
                                     }
-                                    echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
+                                    echo "<li class='page-item'><a class='page-link' id='page-choose' href='#shop' name='page=$i' >$i</a></li>'";
                                 }
                                 if ($page < $numPage) {
                                 ?>
                                     <li class="page-item">
-                                        <a class="page-link rounded-0" href="?<?php echo 'page=' . $page + 1 ?>" aria-label="Next">
+                                        <a class="page-link rounded-0" href="#shop" name="page=<?php echo $page?>" aria-label="Next">
                                             <span aria-hidden="true">
                                                 <i class="fa fa-arrow-right"></i>
                                             </span>

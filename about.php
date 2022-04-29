@@ -2,24 +2,24 @@
 <div class="section section-margin">
     <div class="container">
         <div class="row m-b-n30">
-            <div class="col-md-6 pe-lg-5 p-r-15 m-b-30">
+            <div class="col-md-6 pe-lg-5 p-r-15 m-b-30" data-aos="fade-up" data-aos-duration="1000">
                 <!-- About Thumb Start -->
                 <div class="about-thumb">
                     <img class="fit-image" src="assets/images/about/1.png" alt="About Image">
                 </div>
                 <!-- About Thumb End -->
             </div>
-            <div class="col-md-6 align-self-center m-b-30">
+            <div class="col-md-6 align-self-center m-b-30" data-aos="fade-up" data-aos-duration="1500">
                 <!-- About Content Start -->
                 <div class="about-content">
-                    <h2 class="title">About Amber</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididu ut labore et dolore magna aliqua. Ut enim ad minim quis nostrud exercitat ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h2 class="title">Dự án Web bán thức ăn vặt</h2>
+                    <p>Đây là dự web cơ bản được viết bằng PHP thuần, chủ yếu là để học tập và các công nghệ dùng dưới đây.</p>
                     <ul class="about-content-list">
-                        <li><span><i class="ti-angle-double-right"></i></span> There are many variation passages</li>
-                        <li><span><i class="ti-angle-double-right"></i></span> Contrary to popular belief not simply</li>
-                        <li><span><i class="ti-angle-double-right"></i></span> But I must explain to you how all this</li>
+                        <li><span><i class="ti-angle-double-right"></i></span> Bootstrap 5</li>
+                        <li><span><i class="ti-angle-double-right"></i></span> Jquery Ajax</li>
+                        <li><span><i class="ti-angle-double-right"></i></span> PHP Composer</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary btn-hover-dark">Contact Us</a>
+                    <a href="/index.php#contact" id="nav-contact" class="btn btn-primary btn-hover-dark">Liên Hệ</a>
                 </div>
                 <!-- About Content End -->
             </div>
@@ -38,7 +38,7 @@
                 <div class="testimonial-carousel">
 
                     <!-- Testimonial Gallery Top Start -->
-                    <div class="swiper-container testimonial-gallery-top">
+                    <div class="swiper-container testimonial-gallery-top" data-aos="fade-up" data-aos-duration="1000">
                         <div class="swiper-wrapper">
 
                             <!-- Single Swiper Slide Start -->
@@ -70,7 +70,7 @@
                     <!-- Testimonial Gallery Top End -->
 
                     <!-- Testimonial Gallery Thumb Start -->
-                    <div class="swiper-container testimonial-gallery-thumbs">
+                    <div class="swiper-container testimonial-gallery-thumbs" data-aos="fade-up" data-aos-duration="1500">
                         <div class="swiper-wrapper">
 
                             <!-- Single Swiper Slide Start -->
@@ -118,7 +118,7 @@
     <div class="container">
         <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30">
 
-            <div class="col m-b-30">
+            <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
@@ -142,7 +142,7 @@
                 <!-- Single Team Wrapper End -->
             </div>
 
-            <div class="col m-b-30">
+            <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1500">
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
@@ -166,7 +166,7 @@
                 <!-- Single Team Wrapper End -->
             </div>
 
-            <div class="col m-b-30">
+            <div class="col m-b-30" data-aos="fade-up" data-aos-duration="2000">
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
