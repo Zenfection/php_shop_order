@@ -1,6 +1,11 @@
 (function ($) {
   "use strict";
-
+  function checkURL(){
+    if(window.location.href == window.location.origin + '/'){
+      window.location.href = window.location.origin + '/index.php';
+    }
+  }
+  checkURL();
   /*----------------------------------------
     Sticky Menu Activation
   ------------------------------------------*/
@@ -533,6 +538,7 @@
       data: {page: id + 1},
       success: function(data){
         $('#content').html(data);
+        AOS.init();
       }
     });
   });
@@ -545,6 +551,7 @@
       data: {page: id - 1},
       success: function(data){
         $('#content').html(data);
+        AOS.init();
       }
     });
   });
@@ -557,6 +564,7 @@
       data: {page: id},
       success: function(data){
         $('#content').html(data);
+        AOS.init();
       }
     });
   });
@@ -604,7 +612,7 @@
         url: '/home.php',
         success: function(data){
           $('#content').html(data);
-
+          AOS.init();
         }
       });
     });
@@ -621,8 +629,8 @@
       $.ajax({
         url: '/contact.php',
         success: function(data){
-          $('#content').html(data);
-          AOS.init();
+            $('#content').html(data);
+            AOS.init();
         }
       });
     });
@@ -685,8 +693,10 @@
       let pathURL = window.location.href;
       if(pathURL.indexOf('#') == -1){
         // $('#content').load('/home.php');
+        AOS.init();
       } else {
         let path = pathURL.split('/')[3].split('#')[1];
+        AOS.init();
         $('#content').load('/' + path + '.php');
       }
     }
