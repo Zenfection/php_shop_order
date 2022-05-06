@@ -1,4 +1,7 @@
 <!-- Login Section Start -->
+<?php 
+    echo "<script>window.location.href='/index.php#login'</script>"
+?>
 <div class="section section-margin login">
     <?php
     session_start();

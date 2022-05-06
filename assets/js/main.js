@@ -673,18 +673,18 @@
       loadContent('/shop.php');
     });
     $(document).on('click', '#nav-viewcart', function(){
-      let user = $('#login').text().trim();
-      if(user != 'Login'){
-        loadContent('/account.php'); 
+      let check = $('.header-actions #login').text().trim().toLowerCase();
+      if(check == 'login'){
+        loadContent('/login.php'); 
       }
       else{
         loadContent('/viewcart.php');
       }
     });
-    $(document).on("click", '#nav-checkout', function(e) { 
-      let user = $('#login').text().trim();
-      if(user != 'Login'){
-        loadContent('/account.php'); 
+    $(document).on("click", '#nav-checkout', function() { 
+      let check = $('.header-actions #login').text().trim().toLowerCase();
+      if(check == 'login'){
+        loadContent('/login.php'); 
       }
       else{
         loadContent('/checkout.php');
@@ -694,9 +694,9 @@
       loadContent('/login.php');
     });
     $(document).on('click','#account', function(){
-      let user = $('#login').text().trim();
-      if(user != 'Login'){
-        loadContent('/account.php'); 
+      let check = $('.header-actions #login').text().trim().toLowerCase();
+      if(check == 'login'){
+        loadContent('/login.php'); 
       }
       else{
         loadContent('/login.php');
