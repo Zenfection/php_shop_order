@@ -34,7 +34,7 @@ include "./config/connect.php";
             <div class="container">
                 <div class="row align-items-center position-relative">
                     <!-- Header Logo Start -->
-                    <div class="col-lg-3 col-md-4 col-6">
+                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-in" data-aos-duration="500">
                         <div class="header-logo">
                             <a href="/index.php"><img src="/assets/images/logo.png" alt="Site Logo" /></a>
                         </div>
@@ -42,7 +42,7 @@ include "./config/connect.php";
                     <!-- Header Logo End -->
 
                     <!-- Header Menu Start -->
-                    <div class="col-lg-5 d-none d-lg-block">
+                    <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="500">
                         <div class="main-menu">
                             <ul>
                                 <li><a id="nav-home" href="/index.php#home">Trang Chủ</a></li>

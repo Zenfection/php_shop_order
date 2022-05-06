@@ -1,16 +1,14 @@
-    
-
-    <!-- Register Section Start -->
-    <?php
-        if(isset($_SESSION['user'])){
-            echo "<script>window.location.href='/index.php'</script>";
-        }
-        if(isset($_SESSION['register'])){
-            echo $_SESSION['register'];
-            unset($_SESSION['register']);
-        }
-    ?>
-    <form method="POST" action="./backend/register.php">
+<!-- Register Section Start -->
+<?php
+if (isset($_SESSION['user'])) {
+    echo "<script>window.location.href='/index.php'</script>";
+}
+if (isset($_SESSION['register'])) {
+    echo $_SESSION['register'];
+    unset($_SESSION['register']);
+}
+?>
+<form method="POST" action="./backend/register.php" id="registerForm">
     <div class="section section-margin">
         <div class="container">
             <div class="row">
@@ -29,7 +27,7 @@
                             <div class="single-input-item m-b-10">
                                 <input type="text" placeholder="Họ và Tên" name="fullname">
                             </div>
-                            
+
                             <div class="single-input-item m-b-10">
                                 <input type="email" placeholder="Email" name="email">
                             </div>
@@ -58,5 +56,67 @@
             </div>
         </div>
     </div>
-    </form>
-    <!-- Register Section End -->
+</form>
+<!-- Register Section End -->
+<script type="text/javascript">
+    $(document).ready(() => {
+        $('#registerForm').validate({
+            rules: {
+                fullname: {
+                    required: true,
+                    minlength: 5,
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                username: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                password: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                }
+            },
+            messages: {
+                fullname: {
+                    required: "Vui lòng nhập họ và tên",
+                    minlength: "Họ và tên phải có ít nhất 5 ký tự"
+                },
+                email: {
+                    required: "Vui lòng nhập email",
+                    email: "Email không đúng định dạng"
+                },
+                username: {
+                    required: "Vui lòng nhập username",
+                    minlength: "Username phải có ít nhất 5 ký tự",
+                    maxlength: "Username không được vượt quá 50 ký tự"
+                },
+                password: {
+                    required: "Vui lòng nhập password",
+                    minlength: "Password phải có ít nhất 5 ký tự",
+                    maxlength: "Password không được vượt quá 50 ký tự"
+                }
+            },
+            errorElement: 'div',
+            errorPlacement: (error, element) => {
+                error.addClass('invalid-feedback');
+                if (element.prop('type') === 'checkbox') {
+                    error.insertAfter(element.siblings('label'));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-invalid').removeClass('is-valid').show();
+            },
+            unhighlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-valid').removeClass('is-invalid').show();
+            }
+        })
+    });
+</script>
+

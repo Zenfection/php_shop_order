@@ -96,7 +96,7 @@
 
     <!--Main JS-->
     <script src="/assets/js/main.js"></script>
-
+    <script src="/assets/js/jquery.validate.js"></script>
 
 </body>
 </html>

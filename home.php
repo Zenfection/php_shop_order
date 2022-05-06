@@ -60,7 +60,7 @@ if (isset($_SESSION['order'])) {
 
 <div class="section section-padding">
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 m-b-n30">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 m-b-n30" data-aos="fade-out" data-aos-duration="600">
 
             <div class="col m-b-30">
                 <!-- Single CTA Wrapper Start -->
@@ -132,7 +132,7 @@ if (isset($_SESSION['order'])) {
     <div class="container">
         <h2>Loại Đồ Ăn</h2>
         <!-- Banners Start -->
-        <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30">
+        <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30" data-aos="fade-out" data-aos-duration="600">
             <?php
             $sql = "SELECT * FROM `tb_category` WHERE active = 1 LIMIT 3";
             $result = mysqli_query($conn, $sql);
@@ -143,7 +143,7 @@ if (isset($_SESSION['order'])) {
                     $title = $row['title'];
                     $image = $row['image'];
             ?>
-                    <div class="col m-b-30">
+                    <div class="col m-b-30" data-aos="fade-out" data-aos-duration="600">
                         <a href="/category-foods.php?category_id=<?php echo $id; ?>" class="banner hover-style">
                             <?php
                             if ($image == "") {
@@ -172,7 +172,7 @@ if (isset($_SESSION['order'])) {
     <div class="container">
 
         <!-- Section Title & Tab Start -->
-        <div class="row">
+        <div class="row" data-aos="fade-out" data-aos-duration="600">
             <!-- Tab Start -->
             <div class="col-12">
                 <ul class="product-tab-nav nav justify-content-center m-b-n15 p-b-40 title-border-bottom">

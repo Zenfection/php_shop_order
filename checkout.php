@@ -11,7 +11,7 @@
                     <!-- Checkbox Form Title Start -->
                     <h3 class="title">Hoá Đơn Chi Tiết</h3>
                     <!-- Checkbox Form Title End -->
-                    <form action="./backend/checkout.php" method="POST">
+                    <form action="./backend/checkout.php" method="POST" id="checkoutForm">
                         <div class="row">
                             <?php
                             $user = $_SESSION['user'];
@@ -182,3 +182,79 @@
     </div>
 </div>
 <!-- Checkout Section End -->
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        $('#checkoutForm').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 5
+                },
+                phone: {
+                    required: true,
+                    minlength: 10,
+                    maxlength: 11
+                },
+                address: {
+                    required: true,
+                    minlength: 5
+                },
+                province: {
+                    required: true,
+                    minlength: 5
+                },
+                city: {
+                    required: true,
+                    minlength: 5
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Vui lòng nhập tên",
+                    minlength: "Tên phải có ít nhất 5 ký tự"
+                },
+                phone: {
+                    required: "Vui lòng nhập SĐT",
+                    minlength: "SĐT phải có ít nhất 10 ký tự",
+                    maxlength: "SĐT phải có tối đa 11 ký tự"
+                },
+                address: {
+                    required: "Vui lòng nhập địa chỉ",
+                    minlength: "Địa chỉ phải có ít nhất 5 ký tự"
+                },
+                province: {
+                    required: "Vui lòng nhập tỉnh",
+                    minlength: "Làm gì có tỉnh nào ngắn hơn 5 ký tự"
+                },
+                city: {
+                    required: "Vui lòng nhập thành phố",
+                    minlength: "Làm gì có thành phố nào ngắn hơn 5 ký tự"
+                },
+                email: {
+                    required: "Vui lòng nhập email",
+                    email: "Email không hợp lệ"
+                }
+            },
+            errorElement: 'div',
+            errorPlacement: (error, element) => {
+                error.addClass('invalid-feedback');
+                if (element.prop('type') === 'checkbox') {
+                    error.insertAfter(element.siblings('label'));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-invalid').removeClass('is-valid').show();
+            },
+            unhighlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-valid').removeClass('is-invalid').show();
+            }
+        })
+    });
+</script>

@@ -2,14 +2,14 @@
 <div class="section section-margin login">
     <?php
     session_start();
-    if(isset($_SESSION['user'])){
+    if (isset($_SESSION['user'])) {
         echo "<script>window.location.href='/index.php'</script>";
     }
     if (isset($_SESSION['no-login-message'])) {
         echo $_SESSION['no-login-message'];
         unset($_SESSION['no-login-message']);
     }
-    if (isset($_SESSION['register'])){
+    if (isset($_SESSION['register'])) {
         echo $_SESSION['register'];
         unset($_SESSION['register']);
     }
@@ -25,7 +25,7 @@
                     </div>
 
                     <!-- Form Action  -->
-                    <form action="./backend/login.php" method="POST">
+                    <form action="./backend/login.php" method="POST" id="loginForm">
                         <!-- Input Email  -->
                         <div class="single-input-item m-b-10">
                             <input type="text" placeholder="Email / Username" name="user" id="user">
@@ -62,3 +62,45 @@
     </div>
 </div>
 <!-- Login Section End -->
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        $('#loginForm').validate({
+            rules: {
+                user: {
+                    required: true,
+                    minlength: 3
+                },
+                pass: {
+                    required: true,
+                    minlength: 6
+                }
+            },
+            messages: {
+                user: {
+                    required: "Vui lòng nhập tên đăng nhập",
+                    minlength: "Tên đăng nhập phải có ít nhất 3 ký tự"
+                },
+                pass: {
+                    required: "Vui lòng nhập mật khẩu",
+                    minlength: "Mật khẩu phải có ít nhất 6 ký tự"
+                }
+            },
+            errorElement: 'div',
+            errorPlacement: (error, element) => {
+                error.addClass('invalid-feedback');
+                if (element.prop('type') === 'checkbox') {
+                    error.insertAfter(element.siblings('label'));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-invalid').removeClass('is-valid').show();
+            },
+            unhighlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-valid').removeClass('is-invalid').show();
+            }
+        })
+    });
+</script>

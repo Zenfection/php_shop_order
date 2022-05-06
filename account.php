@@ -124,7 +124,7 @@ if (isset($_SESSION['change_pwd'])) {
                                     <div class="myaccount-content">
                                         <h3 class="title"><i class="fa fa-user-circle" aria-hidden="true"></i> Chi Tiết Tài Khoản</h3>
                                         <div class="account-details-form">
-                                            <form action="./backend/change_info.php" method="POST">
+                                            <form action="./backend/change_info.php" method="POST" id="changeInfoForm">
                                                 <div class="single-input-item m-b-15">
                                                     <div class="row">
                                                         <div class="col-lg-6">
@@ -162,23 +162,23 @@ if (isset($_SESSION['change_pwd'])) {
                                     <div class="myaccount-content">
                                         <h3 class="title"><i class="fa fa-key" aria-hidden="true"></i> Thay đổi mật khẩu</h3>
                                         <div class="account-details-form">
-                                            <form action="/backend/change_password.php" method="POST">
+                                            <form action="/backend/change_password.php" method="POST" id="changePassForm">
                                                 <fieldset>
                                                     <div class="single-input-item m-b-15">
-                                                        <label for="current-pwd" class="required m-b-10">Mật Khẩu Hiện tại</label>
-                                                        <input type="password" name="current-pwd" id="current-pwd" placeholder="Nhập Mật Khẩu" />
+                                                        <label for="current_pwd" class="required m-b-10">Mật Khẩu Hiện tại</label>
+                                                        <input type="password" name="current_pwd" id="current_pwd" placeholder="Nhập Mật Khẩu" />
                                                     </div>
                                                     <div class="row m-b-n15">
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
-                                                                <label for="new-pwd" class="required m-b-10">Mật khẩu mới</label>
+                                                                <label for="new_pwd" class="required m-b-10">Mật khẩu mới</label>
                                                                 <input type="password" id="new-pwd" name="new-pwd" placeholder="Nhập Mật Khẩu" />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
-                                                                <label for="confirm-pwd" class="required m-b-10">Xác Nhận Mật Khẩu</label>
-                                                                <input type="password" id="confirm-pwd" name="confirm-pwd" placeholder="Nhập Mật Khẩu" />
+                                                                <label for="confirm_pwd" class="required m-b-10">Xác Nhận Mật Khẩu</label>
+                                                                <input type="password" id="confirm_pwd" name="confirm_pwd" placeholder="Nhập Mật Khẩu" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -205,3 +205,110 @@ if (isset($_SESSION['change_pwd'])) {
     </div>
 </div>
 <!-- My Account Section End -->
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        $('#changeInfoForm').validate({
+            rules: {
+                fullname: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                phone: {
+                    required: true,
+                    minlength: 10,
+                    maxlength: 11
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                fullname: {
+                    required: "Vui lòng nhập họ và tên",
+                    minlength: "Họ và tên phải có ít nhất 5 ký tự",
+                    maxlength: "Họ và tên phải có nhiều nhất 50 ký tự"
+                },
+                phone: {
+                    required: "Vui lòng nhập số điện thoại",
+                    minlength: "Số điện thoại phải có ít nhất 10 ký tự",
+                    maxlength: "Số điện thoại phải có nhiều nhất 11 ký tự"
+                },
+                email: {
+                    required: "Vui lòng nhập email",
+                    email: "Email không hợp lệ"
+                }
+            },
+            errorElement: 'div',
+            errorPlacement: (error, element) => {
+                error.addClass('invalid-feedback');
+                if (element.prop('type') === 'checkbox') {
+                    error.insertAfter(element.siblings('label'));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-invalid').removeClass('is-valid').show();
+            },
+            unhighlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-valid').removeClass('is-invalid').show();
+            }
+        })
+        $('#changePassForm').validate({
+            rules: {
+                current_pwd: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 50
+                },
+                new_pwd: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 50
+                },
+                confirm_pwd: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 50,
+                    equalTo: "#new-pwd"
+                }
+            },
+            messages: {
+                current_pwd: {
+                    required: "Vui lòng nhập mật khẩu hiện tại",
+                    minlength: "Mật khẩu phải có ít nhất 6 ký tự",
+                    maxlength: "Mật khẩu phải có nhiều nhất 50 ký tự"
+                },
+                new_pwd: {
+                    required: "Vui lòng nhập mật khẩu mới",
+                    minlength: "Mật khẩu phải có ít nhất 6 ký tự",
+                    maxlength: "Mật khẩu phải có nhiều nhất 50 ký tự"
+                },
+                confirm_pwd: {
+                    required: "Vui lòng nhập lại mật khẩu mới",
+                    minlength: "Mật khẩu phải có ít nhất 6 ký tự",
+                    maxlength: "Mật khẩu phải có nhiều nhất 50 ký tự",
+                    equalTo: "Mật khẩu không trùng khớp"
+                }
+            },
+            errorElement: 'div',
+            errorPlacement: (error, element) => {
+                error.addClass('invalid-feedback');
+                if (element.prop('type') === 'checkbox') {
+                    error.insertAfter(element.siblings('label'));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-invalid').removeClass('is-valid').show();
+            },
+            unhighlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-valid').removeClass('is-invalid').show();
+            }
+        })
+    });
+</script>
