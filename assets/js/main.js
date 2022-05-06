@@ -673,16 +673,34 @@
       loadContent('/shop.php');
     });
     $(document).on('click', '#nav-viewcart', function(){
-      loadContent('/viewcart.php');
+      let user = $('#login').text().trim();
+      if(user != 'Login'){
+        loadContent('/account.php'); 
+      }
+      else{
+        loadContent('/viewcart.php');
+      }
     });
     $(document).on("click", '#nav-checkout', function(e) { 
-      loadContent('/checkout.php');
+      let user = $('#login').text().trim();
+      if(user != 'Login'){
+        loadContent('/account.php'); 
+      }
+      else{
+        loadContent('/checkout.php');
+      }
     });
     $(document).on('click', '#login', function(e){
       loadContent('/login.php');
     });
     $(document).on('click','#account', function(){
-      loadContent('/account.php'); 
+      let user = $('#login').text().trim();
+      if(user != 'Login'){
+        loadContent('/account.php'); 
+      }
+      else{
+        loadContent('/login.php');
+      }
     });
     $(document).on('click', '#register-account',function(){
       loadContent('/register.php');

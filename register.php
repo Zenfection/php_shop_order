@@ -1,8 +1,5 @@
 <!-- Register Section Start -->
 <?php
-if (isset($_SESSION['user'])) {
-    echo "<script>window.location.href='/index.php'</script>";
-}
 if (isset($_SESSION['register'])) {
     echo $_SESSION['register'];
     unset($_SESSION['register']);

@@ -1,9 +1,5 @@
 <?php
 include "./config/connect.php";
-if (!isset($_SESSION['user'])) {
-    echo "<script>window.location.href='/index.php#login';
-    location.reload();</script>";
-}
 if (isset($_SESSION['change_pwd'])) {
     echo $_SESSION['change_pwd'];
     unset($_SESSION['change_pwd']);

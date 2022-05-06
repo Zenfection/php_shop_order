@@ -1,4 +1,10 @@
 <?php include "./config/connect.php" ?>
+<?php 
+if (!isset($_SESSION['user'])) {
+    echo "<script>window.location.href='/index.php#login';
+    location.reload();</script>";
+}
+?>
 <!-- Shopping Cart Section Start -->
 <div class="section section-margin">
     <div class="container">

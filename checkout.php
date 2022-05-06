@@ -1,5 +1,4 @@
 <?php include "./config/connect.php" ?>
-
 <!-- Checkout Section Start -->
 <div class="section section-margin">
     <div class="container">

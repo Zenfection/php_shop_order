@@ -3,10 +3,12 @@
     <a class="cart-visible" href="javascript:void(0)">
         <i class="icon-handbag icons"></i>
         <?php
-        $user = $_SESSION['user'];
-        $sql = "SELECT * FROM `tb_cart` WHERE username = '$user'";
-        $count = mysqli_num_rows(mysqli_query($conn, $sql));
-        echo "<span class='header-action-num' id='count-cart'>" . $count . "</span>";
+        if (isset($_SESSION['user'])) {
+            $user = $_SESSION['user'];
+            $sql = "SELECT * FROM `tb_cart` WHERE username = '$user'";
+            $count = mysqli_num_rows(mysqli_query($conn, $sql));
+            echo "<span class='header-action-num' id='count-cart'>" . $count . "</span>";
+        }
         ?>
     </a>
 
@@ -16,6 +18,7 @@
         <!-- Cart Procut Wrapper Start  -->
         <div class="cart-product-wrapper">
             <?php
+            if (isset($_SESSION['user'])) {
             $sql = "SELECT * 
                         FROM `tb_cart` as c, `tb_product` as p
                         WHERE c.username = '" . $_SESSION['user'] . "'
@@ -73,6 +76,7 @@
             <?php
                 }
             }
+        }
             ?>
         </div>
         <!-- Cart Procut Wrapper -->
@@ -81,6 +85,7 @@
         <div class="cart-product-total p-b-20 m-b-20 border-bottom">
             <span class="value">Tổng tiền</span>
             <?php
+            if (isset($_SESSION['user'])) {
             $sql = "SELECT * 
                         FROM `tb_cart` as c, `tb_product` as p
                         WHERE c.username = '" . $_SESSION['user'] . "'
@@ -100,6 +105,7 @@
             } else {
                 echo "<span class='value' id='totalmoney'>0.00$</span>";
             }
+        }
             ?>
         </div>
         <!-- Cart Product Total End -->
