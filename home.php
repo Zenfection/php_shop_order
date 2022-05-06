@@ -144,7 +144,7 @@ if (isset($_SESSION['order'])) {
                     $image = $row['image'];
             ?>
                     <div class="col m-b-30" data-aos="fade-out" data-aos-duration="600">
-                        <a href="/category-foods.php?category_id=<?php echo $id; ?>" class="banner hover-style">
+                        <a href="#" class="banner hover-style">
                             <?php
                             if ($image == "") {
                                 echo "<div class='error'>Image not Available</div>";
@@ -198,7 +198,7 @@ if (isset($_SESSION['order'])) {
                             $count = mysqli_num_rows($result);
                             if ($count > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $id = $row['id'];
+                                    $id = $row['id_product'];
                                     $name = $row['name'];
                                     $description = $row['description'];
                                     $price = $row['price'];
