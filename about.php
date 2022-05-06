@@ -38,7 +38,7 @@
                 <div class="single-team-wrapper">
                     <div class="thumb">
                         <a href="/index.php#contact" id="nav-contact">
-                            <img class="fit-image" src="assets/images/team/1.jpg" alt="Team Image">
+                            <img class="fit-image" src="assets/images/team/1.jpg" alt="Team Image" style="height: 270px;">
                         </a>
                         <!-- Social Shear Start -->
                         <div class="social-share">
