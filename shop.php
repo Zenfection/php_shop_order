@@ -4,7 +4,7 @@
 <div class="section section-margin">
     <div class="container">
         <div class="row">
-            <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-12" data-aos="zoom-in-down">
                 <!--shop toolbar start-->
                 <div class="shop_toolbar_wrapper flex-column flex-md-row p-2 m-b-40 border">
 
@@ -70,10 +70,10 @@
                             $quantity = $results->data[$i]['quantity'];
                     ?>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
-                                <div class="product-inner">
+                                <div class="product-inner" id="product<?php echo $id?>">
                                     <div class="thumb">
                                         <a href="/detail_product.php?id=<?php echo $id ?>" class="image">
-                                            <img class="fit-image" src="assets/images/products/<?php echo $image ?>" alt="Product" width="270" height="270" />
+                                            <img class="fit-image" id="img-product<?php echo $id?>" src="assets/images/products/<?php echo $image ?>" alt="Product" width="270" height="270" />
                                         </a>
                                         <?php
                                         if ($discount > 0) {
@@ -85,8 +85,8 @@
                                         <?php
                                         }
                                         ?>
-                                        <div class="action-wrapper">
-                                            <a href="#/" class="action quickview" id="quickview<?php echo $id?>" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
+                                        <div class="action-wrapper" id="wrapper<?php echo $id?>">
+                                            <a href="/index.php#shop" class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
                                             <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="/index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
                                                 type: 'post',
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title"><a href="/detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
+                                        <h5 class="title"><a class="product-title" href="/detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
                                         <span class="rating">
                                             <?php
                                             for ($j = 0; $j < 5; $j++) {

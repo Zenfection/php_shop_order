@@ -15,7 +15,7 @@ include "./config/connect.php";
 
     <link rel="stylesheet" href="/assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="/assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
 
     <title>Shop Order</title>
@@ -38,7 +38,7 @@ include "./config/connect.php";
                     <div class="col-lg-5 d-none d-lg-block">
                         <div class="main-menu">
                             <ul>
-                                <li><a href="/index.php">Trang Chủ</a></li>
+                                <li><a id="nav-home" href="/index.php#home">Trang Chủ</a></li>
                                 <li><a id="nav-about" href="/index.php#about">Giới Thiệu</a></li>
                                 <li><a id="nav-shop" href="/index.php#shop">Shop</a></li>
                                 <li><a id="nav-contact" href="/index.php#contact">Liên Hệ</a></li>
@@ -80,7 +80,7 @@ include "./config/connect.php";
     </div>
 
     <div id="content">
-        <?php include "./home.php"?>
+        
     </div>
     <!-- Footer Section Start -->
     <footer class="section footer-section">
@@ -90,8 +90,8 @@ include "./config/connect.php";
                 <div class="row m-b-n40">
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
-                            <h1 class="widget-title">About Us</h1>
-                            <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
+                            <h1 class="widget-title">Giới Thiệu</h1>
+                            <p class="desc-content">ZenShop - Đặt đồ ăn vặt online nhanh chóng và tiện lợi hơn các trang web khác</p>
                             <!-- Soclial Link Start -->
                             <div class="widget-social justify-content-start m-b-n10">
                                 <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
@@ -105,34 +105,31 @@ include "./config/connect.php";
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Useful Links</h2>
+                            <h2 class="widget-title">Tính Năng</h2>
                             <ul class="widget-list">
-                                <li><a href="wishlist.html">Help & Contact Us</a></li>
-                                <li><a href="contact.html">Returns & Refunds</a></li>
-                                <li><a href="contact.html">Online Stores</a></li>
-                                <li><a href="contact.html">Terms & Conditions</a></li>
+                                <li><a href="/index.php#shop" id="nav-shop">Mua Hàng</a></li>
+                                <li><a href="/index.php#account" id="account">Dashboard</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Help</h2>
+                            <h2 class="widget-title">Hỗ Trợ</h2>
                             <ul class="widget-list">
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="contact.html">Pricing Plans</a></li>
-                                <li><a href="contact.html">Order Traking</a></li>
-                                <li><a href="contact.html">Returns</a></li>
+                                <li><a href="#">Phí Giao hàng</a></li>
+                                <li><a href="#">Tra cứu đơn hàng</a></li>
+                                <li><a href="#">Hoàn trả hàng</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Quick Menu</h2>
+                            <h2 class="widget-title">Thao Tác Nhanh</h2>
                             <ul class="widget-list">
-                                <li><a href="/login.php">Login</a></li>
-                                <li><a href="/my-account.php">My-Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="/index.php#checkout" id="nav-checkout">Checkout</a></li>
+                                <li><a href="/index.php#login" id="login">Đăng nhập</a></li>
+                                <li><a href="/index.php#register" id="register-account">Đăng ký</a></li>
+                                <li><a href="/index.php#viewcart" id="nav-viewcart">Xem Giỏ Hàng</a></li>
+                                <li><a href="/index.php#checkout" id="nav-checkout">Thanh Toán</a></li>
                             </ul>
                         </div>
                     </div>
@@ -147,7 +144,7 @@ include "./config/connect.php";
                 <div class="row align-items-center m-b-n20">
                     <div class="col-md-6 text-center text-md-start order-2 order-md-1 m-b-20">
                         <div class="copyright-content">
-                            <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="#">HasThemes.</a></p>
+                            <p class="mb-0">© 2022 <a href="https://github.com/zenfection/php_shop_order">Php_Shop_Order</a> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://github.com/zenfection">Zenfection.</a></p>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
@@ -163,14 +160,15 @@ include "./config/connect.php";
         <!-- Footer Bottom End -->
     </footer>
     <!-- Footer Section End -->
-
+    <div id="modal-product">
+        
+    </div>
     
     <script src="/assets/js/vendor.min.js"></script>
     <script src="/assets/js/plugins.min.js"></script>
 
     <!--Main JS-->
     <script src="/assets/js/main.js"></script>
-
 
 </body>
 

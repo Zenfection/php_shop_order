@@ -110,12 +110,12 @@ ul li {
 
 ::-moz-selection {
   color: #ffffff;
-  background: #f6ab49;
+  background: #ffad42;
 }
 
 ::selection {
   color: #ffffff;
-  background: #f6ab49;
+  background: #ffad42;
 }
 
 input[type="checkbox"] {
@@ -164,11 +164,11 @@ input[type="checkbox"] + label:after {
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 input[type="checkbox"]:checked + label:before {
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
 }
 
 input[type="checkbox"]:checked + label:after {
@@ -322,7 +322,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .rating i {
-  color: #f6ab49;
+  color: #ffad42;
   margin: 0 2px;
 }
 
@@ -384,7 +384,7 @@ input[type="checkbox"]:checked + label:after {
   width: 12px;
   height: 12px;
   opacity: 1;
-  background: #f6ab49;
+  background: #ffad42;
   border-radius: 100%;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -392,19 +392,19 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #f6ab49;
+  background: #ffad42;
 }
 
 .swiper-pagination.swiper-pagination-primary .swiper-pagination-bullet:hover:before {
-  background: #f6ab49;
+  background: #ffad42;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
 .swiper-pagination.swiper-pagination-primary .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  border: 2px solid #f6ab49;
-  background: #f6ab49;
+  border: 2px solid #ffad42;
+  background: #ffad42;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -439,7 +439,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .swiper-nav-button:hover {
-  color: #f6ab49;
+  color: #ffad42;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
@@ -496,7 +496,7 @@ input[type="checkbox"]:checked + label:after {
   padding: 10px;
   margin-right: 5px;
   margin-bottom: 5px;
-  background: #f6ab49;
+  background: #ffad42;
   text-align: center;
 }
 
@@ -600,21 +600,21 @@ input[type="checkbox"]:checked + label:after {
 .pagination .page-item .page-link {
   border-radius: 0;
   margin-right: 10px;
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
   height: 40px;
   width: 40px;
   text-align: center;
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .pagination .page-item .page-link.active {
-  background: #f6ab49;
+  background: #ffad42;
   color: #ffffff;
 }
 
 .pagination .page-item .page-link:hover {
-  background: #f6ab49;
-  border: 1px solid #f6ab49;
+  background: #ffad42;
+  border: 1px solid #ffad42;
   color: #ffffff;
 }
 
@@ -651,7 +651,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .scroll-top:hover {
-  background-color: #f6ab49;
+  background-color: #ffad42;
 }
 
 .scroll-top:hover i {
@@ -832,7 +832,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .header-top-settings > ul > li .dropdown-list li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .header-top-settings > ul > li .dropdown-list li a img {
@@ -980,7 +980,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .main-menu > ul > li > a:hover, .main-menu > ul > li > a.active {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .main-menu ul .has-children {
@@ -1004,7 +1004,7 @@ input[type="checkbox"]:checked + label:after {
   transition: all 0.3s ease-in-out;
   z-index: 9;
   padding-left: 0;
-  border-bottom: 3px solid #f6ab49;
+  border-bottom: 3px solid #ffad42;
 }
 
 .main-menu ul .has-children > .sub-menu > li {
@@ -1023,7 +1023,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .main-menu ul .has-children > .sub-menu > li > a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .main-menu ul .has-children > .sub-menu > li:last-child > a {
@@ -1065,7 +1065,7 @@ input[type="checkbox"]:checked + label:after {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   margin: 0 auto;
-  border-bottom: 3px solid #f6ab49;
+  border-bottom: 3px solid #ffad42;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1101,7 +1101,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .mega-menu > li > ul a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 /* Actions */
@@ -1148,7 +1148,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .header-actions .header-action-btn:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .header-actions .header-action-btn-cart {
@@ -1179,7 +1179,7 @@ input[type="checkbox"]:checked + label:after {
   text-align: center;
   color: #ffffff;
   border-radius: 50%;
-  background-color: #f6ab49;
+  background-color: #ffad42;
 }
 
 @media only screen and (max-width: 479px) {
@@ -1348,7 +1348,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .header-action-btn-search .header-search-form .header-search-button:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .cursor-pointer {
@@ -1454,7 +1454,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .cart-product-inner .single-cart-product .cart-product-content .title a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .cart-product-inner .single-cart-product .cart-product-content .product-quty-price {
@@ -1477,7 +1477,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .cart-product-inner .single-cart-product .cart-product-content .product-quty-price .cart-quantity strong {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .cart-product-inner .single-cart-product .cart-product-content .product-quty-price .price {
@@ -1496,7 +1496,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .cart-product-inner .cart-product-remove a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .cart-product-total {
@@ -1761,7 +1761,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .mobile-menu > .has-children.active > a {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .mobile-menu > .has-children.active > a i {
@@ -1798,7 +1798,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .mobile-menu > li > a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .mobile-menu > li:last-child {
@@ -1833,7 +1833,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .contact-links li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .contact-links li i {
@@ -1852,7 +1852,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .widget-social a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .offcanvas-lag-curr .header-top-lan-curr-link .dropdown {
@@ -1893,7 +1893,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .offcanvas-lag-curr .header-top-lan-curr-link .dropdown .dropdown-toggle:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .offcanvas-lag-curr .header-top-lan-curr-link .dropdown .dropdown-menu li a {
@@ -1929,10 +1929,10 @@ input[type="checkbox"]:checked + label:after {
 
 /* Button Color & Style (Solid) */
 .btn-primary {
-  border-color: #f6ab49;
-  background-color: #f6ab49;
+  border-color: #ffad42;
+  background-color: #ffad42;
   color: #ffffff;
-  background-color: #f6ab49;
+  background-color: #ffad42;
   border: 1px solid transparent;
 }
 
@@ -1981,8 +1981,8 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .btn-hover-primary:hover {
-  border-color: #f6ab49;
-  background-color: #f6ab49;
+  border-color: #ffad42;
+  background-color: #ffad42;
   color: #ffffff;
 }
 
@@ -2032,10 +2032,10 @@ input[type="checkbox"]:checked + label:after {
 
 /* Button Color & Style (Outline) */
 .btn-outline-primary {
-  border-color: #f6ab49;
-  background-color: #f6ab49;
+  border-color: #ffad42;
+  background-color: #ffad42;
   color: #ffffff;
-  background-color: #f6ab49;
+  background-color: #ffad42;
   border: 1px solid transparent;
 }
 
@@ -2084,8 +2084,8 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .btn-outline-hover-primary:hover {
-  border-color: #f6ab49;
-  background-color: #f6ab49;
+  border-color: #ffad42;
+  background-color: #ffad42;
   color: #ffffff;
 }
 
@@ -2328,7 +2328,7 @@ input[type="checkbox"]:checked + label:after {
 
 .hero-slider .main-slider-nav:hover {
   color: #ffffff;
-  background: #f6ab49;
+  background: #ffad42;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -2527,7 +2527,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product .thumb .action-wrapper .action:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .product .thumb .countdown-area {
@@ -2590,7 +2590,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product .badges span.new {
-  background-color: #f6ab49;
+  background-color: #ffad42;
 }
 
 .product .badges span.sale {
@@ -2631,7 +2631,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product .content .title a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .product .content .price {
@@ -2705,11 +2705,11 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product-tab-nav > li > a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .product-tab-nav > li > a.active {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .product-deal-content .title {
@@ -2719,7 +2719,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product-deal-content .title:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .product-deal-content .rating {
@@ -2771,7 +2771,7 @@ input[type="checkbox"]:checked + label:after {
   font-size: 18px;
   margin-left: 10px;
   text-decoration: line-through;
-  color: #f6ab49;
+  color: #ffad42;
   opacity: .5;
 }
 
@@ -2873,7 +2873,7 @@ input[type="checkbox"]:checked + label:after {
 
 .product-deal-carousel .swiper-nav-button:hover, .product-carousel .swiper-nav-button:hover {
   color: #ffffff;
-  background: #f6ab49;
+  background: #ffad42;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -3019,7 +3019,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .single-product-tab .nav-tabs .nav-item .nav-link:hover {
-  color: #f6ab49;
+  color: #ffad42;
   background-color: transparent;
 }
 
@@ -3032,7 +3032,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .single-product-tab .nav-tabs .nav-item .nav-link.active {
-  color: #f6ab49;
+  color: #ffad42;
   background-color: transparent;
 }
 
@@ -3051,7 +3051,7 @@ input[type="checkbox"]:checked + label:after {
   width: 0%;
   bottom: 0;
   left: 0;
-  background-color: #f6ab49;
+  background-color: #ffad42;
   opacity: 0;
   -webkit-transition: .4s;
   -o-transition: .4s;
@@ -3233,7 +3233,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .single-product-tab .comments-reply-area .comment-input input:focus, .single-product-tab .comments-reply-area .comment-input textarea:focus, .single-product-tab .comments-reply-area .comment-form-comment input:focus, .single-product-tab .comments-reply-area .comment-form-comment textarea:focus {
-  border-color: #f6ab49;
+  border-color: #ffad42;
 }
 
 .single-product-tab .comments-reply-area .comment-input textarea, .single-product-tab .comments-reply-area .comment-form-comment textarea {
@@ -3334,7 +3334,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product-summery .product-inventroy .inventory-varient {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .product-summery .product-size .size-ratio {
@@ -3417,9 +3417,9 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product-summery .action:hover {
-  background: #f6ab49;
+  background: #ffad42;
   color: #ffffff;
-  border-color: #f6ab49;
+  border-color: #ffad42;
 }
 
 .product-summery .social-share a {
@@ -3429,7 +3429,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product-summery .social-share a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 @media only screen and (max-width: 479px) {
@@ -3504,7 +3504,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .product-details-img .single-product-thumb .swiper-button-prev:hover, .product-details-img .single-product-thumb .swiper-button-next:hover {
-  background: #f6ab49;
+  background: #ffad42;
 }
 
 .product-details-img .single-product-thumb .swiper-button-prev:hover i, .product-details-img .single-product-thumb .swiper-button-next:hover i {
@@ -3579,7 +3579,7 @@ input[type="checkbox"]:checked + label:after {
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
-  background-color: #f6ab49;
+  background-color: #ffad42;
   color: #ffffff;
 }
 
@@ -3633,7 +3633,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .group-quantity-product table tbody .pro-title a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 /*=======================================
@@ -3728,7 +3728,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .single-team-wrapper .thumb .social-share a:hover {
-  background: #f6ab49;
+  background: #ffad42;
   color: #ffffff;
 }
 
@@ -3827,7 +3827,7 @@ input[type="checkbox"]:checked + label:after {
 .testimonial-thumb img {
   width: 100px;
   height: 100px;
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
   border-radius: 100%;
 }
 
@@ -3931,7 +3931,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .breadcrumb-wrapper ul li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .breadcrumb-wrapper ul li::after {
@@ -4026,8 +4026,8 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .sidebar_widget .widget_inner .search-box .search-icon:hover {
-  background: #f6ab49;
-  border-color: #f6ab49;
+  background: #ffad42;
+  border-color: #ffad42;
   color: #ffffff;
 }
 
@@ -4057,7 +4057,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .sidebar_widget .widget_inner .widget-list .sidebar-body .checkbox-container .custom-control-label:hover {
-  color: #f6ab49;
+  color: #ffad42;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -4075,7 +4075,7 @@ input[type="checkbox"]:checked + label:after {
 
 .sidebar_widget .blog-list-wrapper .single-blog-list .blog-thumb {
   width: 70px;
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
   height: 100%;
 }
 
@@ -4094,7 +4094,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .sidebar_widget .blog-list-wrapper .single-blog-list .blog-list-content .blog-name a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .sidebar_widget .blog-list-wrapper .single-blog-list .blog-list-content .blog-meta p {
@@ -4122,7 +4122,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .sidebar-list > li > a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .sidebar-list > li:last-child a {
@@ -4145,8 +4145,8 @@ input[type="checkbox"]:checked + label:after {
 
 .tags li a:hover {
   color: #ffffff;
-  background: #f6ab49;
-  border-color: #f6ab49;
+  background: #ffad42;
+  border-color: #ffad42;
 }
 
 .single-product-list {
@@ -4179,7 +4179,7 @@ input[type="checkbox"]:checked + label:after {
 
 .single-product-list .product-list-content .product-name:hover a {
   text-decoration: underline;
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .single-product-list .product-list-content .price {
@@ -4205,7 +4205,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .single-product-list .product-list-content .price span.new {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .single-product-list .product-list-content .price span.old {
@@ -4241,7 +4241,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .sidebar-body-archive .archive-list li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
   padding-left: 5px;
 }
 
@@ -4365,7 +4365,7 @@ input[type="checkbox"]:checked + label:after {
 
 .modal-product-carousel .swiper-button-prev i:hover, .modal-product-carousel .swiper-button-next i:hover {
   color: #ffffff;
-  background: #f6ab49 !important;
+  background: #ffad42 !important;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
@@ -4398,7 +4398,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .single-footer-widget .widget-social a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .single-footer-widget .widget-list li {
@@ -4412,7 +4412,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .single-footer-widget .widget-list li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
   padding-left: 5px;
 }
 
@@ -4456,7 +4456,7 @@ input[type="checkbox"]:checked + label:after {
 
 .newsletter-form-wrap .mc-form .newsletter-btn {
   position: absolute;
-  background: #f6ab49;
+  background: #ffad42;
   top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -4494,7 +4494,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .copyright-content p a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .footer-bottom .payment a {
@@ -4510,7 +4510,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .bg-name-primary {
-  background-color: #f6ab49;
+  background-color: #ffad42;
 }
 
 .bg-name-dark {
@@ -5165,7 +5165,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .blog-content .blog-meta ul li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .blog-content .blog-title {
@@ -5191,7 +5191,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .blog-content .blog-title a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .blog-content p {
@@ -5225,7 +5225,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .blog-content .more-link:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .blog-details-wrapper .blog-image {
@@ -5286,7 +5286,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .blog-details-wrapper .blog-details-title-meta .blog-meta li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .blog-details-wrapper p {
@@ -5370,7 +5370,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .blog-details-wrapper .blog-details-tag-social .blog-details-tag ul li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .blog-details-wrapper .blog-details-tag-social .widget-social a {
@@ -5534,7 +5534,7 @@ input[type="checkbox"]:checked + label:after {
 
 .shop_toolbar_wrapper .shop_toolbar_btn button.active {
   color: #ffffff;
-  background: #f6ab49;
+  background: #ffad42;
 }
 
 .shop_toolbar_wrapper .shop_toolbar_btn button:focus {
@@ -5545,8 +5545,8 @@ input[type="checkbox"]:checked + label:after {
 
 .shop_toolbar_wrapper .shop_toolbar_btn button:hover {
   color: #ffffff;
-  background: #f6ab49;
-  border-color: #f6ab49;
+  background: #ffad42;
+  border-color: #ffad42;
 }
 
 .shop_toolbar_wrapper .shop-top-bar-right {
@@ -5652,12 +5652,12 @@ input[type="checkbox"]:checked + label:after {
 .shop_toolbar_wrapper .shop-bottom-bar-left .shop-short-by .nice-select li:hover {
   padding-left: 5px;
   display: block;
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .shop_toolbar_wrapper .shop-top-bar-right .shop-short-by .nice-select:focus,
 .shop_toolbar_wrapper .shop-bottom-bar-left .shop-short-by .nice-select:focus {
-  border-color: #f6ab49;
+  border-color: #ffad42;
 }
 
 .shop_toolbar_wrapper .shop-top-bar-right .shop-short-by .nice-select .current,
@@ -5840,9 +5840,9 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .grid_list .product .content .action-btn .action:hover {
-  background: #f6ab49;
+  background: #ffad42;
   color: #ffffff;
-  border-color: #f6ab49;
+  border-color: #ffad42;
 }
 
 /* Shop Wrapper End */
@@ -5897,7 +5897,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .contact-content .contact-block ul li a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .contact-content .working-time .title {
@@ -5964,8 +5964,8 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .myaccount-tab-menu a:hover, .myaccount-tab-menu a.active {
-  background-color: #f6ab49;
-  border-color: #f6ab49;
+  background-color: #ffad42;
+  border-color: #ffad42;
   color: #ffffff;
 }
 
@@ -6012,7 +6012,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .myaccount-content form .single-input-item input:focus {
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
 }
 
 .myaccount-content form .single-input-item .required {
@@ -6063,12 +6063,12 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .myaccount-content .welcome a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .myaccount-content .welcome strong {
   font-weight: 600;
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .myaccount-content fieldset {
@@ -6106,7 +6106,7 @@ input[type="checkbox"]:checked + label:after {
 
 .saved-message {
   background-color: #ebebeb;
-  border-top: 3px solid #f6ab49;
+  border-top: 3px solid #ffad42;
   border-radius: 5px 5px 0 0;
   font-weight: 600;
   font-size: 15px;
@@ -6203,7 +6203,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .login-wrapper .single-input-item .login-reg-form-meta .forget-pwd:hover, .register-wrapper .single-input-item .login-reg-form-meta .forget-pwd:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .login-wrapper .lost-password a, .register-wrapper .lost-password a {
@@ -6214,7 +6214,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .login-wrapper .lost-password a:hover, .register-wrapper .lost-password a:hover {
-  color: #f6ab49;
+  color: #ffad42;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -6291,7 +6291,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .wishlist-table .table tbody td a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .wishlist-table .table tbody td a.btn {
@@ -6411,7 +6411,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .cart-table .table tbody td a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .cart-table .table tbody td a.btn {
@@ -6535,7 +6535,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .cart-calculator-wrapper .cart-calculate-items .table tr td.total-amount {
-  color: #f6ab49;
+  color: #ffad42;
   font-weight: 700;
 }
 
@@ -6574,7 +6574,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .coupon-accordion .title span:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .coupon-accordion span {
@@ -6604,7 +6604,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .coupon-accordion .coupon-content .coupon-info p.form-row-first label span .required, .coupon-accordion .coupon-content .coupon-info p.form-row-last label span .required {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .coupon-accordion .coupon-content .coupon-info p.form-row-first input, .coupon-accordion .coupon-content .coupon-info p.form-row-last input {
@@ -6619,7 +6619,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .coupon-accordion .coupon-content .coupon-info p.form-row-first input:focus, .coupon-accordion .coupon-content .coupon-info p.form-row-last input:focus {
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
 }
 
 .coupon-accordion .coupon-content .coupon-info p .form-row input[type="submit"] {
@@ -6664,7 +6664,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .coupon-accordion .coupon-content .coupon-info .lost-password a:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .coupon-accordion .coupon-content .coupon-info .coupon-text {
@@ -6698,7 +6698,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .coupon-checkout-content .coupon-info .checkout-coupon input[type="text"]:focus {
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
 }
 
 .coupon-checkout-content .coupon-info .checkout-coupon input[type="submit"] {
@@ -6751,7 +6751,7 @@ input[type="checkbox"]:checked + label:after {
 .checkbox-form .checkout-form-list input[type="text"]:focus,
 .checkbox-form .checkout-form-list input[type="password"]:focus,
 .checkbox-form .checkout-form-list input[type="email"]:focus {
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
 }
 
 .checkbox-form .checkout-form-list.create-acc {
@@ -6791,7 +6791,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .checkbox-label:hover {
-  color: #f6ab49;
+  color: #ffad42;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
@@ -6822,7 +6822,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .order-notes textarea:focus {
-  border: 1px solid #f6ab49;
+  border: 1px solid #ffad42;
 }
 
 .your-order-area {
@@ -6940,7 +6940,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .payment-accordion .single-payment .panel-title .collapse-off:hover {
-  background: #f6ab49;
+  background: #ffad42;
   color: #ffffff;
 }
 
@@ -7008,7 +7008,7 @@ input[type="checkbox"]:checked + label:after {
 .compare-table .table tbody tr td.product-image-title .category {
   float: left;
   clear: both;
-  color: #f6ab49;
+  color: #ffad42;
   text-transform: capitalize;
   letter-spacing: 0.5px;
 }
@@ -7023,7 +7023,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .compare-table .table tbody tr td.product-image-title .title:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .compare-table .table tbody tr td.pro-desc p {
@@ -7052,7 +7052,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .compare-table .table tbody tr td.pro-remove button:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 /*=======================================
@@ -7093,7 +7093,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .accordion .card-header .btn:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }
 
 .accordion .card-body {
@@ -7166,7 +7166,7 @@ input[type="checkbox"]:checked + label:after {
 .error_form .title {
   font-size: 200px;
   font-weight: 700;
-  color: #f6ab49;
+  color: #ffad42;
   letter-spacing: 10px;
   line-height: .73;
   margin: 0 0 52px;
@@ -7257,5 +7257,5 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .error_form .search-form-error .submit-btn:hover {
-  color: #f6ab49;
+  color: #ffad42;
 }

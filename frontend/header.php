@@ -54,10 +54,10 @@ include "./config/connect.php";
                             <!-- account login -->
                             <?php
                             if (isset($_SESSION['user'])) {
-                                echo "<a href='/account.php' class='header-action-btn header-action-btn-wishlist'>
+                                echo "<a href='/index.php#account' class='header-action-btn header-action-btn-wishlist'>
                                     <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
                             } else {
-                                echo "<a href='/login.php' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                                echo "<a href='/index.php#login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
                             }
                             ?>
                             <?php include "cart.php" ?>

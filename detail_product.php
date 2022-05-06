@@ -12,7 +12,7 @@
 
                     <!-- Single Product Image Start -->
                     <div class="single-product-img swiper-container product-gallery-top">
-                    <div class="swiper-wrapper popup-gallery">
+                        <div class="swiper-wrapper popup-gallery">
                             <?php
                             $id = $_GET['id'];
                             $sql = "SELECT * FROM `tb_product` WHERE id_product = $id";
@@ -28,7 +28,7 @@
                             $id_category = $row['id_category'];
                             ?>
                             <a class='swiper-slide w-100'>
-                                <img class='w-100 rounded' id="img-product<?php echo $id?>" src='/assets/images/products/<?php echo $image?>' alt='Product'>
+                                <img class='w-100 rounded' id="img-product<?php echo $id ?>" src='/assets/images/products/<?php echo $image ?>' alt='Product'>
                             </a>";
                             ?>
 
@@ -127,7 +127,7 @@
                     <!-- Cart Button Start -->
                     <div class="cart-btn action-btn m-b-30">
                         <div class="action-cart-btn-wrapper d-flex">
-                            <div class="add-to_cart" id="product<?php echo $id?>">
+                            <div class="add-to_cart" id="product<?php echo $id ?>">
                                 <a class="btn btn-primary btn-hover-dark rounded">Add to cart</a>
                             </div>
                             <a href="wishlist.html" title="Wishlist" class="action"><i class="ti-heart"></i></a>
@@ -261,8 +261,8 @@
                                             <div class="product">
                                                 <!-- Thumb Start  -->
                                                 <div class="thumb">
-                                                    <a href="/detail_product.php?id=<?php echo $id?>" class="image">
-                                                        <img class="fit-image rounded" src="/assets/images/products/<?php echo $image?>" alt="Product" />
+                                                    <a href="/detail_product.php?id=<?php echo $id ?>" class="image">
+                                                        <img class="fit-image rounded" src="/assets/images/products/<?php echo $image ?>" alt="Product" />
                                                     </a>
                                                     <?php
                                                     if ($discount > 0) {
@@ -274,17 +274,23 @@
                                                     <?php
                                                     }
                                                     ?>
-                                                    <div class="action-wrapper">
-                                                        <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
+                                                    <div class="action-wrapper" id="wrapper<?php echo $id ?>">
+                                                        <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
                                                         <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                                        <a href="/backend/add_product_cart.php?id_product=<?echo $id?>?qty=<?php echo $amount?>" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                                                        <a href="/index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
+                                                type: 'post',
+                                                url: '/viewcart.php',
+                                                success: function(data){
+                                                    $('#content').html(data);
+                                                }
+                                            });"><i class="ti-shopping-cart"></i></a>
                                                     </div>
                                                 </div>
                                                 <!-- Thumb End  -->
 
                                                 <!-- Content Start  -->
                                                 <div class="content">
-                                                    <h5 class="title"><a href="/detail_product.php?id=<?php echo $id?>"><?php echo $name ?></a></h5>
+                                                    <h5 class="title"><a href="/detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
                                                     <span class="rating">
                                                         <?php
                                                         for ($j = 0; $j < 5; $j++) {

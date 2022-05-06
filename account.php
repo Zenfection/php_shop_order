@@ -1,7 +1,8 @@
 <?php
 include "./config/connect.php";
 if (!isset($_SESSION['user'])) {
-    echo "<script>window.location.href='/login.php'</script>";
+    echo "<script>window.location.href='/index.php#login';
+    location.reload();</script>";
 }
 if (isset($_SESSION['change_pwd'])) {
     echo $_SESSION['change_pwd'];
@@ -91,12 +92,12 @@ if (isset($_SESSION['change_pwd'])) {
                                                             $status = $row['status'];
                                                             $total_money = $row['total_money'];
                                                     ?>
-                                                            <tr>
+                                                            <tr id="id_order=<?php echo $id_order?>">
                                                                 <td><?php echo $id_order?></td>
                                                                 <td><?php echo $order_date?></td>
                                                                 <td><?php echo $status?></td>
                                                                 <td><?php echo $total_money?>$</td>
-                                                                <td><a href="/index.php#viewcart" id="nav-viewcart" class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">Chi Tiết</a></td>
+                                                                <td><a href="/index.php#account" id="nav-order-view" class="btn btn btn-dark btn-hover-primary btn-sm rounded">Xem</a></td>
                                                             </tr>
                                                     <?php
                                                         }
