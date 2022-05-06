@@ -107,30 +107,8 @@
   });
 
   /*----------------------------------------
-	   Slider Activation
+	Slider Activation
     ------------------------------------------*/
-
-  /* Hero Slider Activation */
-  var swiper = new Swiper('.hero-slider.swiper-container', {
-    loop: true,
-    speed: 1150,
-    spaceBetween: 30,
-    slidesPerView: 1,
-    effect: 'fade',
-    pagination: true,
-    navigation: true,
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.hero-slider .home-slider-next',
-      prevEl: '.hero-slider .home-slider-prev'
-    },
-    pagination: {
-      el: '.hero-slider .swiper-pagination',
-      type: 'bullets',
-      clickable: 'true'
-    },
-  });
 
   /* Product Deal Activation */
   var swiper = new Swiper('.product-deal-carousel .swiper-container', {

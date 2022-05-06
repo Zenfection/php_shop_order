@@ -2,7 +2,6 @@
 include "./config/connect.php";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +12,24 @@ include "./config/connect.php";
 
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <link rel="stylesheet" href="/assets/css/vendor/vendor.min.css">
-    <link rel="stylesheet" href="/assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="/assets/css/style.min.css">
-    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/themify-icons-min.css">
+
+    <link rel="stylesheet" href="/assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/aos.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/lightgallery.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/nice-select.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <title>Shop Order</title>
 </head>
 
 <body>
-    <div class="header-bottom">
+<div class="header-bottom">
         <div class="header-sticky">
             <div class="container">
                 <div class="row align-items-center position-relative">
@@ -38,10 +45,10 @@ include "./config/connect.php";
                     <div class="col-lg-5 d-none d-lg-block">
                         <div class="main-menu">
                             <ul>
-                                <li id="nav-home"><a href="/index.php#home">Trang Chủ</a></li>
-                                <li id="nav-about"><a href="/index.php#about">Giới Thiệu</a></li>
-                                <li id="nav-shop"><a href="/index.php#shop">Shop</a></li>
-                                <li id="nav-contact"><a href="/index.php#contact">Liên Hệ</a></li>
+                                <li><a id="nav-home" href="/index.php#home">Trang Chủ</a></li>
+                                <li><a id="nav-about" href="/index.php#about">Giới Thiệu</a></li>
+                                <li><a id="nav-shop" href="/index.php#shop">Shop</a></li>
+                                <li><a id="nav-contact" href="/index.php#contact">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -50,17 +57,17 @@ include "./config/connect.php";
                     <!-- Header Action Start -->
                     <div class="col-lg-4 col-md-8 col-6">
                         <div class="header-actions">
-                            <?php include "search.php" ?>
+                            <?php include "./frontend/search.php" ?>
                             <!-- account login -->
                             <?php
                             if (isset($_SESSION['user'])) {
-                                echo "<a href='/index.php#account' class='header-action-btn header-action-btn-wishlist'>
+                                echo "<a href='#account' id='account' class='header-action-btn header-action-btn-wishlist'>
                                     <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
                             } else {
-                                echo "<a href='/index.php#login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                                echo "<a href='#login' id='login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
                             }
                             ?>
-                            <?php include "cart.php" ?>
+                            <?php include "./frontend/cart.php" ?>
                             <!-- Scroll Top Start -->
                             <a href="#" class="scroll-top show rounded" id="scroll-top">
                                 <i class="arrow-top ti-angle-double-up"></i>

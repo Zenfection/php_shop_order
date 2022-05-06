@@ -24,7 +24,7 @@ if (isset($_SESSION['order'])) {
                         <h5 class="sub-title">Thực phẩm đa dạng.</h5>
                         <h2 class="title m-0">KHÔNG CHẤT BẢO QUẢN</h2>
                         <p class="ms-0">Tất cả được làm bằng 100% thiên nhiên không chất phụ gia.</p>
-                        <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a href="/index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@ if (isset($_SESSION['order'])) {
                         <h5 class="sub-title">Giao nhận nhanh chóng.</h5>
                         <h2 class="title m-0">FREESHIP TOÀN HÀNG</h2>
                         <p>Các đơn hàng có giá trị trên 200k sẽ được freeship.</p>
-                        <a href="/category.php" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a href="/index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@ if (isset($_SESSION['order'])) {
 <!-- Category Section Start -->
 <div class="section section-margin">
     <div class="container">
-        <h2>Category</h2>
+        <h2>Loại Đồ Ăn</h2>
         <!-- Banners Start -->
         <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30">
             <?php
@@ -150,7 +150,8 @@ if (isset($_SESSION['order'])) {
                                 echo "<div class='error'>Image not Available</div>";
                             } else {
                             ?>
-                                <img class="fit-image rounded" src="assets/images/category/<?php echo $image; ?>" alt="Banner Image" />
+                                <img class="fit-image" src="assets/images/category/<?php echo $image; ?>" alt="Banner Image" width="250px" height="300px" 
+                                style="border-radius: 20px"/>
                             <?php
                             }
                             ?>
@@ -271,3 +272,28 @@ if (isset($_SESSION['order'])) {
     </div>
 </div>
 <!-- Product Section End -->
+
+<script>
+/* Hero Slider Activation */
+var swiper = new Swiper('.hero-slider.swiper-container', {
+    loop: true,
+    speed: 1150,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    effect: 'fade',
+    pagination: true,
+    navigation: true,
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.hero-slider .home-slider-next',
+        prevEl: '.hero-slider .home-slider-prev'
+    },
+    pagination: {
+        el: '.hero-slider .swiper-pagination',
+        type: 'bullets',
+        clickable: 'true'
+    },
+});
+
+</script>
