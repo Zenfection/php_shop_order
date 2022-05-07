@@ -699,7 +699,7 @@
         loadContent('/login.php'); 
       }
       else{
-        loadContent('/login.php');
+        loadContent('/account.php');
       }
     });
     $(document).on('click', '#register-account',function(){
