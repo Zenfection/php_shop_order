@@ -13,7 +13,7 @@
 
                 <!-- Contact Form Wrapper Start -->
                 <div class="contact-form-wrapper contact-form">
-                    <form action="assets/php/amber.php" id="contact-form" method="post">
+                    <form action="" id="contactForm" method="post">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
@@ -68,3 +68,64 @@
     </div>
 </div>
 <!-- Contact us Section End -->
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        $('#contactForm').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 3
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                subject: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 30
+                },
+                message: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 300
+                }
+            },
+            messages: {
+                name: {
+                    required: 'Vui lòng nhập họ tên',
+                    minlength: 'Họ tên phải có ít nhất 3 ký tự'
+                },
+                email: {
+                    required: 'Vui lòng nhập email',
+                    email: 'Vui lòng nhập đúng định dạng email'
+                },
+                subject: {
+                    required: 'Vui lòng nhập chủ đề',
+                    minlength: 'Chủ đề phải có ít nhất 3 ký tự',
+                },
+                message: {
+                    required: 'Vui lòng nhập tin nhắn',
+                    minlength: 'Tin nhắn phải có ít nhất 3 ký tự',
+                    maxlength: 'Tin nhắn không được quá 300 ký tự'
+                },
+            },
+            errorElement: 'div',
+            errorPlacement: (error, element) => {
+                error.addClass('invalid-feedback');
+                if (element.prop('type') === 'checkbox') {
+                    error.insertAfter(element.siblings('label'));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-invalid').removeClass('is-valid').show();
+            },
+            unhighlight: (element, errorClass, validClass) => {
+                $(element).addClass('is-valid').removeClass('is-invalid').show();
+            }
+        })
+    });
+</script>
