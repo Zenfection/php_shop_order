@@ -12,24 +12,27 @@ include "./config/connect.php";
 
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/vendor/fontawesome.min.css">
-    <link rel="stylesheet" href="/assets/css/vendor/simple-line-icons.min.css">
-    <link rel="stylesheet" href="/assets/css/vendor/themify-icons-min.css">
+    <!-- Vendor CSS (Icon Font) -->
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/simple-line-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/themify-icons-min.css" />
 
-    <link rel="stylesheet" href="/assets/css/plugins/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/plugins/aos.min.css">
-    <link rel="stylesheet" href="/assets/css/plugins/lightgallery.min.css">
-    <link rel="stylesheet" href="/assets/css/plugins/nice-select.min.css">
-    <link rel="stylesheet" href="/assets/css/plugins/swiper-bundle.min.css">
 
+    <!-- Plugins CSS (All Plugins Files) -->
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/aos.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" />
+
+    <!-- Main Style CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
-
     <title>Shop Order</title>
 </head>
 
 <body>
-<div class="header-bottom">
+    <div class="header-bottom">
         <div class="header-sticky">
             <div class="container">
                 <div class="row align-items-center position-relative">

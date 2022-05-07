@@ -39,7 +39,7 @@
   --------------------- */
 
   $(document).on('click','.cart-visible', function () {
-    $(".header-cart-content").slideToggle("slow");
+    $(".header-cart-content").slideToggle();
   });
 
   /*-----------------------------------------
@@ -352,6 +352,17 @@
   /*-------------------------
       Ajax Function
   ---------------------------*/
+  function choosePage(id){
+    $.ajax({
+      type: 'get',
+      url: '/shop.php',
+      data: {page: id},
+      success: function(data){
+        $('#content').html(data);
+        AOS.init();
+      }
+    });
+  }
   function checkProductCart(id) {
     let check = $('.cart-product-wrapper .cart-product-inner');
     for (let i = 0; i < check.length; i++) {
@@ -544,51 +555,70 @@
               </div>
           </div>`;
           $('.cart-product-wrapper').append(html);
-          $('#product_id'+id).hide().fadeIn('slow');
+          $('#product_id'+id).hide().fadeIn();
           $('#totalmoney').text(parseFloat(totalMoney).toFixed(2) + '$');
         }
       }
     });
   });
+  $(document).keydown(function(e){
+    switch (e.which){
+    // case 37:    //left arrow key
+    //     console.log(123)
+    //     break;
+    // case 38:    //up arrow key
+    //   console.log(123)
+    //     break;
+    // case 39:    //right arrow key
+    //     $(".box").finish().animate({
+    //         left: "+=50"
+    //     });
+    //     break;
+    // case 40:    //bottom arrow key
+    //     $(".box").finish().animate({
+    //         top: "+=50"
+    //     });
+    //     break;
+    case 27:    //esc key
+      console.log(123);
+      break;
+    }
+  });
+  function goBack() {
+    window.location.hash = window.location.lasthash[window.location.lasthash.length-1];
+    //blah blah blah
+    window.location.lasthash.pop();
+}
+  $(document).keydown('.shop_wrapper grid_4', function(e){
+    let next = $('.page-item a[aria-label="Next"]');
+    let prev = $('.page-item a[aria-label="Prev"]');
+    switch (e.which){
+      case 37:    //left arrow key
+        if(prev.length > 0){
+          let id = parseInt($(prev).attr('name').split('page=')[1]);
+          choosePage(id - 1);
+        }
+        break;
+      case 39:   //right arrow key
+        if(next.length > 0){
+          let id = parseInt($(next).attr('name').split('page=')[1]);
+          choosePage(id + 1);
+        }
+        break;
+    }
+  })
 
   $(document).on('click', '.page-item a[aria-label="Next"]', function(){
-    let id = $(this).attr('name').split('page=')[1];
-    id = parseInt(id);
-    $.ajax({
-      type: 'get',
-      url: '/shop.php',
-      data: {page: id + 1},
-      success: function(data){
-        $('#content').html(data);
-        AOS.init();
-      }
-    });
+    let id = parseInt($(this).attr('name').split('page=')[1]);
+    choosePage(id + 1);
   });
   $(document).on('click', '.page-item a[aria-label="Prev"]', function(){
-    let id = $(this).attr('name').split('page=')[1];
-    id = parseInt(id);
-    $.ajax({
-      type: 'get',
-      url: '/shop.php',
-      data: {page: id - 1},
-      success: function(data){
-        $('#content').html(data);
-        AOS.init();
-      }
-    });
+    let id = parseInt($(this).attr('name').split('page=')[1]);
+    choosePage(id - 1);
   });
   $(document).on('click', '#page-choose', function(){
-    let id = $(this).attr('name').split('page=')[1];
-    id = parseInt(id);
-    $.ajax({
-      type: 'get',
-      url: '/shop.php',
-      data: {page: id},
-      success: function(data){
-        $('#content').html(data);
-        AOS.init();
-      }
-    });
+    let id = parseInt($(this).attr('name').split('page=')[1]);
+    choosePage(id);
   });
   /*-------------------------
       Ajax Cart View

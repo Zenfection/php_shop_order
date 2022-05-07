@@ -6,7 +6,7 @@ USE `shop_order`;
 CREATE TABLE tb_cart
 (
   username   varchar(255) NOT NULL,
-  id_product int(11)      NOT NULL UNIQUE,
+  id_product int(11)      NOT NULL,
   amount     int          NOT NULL
 );
 

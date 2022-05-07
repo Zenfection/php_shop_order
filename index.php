@@ -1,7 +1,7 @@
 <?php include "./frontend/header.php" ?>
 
-<div id="content">
+    <div id="content">
 
-</div>
+    </div>
 
 <?php include "./frontend/footer.php" ?>

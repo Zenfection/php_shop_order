@@ -13,7 +13,7 @@
                                 ('$user', $id, $qty)";
                 }
                 else{
-                        // chỉ tăng ôố lượng
+                        // chỉ tăng số lượng
                         $sql = "UPDATE `tb_cart` 
                                 SET amount = amount + 1
                                 WHERE username = '$user' 
