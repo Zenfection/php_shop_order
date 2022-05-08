@@ -260,7 +260,7 @@ $(function () {
 		stroke: {
 			dashArray: 4
 		},
-		labels: ['Received'],
+		labels: ['Đã Giao'],
 		responsive: [{
 			breakpoint: 480,
 			options: {
