@@ -61,6 +61,9 @@
                     if ($limit > 0) {
                         for ($i = 0; $i < $limit; $i++) {
                             $id = $results->data[$i]['id_product'];
+                            if($id == ''){
+                                break;
+                            }
                             $name = $results->data[$i]['name'];
                             $description = $results->data[$i]['description'];
                             $price = $results->data[$i]['price'];
