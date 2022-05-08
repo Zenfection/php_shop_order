@@ -1,0 +1,1558 @@
+<!doctype html>
+<html lang="en" class="color-sidebar sidebarcolor3 color-header headercolor1">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="assets/css/pace.min.css" rel="stylesheet" />
+	<script src="assets/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="assets/css/app.css" rel="stylesheet">
+	<link href="assets/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<link rel="stylesheet" href="assets/css/dark-theme.css" />
+	<link rel="stylesheet" href="assets/css/semi-dark.css" />
+	<link rel="stylesheet" href="assets/css/header-colors.css" />
+	<title>Synadmin – Bootstrap5 Admin Template</title>
+</head>
+
+<body>
+	<!--wrapper-->
+	<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+				<div>
+					<img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">Synadmin</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-first-page'></i>
+				</div>
+			</div>
+			<!--navigation-->
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home'></i>
+						</div>
+						<div class="menu-title">Dashboard</div>
+					</a>
+					<ul>
+						<li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
+						</li>
+						<li> <a href="index2.html"><i class="bx bx-right-arrow-alt"></i>Sales</a>
+						</li>
+						<li> <a href="index3.html"><i class="bx bx-right-arrow-alt"></i>eCommerce</a>
+						</li>
+						<li> <a href="index4.html"><i class="bx bx-right-arrow-alt"></i>Alternate</a>
+						</li>
+						<li> <a href="index5.html"><i class="bx bx-right-arrow-alt"></i>Hospitality</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-spa' ></i>
+						</div>
+						<div class="menu-title">Application</div>
+					</a>
+					<ul>
+						<li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
+						</li>
+						<li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
+						</li>
+						<li> <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>File Manager</a>
+						</li>
+						<li> <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Contatcs</a>
+						</li>
+						<li> <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Todo List</a>
+						</li>
+						<li> <a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i>Invoice</a>
+						</li>
+						<li> <a href="app-fullcalender.html"><i class="bx bx-right-arrow-alt"></i>Calendar</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-label">UI Elements</li>
+				<li>
+					<a href="widgets.html">
+						<div class="parent-icon"><i class='bx bx-briefcase-alt-2'></i>
+						</div>
+						<div class="menu-title">Widgets</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart-alt' ></i>
+						</div>
+						<div class="menu-title">eCommerce</div>
+					</a>
+					<ul>
+						<li> <a href="ecommerce-products.html"><i class="bx bx-right-arrow-alt"></i>Products</a>
+						</li>
+						<li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>Product Details</a>
+						</li>
+						<li> <a href="ecommerce-add-new-products.html"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
+						</li>
+						<li> <a href="ecommerce-orders.html"><i class="bx bx-right-arrow-alt"></i>Orders</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class='bx bx-gift'></i>
+						</div>
+						<div class="menu-title">Components</div>
+					</a>
+					<ul>
+						<li> <a href="component-alerts.html"><i class="bx bx-right-arrow-alt"></i>Alerts</a>
+						</li>
+						<li> <a href="component-accordions.html"><i class="bx bx-right-arrow-alt"></i>Accordions</a>
+						</li>
+						<li> <a href="component-badges.html"><i class="bx bx-right-arrow-alt"></i>Badges</a>
+						</li>
+						<li> <a href="component-buttons.html"><i class="bx bx-right-arrow-alt"></i>Buttons</a>
+						</li>
+						<li> <a href="component-cards.html"><i class="bx bx-right-arrow-alt"></i>Cards</a>
+						</li>
+						<li> <a href="component-carousels.html"><i class="bx bx-right-arrow-alt"></i>Carousels</a>
+						</li>
+						<li> <a href="component-list-groups.html"><i class="bx bx-right-arrow-alt"></i>List Groups</a>
+						</li>
+						<li> <a href="component-media-object.html"><i class="bx bx-right-arrow-alt"></i>Media Objects</a>
+						</li>
+						<li> <a href="component-modals.html"><i class="bx bx-right-arrow-alt"></i>Modals</a>
+						</li>
+						<li> <a href="component-navs-tabs.html"><i class="bx bx-right-arrow-alt"></i>Navs & Tabs</a>
+						</li>
+						<li> <a href="component-navbar.html"><i class="bx bx-right-arrow-alt"></i>Navbar</a>
+						</li>
+						<li> <a href="component-paginations.html"><i class="bx bx-right-arrow-alt"></i>Pagination</a>
+						</li>
+						<li> <a href="component-popovers-tooltips.html"><i class="bx bx-right-arrow-alt"></i>Popovers & Tooltips</a>
+						</li>
+						<li> <a href="component-progress-bars.html"><i class="bx bx-right-arrow-alt"></i>Progress</a>
+						</li>
+						<li> <a href="component-spinners.html"><i class="bx bx-right-arrow-alt"></i>Spinners</a>
+						</li>
+						<li> <a href="component-notifications.html"><i class="bx bx-right-arrow-alt"></i>Notifications</a>
+						</li>
+						<li> <a href="component-avtars-chips.html"><i class="bx bx-right-arrow-alt"></i>Avatrs & Chips</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class='bx bx-command' ></i>
+						</div>
+						<div class="menu-title">Content</div>
+					</a>
+					<ul>
+						<li> <a href="content-grid-system.html"><i class="bx bx-right-arrow-alt"></i>Grid System</a>
+						</li>
+						<li> <a href="content-typography.html"><i class="bx bx-right-arrow-alt"></i>Typography</a>
+						</li>
+						<li> <a href="content-text-utilities.html"><i class="bx bx-right-arrow-alt"></i>Text Utilities</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"> <i class='bx bx-atom'></i>
+						</div>
+						<div class="menu-title">Icons</div>
+					</a>
+					<ul>
+						<li> <a href="icons-line-icons.html"><i class="bx bx-right-arrow-alt"></i>Line Icons</a>
+						</li>
+						<li> <a href="icons-boxicons.html"><i class="bx bx-right-arrow-alt"></i>Boxicons</a>
+						</li>
+						<li> <a href="icons-feather-icons.html"><i class="bx bx-right-arrow-alt"></i>Feather Icons</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-label">Forms & Tables</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class='bx bx-hourglass' ></i>
+						</div>
+						<div class="menu-title">Forms</div>
+					</a>
+					<ul>
+						<li> <a href="form-elements.html"><i class="bx bx-right-arrow-alt"></i>Form Elements</a>
+						</li>
+						<li> <a href="form-input-group.html"><i class="bx bx-right-arrow-alt"></i>Input Groups</a>
+						</li>
+						<li> <a href="form-layouts.html"><i class="bx bx-right-arrow-alt"></i>Forms Layouts</a>
+						</li>
+						<li> <a href="form-validations.html"><i class="bx bx-right-arrow-alt"></i>Form Validation</a>
+						</li>
+						<li> <a href="form-wizard.html"><i class="bx bx-right-arrow-alt"></i>Form Wizard</a>
+						</li>
+						<li> <a href="form-text-editor.html"><i class="bx bx-right-arrow-alt"></i>Text Editor</a>
+						</li>
+						<li> <a href="form-file-upload.html"><i class="bx bx-right-arrow-alt"></i>File Upload</a>
+						</li>
+						<li> <a href="form-date-time-pickes.html"><i class="bx bx-right-arrow-alt"></i>Date Pickers</a>
+						</li>
+						<li> <a href="form-select2.html"><i class="bx bx-right-arrow-alt"></i>Select2</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class="bx bx-grid-alt"></i>
+						</div>
+						<div class="menu-title">Tables</div>
+					</a>
+					<ul>
+						<li> <a href="table-basic-table.html"><i class="bx bx-right-arrow-alt"></i>Basic Table</a>
+						</li>
+						<li> <a href="table-datatable.html"><i class="bx bx-right-arrow-alt"></i>Data Table</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-label">Pages</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class='bx bx-lock-open-alt'></i>
+						</div>
+						<div class="menu-title">Authentication</div>
+					</a>
+					<ul>
+						<li> <a href="authentication-signin.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Sign In</a>
+						</li>
+						<li> <a href="authentication-signup.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Sign Up</a>
+						</li>
+						<li> <a href="authentication-signin-with-header-footer.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Sign In with Header & Footer</a>
+						</li>
+						<li> <a href="authentication-signup-with-header-footer.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Sign Up with Header & Footer</a>
+						</li>
+						<li> <a href="authentication-forgot-password.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Forgot Password</a>
+						</li>
+						<li> <a href="authentication-reset-password.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Reset Password</a>
+						</li>
+						<li> <a href="authentication-lock-screen.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Lock Screen</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="user-profile.html">
+						<div class="parent-icon"><i class='bx bx-user-pin' ></i>
+						</div>
+						<div class="menu-title">User Profile</div>
+					</a>
+				</li>
+				<li>
+					<a href="timeline.html">
+						<div class="parent-icon"> <i class="bx bx-video-recording"></i>
+						</div>
+						<div class="menu-title">Timeline</div>
+					</a>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class="bx bx-error"></i>
+						</div>
+						<div class="menu-title">Errors</div>
+					</a>
+					<ul>
+						<li> <a href="errors-404-error.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>404 Error</a>
+						</li>
+						<li> <a href="errors-500-error.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>500 Error</a>
+						</li>
+						<li> <a href="errors-coming-soon.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Coming Soon</a>
+						</li>
+						<li> <a href="error-blank-page.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Blank Page</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="faq.html">
+						<div class="parent-icon"><i class="bx bx-help-circle"></i>
+						</div>
+						<div class="menu-title">FAQ</div>
+					</a>
+				</li>
+				<li>
+					<a href="pricing-table.html">
+						<div class="parent-icon"><i class='bx bx-dollar-circle'></i>
+						</div>
+						<div class="menu-title">Pricing</div>
+					</a>
+				</li>
+				<li class="menu-label">Charts & Maps</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class="bx bx-line-chart"></i>
+						</div>
+						<div class="menu-title">Charts</div>
+					</a>
+					<ul>
+						<li> <a href="charts-apex-chart.html"><i class="bx bx-right-arrow-alt"></i>Apex</a>
+						</li>
+						<li> <a href="charts-chartjs.html"><i class="bx bx-right-arrow-alt"></i>Chartjs</a>
+						</li>
+						<li> <a href="charts-highcharts.html"><i class="bx bx-right-arrow-alt"></i>Highcharts</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class='bx bx-map-pin' ></i>
+						</div>
+						<div class="menu-title">Maps</div>
+					</a>
+					<ul>
+						<li> <a href="map-google-maps.html"><i class="bx bx-right-arrow-alt"></i>Google Maps</a>
+						</li>
+						<li> <a href="map-vector-maps.html"><i class="bx bx-right-arrow-alt"></i>Vector Maps</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-label">Others</li>
+				<li>
+					<a class="has-arrow" href="javascript:;">
+						<div class="parent-icon"><i class="bx bx-menu"></i>
+						</div>
+						<div class="menu-title">Menu Levels</div>
+					</a>
+					<ul>
+						<li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Level One</a>
+							<ul>
+								<li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Level Two</a>
+									<ul>
+										<li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>Level Three</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="https://codervent.com/synadmin/documentation/index.html" target="_blank">
+						<div class="parent-icon"><i class='bx bx-file' ></i>
+						</div>
+						<div class="menu-title">Documentation</div>
+					</a>
+				</li>
+				<li>
+					<a href="https://themeforest.net/user/codervent" target="_blank">
+						<div class="parent-icon"><i class='bx bx-headphone' ></i>
+						</div>
+						<div class="menu-title">Support</div>
+					</a>
+				</li>
+			</ul>
+			<!--end navigation-->
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+		<header>
+			<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="top-menu-left d-none d-lg-block">
+						<ul class="nav">
+						  <li class="nav-item">
+							<a class="nav-link" href="app-emailbox.html"><i class='bx bx-envelope'></i></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="app-chat-box.html"><i class='bx bx-message'></i></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="app-fullcalender.html"><i class='bx bx-calendar'></i></a>
+						  </li>
+						  <li class="nav-item">
+							  <a class="nav-link" href="app-to-do.html"><i class='bx bx-check-square'></i></a>
+						  </li>
+					  </ul>
+					 </div>
+					<div class="search-bar flex-grow-1">
+						<div class="position-relative search-bar-box">
+							<input type="text" class="form-control search-control" placeholder="Type to search..."> <span class="position-absolute top-50 search-show translate-middle-y"><i class='bx bx-search'></i></span>
+							<span class="position-absolute top-50 search-close translate-middle-y"><i class='bx bx-x'></i></span>
+						</div>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item mobile-search-icon">
+								<a class="nav-link" href="#">	<i class='bx bx-search'></i>
+								</a>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">	<i class='bx bx-category'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="row row-cols-3 g-3 p-3">
+										<div class="col text-center">
+											<div class="app-box mx-auto bg-gradient-cosmic text-white"><i class='bx bx-group'></i>
+											</div>
+											<div class="app-title">Teams</div>
+										</div>
+										<div class="col text-center">
+											<div class="app-box mx-auto bg-gradient-burning text-white"><i class='bx bx-atom'></i>
+											</div>
+											<div class="app-title">Projects</div>
+										</div>
+										<div class="col text-center">
+											<div class="app-box mx-auto bg-gradient-lush text-white"><i class='bx bx-shield'></i>
+											</div>
+											<div class="app-title">Tasks</div>
+										</div>
+										<div class="col text-center">
+											<div class="app-box mx-auto bg-gradient-kyoto text-dark"><i class='bx bx-notification'></i>
+											</div>
+											<div class="app-title">Feeds</div>
+										</div>
+										<div class="col text-center">
+											<div class="app-box mx-auto bg-gradient-blues text-dark"><i class='bx bx-file'></i>
+											</div>
+											<div class="app-title">Files</div>
+										</div>
+										<div class="col text-center">
+											<div class="app-box mx-auto bg-gradient-moonlit text-white"><i class='bx bx-filter-alt'></i>
+											</div>
+											<div class="app-title">Alerts</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">7</span>
+									<i class='bx bx-bell'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title">Notifications</p>
+											<p class="msg-header-clear ms-auto">Marks all as read</p>
+										</div>
+									</a>
+									<div class="header-notifications-list">
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-primary text-primary"><i class="bx bx-group"></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">New Customers<span class="msg-time float-end">14 Sec
+												ago</span></h6>
+													<p class="msg-info">5 new user registered</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-danger text-danger"><i class="bx bx-cart-alt"></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">New Orders <span class="msg-time float-end">2 min
+												ago</span></h6>
+													<p class="msg-info">You have recived new orders</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-success text-success"><i class="bx bx-file"></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">24 PDF File<span class="msg-time float-end">19 min
+												ago</span></h6>
+													<p class="msg-info">The pdf files generated</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-warning text-warning"><i class="bx bx-send"></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Time Response <span class="msg-time float-end">28 min
+												ago</span></h6>
+													<p class="msg-info">5.1 min avarage time response</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-info text-info"><i class="bx bx-home-circle"></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">New Product Approved <span
+												class="msg-time float-end">2 hrs ago</span></h6>
+													<p class="msg-info">Your new product has approved</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-danger text-danger"><i class="bx bx-message-detail"></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">New Comments <span class="msg-time float-end">4 hrs
+												ago</span></h6>
+													<p class="msg-info">New customer comments recived</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-success text-success"><i class='bx bx-check-square'></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5 hrs
+												ago</span></h6>
+													<p class="msg-info">Successfully shipped your item</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-primary text-primary"><i class='bx bx-user-pin'></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
+												ago</span></h6>
+													<p class="msg-info">24 new authors joined last week</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-warning text-warning"><i class='bx bx-door-open'></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Defense Alerts <span class="msg-time float-end">2 weeks
+												ago</span></h6>
+													<p class="msg-info">45% less alerts last 4 weeks</p>
+												</div>
+											</div>
+										</a>
+									</div>
+									<a href="javascript:;">
+										<div class="text-center msg-footer">View All Notifications</div>
+									</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">8</span>
+									<i class='bx bx-comment'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title">Messages</p>
+											<p class="msg-header-clear ms-auto">Marks all as read</p>
+										</div>
+									</a>
+									<div class="header-message-list">
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-1.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Daisy Anderson <span class="msg-time float-end">5 sec
+												ago</span></h6>
+													<p class="msg-info">The standard chunk of lorem</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-2.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Althea Cabardo <span class="msg-time float-end">14
+												sec ago</span></h6>
+													<p class="msg-info">Many desktop publishing packages</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-3.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Oscar Garner <span class="msg-time float-end">8 min
+												ago</span></h6>
+													<p class="msg-info">Various versions have evolved over</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-4.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Katherine Pechon <span class="msg-time float-end">15
+												min ago</span></h6>
+													<p class="msg-info">Making this the first true generator</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-5.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Amelia Doe <span class="msg-time float-end">22 min
+												ago</span></h6>
+													<p class="msg-info">Duis aute irure dolor in reprehenderit</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-6.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Cristina Jhons <span class="msg-time float-end">2 hrs
+												ago</span></h6>
+													<p class="msg-info">The passage is attributed to an unknown</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-7.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">James Caviness <span class="msg-time float-end">4 hrs
+												ago</span></h6>
+													<p class="msg-info">The point of using Lorem</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-8.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Peter Costanzo <span class="msg-time float-end">6 hrs
+												ago</span></h6>
+													<p class="msg-info">It was popularised in the 1960s</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-9.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">David Buckley <span class="msg-time float-end">2 hrs
+												ago</span></h6>
+													<p class="msg-info">Various versions have evolved over</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-10.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Thomas Wheeler <span class="msg-time float-end">2 days
+												ago</span></h6>
+													<p class="msg-info">If you are going to use a passage</p>
+												</div>
+											</div>
+										</a>
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-11.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">Johnny Seitz <span class="msg-time float-end">5 days
+												ago</span></h6>
+													<p class="msg-info">All the Lorem Ipsum generators</p>
+												</div>
+											</div>
+										</a>
+									</div>
+									<a href="javascript:;">
+										<div class="text-center msg-footer">View All Messages</div>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="user-box dropdown">
+						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar">
+							<div class="user-info ps-3">
+								<p class="user-name mb-0">Pauline Seitz</p>
+								<p class="designattion mb-0">Web Designer</p>
+							</div>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end">
+							<li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
+							</li>
+							<li><a class="dropdown-item" href="javascript:;"><i class="bx bx-cog"></i><span>Settings</span></a>
+							</li>
+							<li><a class="dropdown-item" href="javascript:;"><i class='bx bx-home-circle'></i><span>Dashboard</span></a>
+							</li>
+							<li><a class="dropdown-item" href="javascript:;"><i class='bx bx-dollar-circle'></i><span>Earnings</span></a>
+							</li>
+							<li><a class="dropdown-item" href="javascript:;"><i class='bx bx-download'></i><span>Downloads</span></a>
+							</li>
+							<li>
+								<div class="dropdown-divider mb-0"></div>
+							</li>
+							<li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+				<div class="row row-cols-1 row-cols-lg-4">
+					<div class="col">
+						<div class="card radius-10 overflow-hidden bg-gradient-cosmic">
+							<div class="card-body">
+								<div class="d-flex align-items-center">
+									<div>
+										<p class="mb-0 text-white">Total Orders</p>
+										<h5 class="mb-0 text-white">867</h5>
+									</div>
+									<div class="ms-auto text-white"><i class='bx bx-cart font-30'></i>
+									</div>
+								</div>
+								<div class="progress bg-white-2 radius-10 mt-4" style="height:4.5px;">
+									<div class="progress-bar bg-white" role="progressbar" style="width: 46%"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card radius-10 overflow-hidden bg-gradient-burning">
+							<div class="card-body">
+								<div class="d-flex align-items-center">
+									<div>
+										<p class="mb-0 text-white">Total Income</p>
+										<h5 class="mb-0 text-white">$52,945</h5>
+									</div>
+									<div class="ms-auto text-white"><i class='bx bx-wallet font-30'></i>
+									</div>
+								</div>
+								<div class="progress bg-white-2 radius-10 mt-4" style="height:4.5px;">
+									<div class="progress-bar bg-white" role="progressbar" style="width: 72%"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card radius-10 overflow-hidden bg-gradient-Ohhappiness">
+							<div class="card-body">
+								<div class="d-flex align-items-center">
+									<div>
+										<p class="mb-0 text-white">Total Users</p>
+										<h5 class="mb-0 text-white">24.5K</h5>
+									</div>
+									<div class="ms-auto text-white"><i class='bx bx-bulb font-30'></i>
+									</div>
+								</div>
+								<div class="progress bg-white-2 radius-10 mt-4" style="height:4.5px;">
+									<div class="progress-bar bg-white" role="progressbar" style="width: 68%"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card radius-10 overflow-hidden bg-gradient-moonlit">
+							<div class="card-body">
+								<div class="d-flex align-items-center">
+									<div>
+										<p class="mb-0 text-white">Comments</p>
+										<h5 class="mb-0 text-white">869</h5>
+									</div>
+									<div class="ms-auto text-white"><i class='bx bx-chat font-30'></i>
+									</div>
+								</div>
+								<div class="progress  bg-white-2 radius-10 mt-4" style="height:4.5px;">
+									<div class="progress-bar bg-white" role="progressbar" style="width: 66%"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--end row-->
+				
+				<div class="card radius-10">
+					<div class="card-header border-bottom-0 bg-transparent">
+						<div class="d-lg-flex align-items-center">
+							<div>
+								<h6 class="font-weight-bold mb-2 mb-lg-0">Monthly Revenue</h6>
+							</div>
+							<div class="ms-lg-auto mb-2 mb-lg-0">
+								<div class="btn-group-round">
+									<div class="btn-group">
+										<button type="button" class="btn btn-white">Day</button>
+										<button type="button" class="btn btn-white">Week</button>
+										<button type="button" class="btn btn-white">Month</button>
+									</div>
+								</div>
+							</div>
+							<div>
+								<button type="button" class="btn btn-primary radius-10 ms-lg-3">Download CSV</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div id="chart1"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-lg-8">
+						<div class="card radius-10">
+							<div class="card-header border-bottom-0 bg-transparent">
+								<div class="d-lg-flex align-items-center">
+									<div>
+										<h6 class="font-weight-bold mb-2 mb-lg-0">Historical Analytics</h6>
+									</div>
+									<div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="d-flex align-items-center ms-auto font-13 gap-2">
+									<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle text-danger me-1"></i>Visitors</span>
+									<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle text-success me-1"></i>Chats</span>
+									<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle text-info me-1"></i>Page Views</span>
+								</div>
+								<div id="chart2"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-4">
+						<div class="card radius-10 bg-primary">
+							<div class="card-body">
+								<h6 class="text-white">Active Visitors</h6>
+								<h4 class="font-weight-bold text-white">3467</h4>
+								<p class="font-13 text-white">Page view per minute</p>
+								<div id="chart3"></div>
+							</div>
+						</div>
+						<div class="card radius-10">
+							<div class="card-body">
+								<div class="revenue-by-channel">
+									<h6 class="mb-4 font-weight-bold">Revenue by Channel</h6>
+									<div class="progress-wrapper">
+										<div class="d-flex align-items-center">
+											<div class="text-secondary">Direct</div>
+											<div class="ms-auto pe-4">$1,24,685</div>
+											<div class="text-success">65.6%</div>
+										</div>
+										<div class="progress mt-2" style="height:3px;">
+											<div class="progress-bar" role="progressbar" style="width: 65%"></div>
+										</div>
+									</div>
+									<div class="progress-wrapper mt-3">
+										<div class="d-flex align-items-center">
+											<div class="text-secondary">Referral</div>
+											<div class="ms-auto pe-4">$1,22,863</div>
+											<div class="text-success">45.6%</div>
+										</div>
+										<div class="progress mt-2" style="height:3px;">
+											<div class="progress-bar" role="progressbar" style="width: 55%"></div>
+										</div>
+									</div>
+									<div class="progress-wrapper mt-3">
+										<div class="d-flex align-items-center">
+											<div class="text-secondary">Social</div>
+											<div class="ms-auto pe-4">$1,24,685</div>
+											<div class="text-danger">25.2%</div>
+										</div>
+										<div class="progress mt-2" style="height:3px;">
+											<div class="progress-bar" role="progressbar" style="width: 35%"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end row-->
+				<div class="row">
+					<div class="col-12 col-lg-6 d-flex">
+						<div class="card radius-10 w-100">
+							<div class="card-body">
+								<div class="d-flex align-items-center">
+									<div>
+										<h6 class="font-weight-bold mb-0">Order Status</h6>
+									</div>
+									<div class="dropdown ms-auto">
+										<div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
+										</div>
+										<div class="dropdown-menu dropdown-menu-end">
+											<a class="dropdown-item" href="javaScript:;">Action</a>
+											<a class="dropdown-item" href="javaScript:;">Another action</a>
+											<div class="dropdown-divider"></div>	
+											<a class="dropdown-item" href="javaScript:;">Something else here</a>
+										</div>
+									</div>
+								</div>
+								<div id="chart4"></div>
+								<div class="d-flex align-items-center justify-content-between text-center">
+									<div>
+										<h5 class="mb-1 font-weight-bold">289</h5>
+										<p class="mb-0 text-secondary">Booked</p>
+									</div>
+									<div class="mb-1">
+										<h5 class="mb-1 font-weight-bold">348</h5>
+										<p class="mb-0 text-secondary">In Progress</p>
+									</div>
+									<div>
+										<h5 class="mb-1 font-weight-bold">152</h5>
+										<p class="mb-0 text-secondary">Canceled</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 d-flex">
+						<div class="card w-100 radius-10 shadow-none bg-transparent">
+							<div class="card-body p-0">
+								<div class="card radius-10 bg-primary">
+									<div class="card-body">
+										<div id="chart5"></div>
+										<div class="d-flex align-items-center justify-content-between">
+											<div>
+												<h4 class="mb-0 font-weight-bold text-white">$534.8</h4>
+												<p class="mb-0 text-white">Average Weekly Sales</p>
+											</div>
+											<div><i class='bx bx-diamond font-24 text-white'></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row row-cols-1 row-cols-sm-2">
+									<div class="col">
+										<div class="card radius-10 mb-sm-0">
+											<div class="card-body">
+												<div id="chart6"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card radius-10 mb-0">
+											<div class="card-body">
+												<div id="chart7"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end row-->
+
+				<div class="row row-cols-1 row-cols-lg-3">
+                   <div class="col d-flex">
+					<div class="card radius-10 w-100">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div>
+									<h6 class="font-weight-bold mb-0">Best Selling Products</h6>
+								</div>
+								<div class="dropdown ms-auto">
+									<div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
+									</div>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="javaScript:;">Action</a>
+										<a class="dropdown-item" href="javaScript:;">Another action</a>
+										<div class="dropdown-divider"></div>	
+										<a class="dropdown-item" href="javaScript:;">Something else here</a>
+									</div>
+								</div>
+							</div>
+						   </div>
+							<div class="best-selling-products p-3 mb-3">
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/ice-cream-cornet.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Cone Ice Cream</h6>
+										<p class="mb-0 text-secondary">$29/Each 56 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$521.52</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Wine Glass</h6>
+										<p class="mb-0 text-secondary">$30/Each 48 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$406.87</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/banana.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Banana Toy</h6>
+										<p class="mb-0 text-secondary">$26/Each 66 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$685.69</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/telephone.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Old Telephone</h6>
+										<p class="mb-0 text-secondary">$39/Each 26 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$913.72</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/plate.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Orange Plate</h6>
+										<p class="mb-0 text-secondary">$22/Each 34 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$372.62</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/telephone.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Old Telephone</h6>
+										<p class="mb-0 text-secondary">$39/Each 26 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$913.72</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/banana.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Banana Toy</h6>
+										<p class="mb-0 text-secondary">$26/Each 66 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$685.69</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Wine Glass</h6>
+										<p class="mb-0 text-secondary">$30/Each 48 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$406.87</p>
+								</div>
+								<hr>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/ice-cream-cornet.png" class="p-1" class="" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Cone Ice Cream</h6>
+										<p class="mb-0 text-secondary">$29/Each 56 Orders</p>
+									</div>
+									<p class="ms-auto mb-0 text-purple">$521.52</p>
+								</div>
+							</div>
+					</div>
+				   </div>
+				   <div class="col d-flex">
+					<div class="card radius-10 w-100">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div>
+									<h6 class="font-weight-bold mb-0">Recent Reviews</h6>
+								</div>
+								<div class="dropdown ms-auto">
+									<div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
+									</div>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="javaScript:;">Action</a>
+										<a class="dropdown-item" href="javaScript:;">Another action</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="javaScript:;">Something else here</a>
+									</div>
+								</div>
+							</div>
+						  </div>
+							<div class="recent-reviews p-3 mb-3">
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/banana.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Banana Toy</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/telephone.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Old Telephone</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Wine Glass</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/plate.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Orange Plate</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/ice-cream-cornet.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Cone Ice Cream</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/telephone.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Old Telephone</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Wine Glass</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-center">
+									<div class="product-img">
+										<img src="assets/images/icons/plate.png" class="p-1" alt="" />
+									</div>
+									<div class="ps-3">
+										<h6 class="mb-0 font-weight-bold">Orange Plate</h6>
+									</div>
+									<p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
+								</div>
+							</div>
+						
+					</div>
+				   </div>
+				   <div class="col d-flex">
+					<div class="card radius-10 w-100">
+						<div class="card-body">
+							<div class="d-flex align-items-center">
+								<div>
+									<h6 class="font-weight-bold mb-0">Support Inbox</h6>
+								</div>
+								<div class="dropdown ms-auto">
+									<div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
+									</div>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="javaScript:;">Action</a>
+										<a class="dropdown-item" href="javaScript:;">Another action</a>
+										<div class="dropdown-divider"></div>	
+										<a class="dropdown-item" href="javaScript:;">Something else here</a>
+									</div>
+								</div>
+							 </div>
+						    </div>
+							<div class="support-list p-3 mb-3">
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-1.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Jordan Ntolo <span class="text-primary float-end font-13">2 hours ago</span></h6>
+										<p class="mb-0 font-13 text-secondary">My item doesn't ship to correct address. Please check It Proper</p>
+									</div>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-2.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Carolien Bloeme <span class="text-primary float-end font-13">3 hours ago</span></h6>
+										<p class="mb-0 font-13 text-secondary">You shipped different color, I need it to be changed</p>
+									</div>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-3.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Lisanne Viscall <span class="text-primary float-end font-13">12 hours ago</span></h6>
+										<p class="mb-0 font-13 text-secondary">Can you please refund my money. I don't want to wait anymore</p>
+									</div>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-4.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Sun Jun <span class="text-primary float-end font-13">12 Yesterday</span></h6>
+										<p class="mb-0 font-13 text-secondary">Please return my phone. it is not iPhon7. I send you many request.</p>
+									</div>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-5.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Lotila Remo <span class="text-primary float-end font-13">2 days ago</span></h6>
+										<p class="mb-0 font-13 text-secondary">Hello, I need admin template product. how can i purchase?</p>
+									</div>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-2.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Carolien Bloeme <span class="text-primary float-end font-13">3 hours ago</span></h6>
+										<p class="mb-0 font-13 text-secondary">You shipped different color, I need it to be changed</p>
+									</div>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-3.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Lisanne Viscall <span class="text-primary float-end font-13">12 hours ago</span></h6>
+										<p class="mb-0 font-13 text-secondary">Can you please refund my money. I don't want to wait anymore</p>
+									</div>
+								</div>
+								<hr/>
+								<div class="d-flex align-items-top">
+									<div class="">
+										<img src="assets/images/avatars/avatar-4.png" width="45" height="45" class="rounded-circle" alt="" />
+									</div>
+									<div class="ps-2">
+										<h6 class="mb-1 font-weight-bold">Sun Jun <span class="text-primary float-end font-13">12 Yesterday</span></h6>
+										<p class="mb-0 font-13 text-secondary">Please return my phone. it is not iPhon7. I send you many request.</p>
+									</div>
+								</div>
+							</div>
+						
+					</div>
+				   </div>
+				</div>
+				<!--end row-->
+
+				<div class="card radius-10">
+					<div class="card-header border-bottom-0 bg-transparent">
+						<div class="d-flex align-items-center">
+							<div>
+								<h5 class="font-weight-bold mb-0">Recent Orders</h5>
+							</div>
+							<div class="ms-auto">
+								<button type="button" class="btn btn-white radius-10">View More</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table mb-0 align-middle">
+								<thead>
+									<tr>
+										<th>Photo</th>
+										<th>Product Name</th>
+										<th>Customer</th>
+										<th>Product id</th>
+										<th>Price</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="product-img bg-transparent border">
+												<img src="assets/images/icons/shoes.png" class="p-1" alt="">
+											</div>
+										</td>
+										<td>Nike Sports NK</td>
+										<td>Mitchell Daniel</td>
+										<td>#9668521</td>
+										<td>$99.85</td>
+										<td><a href="javaScript:;" class="btn btn-sm btn-success radius-30">Delivered</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="product-img bg-transparent border">
+												<img src="assets/images/icons/smartphone.png" class="p-1" alt="">
+											</div>
+										</td>
+										<td>Redmi Airdts</td>
+										<td>Craig Clayton</td>
+										<td>#8627523</td>
+										<td>$59.35</td>
+										<td><a href="javaScript:;" class="btn btn-sm btn-danger radius-30">Cancelled</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="product-img bg-transparent border">
+												<img src="assets/images/icons/mouse.png" class="p-1" alt="">
+											</div>
+										</td>
+										<td>Magic Mouse 2</td>
+										<td>Julia Burke</td>
+										<td>#6875954</td>
+										<td>$42.68</td>
+										<td><a href="javaScript:;" class="btn btn-sm btn-warning radius-30">Pending</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="product-img bg-transparent border">
+												<img src="assets/images/icons/tshirt.png" class="p-1" alt="">
+											</div>
+										</td>
+										<td>Coton-T-Shirt</td>
+										<td>Clark Natela</td>
+										<td>#4587892</td>
+										<td>$32.78</td>
+										<td><a href="javaScript:;" class="btn btn-sm btn-success radius-30">Delivered</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="product-img bg-transparent border">
+												<img src="assets/images/icons/headphones.png" class="p-1" alt="">
+											</div>
+										</td>
+										<td>Headphones 7</td>
+										<td>Robin Mandela</td>
+										<td>#5587426</td>
+										<td>$29.52</td>
+										<td><a href="javaScript:;" class="btn btn-sm btn-success radius-30">Delivered</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="product-img bg-transparent border">
+												<img src="assets/images/icons/mouse.png" class="p-1" alt="">
+											</div>
+										</td>
+										<td>Magic Mouse 2</td>
+										<td>Julia Burke</td>
+										<td>#6875954</td>
+										<td>$42.68</td>
+										<td><a href="javaScript:;" class="btn btn-sm btn-warning radius-30">Pending</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="product-img bg-transparent border">
+												<img src="assets/images/icons/tshirt.png" class="p-1" alt="">
+											</div>
+										</td>
+										<td>Coton-T-Shirt</td>
+										<td>Clark Natela</td>
+										<td>#4587892</td>
+										<td>$32.78</td>
+										<td><a href="javaScript:;" class="btn btn-sm btn-success radius-30">Delivered</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2021. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+	<!--start switcher-->
+	<div class="switcher-wrapper">
+		<div class="switcher-btn"> <i class='bx bx-cog bx-spin'></i>
+		</div>
+		<div class="switcher-body">
+			<div class="d-flex align-items-center">
+				<h5 class="mb-0 text-uppercase">Theme Customizer</h5>
+				<button type="button" class="btn-close ms-auto close-switcher" aria-label="Close"></button>
+			</div>
+			<hr/>
+			<h6 class="mb-0">Theme Styles</h6>
+			<hr/>
+			<div class="d-flex align-items-center justify-content-between">
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="lightmode" checked>
+					<label class="form-check-label" for="lightmode">Light</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmode">
+					<label class="form-check-label" for="darkmode">Dark</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="semidark">
+					<label class="form-check-label" for="semidark">Semi Dark</label>
+				</div>
+			</div>
+			<hr/>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" id="minimaltheme" name="flexRadioDefault">
+				<label class="form-check-label" for="minimaltheme">Minimal Theme</label>
+			</div>
+			<hr/>
+			<h6 class="mb-0">Header Colors</h6>
+			<hr/>
+			<div class="header-colors-indigators">
+				<div class="row row-cols-auto g-3">
+					<div class="col">
+						<div class="indigator headercolor1" id="headercolor1"></div>
+					</div>
+					<div class="col">
+						<div class="indigator headercolor2" id="headercolor2"></div>
+					</div>
+					<div class="col">
+						<div class="indigator headercolor3" id="headercolor3"></div>
+					</div>
+					<div class="col">
+						<div class="indigator headercolor4" id="headercolor4"></div>
+					</div>
+					<div class="col">
+						<div class="indigator headercolor5" id="headercolor5"></div>
+					</div>
+					<div class="col">
+						<div class="indigator headercolor6" id="headercolor6"></div>
+					</div>
+					<div class="col">
+						<div class="indigator headercolor7" id="headercolor7"></div>
+					</div>
+					<div class="col">
+						<div class="indigator headercolor8" id="headercolor8"></div>
+					</div>
+				</div>
+			</div>
+			<hr/>
+			<h6 class="mb-0">Sidebar Backgrounds</h6>
+			<hr/>
+			<div class="header-colors-indigators">
+				<div class="row row-cols-auto g-3">
+					<div class="col">
+						<div class="indigator sidebarcolor1" id="sidebarcolor1"></div>
+					</div>
+					<div class="col">
+						<div class="indigator sidebarcolor2" id="sidebarcolor2"></div>
+					</div>
+					<div class="col">
+						<div class="indigator sidebarcolor3" id="sidebarcolor3"></div>
+					</div>
+					<div class="col">
+						<div class="indigator sidebarcolor4" id="sidebarcolor4"></div>
+					</div>
+					<div class="col">
+						<div class="indigator sidebarcolor5" id="sidebarcolor5"></div>
+					</div>
+					<div class="col">
+						<div class="indigator sidebarcolor6" id="sidebarcolor6"></div>
+					</div>
+					<div class="col">
+						<div class="indigator sidebarcolor7" id="sidebarcolor7"></div>
+					</div>
+					<div class="col">
+						<div class="indigator sidebarcolor8" id="sidebarcolor8"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end switcher-->
+	<!-- Bootstrap JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!--plugins-->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+	<script src="assets/js/index3.js"></script>
+	<script>
+		new PerfectScrollbar('.best-selling-products');
+		new PerfectScrollbar('.recent-reviews');
+		new PerfectScrollbar('.support-list');
+	</script>
+	<!--app JS-->
+	<script src="assets/js/app.js"></script>
+</body>
+
+</html>
