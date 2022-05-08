@@ -1,14 +1,37 @@
+<?php include "../config/connect.php"?>
+<?php echo "<script>window.location.href='/admin/index.php#dashboard'</script>"?>
+<?php 
+    //* Tổng tiền
+    $sql = "SELECT * FROM `tb_order`";
+    $result = mysqli_query($conn, $sql);
+    $countOrder = mysqli_num_rows($result); 
+    //* Tổng số khách hàng
+    $sql = "SELECT ROUND(SUM(total_money),2) as totalMoney FROM `tb_order`";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $totalMoney = $row['totalMoney']; 
+    //* Tổng số sản phẩm
+    $sql = "SELECT COUNT(id_product) as totalProduct FROM `tb_product`";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $totalProduct = $row['totalProduct'];
+    //* Tổng số khách hàng
+    $sql = "SELECT COUNT(username) as totalCustomer FROM `tb_user`";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $totalCustomer = $row['totalCustomer']; 
+?>
 <!--start page wrapper -->
 <div class="page-wrapper">
     <div class="page-content">
         <div class="row row-cols-1 row-cols-lg-4">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-3">
                 <div class="card radius-10 bg-primary bg-gradient">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
                                 <p class="mb-0 text-white">Đơn Hàng</p>
-                                <h4 class="my-1 text-white">245</h4>
+                                <h4 class="my-1 text-white"><?php echo $countOrder?></h4>
                             </div>
                             <div class="text-white ms-auto font-35"><i class='bx bx-cart-alt'></i>
                             </div>
@@ -16,13 +39,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-3">
                 <div class="card radius-10 bg-danger bg-gradient">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
                                 <p class="mb-0 text-white">Thu Nhập</p>
-                                <h4 class="my-1 text-white">$8,245</h4>
+                                <h4 class="my-1 text-white"><?php echo $totalMoney?>$</h4>
                             </div>
                             <div class="text-white ms-auto font-35"><i class='bx bx-dollar'></i>
                             </div>
@@ -30,13 +53,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-3">
+                <div class="card radius-10 bg-success bg-gradient">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="mb-0 text-dark">Sản phẩm</p>
+                                <h4 class="text-dark my-1"><?php echo $totalProduct?></h4>
+                            </div>
+                            <div class="text-dark ms-auto font-35"><i class='bx bx-food-menu'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
                 <div class="card radius-10 bg-warning bg-gradient">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
                                 <p class="mb-0 text-dark">Khách Hàng</p>
-                                <h4 class="text-dark my-1">221</h4>
+                                <h4 class="text-dark my-1"><?php echo $totalCustomer?></h4>
                             </div>
                             <div class="text-dark ms-auto font-35"><i class='bx bx-user-pin'></i>
                             </div>
@@ -146,12 +183,6 @@
                             </div>
                             <div class="dropdown ms-auto">
                                 <div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="javaScript:;">Action</a>
-                                    <a class="dropdown-item" href="javaScript:;">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javaScript:;">Something else here</a>
                                 </div>
                             </div>
                         </div>
@@ -366,3 +397,84 @@
     </div>
 </div>
 <!--end page wrapper -->
+
+<script>
+	// chart4
+	var options = {
+		series: [87],
+		chart: {
+			//foreColor: '#9a9797',
+			height: 380,
+			type: 'radialBar',
+			offsetY: -10
+		},
+		plotOptions: {
+			radialBar: {
+				startAngle: -135,
+				endAngle: 135,
+				hollow: {
+					margin: 0,
+					size: '70%',
+					background: 'transparent',
+				},
+				track: {
+					strokeWidth: '100%',
+					dropShadow: {
+						enabled: false,
+						top: -3,
+						left: 0,
+						blur: 4,
+						//color: 'rgba(209, 58, 223, 0.65)',
+						opacity: 0.12
+					}
+				},
+				dataLabels: {
+					name: {
+						fontSize: '16px',
+						color: '#212529',
+						offsetY: 5
+					},
+					value: {
+						offsetY: 20,
+						fontSize: '30px',
+						color: '#212529',
+						formatter: function (val) {
+							return val + "%";
+						}
+					}
+				}
+			}
+		},
+		fill: {
+			type: 'gradient',
+			gradient: {
+				shade: 'dark',
+				shadeIntensity: 0.15,
+				gradientToColors: ['#4a00e0'],
+				inverseColors: false,
+				opacityFrom: 1,
+				opacityTo: 1,
+				stops: [0, 50, 65, 91]
+			},
+		},
+		colors: ["#8e2de2"],
+		stroke: {
+			dashArray: 4
+		},
+		labels: ['Đã Giao'],
+		responsive: [{
+			breakpoint: 480,
+			options: {
+				chart: {
+					height: 300,
+				}
+			}
+		}]
+	};
+	var chart = new ApexCharts(document.querySelector("#chart4"), options);
+	chart.render(); 
+
+	new PerfectScrollbar('.best-selling-products');
+	new PerfectScrollbar('.recent-reviews');
+	new PerfectScrollbar('.support-list');
+</script>

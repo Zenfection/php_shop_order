@@ -13,31 +13,31 @@
 
                 <!-- Contact Form Wrapper Start -->
                 <div class="contact-form-wrapper contact-form">
-                    <form action="" id="contactForm" method="post">
+                    <form action="" id="contactForm" method="post" class="form-control">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-area m-b-20">
-                                            <input class="input-item" type="text" placeholder="Họ Tên *" name="name">
+                                            <input class="input-item" type="text" placeholder="Họ Tên *" name="name" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="input-area m-b-20">
-                                            <input class="input-item" type="email" placeholder="Email *" name="email">
+                                            <input class="input-item" type="email" placeholder="Email *" name="email" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="input-area m-b-20">
-                                            <input class="input-item" type="text" placeholder="Chủ đề *" name="subject">
+                                            <input class="input-item" type="text" placeholder="Chủ đề *" name="subject" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="input-area m-b-40">
-                                            <textarea cols="30" rows="5" class="textarea-item" name="message" placeholder="Tin nhắn"></textarea>
+                                            <textarea cols="30" rows="5" class="textarea-item" name="message" placeholder="Tin nhắn" class="form-control"></textarea>
                                         </div>
                                     </div>
 

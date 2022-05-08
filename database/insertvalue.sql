@@ -32,7 +32,17 @@ VALUES
 INSERT INTO `tb_user` 
 (`username`, `fullname`, `email`, `password`, `phone`, `address`)
 VALUES
-("kietgolx65234", "Lê Tuấn Kiệt", "kietgolx65234@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "0123456789","3/2 Đại học Cần Thơ");
+("kietgolx65234", "Lê Tuấn Kiệt", "kietgolx65234@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "1023456789","3/2 Đại học Cần Thơ"),
+("user1", "Nguyễn Văn A", "user1@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "0123456789","Hẻm 1, Nguyễn Văn Linh"),
+("user2", "Nguyễn Văn B", "user2@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "1123456789","Hẻm 2, Nguyễn Văn Linh"),
+("user3", "Nguyễn Văn C", "user3@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "2123456789","Hẻm 3, Nguyễn Văn Linh"),
+("user4", "Nguyễn Văn D", "user4@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "3123456789","Hẻm 4, Nguyễn Văn Linh"),
+("user5", "Nguyễn Văn E", "user5@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "4123456789","Hẻm 5, Nguyễn Văn Linh"),
+("user6", "Nguyễn Văn F", "user6@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "5123456789","Hẻm 6, Nguyễn Văn Linh"),
+("user7", "Nguyễn Văn G", "user7@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "6123456789","Hẻm 7, Nguyễn Văn Linh"),
+("user8", "Lê Văn A", "user8@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "7123456789","Hẻm 8, Nguyễn Văn Linh"),
+("user9", "Lê Văn B", "user9@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "8123456789","Hẻm 9, Nguyễn Văn Linh"),
+("user10", "Lê Văn C", "user10@gmail.com", "e10adc3949ba59abbe56e057f20f883e", "9123456789","Hẻm 10, Nguyễn Văn Linh");
 
 INSERT INTO `tb_cart`
 (`username`, `id_product`, `amount`)

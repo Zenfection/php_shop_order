@@ -120,20 +120,20 @@ if (isset($_SESSION['change_pwd'])) {
                                     <div class="myaccount-content">
                                         <h3 class="title"><i class="fa fa-user-circle" aria-hidden="true"></i> Chi Tiết Tài Khoản</h3>
                                         <div class="account-details-form">
-                                            <form action="./backend/change_info.php" method="POST" id="changeInfoForm">
+                                            <form action="./backend/change_info.php" method="POST" id="changeInfoForm" class="has-validation">
                                                 <div class="single-input-item m-b-15">
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
                                                                 <label for="full-name" class="required m-b-10">Họ và Tên</label>
-                                                                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" value="<?php echo $fullname ?>" />
+                                                                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" value="<?php echo $fullname ?>" class="form-control" />
 
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
                                                                 <label for="last-name" class="required m-b-10">Số điện thoại</label>
-                                                                <input type="text" id="phone" name="phone" placeholder="Chưa có số điện thoại" value="<?php echo $phone ?>" />
+                                                                <input type="text" id="phone" name="phone" placeholder="Chưa có số điện thoại" value="<?php echo $phone ?>" class="form-control"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -144,7 +144,7 @@ if (isset($_SESSION['change_pwd'])) {
                                                 </div>
                                                 <div class="single-input-item m-b-15">
                                                     <label for="email" class="required m-b-5">Địa chỉ Email</label>
-                                                    <input type="email" name="email" id="email" placeholder="Nhập Email" value="<?php echo $email ?>" />
+                                                    <input type="email" name="email" id="email" placeholder="Nhập Email" value="<?php echo $email ?>"  class="form-control"/>
                                                 </div>
                                                 <div class="single-input-item single-item-button m-t-30">
                                                     <button type="submit" name="submit" class="btn btn btn-primary btn-hover-dark rounded-0">Lưu Thay Đổi</button>
@@ -158,23 +158,23 @@ if (isset($_SESSION['change_pwd'])) {
                                     <div class="myaccount-content">
                                         <h3 class="title"><i class="fa fa-key" aria-hidden="true"></i> Thay đổi mật khẩu</h3>
                                         <div class="account-details-form">
-                                            <form action="/backend/change_password.php" method="POST" id="changePassForm">
+                                            <form action="/backend/change_password.php" method="POST" id="changePassForm"  class="form-control">
                                                 <fieldset>
                                                     <div class="single-input-item m-b-15">
                                                         <label for="current_pwd" class="required m-b-10">Mật Khẩu Hiện tại</label>
-                                                        <input type="password" name="current_pwd" id="current_pwd" placeholder="Nhập Mật Khẩu" />
+                                                        <input type="password" name="current_pwd" id="current_pwd" placeholder="Nhập Mật Khẩu" class="form-control"/>
                                                     </div>
                                                     <div class="row m-b-n15">
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
                                                                 <label for="new_pwd" class="required m-b-10">Mật khẩu mới</label>
-                                                                <input type="password" id="new-pwd" name="new-pwd" placeholder="Nhập Mật Khẩu" />
+                                                                <input type="password" id="new-pwd" name="new-pwd" placeholder="Nhập Mật Khẩu" class="form-control"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
                                                                 <label for="confirm_pwd" class="required m-b-10">Xác Nhận Mật Khẩu</label>
-                                                                <input type="password" id="confirm_pwd" name="confirm_pwd" placeholder="Nhập Mật Khẩu" />
+                                                                <input type="password" id="confirm_pwd" name="confirm_pwd" placeholder="Nhập Mật Khẩu" class="form-control"/>
                                                             </div>
                                                         </div>
                                                     </div>

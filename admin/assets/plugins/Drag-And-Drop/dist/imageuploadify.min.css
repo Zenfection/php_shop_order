@@ -41,8 +41,8 @@
 	display: block;
 	font-size: 7em;
 	text-align: center;
-	margin-top: .5em;
-	padding-bottom: 12px
+	/* margin-top: .5em;
+	padding-bottom: 12px */
 }
 .imageuploadify .imageuploadify-images-list span.imageuploadify-message {
 	font-size: 24px;

@@ -28,22 +28,22 @@
                     </div>
 
                     <!-- Form Action  -->
-                    <form action="./backend/login.php" method="POST" id="loginForm">
+                    <form action="./backend/login.php" method="POST" id="loginForm" class="has-validation">
                         <!-- Input Email  -->
                         <div class="single-input-item m-b-10">
-                            <input type="text" placeholder="Email / Username" name="user" id="user">
+                            <input type="text" class="form-control" placeholder="Email / Username" name="user" id="user" required>
                         </div>
 
                         <!-- Input Passwordv  -->
                         <div class="single-input-item m-b-10">
-                            <input type="password" placeholder="Nhập mật khẩu" name="pass" id="pass">
+                            <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="pass" id="pass" required>
                         </div>
                         <!-- Input Password End -->
 
                         <!-- Button/Forget Password Start -->
                         <div class="single-input-item m-b-15">
                             <div class="login-reg-form-meta m-b-n15">
-                                <button class="btn btn btn-gray-deep btn-hover-primary m-b-15 " type="submit" name="submit">Sign In</button>
+                                <button class="btn btn btn-gray-deep btn-hover-primary m-b-15" type="submit" name="submit">Sign In</button>
                                 <!-- <a href="#" class="forget-pwd m-b-15">Quên mật khẩu?</a> -->
 
                             </div>
