@@ -7,6 +7,7 @@ $(function () {
 			success: function (data) {
 				window.scrollTo(0, 0);
 				$('#content').html(data);
+				AOS.init();
 			}
 		});
 	}
@@ -20,7 +21,7 @@ $(function () {
 
 	function nav() {
 		let pathURL = window.location.href;
-		if (pathURL.indexOf('#') == -1) {
+		if (pathURL.indexOf('#') == -1 && pathURL.indexOf('?') == -1) {
 			loadContent('/admin/dashboard.php');
 		} else {
 			let path = pathURL.split('/')[4].split('#')[1].replace("=", "");
@@ -29,6 +30,7 @@ $(function () {
 				url: path,
 				success: function (data) {
 					$('#content').html(data);
+					AOS.init();
 				}
 			});
 		}
@@ -52,5 +54,17 @@ $(function () {
 	$(document).on('click', '#sidebar-add-product', function () {
 		loadContent('/admin/add_product.php');
 	});
-	
+	$(document).on('click', '.viewOrderDetails', function(){
+		let id = $(this).attr('id');
+		$.ajax({
+			type: 'POST',
+			url: '/admin/order_details.php',
+			data: {id: id},
+			success: function (data) {
+				window.scrollTo(0, 0);
+				$('#content').html(data);
+				AOS.init();
+			}
+		});
+	});
 });

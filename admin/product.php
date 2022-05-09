@@ -4,13 +4,12 @@
 <div class="page-wrapper">
     <div class="page-content">
         <?php 
-            session_start();
             if(isset($_SESSION['addProduct'])) {
                 echo $_SESSION['addProduct'];
                 unset($_SESSION['addProduct']);
             }
         ?>
-        <div class="row">
+        <div class="row" data-aos="fade-in" data-aos-duration="1000">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">

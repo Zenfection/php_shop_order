@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -68,6 +67,7 @@
 	<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 	<script src="assets/plugins/Drag-And-Drop/dist/imageuploadify.min.js"></script>
 	<!--app JS-->
+	<script src="assets/js/aos.min.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 

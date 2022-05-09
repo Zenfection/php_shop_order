@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $city = $_POST['city'];
     $province = $_POST['province'];
-    $order_date = date('Y-m-d');
+    $order_date = date('d/m/Y');
     $status = 'pending';
     $user = $_SESSION['user'];
     // tạo chuỗi ID ngẫu nhiên

@@ -24,7 +24,7 @@
         </div>
         <div class='ms-3'>
             <h6 class='mb-0 text-success'>Thêm sản phẩm thành công</h6>
-            <div>Bạn đã thêm ${title}</div>
+            <div>Bạn đã thêm <strong>${title}</strong></div>
         </div>
     </div>
     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
