@@ -1,9 +1,15 @@
 <?php include "../config/connect.php" ?>
-<?php echo "<script>window.location.href='/admin/index.php#product'</script>"?>
+<?php echo "<script>window.location.href='/admin/index.php#product'</script>" ?>
 <!--start page wrapper -->
 <div class="page-wrapper">
     <div class="page-content">
-
+        <?php 
+            session_start();
+            if(isset($_SESSION['addProduct'])) {
+                echo $_SESSION['addProduct'];
+                unset($_SESSION['addProduct']);
+            }
+        ?>
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -69,19 +75,19 @@
                             </div>
                             <div class="d-flex align-items-center mt-3 fs-6">
                                 <div class="cursor-pointer">
-                                    <?php 
-                                        $tempRank = $ranking;
-                                        for ($i = 0; $i < 5; $i++) {
-                                            if ($tempRank > 2) {
-                                                echo "<i class='bx bxs-star text-warning'></i>";
-                                                $tempRank -= 2;
-                                            } else if ($tempRank > 0) {
-                                                echo "<i class='bx bxs-star-half text-warning'></i>";
-                                                $tempRank = 0;
-                                            } else {
-                                                echo "<i class='bx bxs-star text-secondary'></i>";
-                                            }
+                                    <?php
+                                    $tempRank = $ranking;
+                                    for ($i = 0; $i < 5; $i++) {
+                                        if ($tempRank > 2) {
+                                            echo "<i class='bx bxs-star text-warning'></i>";
+                                            $tempRank -= 2;
+                                        } else if ($tempRank > 0) {
+                                            echo "<i class='bx bxs-star-half text-warning'></i>";
+                                            $tempRank = 0;
+                                        } else {
+                                            echo "<i class='bx bxs-star text-secondary'></i>";
                                         }
+                                    }
                                     ?>
                                 </div>
                                 <p class="mb-0 ms-auto"><?php echo $ranking / 2 ?></p>

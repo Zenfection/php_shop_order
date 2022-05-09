@@ -150,8 +150,7 @@ if (isset($_SESSION['order'])) {
                                 echo "<div class='error'>Image not Available</div>";
                             } else {
                             ?>
-                                <img class="fit-image" src="assets/images/category/<?php echo $image; ?>" alt="Banner Image" width="250px" height="300px" 
-                                style="border-radius: 20px"/>
+                                <img class="fit-image p-10" src="assets/images/category/<?php echo $image; ?>" alt="Banner Image"/>
                             <?php
                             }
                             ?>

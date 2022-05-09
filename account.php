@@ -4,6 +4,7 @@ if (isset($_SESSION['change_pwd'])) {
     echo $_SESSION['change_pwd'];
     unset($_SESSION['change_pwd']);
 }
+echo "<script>window.location.href = '/index.php#account'</script>";
 ?>
 <!-- My Account Section Start -->
 <div class="section section-margin">

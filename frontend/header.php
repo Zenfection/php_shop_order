@@ -50,10 +50,10 @@ include "./config/connect.php";
                     <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="500">
                         <div class="main-menu">
                             <ul>
-                                <li><a id="nav-home" href="/index.php#home">Trang Chủ</a></li>
-                                <li><a id="nav-about" href="/index.php#about">Giới Thiệu</a></li>
-                                <li><a id="nav-shop" href="/index.php#shop">Shop</a></li>
-                                <li><a id="nav-contact" href="/index.php#contact">Liên Hệ</a></li>
+                                <li><a style="cursor:pointer" id="nav-home" href="/index.php#home">Trang Chủ</a></li>
+                                <li><a style="cursor:pointer" id="nav-about" href="/index.php#about">Giới Thiệu</a></li>
+                                <li><a style="cursor:pointer" id="nav-shop" href="/index.php#shop">Shop</a></li>
+                                <li><a style="cursor:pointer" id="nav-contact" href="/index.php#contact">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ include "./config/connect.php";
                             <!-- account login -->
                             <?php
                             if (isset($_SESSION['user'])) {
-                                echo "<a href='#account' id='account' class='header-action-btn header-action-btn-wishlist'>
+                                echo "<a href='/index.php#account' id='account' class='header-action-btn header-action-btn-wishlist'>
                                     <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
                             } else {
                                 echo "<a href='#login' id='login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
