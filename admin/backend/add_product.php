@@ -1,7 +1,7 @@
 <?php 
     include "../../config/connect.php";
     if (isset($_POST['submit'])) {
-    $title = $_POST['title'];
+    $name = $_POST['title'];
     $description = $_POST['description'];
     $price = (float)$_POST['price'];
     $quantity = (int)$_POST['quantity'];
@@ -14,8 +14,8 @@
     //!check session admin sau này, giờ chưa có
 
     //* Lấy id_product mới nhất
-    $sql = "INSERT INTO `tb_product` (name, description, price, image, discount, ranking, quantity, id_category) 
-    VALUES ('$title', '$description', $price, '$image',$discount, $ranking, $quantity, '$type')";
+    //(name, description, price, image, discount, ranking, quantity, id_category) 
+    $sql = "CALL ADD_PRODUCT('$name', '$description', $price, '$image', $discount, $ranking,$quantity, '$type')";
     $result = mysqli_query($conn, $sql);
     move_uploaded_file($tempImage, '../../assets/images/products/' . $image);
     $_SESSION['addProduct'] = "<div class='alert border-0 border-start border-5 border-success alert-dismissible fade show py-2'>
@@ -24,7 +24,7 @@
         </div>
         <div class='ms-3'>
             <h6 class='mb-0 text-success'>Thêm sản phẩm thành công</h6>
-            <div>Bạn đã thêm <strong>${title}</strong></div>
+            <div>Bạn đã thêm <strong>${name}</strong></div>
         </div>
     </div>
     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>

@@ -1,25 +1,25 @@
-<?php include "../config/connect.php"?>
-<?php echo "<script>window.location.href='/admin/index.php#dashboard'</script>"?>
-<?php 
-    //* Tổng tiền
-    $sql = "SELECT * FROM `tb_order`";
-    $result = mysqli_query($conn, $sql);
-    $countOrder = mysqli_num_rows($result); 
-    //* Tổng số khách hàng
-    $sql = "SELECT ROUND(SUM(total_money),2) as totalMoney FROM `tb_order`";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    $totalMoney = $row['totalMoney']; 
-    //* Tổng số sản phẩm
-    $sql = "SELECT COUNT(id_product) as totalProduct FROM `tb_product`";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    $totalProduct = $row['totalProduct'];
-    //* Tổng số khách hàng
-    $sql = "SELECT COUNT(username) as totalCustomer FROM `tb_user`";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    $totalCustomer = $row['totalCustomer']; 
+<?php include "../config/connect.php" ?>
+<?php echo "<script>window.location.href='/admin/index.php#dashboard'</script>" ?>
+<?php
+//* Tổng tiền
+$sql = "SELECT * FROM `tb_order`";
+$result = mysqli_query($conn, $sql);
+$countOrder = mysqli_num_rows($result);
+//* Tổng số khách hàng
+$sql = "SELECT ROUND(SUM(total_money),2) as totalMoney FROM `tb_order`";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$totalMoney = $row['totalMoney'];
+//* Tổng số sản phẩm
+$sql = "SELECT COUNT(id_product) as totalProduct FROM `tb_product`";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$totalProduct = $row['totalProduct'];
+//* Tổng số khách hàng
+$sql = "SELECT COUNT(username) as totalCustomer FROM `tb_user`";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$totalCustomer = $row['totalCustomer'];
 ?>
 <!--start page wrapper -->
 <div class="page-wrapper">
@@ -31,7 +31,7 @@
                         <div class="d-flex align-items-center">
                             <div>
                                 <p class="mb-0 text-white">Đơn Hàng</p>
-                                <h4 class="my-1 text-white"><?php echo $countOrder?></h4>
+                                <h4 class="my-1 text-white"><?php echo $countOrder ?></h4>
                             </div>
                             <div class="text-white ms-auto font-35"><i class='bx bx-cart-alt'></i>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="d-flex align-items-center">
                             <div>
                                 <p class="mb-0 text-white">Thu Nhập</p>
-                                <h4 class="my-1 text-white"><?php echo $totalMoney?>$</h4>
+                                <h4 class="my-1 text-white"><?php echo $totalMoney ?>$</h4>
                             </div>
                             <div class="text-white ms-auto font-35"><i class='bx bx-dollar'></i>
                             </div>
@@ -59,7 +59,7 @@
                         <div class="d-flex align-items-center">
                             <div>
                                 <p class="mb-0 text-dark">Sản phẩm</p>
-                                <h4 class="text-dark my-1"><?php echo $totalProduct?></h4>
+                                <h4 class="text-dark my-1"><?php echo $totalProduct ?></h4>
                             </div>
                             <div class="text-dark ms-auto font-35"><i class='bx bx-food-menu'></i>
                             </div>
@@ -73,7 +73,7 @@
                         <div class="d-flex align-items-center">
                             <div>
                                 <p class="mb-0 text-dark">Khách Hàng</p>
-                                <h4 class="text-dark my-1"><?php echo $totalCustomer?></h4>
+                                <h4 class="text-dark my-1"><?php echo $totalCustomer ?></h4>
                             </div>
                             <div class="text-dark ms-auto font-35"><i class='bx bx-user-pin'></i>
                             </div>
@@ -154,16 +154,26 @@
                         </div>
                         <div id="chart4"></div>
                         <div class="d-flex align-items-center justify-content-between text-center">
+                            <?php 
+                                $countTotal = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order`"));
+                                $countPending = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order` WHERE status = 'pending'"));
+                                $countShipping = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order` WHERE status = 'shipping'"));
+                                $countCanceled = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order` WHERE status = 'canceled'"));
+                            ?>
                             <div>
-                                <h5 class="mb-1 font-weight-bold">289</h5>
+                                <h5 class="mb-1 font-weight-bold"><?php echo $countTotal?></h5>
                                 <p class="mb-0 text-secondary">Đã Đặt</p>
                             </div>
-                            <div class="mb-1">
-                                <h5 class="mb-1 font-weight-bold">348</h5>
+                            <div>
+                                <h5 class="mb-1 font-weight-bold"><?php echo $countPending?></h5>
                                 <p class="mb-0 text-secondary">Đang Xử Lý</p>
                             </div>
+                            <div class="mb-1">
+                                <h5 class="mb-1 font-weight-bold"><?php echo $countShipping?></h5>
+                                <p class="mb-0 text-secondary">Đang Giao Hàng</p>
+                            </div>
                             <div>
-                                <h5 class="mb-1 font-weight-bold">252</h5>
+                                <h5 class="mb-1 font-weight-bold"><?php echo $countCanceled?></h5>
                                 <p class="mb-0 text-secondary">Huỷ</p>
                             </div>
                         </div>
@@ -179,7 +189,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h6 class="font-weight-bold mb-0">Best Selling Products</h6>
+                                <h6 class="font-weight-bold mb-0">Top 10 sản phẩm bán chạy nhất</h6>
                             </div>
                             <div class="dropdown ms-auto">
                                 <div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
@@ -188,104 +198,34 @@
                         </div>
                     </div>
                     <div class="best-selling-products p-3 mb-3">
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/ice-cream-cornet.png" class="p-1" alt="" />
+                        <?php
+                        $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`quantity` ASC LIMIT 10";
+                        $result = mysqli_query($conn, $sql);
+                        $count = mysqli_num_rows($result);
+                        for($i = 1; $i <= $count; $i++){
+                            $row = mysqli_fetch_array($result);
+                            $name = $row['name'];
+                            $description = $row['description'];
+                            $price = (float)$row['price'];
+                            $discount = (int)$row['discount'];
+                            $image = $row['image'];
+                            $quantity = (int)$row['quantity'];
+                            $discount_price = $price - ($price * $discount / 100);
+                        ?>
+                            <div class="d-flex align-items-center">
+                                <div class="product-img">
+                                    <img src="/assets/images/products/<?php echo $image ?>" class="p-1" />
+                                </div>
+                                <div class="ps-3">
+                                    <h6 class="mb-0 font-weight-bold"><?php echo $name ?></h6>
+                                    <p class="mb-0 text-secondary"><?php echo $discount_price ?>$ / còn <?php echo $quantity ?></p>
+                                </div>
+                                <!-- <p class="ms-auto mb-0 text-purple">$521.52</p> -->
                             </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Cone Ice Cream</h6>
-                                <p class="mb-0 text-secondary">$29/Each 56 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$521.52</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Wine Glass</h6>
-                                <p class="mb-0 text-secondary">$30/Each 48 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$406.87</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/banana.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Banana Toy</h6>
-                                <p class="mb-0 text-secondary">$26/Each 66 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$685.69</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/telephone.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Old Telephone</h6>
-                                <p class="mb-0 text-secondary">$39/Each 26 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$913.72</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/plate.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Orange Plate</h6>
-                                <p class="mb-0 text-secondary">$22/Each 34 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$372.62</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/telephone.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Old Telephone</h6>
-                                <p class="mb-0 text-secondary">$39/Each 26 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$913.72</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/banana.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Banana Toy</h6>
-                                <p class="mb-0 text-secondary">$26/Each 66 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$685.69</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Wine Glass</h6>
-                                <p class="mb-0 text-secondary">$30/Each 48 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$406.87</p>
-                        </div>
-                        <hr>
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/ice-cream-cornet.png" class="p-1" class="" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Cone Ice Cream</h6>
-                                <p class="mb-0 text-secondary">$29/Each 56 Orders</p>
-                            </div>
-                            <p class="ms-auto mb-0 text-purple">$521.52</p>
-                        </div>
+                            <?php if($i == 10){ continue; } echo "<hr/>"?>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -294,102 +234,53 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h6 class="font-weight-bold mb-0">Recent Reviews</h6>
+                                <h6 class="font-weight-bold mb-0">Top 10 sản phẩn đánh giá cao nhất</h6>
                             </div>
                             <div class="dropdown ms-auto">
                                 <div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="javaScript:;">Action</a>
-                                    <a class="dropdown-item" href="javaScript:;">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javaScript:;">Something else here</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="recent-reviews p-3 mb-3">
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/banana.png" class="p-1" alt="" />
+                        <?php
+                        $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`ranking` DESC LIMIT 10";
+                        $result = mysqli_query($conn, $sql);
+                        for($i = 1; $i <= 10; $i++) {
+                            $row = mysqli_fetch_assoc($result);
+                            $name = $row['name'];
+                            $image = $row['image'];
+                            $ranking = (int)$row['ranking'];
+                        ?>
+                            <div class="d-flex align-items-center">
+                                <div class="product-img">
+                                    <img src="/assets/images/products/<?php echo $image?>" class="p-1" alt="" />
+                                </div>
+                                <div class="ps-3">
+                                    <h6 class="mb-0 font-weight-bold"><?php echo $name?></h6>
+                                </div>
+                                <p class="ms-auto mb-0">
+                                    <?php
+                                        $temp = $ranking;
+                                        for($j = 1; $j <= 5; $j++){
+                                            if($temp > 2){
+                                                echo "<i class='bx bxs-star text-warning mr-1'></i>";
+                                                $temp -= 2;
+                                            }
+                                            else if($temp > 1){
+                                                echo "<i class='bx bxs-star-half text-warning mr-1'></i>";
+                                                $temp = 0;
+                                                break;
+                                            }
+                                        }
+                                    ?>
+                                </p>
                             </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Banana Toy</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/telephone.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Old Telephone</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Wine Glass</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/plate.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Orange Plate</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/ice-cream-cornet.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Cone Ice Cream</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/telephone.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Old Telephone</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/wine-glass.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Wine Glass</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
-                        <hr />
-                        <div class="d-flex align-items-center">
-                            <div class="product-img">
-                                <img src="assets/images/icons/plate.png" class="p-1" alt="" />
-                            </div>
-                            <div class="ps-3">
-                                <h6 class="mb-0 font-weight-bold">Orange Plate</h6>
-                            </div>
-                            <p class="ms-auto mb-0"><i class='bx bxs-star text-warning mr-1'></i> 5.00</p>
-                        </div>
+                            <?php if($i == 10){ continue; } echo "<hr/>"?>
+                        <?php
+                        }
+                        ?>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -399,82 +290,82 @@
 <!--end page wrapper -->
 
 <script>
-	// chart4
-	var options = {
-		series: [87],
-		chart: {
-			//foreColor: '#9a9797',
-			height: 380,
-			type: 'radialBar',
-			offsetY: -10
-		},
-		plotOptions: {
-			radialBar: {
-				startAngle: -135,
-				endAngle: 135,
-				hollow: {
-					margin: 0,
-					size: '70%',
-					background: 'transparent',
-				},
-				track: {
-					strokeWidth: '100%',
-					dropShadow: {
-						enabled: false,
-						top: -3,
-						left: 0,
-						blur: 4,
-						//color: 'rgba(209, 58, 223, 0.65)',
-						opacity: 0.12
-					}
-				},
-				dataLabels: {
-					name: {
-						fontSize: '16px',
-						color: '#212529',
-						offsetY: 5
-					},
-					value: {
-						offsetY: 20,
-						fontSize: '30px',
-						color: '#212529',
-						formatter: function (val) {
-							return val + "%";
-						}
-					}
-				}
-			}
-		},
-		fill: {
-			type: 'gradient',
-			gradient: {
-				shade: 'dark',
-				shadeIntensity: 0.15,
-				gradientToColors: ['#4a00e0'],
-				inverseColors: false,
-				opacityFrom: 1,
-				opacityTo: 1,
-				stops: [0, 50, 65, 91]
-			},
-		},
-		colors: ["#8e2de2"],
-		stroke: {
-			dashArray: 4
-		},
-		labels: ['Đã Giao'],
-		responsive: [{
-			breakpoint: 480,
-			options: {
-				chart: {
-					height: 300,
-				}
-			}
-		}]
-	};
-	var chart = new ApexCharts(document.querySelector("#chart4"), options);
-	chart.render(); 
+    // chart4
+    var options = {
+        series: [87],
+        chart: {
+            //foreColor: '#9a9797',
+            height: 380,
+            type: 'radialBar',
+            offsetY: -10
+        },
+        plotOptions: {
+            radialBar: {
+                startAngle: -135,
+                endAngle: 135,
+                hollow: {
+                    margin: 0,
+                    size: '70%',
+                    background: 'transparent',
+                },
+                track: {
+                    strokeWidth: '100%',
+                    dropShadow: {
+                        enabled: false,
+                        top: -3,
+                        left: 0,
+                        blur: 4,
+                        //color: 'rgba(209, 58, 223, 0.65)',
+                        opacity: 0.12
+                    }
+                },
+                dataLabels: {
+                    name: {
+                        fontSize: '16px',
+                        color: '#212529',
+                        offsetY: 5
+                    },
+                    value: {
+                        offsetY: 20,
+                        fontSize: '30px',
+                        color: '#212529',
+                        formatter: function(val) {
+                            return val + "%";
+                        }
+                    }
+                }
+            }
+        },
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'dark',
+                shadeIntensity: 0.15,
+                gradientToColors: ['#4a00e0'],
+                inverseColors: false,
+                opacityFrom: 1,
+                opacityTo: 1,
+                stops: [0, 50, 65, 91]
+            },
+        },
+        colors: ["#8e2de2"],
+        stroke: {
+            dashArray: 4
+        },
+        labels: ['Đã Giao'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    height: 300,
+                }
+            }
+        }]
+    };
+    var chart = new ApexCharts(document.querySelector("#chart4"), options);
+    chart.render();
 
-	new PerfectScrollbar('.best-selling-products');
-	new PerfectScrollbar('.recent-reviews');
-	new PerfectScrollbar('.support-list');
+    new PerfectScrollbar('.best-selling-products');
+    new PerfectScrollbar('.recent-reviews');
+    new PerfectScrollbar('.support-list');
 </script>

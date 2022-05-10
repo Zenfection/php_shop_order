@@ -247,7 +247,7 @@ if (isset($_SESSION['order'])) {
                             $count = mysqli_num_rows($result);
                             if ($count > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $id = $row['id'];
+                                    $id = $row['id_product'];
                                     $name = $row['name'];
                                     $description = $row['description'];
                                     $price = $row['price'];

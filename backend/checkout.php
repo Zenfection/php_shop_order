@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $city = $_POST['city'];
     $province = $_POST['province'];
-    $order_date = date('d/m/Y');
+    $order_date = date('Y-m-d');
     $status = 'pending';
     $user = $_SESSION['user'];
     // tạo chuỗi ID ngẫu nhiên
@@ -15,10 +15,8 @@ if (isset($_POST['submit'])) {
     $str = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
     $id_order = strtoupper(substr(str_shuffle($str), 0, $length));
     // ----
-    $sql = "INSERT INTO `tb_order`
-            (`id_order`, `username`, `name_customer`, `phone_customer`, `address_customer`, `email_customer`, `city_customer`, `province_customer`, `status`, `order_date`) 
-            VALUES 
-            ('$id_order', '$user', '$fullname', '$phone', '$address', '$email', '$city', '$province', '$status', '$order_date')";
+    // CALL CHECKOUT(id, user, name, email, phone, province, city, address, status, orderDate)
+    $sql = "CALL CHECKOUT('$id_order', '$user', '$fullname', '$email', '$phone', '$province', '$city', '$address', '$status', '$order_date')";
     $result = mysqli_query($conn, $sql); 
 
     $sql2 = "SELECT * 

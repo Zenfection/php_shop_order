@@ -10,17 +10,8 @@
         $address = $_POST['address'];
         $status = $_POST['status'];
         //!check session admin sau này, giờ chưa có
-
-        $sql = "UPDATE `tb_order` 
-                SET name_customer = '$name',
-                email_customer = '$email',
-                phone_customer = '$phone',
-                province_customer = '$province',
-                city_customer = '$city',
-                address_customer = '$address',
-                status = '$status'
-                WHERE id_order = '$id'";
-    $result = mysqli_query($conn, $sql);
+        // UPDATE_ORDER(id, name, email, phone, province, city, address, status);
+        $result = mysqli_query($conn, "CALL UPDATE_ORDER('$id', '$name', '$email', '$phone', '$province', '$city', '$address', '$status')");
     $_SESSION['change_order_info'] = "<div class='alert border-0 border-start border-5 border-success alert-dismissible fade show py-2'>
     <div class='d-flex align-items-center'>
         <div class='font-35 text-success'><i class='bx bxs-check-circle'></i>
@@ -34,4 +25,3 @@
     </div>";
     }
     echo "<script>window.location.href = '/admin/index.php#order'</script>";
-?>

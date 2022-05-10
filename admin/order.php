@@ -26,12 +26,11 @@
                                 <th>Tổng Tiền</th>
                                 <th>Ngày Đặt</th>
                                 <th>Xem Chi Tiết</th>
-                                <th>Thao Tác</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `tb_order`";
+                            $sql = "SELECT * FROM `tb_order` ORDER BY `tb_order`.`order_date` DESC";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                                 $id = $row['id_order'];
@@ -89,11 +88,6 @@
                                         <a class="viewOrderDetails" id="<?php echo $id?>">
                                             <button type="button" class="btn btn-primary btn-sm radius-30 px-4">Xem</button>
                                         </a>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex order-actions">
-                                            <a href="javascript:;" class="ms-3"><i class='bx bxs-trash'></i></a>
-                                        </div>
                                     </td>
                                 </tr>
                             <?php
