@@ -20,21 +20,27 @@
             </a>
         </li>
         <li class="menu-label">Quản lí Hàng</li>
-            <a id="sidebar-product" style="cursor: pointer;">
-                <div class="parent-icon"><i class='lni lni-gift'></i>
-                </div>
-                <div class="menu-title">Sản Phẩm</div>
-            </a>
-            <a id="sidebar-order" style="cursor: pointer;">
-                <div class="parent-icon"><i class='lni lni-shopping-basket'></i>
-                </div>
-                <div class="menu-title">Đơn Hàng</div>
-            </a>
-            <a id="sidebar-customer" style="cursor: pointer;">
-                <div class="parent-icon"><i class='lni lni-users'></i>
-                </div>
-                <div class="menu-title">Khách Hàng</div>
-            </a>
+            <li>
+                <a id="sidebar-product" style="cursor: pointer;">
+                    <div class="parent-icon"><i class='lni lni-gift'></i>
+                    </div>
+                    <div class="menu-title">Sản Phẩm</div>
+                </a>
+            </li>
+            <li>
+                <a id="sidebar-order" style="cursor: pointer;">
+                    <div class="parent-icon"><i class='lni lni-shopping-basket'></i>
+                    </div>
+                    <div class="menu-title">Đơn Hàng</div>
+                </a>
+            </li>
+            <li>
+                <a id="sidebar-customer" style="cursor: pointer;">
+                    <div class="parent-icon"><i class='lni lni-users'></i>
+                    </div>
+                    <div class="menu-title">Khách Hàng</div>
+                </a>
+            </li>
         <li class="menu-label">Trợ Giúp</li>
         <li>
             <a href="https://facebook.com/zenfection" target="_blank">

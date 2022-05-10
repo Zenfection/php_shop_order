@@ -118,4 +118,39 @@ BEGIN
 END //
 DELIMITER ;
 
-SELECT countPendingOrder();
+-- *SELECT countPendingOrder();
+
+
+-- Hàm tính tổng tiền trong đơn hàng
+DELIMITER //
+DROP FUNCTION IF EXISTS totalMoney;
+CREATE FUNCTION `totalMoney`(id char(10)) RETURNS FLOAT DETERMINISTIC
+BEGIN
+    DECLARE result FLOAT DEFAULT -1;
+
+    SELECT SUM(total) INTO result FROM 
+        (SELECT (p.price - (p.price * p.discount)/100) * od.amount as total 
+        FROM `tb_order_details` as od, `tb_product` as p 
+        WHERE od.id_product = p.id_product 
+        AND id_order = id) as total;
+
+    RETURN result;
+END // 
+DELIMITER ;
+
+--* Top 10 sản phẩm bán được nhiều nhất
+DROP PROCEDURE IF EXISTS TOP_SELLER_PRODUCT;
+DELIMITER //
+CREATE PROCEDURE TOP_SELLER_PRODUCT()
+BEGIN
+    SELECT p.*, COUNT(od.amount) as total_amount
+    FROM `tb_order_details` as od, `tb_product` as p
+    WHERE od.id_product = p.id_product
+    GROUP BY p.id_product
+    ORDER BY total_amount DESC
+    LIMIT 10;
+END //
+DELIMITER ;
+
+CALL PROCEDURE `TOP_SELLER_PRODUCT`()
+

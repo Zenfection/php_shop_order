@@ -1,25 +1,17 @@
 <?php include "../config/connect.php" ?>
 <?php echo "<script>window.location.href='/admin/index.php#dashboard'</script>" ?>
 <?php
-//* Tổng tiền
-$sql = "SELECT * FROM `tb_order`";
-$result = mysqli_query($conn, $sql);
-$countOrder = mysqli_num_rows($result);
-//* Tổng số khách hàng
+//* Tổng đơn hàng
+$countOrder = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order`"));
+//* Tổng số tiền đơn hàng
 $sql = "SELECT ROUND(SUM(total_money),2) as totalMoney FROM `tb_order`";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $totalMoney = $row['totalMoney'];
 //* Tổng số sản phẩm
-$sql = "SELECT COUNT(id_product) as totalProduct FROM `tb_product`";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
-$totalProduct = $row['totalProduct'];
+$totalProduct = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_product`"));
 //* Tổng số khách hàng
-$sql = "SELECT COUNT(username) as totalCustomer FROM `tb_user`";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
-$totalCustomer = $row['totalCustomer'];
+$totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"));
 ?>
 <!--start page wrapper -->
 <div class="page-wrapper">
@@ -158,6 +150,7 @@ $totalCustomer = $row['totalCustomer'];
                                 $countTotal = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order`"));
                                 $countPending = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order` WHERE status = 'pending'"));
                                 $countShipping = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order` WHERE status = 'shipping'"));
+                                $countDelivered = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order` WHERE status = 'delivered'"));
                                 $countCanceled = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order` WHERE status = 'canceled'"));
                             ?>
                             <div>
@@ -199,7 +192,12 @@ $totalCustomer = $row['totalCustomer'];
                     </div>
                     <div class="best-selling-products p-3 mb-3">
                         <?php
-                        $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`quantity` ASC LIMIT 10";
+                        $sql = "SELECT p.*, COUNT(od.amount) as total_amount
+                                FROM `tb_order_details` as od, `tb_product` as p
+                                WHERE od.id_product = p.id_product
+                                GROUP BY p.id_product
+                                ORDER BY total_amount DESC
+                                LIMIT 10;";
                         $result = mysqli_query($conn, $sql);
                         $count = mysqli_num_rows($result);
                         for($i = 1; $i <= $count; $i++){
@@ -209,7 +207,7 @@ $totalCustomer = $row['totalCustomer'];
                             $price = (float)$row['price'];
                             $discount = (int)$row['discount'];
                             $image = $row['image'];
-                            $quantity = (int)$row['quantity'];
+                            $total_amount = (int)$row['total_amount'];
                             $discount_price = $price - ($price * $discount / 100);
                         ?>
                             <div class="d-flex align-items-center">
@@ -218,9 +216,9 @@ $totalCustomer = $row['totalCustomer'];
                                 </div>
                                 <div class="ps-3">
                                     <h6 class="mb-0 font-weight-bold"><?php echo $name ?></h6>
-                                    <p class="mb-0 text-secondary"><?php echo $discount_price ?>$ / còn <?php echo $quantity ?></p>
+                                    <p class="mb-0 text-secondary"><?php echo $discount_price ?>$ / mua <?php echo $total_amount ?> cái</p>
                                 </div>
-                                <!-- <p class="ms-auto mb-0 text-purple">$521.52</p> -->
+                                <p class="ms-auto mb-0 text-purple" style="font-weight: bold;"><?php echo $discount_price * $total_amount?>$</p>
                             </div>
                             <?php if($i == 10){ continue; } echo "<hr/>"?>
                         <?php
@@ -292,7 +290,7 @@ $totalCustomer = $row['totalCustomer'];
 <script>
     // chart4
     var options = {
-        series: [87],
+        series: [<?php echo ($countDelivered / $countTotal)*100?>],
         chart: {
             //foreColor: '#9a9797',
             height: 380,

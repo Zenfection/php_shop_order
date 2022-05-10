@@ -42,7 +42,7 @@
                                         <div class="notify bg-light-danger text-danger"><i class="bx bx-cart-alt"></i>
                                         </div>
                                         <div class="flex-grow-1">
-                                            <h6 class="msg-name">New Orders <span class="msg-time float-end">2
+                                            <h6 class="msg-name">Thêm đơn hàng <span class="msg-time float-end">2
                                                     phút trước</span></h6>
                                             <p class="msg-info">Bạn đã có đơn hàng mới</p>
                                         </div>
