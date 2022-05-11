@@ -4,7 +4,7 @@
 //* Tổng đơn hàng
 $countOrder = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_order`"));
 //* Tổng số tiền đơn hàng
-$sql = "SELECT ROUND(SUM(total_money),2) as totalMoney FROM `tb_order`";
+$sql = "SELECT ROUND(SUM(total_money),2) as totalMoney FROM `tb_order` WHERE status = 'delivered'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $totalMoney = $row['totalMoney'];
@@ -290,7 +290,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
 <script>
     // chart4
     var options = {
-        series: [<?php echo ($countDelivered / $countTotal)*100?>],
+        series: [<?php echo ROUND(($countDelivered / $countTotal)*100,2)?>],
         chart: {
             //foreColor: '#9a9797',
             height: 380,

@@ -4,6 +4,11 @@ if (isset($_SESSION['change_pwd'])) {
     echo $_SESSION['change_pwd'];
     unset($_SESSION['change_pwd']);
 }
+if(isset($_SESSION['cancel_order'])){
+    echo $_SESSION['cancel_order'];
+    unset ($_SESSION['cancel_order']);
+}
+
 echo "<script>window.location.href = '/index.php#account'</script>";
 ?>
 <!-- My Account Section Start -->

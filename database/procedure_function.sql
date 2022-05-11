@@ -154,3 +154,29 @@ DELIMITER ;
 
 CALL PROCEDURE `TOP_SELLER_PRODUCT`()
 
+--* Trigger khi thêm đơn hàng sẽ tự động trừ vào sản phẩm
+DROP TRIGGER IF EXISTS tb_order_details_insert;
+DELIMITER //
+CREATE TRIGGER `quantity_prodcut_after_insert`
+AFTER INSERT ON `tb_order_details`
+FOR EACH ROW
+BEGIN
+    UPDATE `tb_product`
+    SET quantity = quantity - NEW.amount
+    WHERE id_product = NEW.id_product;
+END //
+DELIMITER ; 
+
+--* Trigger thêm các order detail khi thêm order
+DROP TRIGGER IF EXISTS tb_order_details_insert;
+DELIMITER //
+CREATE TRIGGER `tb_order_details_insert`
+AFTER INSERT ON `tb_order`, `tb_cart`
+FOR EACH ROW
+BEGIN
+    INSERT INTO `tb_order_details`
+    (id_order, id_product, amount)
+    VALUES
+    (NEW.id_order, NEW.id_product, NEW.amount);
+END //
+DELIMITER ;

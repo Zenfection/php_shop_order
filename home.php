@@ -242,7 +242,12 @@ if (isset($_SESSION['order'])) {
                     <div class="tab-pane fade" id="top-product-seller">
                         <div class="row m-b-n40">
                             <?php
-                            $sql = "SELECT * FROM `tb_product` ORDER BY `tb_product`.`quantity` ASC LIMIT 8";
+                            $sql = "SELECT p.*, COUNT(od.amount) as total_amount
+                            FROM `tb_order_details` as od, `tb_product` as p
+                            WHERE od.id_product = p.id_product
+                            GROUP BY p.id_product
+                            ORDER BY total_amount DESC
+                            LIMIT 8";
                             $result = mysqli_query($conn, $sql);
                             $count = mysqli_num_rows($result);
                             if ($count > 0) {

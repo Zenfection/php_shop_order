@@ -1,4 +1,8 @@
-<?php include "./config/connect.php" ?>
+<?php include "./config/connect.php" ;
+$statusVie = ["Đang xử lý", "Đang giao hàng", "Đã giao hàng", "Đã hủy"];
+$id_order =$_GET['id_order'];
+?>
+
 <!-- Shopping Cart Section Start -->
 <div class="section section-margin">
     <div class="container">
@@ -9,7 +13,7 @@
                 <!-- Cart Table Start -->
                 <div class="cart-table table-responsive">
                     <table class="table table-bordered">
-                        <h3 class="text-center">Chi tiết đơn hàng <?php echo $_GET['id_order']?></h3>
+                        <h3 class="text-center">Chi tiết đơn hàng <?php echo $id_order ?></h3>
                         <!-- Table Head Start -->
                         <thead>
                             <tr>
@@ -51,19 +55,19 @@
                                     <tr>
                                         <td class="pro-thumbnail">
                                             <a href="#">
-                                                <img class="fit-image rounded" src="./assets/images/products/<?php echo $image?>" alt="Product<?php echo $id_product?>" style="width:80%"/>
+                                                <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" alt="Product<?php echo $id_product ?>" style="width:80%" />
                                             </a>
                                         </td>
                                         <td class="pro-title">
-                                            <a href="#"><?php echo $name?></a>
+                                            <a href="#"><?php echo $name ?></a>
                                         </td>
-                                        <td class="pro-price"><span><?php echo $price?>$</span></td>
+                                        <td class="pro-price"><span><?php echo $price ?>$</span></td>
                                         <td class="pro-quantity">
                                             <div class="quantity">
-                                                <?php echo $amount?>
+                                                <?php echo $amount ?>
                                             </div>
                                         </td>
-                                        <td class="pro-subtotal"><span><?php echo $total_price?>$</span></td>
+                                        <td class="pro-subtotal"><span><?php echo $total_price ?>$</span></td>
                                     </tr>
                             <?php
                                 }
@@ -91,29 +95,44 @@
                             <table class="table">
                                 <tr>
                                     <td>Ngày đặt hàng</td>
-                                    <td><?php echo $order_date?></td>
+                                    <td><?php echo $order_date ?></td>
                                 </tr>
                                 <tr>
                                     <td>Trạng thái</td>
-                                    <td><?php echo $status?></td>
+                                    <td><?php 
+                                        if($status == 'pending'){
+                                            echo $statusVie[0];
+                                        }
+                                        else if($status == 'shipping'){
+                                            echo $statusVie[1] . ' (không thể huỷ hàng)'; 
+                                        }
+                                        else if($status == 'delivered'){
+                                            echo $statusVie[2] . ' (không thể huỷ hàng)';
+                                        }
+                                        else if($status == 'canceled'){
+                                            echo $statusVie[3] . ' (không thể huỷ hàng)';
+                                        }
+                                    ?></td>
                                 </tr>
                                 <tr class="total">
                                     <td>Tổng tiền</td>
-                                    <td class="total-amount"><?php echo $total_money?>$</td>
+                                    <td class="total-amount"><?php echo $total_money ?>$</td>
                                 </tr>
                             </table>
                         </div>
                         <!-- Responsive Table End -->
 
                     </div>
-                    <!-- Cart Calculate Items End -->
-
+                    <?php if($status == 'pending'){
+                        ?>
+                        <a href="/backend/cancel_order.php?id=<?php echo $id_order?>" class="btn btn btn-gray-deep btn-hover-primary m-t-30 cursor-pointer">Huỷ Hàng</a>";
+                        <?php
+                    }
+                    ?>
                 </div>
                 <!-- Cart Calculation Area End -->
-
             </div>
         </div>
-
     </div>
 </div>
 <!-- Shopping Cart Section End -->

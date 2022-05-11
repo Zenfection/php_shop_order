@@ -56,6 +56,7 @@
     $(".mobile-menu-wrapper").removeClass('open');
   });
 
+    
   /*----------------------------------------*/
   /* Toggle Function Active
   /*----------------------------------------*/
@@ -78,6 +79,10 @@
     $('#ship-box-info').slideToggle(1000);
   });
 
+  $(document).on('click', '#incQtyProduct', function(){
+    let id = $(this).parents('tr').attr('id').replace('view_cart_product', '');
+    addProduct(parseInt(id), 1);
+  });
   /*----------------------------------------
     Responsive Mobile Menu
   ------------------------------------------*/
@@ -463,6 +468,7 @@
       }
     });
   }
+
   /*-------------------------
       Ajax Shop Page
   ---------------------------*/
@@ -773,6 +779,7 @@
       }
     }
     nav();
+  
   
   /*-------------------------
       Ajax Contact Form 

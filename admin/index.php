@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="assets/css/dark-theme.min.css" />
 	<link rel="stylesheet" href="assets/css/semi-dark.min.css" />
 	<link rel="stylesheet" href="assets/css/header-colors.min.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
 	<title>ZenShop - Admin</title>
 </head>
 <html>

@@ -66,17 +66,17 @@
                             }
                             $name = $results->data[$i]['name'];
                             $description = $results->data[$i]['description'];
-                            $price = $results->data[$i]['price'];
+                            $price = (float)$results->data[$i]['price'];
                             $image = $results->data[$i]['image'];
-                            $discount = $results->data[$i]['discount'];
-                            $ranking = $results->data[$i]['ranking'];
-                            $quantity = $results->data[$i]['quantity'];
+                            $discount = (int)$results->data[$i]['discount'];
+                            $ranking = (int)$results->data[$i]['ranking'];
+                            $quantity = (int)$results->data[$i]['quantity'];
                     ?>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
                                 <div class="product-inner" id="product<?php echo $id?>">
-                                    <div class="thumb">
+                                    <div class="thumb">                                  
                                         <a href="/detail_product.php?id=<?php echo $id ?>" class="image">
-                                            <img class="fit-image" id="img-product<?php echo $id?>" src="assets/images/products/<?php echo $image ?>" alt="Product" width="270" height="270" />
+                                            <img class="fit-image p-10" id="img-product<?php echo $id?>" src="assets/images/products/<?php echo $image ?>" alt="Product" />
                                         </a>
                                         <?php
                                         if ($discount > 0) {
@@ -145,6 +145,15 @@
                                             </div>
                                         </div>
                                         <!-- Cart Button End -->
+                                    <?php if($quantity == 0){
+                                        echo "<div class='ribbon bg-danger' style='top: -20px'>Đã Bán Hết</div>";
+                                        echo "<script>
+                                        $('.ribbon').parents('.product-inner').css('opacity', '0.5');
+                                        $('.ribbon').parents('.product-inner').find('.action-wrapper').remove();
+                                        $('.ribbon').parents('.product-inner').find('a.image').removeAttr('href');
+                                        </script>";
+                                    }
+                                ?>
                                     </div>
                                 </div>
                             </div>

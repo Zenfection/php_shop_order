@@ -65,8 +65,8 @@ if (!isset($_SESSION['user'])) {
                                             <div class="quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" value="<?php echo $quantity ?>" type="text">
-                                                    <div class="dec qtybutton">-</div>
-                                                    <div class="inc qtybutton">+</div>
+                                                    <div class="dec qtybutton" id="decQtyProduct">-</div>
+                                                    <div class="inc qtybutton" id="incQtyProduct">+</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -121,7 +121,6 @@ if (!isset($_SESSION['user'])) {
                     <!-- Cart Button left Side Start -->
                     <div class="cart-btn-lef-side m-b-20">
                         <a href="/index.php" class="btn btn btn-gray-deep btn-hover-primary">Tiếp tục mua</a>
-                        <a href="#" class="btn btn btn-gray-deep btn-hover-primary">Cập Nhật Trạng Thái</a>
                     </div>
                     <!-- Cart Button left Side End -->
 

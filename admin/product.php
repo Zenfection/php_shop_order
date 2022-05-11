@@ -22,7 +22,7 @@
                                     <div class="row row-cols-lg-auto g-2">
                                         <div class="col-12">
                                             <div class="position-relative">
-                                                <input type="text" class="form-control ps-5" placeholder="Search Product..."> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                                                <input type="text" class="form-control ps-5" placeholder="Tìm Sản Phẩm..."> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -51,6 +51,10 @@
             ?>
                 <div class="col">
                     <div class="card">
+                        <?php if($quantity == 0) 
+                            echo "<div class='ribbon bg-danger'>Đã bán hết</div>";
+                            echo "<script>$('.ribbon').parent().css('opacity', '0.5')</script>";
+                            ?>
                         <img src="/assets/images/products/<?php echo $image ?>" class="card-img-top">
                         <?php
                         if ($discount > 0) {
