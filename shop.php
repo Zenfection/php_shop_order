@@ -1,4 +1,4 @@
-<?php include "./config/connect.php" ?>
+<?php include "./config/connect.php";?>
 
 <!-- Shop Section Start -->
 <div class="section section-margin">
@@ -16,7 +16,12 @@
                         </div>
                         <div class="shop-top-show">
                             <?php
-                            $sql = "SELECT * FROM `tb_product`";
+                            if(isset($_POST['search'])){
+                                $search = $_POST['search'];
+                                $sql = "SELECT * FROM `tb_product` WHERE name LIKE '%$search%'";
+                            }else{
+                                $sql = "SELECT * FROM `tb_product`";
+                            }
                             $result = $conn->query($sql);
                             $total = $result->num_rows;
                             echo "<span>Tổng cộng có $total sản phẩm</span>";
@@ -27,7 +32,7 @@
                     <!-- Shop Top Bar Left end -->
 
                     <!-- Shopt Top Bar Right Start -->
-                    <div class="shop-top-bar-right">
+                    <!-- <div class="shop-top-bar-right">
 
                         <h4 class="title m-r-10">Short By: </h4>
 
@@ -41,7 +46,7 @@
                                 <option value="3">Short by Price</option>
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Shopt Top Bar Right End -->
 
                 </div>
@@ -54,10 +59,10 @@
                     $limit = (isset($_GET['limit'])) ? $_GET['limit'] : 8;
                     $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
                     $links = (isset($_GET['links'])) ? $_GET['links'] : 7;
-                    $sql = "SELECT * FROM `tb_product`";
                     $paginator = new Paginator($conn, $sql);
                     $results = $paginator->getData($limit, $page);
-
+                    
+                    $limit > $total ? $limit = $total : $limit;
                     if ($limit > 0) {
                         for ($i = 0; $i < $limit; $i++) {
                             $id = $results->data[$i]['id_product'];

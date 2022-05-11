@@ -34,6 +34,21 @@
     }
   });
 
+  $(document).on('keypress', '#searchProduct', function(e) {
+    if(e.which == 13) {
+        let search = $('#searchProduct input').val();
+        $.ajax({
+          type: 'post',
+          url: '/shop.php',
+          data: { search: search },
+          success: function (data) {
+            window.scrollTo(0, 0);
+            $('#content').html(data);
+            AOS.init();
+          }
+        });
+    }
+  });
   /*---------------------
       Header Cart Toggle
   --------------------- */
