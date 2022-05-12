@@ -166,17 +166,3 @@ BEGIN
     WHERE id_product = NEW.id_product;
 END //
 DELIMITER ; 
-
---* Trigger thêm các order detail khi thêm order
-DROP TRIGGER IF EXISTS tb_order_details_insert;
-DELIMITER //
-CREATE TRIGGER `tb_order_details_insert`
-AFTER INSERT ON `tb_order`, `tb_cart`
-FOR EACH ROW
-BEGIN
-    INSERT INTO `tb_order_details`
-    (id_order, id_product, amount)
-    VALUES
-    (NEW.id_order, NEW.id_product, NEW.amount);
-END //
-DELIMITER ;

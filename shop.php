@@ -18,7 +18,7 @@
                             <?php
                             if(isset($_POST['search'])){
                                 $search = $_POST['search'];
-                                $sql = "SELECT * FROM `tb_product` WHERE name LIKE '%$search%'";
+                                $sql = "SELECT * FROM `tb_product` WHERE LOWER(name) LIKE CONCAT('%', LOWER(CONVERT('$search', BINARY)), '%')";
                             }else{
                                 $sql = "SELECT * FROM `tb_product`";
                             }
