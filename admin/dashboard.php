@@ -17,7 +17,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
 <div class="page-wrapper">
     <div class="page-content">
         <div class="row row-cols-1 row-cols-lg-4">
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-3" data-aos="fade-right">
                 <div class="card radius-10 bg-primary bg-gradient">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -31,7 +31,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-3" data-aos="fade-right">
                 <div class="card radius-10 bg-danger bg-gradient">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -45,7 +45,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-3" data-aos="fade-left">
                 <div class="card radius-10 bg-success bg-gradient">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -59,7 +59,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-3" data-aos="fade-left">
                 <div class="card radius-10 bg-warning bg-gradient">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -77,7 +77,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
         <!--end row-->
 
         <div class="row">
-            <div class="col-lg-4 d-flex">
+            <div class="col-lg-4 d-flex" data-aos="fade-right">
                 <div class="card radius-10 w-100">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
@@ -132,7 +132,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-8 d-flex">
+            <div class="col-12 col-lg-8 d-flex" data-aos="fade-left">
                 <div class="card radius-10 w-100">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -177,7 +177,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
         <!--end row-->
 
         <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col d-flex">
+            <div class="col d-flex" data-aos="fade-up-right">
                 <div class="card radius-10 w-100">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -227,7 +227,7 @@ $totalCustomer = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_user`"))
                     </div>
                 </div>
             </div>
-            <div class="col d-flex">
+            <div class="col d-flex" data-aos="fade-up-left">
                 <div class="card radius-10 w-100">
                     <div class="card-body">
                         <div class="d-flex align-items-center">

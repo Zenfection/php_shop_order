@@ -15,10 +15,9 @@ if (isset($_SESSION['addProduct'])) {
                 <h5 class="card-title">Thêm Sản Phẩm</h5>
                 <hr />
                 <form action="backend/add_product.php" method="post" id="addProductForm" novalidate>
-
                     <div class="form-body mt-4">
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-8" data-aos="fade-right">
                                 <div class="border border-3 p-4 rounded">
                                     <div class="mb-3">
                                         <label for="title" class="form-label">Tên Sản Phẩm</label>
@@ -34,7 +33,7 @@ if (isset($_SESSION['addProduct'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4" data-aos="fade-left">
                                 <div class="border border-3 p-4 rounded">
                                     <div class="row g-3">
                                         <div class="col-md-6">

@@ -48,23 +48,47 @@ $(function () {
 	$(document).on('click', '#sidebar-order', function () {
 		loadContent('/admin/order.php');
 	});
-	$(document).on('click', '#sidebar-product', function () {
-		loadContent('/admin/customer.php');
-	});
 	$(document).on('click', '#sidebar-add-product', function () {
 		loadContent('/admin/add_product.php');
 	});
-	$(document).on('click', '.viewOrderDetails', function(){
+	$(document).on('click', '.viewOrderDetails', function () {
 		let id = $(this).attr('id');
 		$.ajax({
 			type: 'POST',
 			url: '/admin/order_details.php',
-			data: {id: id},
+			data: { id: id },
 			success: function (data) {
 				window.scrollTo(0, 0);
 				$('#content').html(data);
 				AOS.init();
 			}
 		});
+	});
+	$(document).on('keypress', '#searchProduct', function(e) {
+		if(e.which == 13) {
+			let search = $(this).val();
+			$.ajax({
+				type: 'POST',
+				url: '/admin/product.php',
+				data: { search: search },
+				success: function (data) {
+					$('#content').html(data);
+					AOS.init();
+				}
+			});
+		}
+	});$(document).on('keypress', '#searchOrder', function(e) {
+		if(e.which == 13) {
+			let search = $(this).val();
+			$.ajax({
+				type: 'POST',
+				url: '/admin/order.php',
+				data: { search: search },
+				success: function (data) {
+					$('#content').html(data);
+					AOS.init();
+				}
+			});
+		}
 	});
 });

@@ -24,6 +24,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="assets/css/app.min.css" rel="stylesheet">
 	<link href="assets/css/icons.min.css" rel="stylesheet">
+	<link href="assets/css/aos.min.css" rel="stylesheet">
 	<!-- Theme Style CSS -->
 	<link rel="stylesheet" href="assets/css/dark-theme.min.css" />
 	<link rel="stylesheet" href="assets/css/semi-dark.min.css" />

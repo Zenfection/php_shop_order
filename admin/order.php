@@ -13,15 +13,19 @@
             <div class="card-body">
                 <div class="d-lg-flex align-items-center mb-4 gap-3">
                     <div class="position-relative">
-                        <input type="text" class="form-control ps-5 radius-30" placeholder="Tìm đơn hàng"> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                        <input type="text" id="searchOrder" class="form-control ps-5 radius-30" placeholder="Tìm đơn hàng" value="<?php echo $_POST['search']?>"> 
+                        <span class="position-absolute top-50 product-show translate-middle-y">
+                            <i class="bx bx-search"></i>
+                        </span>
                     </div>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive"  data-aos="fade-zoom-in" data-aos-duration="1000">
                     <table class="table mb-0">
                         <thead class="table-light">
                             <tr>
                                 <th>Mã Đơn#</th>
                                 <th>Tên Khách Hàng</th>
+                                <th>Số Điện Thoại</th>
                                 <th>Trạng Thái</th>
                                 <th>Tổng Tiền</th>
                                 <th>Ngày Đặt</th>
@@ -30,11 +34,17 @@
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `tb_order` ORDER BY `tb_order`.`order_date` DESC";
+                            $phone = $_POST['search'];
+                            if(isset($_POST['search'])){
+                                $sql = "SELECT * FROM `tb_order` WHERE LOWER(phone_customer) LIKE CONCAT('%', LOWER(CONVERT('$phone', BINARY)), '%')";
+                            } else {
+                                $sql = "SELECT * FROM `tb_order` ORDER BY `tb_order`.`order_date` DESC";
+                            }
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                                 $id = $row['id_order'];
                                 $name = $row['name_customer'];
+                                $phone = $row['phone_customer'];
                                 $status = $row['status'];
                                 // pending, shipping, delivered, canceled
                                 $total = (float)$row['total_money'];
@@ -50,6 +60,7 @@
                                         </div>
                                     </td>
                                     <td><?php echo $name?></td>
+                                    <td><?php echo $phone?></td>
                                     <td>
                                         <?php 
                                         if (($status == 'pending')){

@@ -57,30 +57,6 @@
                 <!-- Single Team Wrapper End -->
             </div>
 
-            <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1500">
-                <!-- Single Team Wrapper Start -->
-                <div class="single-team-wrapper">
-                    <div class="thumb">
-                        <a href="/index.php#contact" id="nav-contact">
-                            <img class="fit-image" src="assets/images/team/2.jpg" alt="Team Image">
-                        </a>
-                        <!-- Social Shear Start -->
-                        <div class="social-share">
-                            <a title="Twitter" href="#/"><i class="ti-facebook"></i></a>
-                            <a title="Instagram" href="#/"><i class="ti-pinterest"></i></a>
-                            <a title="Linkedin" href="#/"><i class="ti-twitter-alt"></i></a>
-                            <a title="Skype" href="#/"><i class="ti-instagram"></i></a>
-                        </div>
-                        <!-- Social Shear End -->
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Nguyễn Tường An</h4>
-                        <h4 class="subtitle">Người Đóng Góp</h4>
-                    </div>
-                </div>
-                <!-- Single Team Wrapper End -->
-            </div>
-
         </div>
     </div>
 </div>

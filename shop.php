@@ -95,7 +95,7 @@
                                         ?>
                                         <div class="action-wrapper" id="wrapper<?php echo $id?>">
                                             <a href="/index.php#shop" class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
+                                            <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="/index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
                                                 type: 'post',
                                                 url: '/viewcart.php',
@@ -143,10 +143,9 @@
                                         <div class="cart-btn action-btn">
                                             <div class="action-cart-btn-wrapper d-flex">
                                                 <div class="add-to_cart">
-                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/viewcart.php">Add to cart</a>
+                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/viewcart.php" style="width: 110%">Thêm Vào Giỏ</a>
                                                 </div>
-                                                <a href="wishlist.html" title="Wishlist" class="action"><i class="ti-heart"></i></a>
-                                                <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
+                                                <a href="#" title="Wishlist" class="action"><i class="ti-heart"></i></a>
                                             </div>
                                         </div>
                                         <!-- Cart Button End -->

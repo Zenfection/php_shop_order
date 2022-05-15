@@ -128,9 +128,9 @@
                     <div class="cart-btn action-btn m-b-30">
                         <div class="action-cart-btn-wrapper d-flex">
                             <div class="add-to_cart" id="product<?php echo $id ?>">
-                                <a class="btn btn-primary btn-hover-dark rounded">Add to cart</a>
+                                <a class="btn btn-primary btn-hover-dark rounded" style="width: 110%">Thêm Vào Giỏ</a>
                             </div>
-                            <a href="wishlist.html" title="Wishlist" class="action"><i class="ti-heart"></i></a>
+                            <a href="#" title="Wishlist" class="action"><i class="ti-heart"></i></a>
                         </div>
                     </div>
                     <!-- Cart Button End -->
@@ -276,7 +276,7 @@
                                                     ?>
                                                     <div class="action-wrapper" id="wrapper<?php echo $id ?>">
                                                         <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
-                                                        <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
+                                                        <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                                         <a href="/index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
                                                 type: 'post',
                                                 url: '/viewcart.php',
