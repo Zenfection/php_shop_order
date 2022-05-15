@@ -2,13 +2,12 @@ DROP DATABASE IF EXISTS `shop_order`;
 CREATE DATABASE `shop_order`;
 USE `shop_order`;
 
-
 CREATE TABLE tb_cart
 (
-  username   varchar(255) NOT NULL,
-  id_product int(11)      NOT NULL,
-  amount     int          NOT NULL
-);
+  username   char(50) NOT NULL,
+  id_product int(10)  NOT NULL,
+  amount     int      NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 CREATE TABLE tb_category
 (
@@ -17,7 +16,7 @@ CREATE TABLE tb_category
   image       varchar(255) NOT NULL,
   active      tinyint(1)   NOT NULL,
   PRIMARY KEY (id_category)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 CREATE TABLE tb_user
 (
@@ -25,15 +24,15 @@ CREATE TABLE tb_user
   fullname varchar(255) NOT NULL,
   email    varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
-  phone    varchar(255) NULL    ,
+  phone    varchar(11)  NULL    ,
   address  varchar(255) NULL    ,
   PRIMARY KEY (username)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 CREATE TABLE tb_order
 (
   id_order          char(10)     NOT NULL,
-  username          varchar(255) NOT NULL,
+  username          char(50)     NOT NULL,
   name_customer     varchar(255) NOT NULL,
   phone_customer    VARCHAR(11)  NOT NULL,
   address_customer  VARCHAR(255) NOT NULL,
@@ -46,14 +45,14 @@ CREATE TABLE tb_order
   process_date      DATE         NULL    ,
   total_money       FLOAT        NULL,
   PRIMARY KEY (id_order)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 CREATE TABLE tb_order_details
 (
   id_order   char(10) NOT NULL,
   id_product int(11)  NOT NULL,
   amount     int      NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 CREATE TABLE tb_product
 (
@@ -67,7 +66,7 @@ CREATE TABLE tb_product
   quantity    int           NOT NULL,
   id_category char(25)      NOT NULL,
   PRIMARY KEY (id_product)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 ALTER TABLE tb_product
   ADD CONSTRAINT FK_tb_category_TO_tb_product
