@@ -184,3 +184,5 @@ if (!isset($_SESSION['user'])) {
     </div>
 </div>
 <!-- Shopping Cart Section End -->
+
+<?php $conn->close();?>

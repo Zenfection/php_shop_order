@@ -17,5 +17,5 @@ if (isset($_POST['submit'])) {
         header("Location: ../index.php#register");
         exit();
     }
+    $conn->close();
 }
-mysqli_close($conn);

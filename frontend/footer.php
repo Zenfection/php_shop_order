@@ -76,7 +76,14 @@
         <!-- Footer Bottom End -->
     </footer>
     <!-- Footer Section End -->
+    <!-- Scroll Top Start -->
+    <a href="#" class="scroll-top show" id="scroll-top">
+        <i class="arrow-top ti-angle-double-up"></i>
+        <i class="arrow-bottom ti-angle-double-up"></i>
+    </a>
+    <!-- Scroll Top End -->
     
+    <?php include "./frontend/mobile.php"?>
     <!-- Vendor JS -->
     <script src="./assets/js/vendor/popper.min.js"></script>
     <script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>

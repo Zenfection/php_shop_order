@@ -9,7 +9,7 @@
                     OR (email = '$user' AND password = '$password')";
         $result = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($result);
-        mysqli_close($conn);
+        $conn->close();
         if ($count == 1) {
             $_SESSION['user'] = $_POST['user'];
             $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";

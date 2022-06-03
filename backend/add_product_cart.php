@@ -20,4 +20,5 @@ if (isset($_POST['add_id']) && isset($_POST['qty'])) {
         }
         mysqli_query($conn, $sql);
         mysqli_close($conn);
+        exit();
 }

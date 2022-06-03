@@ -58,12 +58,6 @@
                             }
                             ?>
                             <?php include "./frontend/cart.php" ?>
-                            <!-- Scroll Top Start -->
-                            <a href="#" class="scroll-top show rounded" id="scroll-top">
-                                <i class="arrow-top ti-angle-double-up"></i>
-                                <i class="arrow-bottom ti-angle-double-up"></i>
-                            </a>
-                            <!-- Scroll Top End -->
                             <!-- Mobile Menu Hambarger Action Button Start -->
                             <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
                                 <i class="icon-menu"></i>

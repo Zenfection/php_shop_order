@@ -1,5 +1,5 @@
 -- ! Tổng hợp các thủ tục và hàm cho Admin
---* Thêm sản phẩm
+-- * Thêm sản phẩm
 DROP PROCEDURE IF EXISTS ADD_PRODUCT;
 DELIMITER //
 CREATE PROCEDURE ADD_PRODUCT(
@@ -20,7 +20,7 @@ BEGIN
 END //
 DELIMITER ;
 
---* Cập nhật đơn hàng
+-- * Cập nhật đơn hàng
 DROP PROCEDURE IF EXISTS UPDATE_ORDER;
 DELIMITER //
 CREATE PROCEDURE UPDATE_ORDER(
@@ -49,7 +49,7 @@ END //
 -- CALL UPDATE_ORDER(id, name, email, phone, province, city, address, status);
 
 -- ! Tổng hợp các thủ tục và hàm cho User
---* Hàm và thủ tục thêm người dùng, không có phone và address
+-- * Hàm và thủ tục thêm người dùng, không có phone và address
 DROP FUNCTION IF EXISTS checkUser;
 DELIMITER //
 CREATE FUNCTION checkUser(user varchar(255)) RETURNS INT DETERMINISTIC
@@ -83,7 +83,7 @@ DELIMITER ;
 
 -- SELECT checkUser('kietgolx65234');
 
---* Đặt hàng 
+-- * Đặt hàng 
 DROP PROCEDURE IF EXISTS CHECKOUT;
 DELIMITER //
 CREATE PROCEDURE CHECKOUT(
@@ -138,7 +138,7 @@ BEGIN
 END // 
 DELIMITER ;
 
---* Top 10 sản phẩm bán được nhiều nhất
+-- * Top 10 sản phẩm bán được nhiều nhất
 DROP PROCEDURE IF EXISTS TOP_SELLER_PRODUCT;
 DELIMITER //
 CREATE PROCEDURE TOP_SELLER_PRODUCT()
@@ -154,7 +154,7 @@ DELIMITER ;
 
 CALL PROCEDURE `TOP_SELLER_PRODUCT`()
 
---* Trigger khi thêm đơn hàng sẽ tự động trừ vào sản phẩm
+-- * Trigger khi thêm đơn hàng sẽ tự động trừ vào sản phẩm
 DROP TRIGGER IF EXISTS tb_order_details_insert;
 DELIMITER //
 CREATE TRIGGER `quantity_prodcut_after_insert`

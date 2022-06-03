@@ -46,6 +46,6 @@ if (isset($_POST['submit'])) {
         $conn->query("DELETE FROM `tb_cart` WHERE username = '$user'");
         $_SESSION['order'] = "<div class='alert-success text-center'>Đặt hàng thành công, vui lòng kiểm tra tại dashboard</div>";
     }  
-    echo "<script>window.location.href='../index.php';</script>";
+    header("Location: ../order_view.php?order=$id_order");
 }
 ?>

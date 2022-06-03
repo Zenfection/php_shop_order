@@ -7,5 +7,6 @@
                         WHERE username = '$user'
                         AND id_product = '$id'";
                 $conn->query($sql);
+                $conn->close();
         }
 ?>
