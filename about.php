@@ -5,7 +5,7 @@
             <div class="col-md-6 pe-lg-5 p-r-15 m-b-30" data-aos="fade-right" data-aos-duration="1000">
                 <!-- About Thumb Start -->
                 <div class="about-thumb">
-                    <img class="fit-image" src="assets/images/about/1.png" alt="About Image">
+                    <img class="fit-image" src="./assets/images/about/1.png" alt="About Image">
                 </div>
                 <!-- About Thumb End -->
             </div>
@@ -19,7 +19,7 @@
                         <li><span><i class="ti-angle-double-right"></i></span> Jquery Ajax</li>
                         <li><span><i class="ti-angle-double-right"></i></span> PHP Composer</li>
                     </ul>
-                    <a href="/index.php#contact" id="nav-contact" class="btn btn-primary btn-hover-dark">Liên Hệ</a>
+                    <a href="./index.php#contact" id="nav-contact" class="btn btn-primary btn-hover-dark">Liên Hệ</a>
                 </div>
                 <!-- About Content End -->
             </div>
@@ -37,15 +37,15 @@
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
-                        <a href="/index.php#contact" id="nav-contact">
-                            <img class="fit-image" src="assets/images/team/1.jpg" alt="Team Image" style="height: 270px;">
+                        <a href="./index.php#contact" id="nav-contact">
+                            <img class="fit-image" src="./assets/images/team/1.jpg" alt="Team Image" style="height: 270px;">
                         </a>
                         <!-- Social Shear Start -->
                         <div class="social-share">
-                            <a title="Twitter" href="#/"><i class="ti-facebook"></i></a>
-                            <a title="Instagram" href="#/"><i class="ti-pinterest"></i></a>
-                            <a title="Linkedin" href="#/"><i class="ti-twitter-alt"></i></a>
-                            <a title="Skype" href="#/"><i class="ti-instagram"></i></a>
+                            <a title="Twitter" href="#"><i class="ti-facebook"></i></a>
+                            <a title="Instagram" href="#"><i class="ti-pinterest"></i></a>
+                            <a title="Linkedin" href="#"><i class="ti-twitter-alt"></i></a>
+                            <a title="Skype" href="#"><i class="ti-instagram"></i></a>
                         </div>
                         <!-- Social Shear End -->
                     </div>

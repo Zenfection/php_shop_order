@@ -40,7 +40,7 @@
                         <!-- Single Cart Product Start -->
                         <div class="single-cart-product">
                             <div class="cart-product-thumb">
-                                <a href="/detail_product.php?id=<?php echo $id?>"><img src="/assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
+                                <a href="./detail_product.php?id=<?php echo $id?>"><img src="./assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
                             </div>
                             <div class="cart-product-content">
                                 <h3 class="title"><a href="/frontend/detail_product.php"><?php echo $name ?></a></h3>
@@ -112,8 +112,8 @@
 
         <!-- Cart Product Button Start -->
         <div class="cart-product-btn m-t-20">
-            <a href="/index.php#viewcart" id="nav-viewcart" class="btn btn-outline-light btn-hover-primary w-100">Giỏ Hàng</a>
-            <a href="/index.php#checkout" id="nav-checkout" class="btn btn-outline-light btn-hover-primary w-100 m-t-20">Thanh Toán</a>
+            <a href="./index.php#viewcart" id="nav-viewcart" class="btn btn-outline-light btn-hover-primary w-100">Giỏ Hàng</a>
+            <a href="./index.php#checkout" id="nav-checkout" class="btn btn-outline-light btn-hover-primary w-100 m-t-20">Thanh Toán</a>
         </div>
         <!-- Cart Product Button End -->
 

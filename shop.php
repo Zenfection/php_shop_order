@@ -4,7 +4,7 @@
 <div class="section section-margin">
     <div class="container">
         <div class="row">
-            <div class="col-12" data-aos="zoom-in-down">
+            <div class="col-12" data-aos="fade-in" data-aos-duration="500">
                 <!--shop toolbar start-->
                 <div class="shop_toolbar_wrapper flex-column flex-md-row p-2 m-b-40 border">
 
@@ -31,24 +31,6 @@
                     </div>
                     <!-- Shop Top Bar Left end -->
 
-                    <!-- Shopt Top Bar Right Start -->
-                    <!-- <div class="shop-top-bar-right">
-
-                        <h4 class="title m-r-10">Short By: </h4>
-
-                        <div class="shop-short-by">
-                            <select class="nice-select" aria-label=".form-select-sm example">
-                                <option selected>Short by Default</option>
-                                <option value="1">Short by Popularity</option>
-                                <option value="2">Short by Rated</option>
-                                <option value="3">Short by Latest</option>
-                                <option value="3">Short by Price</option>
-                                <option value="3">Short by Price</option>
-                            </select>
-                        </div>
-                    </div> -->
-                    <!-- Shopt Top Bar Right End -->
-
                 </div>
                 <!--shop toolbar end-->
 
@@ -62,13 +44,12 @@
                     $paginator = new Paginator($conn, $sql);
                     $results = $paginator->getData($limit, $page);
                     
-                    $limit > $total ? $limit = $total : $limit;
-                    if ($limit > 0) {
+                    //$limit > $total ? $limit = $total : $limit;
+                    $check = $total - ($limit * ($page - 1));
+                    $limit > $check ? $limit = $check : $limit;
+                    if ($check > 0) {
                         for ($i = 0; $i < $limit; $i++) {
                             $id = $results->data[$i]['id_product'];
-                            if($id == ''){
-                                break;
-                            }
                             $name = $results->data[$i]['name'];
                             $description = $results->data[$i]['description'];
                             $price = (float)$results->data[$i]['price'];
@@ -80,8 +61,8 @@
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
                                 <div class="product-inner" id="product<?php echo $id?>">
                                     <div class="thumb">                                  
-                                        <a href="/detail_product.php?id=<?php echo $id ?>" class="image">
-                                            <img class="fit-image p-10" id="img-product<?php echo $id?>" src="assets/images/products/<?php echo $image ?>" alt="Product" />
+                                        <a href="./detail_product.php?id=<?php echo $id ?>" class="image">
+                                            <img class="fit-image p-10" id="img-product<?php echo $id?>" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                                         </a>
                                         <?php
                                         if ($discount > 0) {
@@ -94,11 +75,11 @@
                                         }
                                         ?>
                                         <div class="action-wrapper" id="wrapper<?php echo $id?>">
-                                            <a href="/index.php#shop" class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
+                                            <a href="./index.php#shop" class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
                                             <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="/index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
+                                            <a href="./index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
                                                 type: 'post',
-                                                url: '/viewcart.php',
+                                                url: './viewcart.php',
                                                 success: function(data){
                                                     $('#content').html(data);
                                                 }
@@ -106,7 +87,7 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title"><a class="product-title" href="/detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
+                                        <h5 class="title"><a class="product-title" href="./detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
                                         <span class="rating">
                                             <?php
                                             for ($j = 0; $j < 5; $j++) {
@@ -143,7 +124,7 @@
                                         <div class="cart-btn action-btn">
                                             <div class="action-cart-btn-wrapper d-flex">
                                                 <div class="add-to_cart">
-                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="/viewcart.php" style="width: 110%">Thêm Vào Giỏ</a>
+                                                    <a class="btn btn-primary btn-hover-dark rounded-0" href="./viewcart.php" style="width: 110%">Thêm Vào Giỏ</a>
                                                 </div>
                                                 <a href="#" title="Wishlist" class="action"><i class="ti-heart"></i></a>
                                             </div>
@@ -179,7 +160,7 @@
                                 if ($page > 1) {
                                 ?>
                                     <li class="page-item">
-                                        <a class="page-link rounded-0" href="#shop" name="page=<?php echo $page?>" aria-label="Prev">
+                                        <a class="page-link rounded-0" href="./index.php#shop" name="page=<?php echo $page?>" aria-label="Prev">
                                             <span aria-hidden="true">
                                                 <i class="fa fa-arrow-left"></i>
                                             </span>
@@ -192,12 +173,12 @@
                                         echo "<li class='page-item'><a class='page-link active'>$i</a></li>";
                                         continue;
                                     }
-                                    echo "<li class='page-item'><a class='page-link' id='page-choose' href='#shop' name='page=$i' >$i</a></li>'";
+                                    echo "<li class='page-item'><a class='page-link' id='page-choose' href='./index.php#shop' name='page=$i' >$i</a></li>'";
                                 }
                                 if ($page < $numPage) {
                                 ?>
                                     <li class="page-item">
-                                        <a class="page-link rounded-0" href="#shop" name="page=<?php echo $page?>" aria-label="Next">
+                                        <a class="page-link rounded-0" href="./index.php#shop" name="page=<?php echo $page?>" aria-label="Next">
                                             <span aria-hidden="true">
                                                 <i class="fa fa-arrow-right"></i>
                                             </span>

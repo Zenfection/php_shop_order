@@ -1,11 +1,12 @@
 <!-- Register Section Start -->
 <?php
+include "./config/connect.php";
 if (isset($_SESSION['register'])) {
     echo $_SESSION['register'];
     unset($_SESSION['register']);
 }
 ?>
-<form method="POST" action="./backend/register.php" id="registerForm" class="has-validation">
+<form method="POST" action="./backend/register.php" id="registerForm" class="has-validation" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
     <div class="section section-margin">
         <div class="container">
             <div class="row">
@@ -38,13 +39,15 @@ if (isset($_SESSION['register'])) {
                             </div>
 
                             <!-- Button/Forget Password Start -->
-                            <div class="single-input-item">
+                            <div class="single-input-item single-input-item m-b-15">
                                 <div class="login-reg-form-meta m-b-n15">
                                     <button type="submit" name="submit" class="btn btn btn-gray-deep btn-hover-primary m-b-15">Đăng ký</button>
                                 </div>
                             </div>
                             <!-- Button/Forget Password End -->
-
+                                <div class="login cursor-pointer">
+                                    <a href="./index.php#login" id="login">Đăng Nhập</a>
+                                </div>
                         </form>
                         <!-- Form Action End -->
 
@@ -65,12 +68,14 @@ if (isset($_SESSION['register'])) {
                 },
                 email: {
                     required: true,
-                    email: true
+                    email: true,
+                    remote: './backend/check_email.php'
                 },
                 username: {
                     required: true,
                     minlength: 5,
-                    maxlength: 50
+                    maxlength: 50,
+                    remote: './backend/check_user.php'
                 },
                 password: {
                     required: true,
@@ -85,12 +90,14 @@ if (isset($_SESSION['register'])) {
                 },
                 email: {
                     required: "Vui lòng nhập email",
-                    email: "Email không đúng định dạng"
+                    email: "Email không đúng định dạng",
+                    remote: jQuery.validator.format('{0} đã tồn tại')
                 },
                 username: {
                     required: "Vui lòng nhập username",
                     minlength: "Username phải có ít nhất 5 ký tự",
-                    maxlength: "Username không được vượt quá 50 ký tự"
+                    maxlength: "Username không được vượt quá 50 ký tự",
+                    remote: jQuery.validator.format('{0} đã tồn tại')
                 },
                 password: {
                     required: "Vui lòng nhập password",
@@ -116,4 +123,3 @@ if (isset($_SESSION['register'])) {
         })
     });
 </script>
-

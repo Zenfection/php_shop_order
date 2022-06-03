@@ -28,7 +28,7 @@
                             $id_category = $row['id_category'];
                             ?>
                             <a class='swiper-slide w-100'>
-                                <img class='w-100 rounded' id="img-product<?php echo $id ?>" src='/assets/images/products/<?php echo $image ?>' alt='Product'>
+                                <img class='w-100 rounded' id="img-product<?php echo $id ?>" src='./assets/images/products/<?php echo $image ?>' alt='Product'>
                             </a>";
                             ?>
 
@@ -151,7 +151,7 @@
                     <div class="payment-option m-t-20 d-flex">
                         <span><strong>Thanh Toán: </strong></span>
                         <a href="#">
-                            <img class="fit-image m-l-5" src="assets/images/payment/payment_large.png" alt="Payment Option Image">
+                            <img class="fit-image m-l-5" src="./assets/images/payment/payment_large.png" alt="Payment Option Image">
                         </a>
                     </div>
                     <!-- Payment Option End -->
@@ -248,12 +248,12 @@
                             $count = mysqli_num_rows($result);
                             for ($i = 0; $i < $count; $i++) {
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    $id = $row['id_product'];
                                     $name = $row['name'];
                                     $price = $row['price'];
                                     $discount = $row['discount'];
                                     $ranking = $row['ranking'];
                                     $image = $row['image'];
-                                    $id = $row['id'];
                             ?>
                                     <div class="swiper-slide">
                                         <!-- Product Start -->
@@ -261,8 +261,8 @@
                                             <div class="product">
                                                 <!-- Thumb Start  -->
                                                 <div class="thumb">
-                                                    <a href="/detail_product.php?id=<?php echo $id ?>" class="image">
-                                                        <img class="fit-image rounded" src="/assets/images/products/<?php echo $image ?>" alt="Product" />
+                                                    <a href="./detail_product.php?id=<?php echo $id ?>" class="image">
+                                                        <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                                                     </a>
                                                     <?php
                                                     if ($discount > 0) {
@@ -277,9 +277,9 @@
                                                     <div class="action-wrapper" id="wrapper<?php echo $id ?>">
                                                         <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
                                                         <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                                        <a href="/index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
+                                                        <a href="./index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
                                                 type: 'post',
-                                                url: '/viewcart.php',
+                                                url: './viewcart.php',
                                                 success: function(data){
                                                     $('#content').html(data);
                                                 }
@@ -290,7 +290,7 @@
 
                                                 <!-- Content Start  -->
                                                 <div class="content">
-                                                    <h5 class="title"><a href="/detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
+                                                    <h5 class="title"><a href="./detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
                                                     <span class="rating">
                                                         <?php
                                                         for ($j = 0; $j < 5; $j++) {

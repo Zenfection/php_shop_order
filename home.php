@@ -1,4 +1,4 @@
-<?php include "./config/connect.php"?>
+<?php include "./config/connect.php" ?>
 <?php
 if (isset($_SESSION['login'])) {
     echo $_SESSION['login'];
@@ -13,32 +13,32 @@ if (isset($_SESSION['order'])) {
 <!-- Hero/Intro Slider Start -->
 <div class="section">
     <div class="hero-slider swiper-container">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" data-aos="fade-in" data-aos-duration="1000">
 
-            <div class="hero-slide-item swiper-slide" data-aos="fade-in" data-aos-duration="1000">
+            <div class="hero-slide-item swiper-slide">
                 <div class="hero-slide-bg">
-                    <img src="/assets/images/slider/1.png" alt="Slider Image" />
+                    <img src="./assets/images/slider/1.png" alt="Slider Image" />
                 </div>
                 <div class="container">
                     <div class="hero-slide-content text-start">
                         <h5 class="sub-title">Thực phẩm đa dạng.</h5>
                         <h2 class="title m-0">KHÔNG CHẤT BẢO QUẢN</h2>
                         <p class="ms-0">Tất cả được làm bằng 100% thiên nhiên không chất phụ gia.</p>
-                        <a href="/index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a href="./index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>
 
             <div class="hero-slide-item swiper-slide" data-aos="fade-up" data-aos-duration="1500">
                 <div class="hero-slide-bg">
-                    <img src="/assets/images/slider/2.png" alt="Slider Image" />
+                    <img src="./assets/images/slider/2.png" alt="Slider Image" />
                 </div>
                 <div class="container">
                     <div class="hero-slide-content text-center text-md-end">
                         <h5 class="sub-title">Giao nhận nhanh chóng.</h5>
                         <h2 class="title m-0">FREESHIP TOÀN HÀNG</h2>
                         <p>Các đơn hàng có giá trị trên 200k sẽ được freeship.</p>
-                        <a href="/index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a href="./index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>
@@ -132,7 +132,7 @@ if (isset($_SESSION['order'])) {
     <div class="container">
         <h2>Loại Đồ Ăn</h2>
         <!-- Banners Start -->
-        <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30" data-aos="fade-out" data-aos-duration="600">
+        <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30">
             <?php
             $sql = "SELECT * FROM `tb_category` WHERE active = 1 LIMIT 3";
             $result = mysqli_query($conn, $sql);
@@ -143,14 +143,14 @@ if (isset($_SESSION['order'])) {
                     $title = $row['title'];
                     $image = $row['image'];
             ?>
-                    <div class="col m-b-30" data-aos="fade-out" data-aos-duration="600">
+                    <div class="col m-b-30" data-aos="fade-in">
                         <a href="#" class="banner hover-style">
                             <?php
                             if ($image == "") {
                                 echo "<div class='error'>Image not Available</div>";
                             } else {
                             ?>
-                                <img class="fit-image p-10" src="assets/images/category/<?php echo $image; ?>" alt="Banner Image"/>
+                                <img class="fit-image p-10" src="./assets/images/category/<?php echo $image; ?>" alt="Banner Image"/>
                             <?php
                             }
                             ?>
@@ -206,7 +206,7 @@ if (isset($_SESSION['order'])) {
                                     $ranking = $row['ranking'];
                                     $quantity = $row['quantity'];
                             ?>
-                                    <?php include "product.php" ?>
+                                    <?php include "./product.php" ?>
                             <?php
                                 }
                             }
@@ -222,7 +222,7 @@ if (isset($_SESSION['order'])) {
                             $count = mysqli_num_rows($result);
                             if ($count > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $id = $row['id'];
+                                    $id = $row['id_product'];
                                     $name = $row['name'];
                                     $description = $row['description'];
                                     $price = $row['price'];
@@ -231,7 +231,7 @@ if (isset($_SESSION['order'])) {
                                     $ranking = $row['ranking'];
                                     $quantity = $row['quantity'];
                             ?>
-                                    <?php include "product.php" ?>
+                                    <?php include "./product.php" ?>
                             <?php
                                 }
                             }
@@ -261,7 +261,7 @@ if (isset($_SESSION['order'])) {
                                     $ranking = $row['ranking'];
                                     $quantity = $row['quantity'];
                             ?>
-                                    <?php include "product.php" ?>
+                                    <?php include "./product.php" ?>
                             <?php
                                 }
                             }

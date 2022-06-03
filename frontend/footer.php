@@ -10,11 +10,11 @@
                             <p class="desc-content">ZenShop - Đặt đồ ăn vặt online nhanh chóng và tiện lợi hơn các trang web khác</p>
                             <!-- Soclial Link Start -->
                             <div class="widget-social justify-content-start m-b-n10">
-                                <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
-                                <a title="Instagram" href="#/"><i class="icon-social-instagram"></i></a>
-                                <a title="Linkedin" href="#/"><i class="icon-social-linkedin"></i></a>
-                                <a title="Skype" href="#/"><i class="icon-social-skype"></i></a>
-                                <a title="Dribble" href="#/"><i class="icon-social-dribbble"></i></a>
+                                <a title="Twitter" href="#"><i class="icon-social-twitter"></i></a>
+                                <a title="Instagram" href="#"><i class="icon-social-instagram"></i></a>
+                                <a title="Linkedin" href="#"><i class="icon-social-linkedin"></i></a>
+                                <a title="Skype" href="#"><i class="icon-social-skype"></i></a>
+                                <a title="Dribble" href="#"><i class="icon-social-dribbble"></i></a>
                             </div>
                             <!-- Social Link End -->
                         </div>
@@ -23,8 +23,8 @@
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Tính Năng</h2>
                             <ul class="widget-list">
-                                <li><a href="/index.php#shop" id="nav-shop">Mua Hàng</a></li>
-                                <li><a href="/index.php#account" id="account">Dashboard</a></li>
+                                <li><a href="./index.php#shop" id="nav-shop">Mua Hàng</a></li>
+                                <li><a href="./index.php#account" id="account">Dashboard</a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,10 +42,10 @@
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Thao Tác Nhanh</h2>
                             <ul class="widget-list">
-                                <li><a href="/index.php#login" id="login">Đăng nhập</a></li>
-                                <li><a href="/index.php#register" id="register-account">Đăng ký</a></li>
-                                <li><a href="/index.php#viewcart" id="nav-viewcart">Xem Giỏ Hàng</a></li>
-                                <li><a href="/index.php#checkout" id="nav-checkout">Thanh Toán</a></li>
+                                <li><a href="./index.php#login" id="login">Đăng nhập</a></li>
+                                <li><a href="./index.php#register" id="register-account">Đăng ký</a></li>
+                                <li><a href="./index.php#viewcart" id="nav-viewcart">Xem Giỏ Hàng</a></li>
+                                <li><a href="./index.php#checkout" id="nav-checkout">Thanh Toán</a></li>
                             </ul>
                         </div>
                     </div>
@@ -65,8 +65,8 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="payment">
-                            <a href="#/">
-                                <img src="assets/images/payment/payment_large.png" alt="Payment">
+                            <a href="#">
+                                <img src="./assets/images/payment/payment_large.png" alt="Payment">
                             </a>
                         </div>
                     </div>
@@ -76,31 +76,29 @@
         <!-- Footer Bottom End -->
     </footer>
     <!-- Footer Section End -->
-    <div id="modal-product">
-        
-    </div>
     
     <!-- Vendor JS -->
-    <script src="assets/js/vendor/popper.min.js"></script>
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.4.0.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>   
+    <script src="./assets/js/vendor/popper.min.js"></script>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.min.js"></script>
+    <script src="./assets/js/vendor/jquery-migrate-3.4.0.min.js"></script>
+    <script src="./assets/js/vendor/modernizr-3.11.2.min.js"></script>   
+    <!-- <script src="./assets/js/vendor.min.js"></script> -->
     
     <!-- Plugins JS -->
-    <!-- <script src="assets/js/plugins/aos.min.js"></script>
-    <script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/js/plugins/jquery-ui.min.js"></script>
-    <script src="assets/js/plugins/nice-select.min.js"></script>
-    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/countdown.min.js"></script>
-    <script src="assets/js/plugins/lightgallery-all.min.js"></script>   -->
+    <!-- <script src="./assets/js/plugins/aos.min.js"></script>
+    <script src="./assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+    <script src="./assets/js/plugins/jquery-ui.min.js"></script>
+    <script src="./assets/js/plugins/nice-select.min.js"></script>
+    <script src="./assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="./assets/js/plugins/countdown.min.js"></script>
+    <script src="./assets/js/plugins/lightgallery-all.min.js"></script>   -->
     
-    <script src="/assets/js/plugins/jquery.validate.js"></script>
-    <!-- <script src="assets/js/vendor.min.js"></script> -->
-    <script src="assets/js/plugins.min.js"></script>
+    <script src="./assets/js/plugins/jquery.validate.js"></script>
+    <script src="./assets/js/plugins.min.js"></script>
     <!--Main JS-->
-    <script src="/assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/custom.js"></script>
 
 </body>
 </html>

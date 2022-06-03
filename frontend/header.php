@@ -1,6 +1,4 @@
-<?php
-include "./config/connect.php";
-?>
+<?php require "./config/connect.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,27 +8,13 @@ include "./config/connect.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
-
-    <!-- Vendor CSS (Icon Font) -->
-    <!-- <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/simple-line-icons.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/themify-icons-min.css" /> -->
-
-
-    <!-- Plugins CSS (All Plugins Files) -->
-    <!-- <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/aos.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" /> -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="/assets/css/vendor/vendor.min.css">
-    <link rel="stylesheet" href="/assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="./assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
     <title>Shop Order</title>
 </head>
 
@@ -40,21 +24,21 @@ include "./config/connect.php";
             <div class="container">
                 <div class="row align-items-center position-relative">
                     <!-- Header Logo Start -->
-                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-in" data-aos-duration="500">
+                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-in" data-aos-duration="300">
                         <div class="header-logo">
-                            <a href="/index.php"><img src="/assets/images/logo.png" alt="Site Logo" /></a>
+                            <a href="./index.php"><img src="./assets/images/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
 
                     <!-- Header Menu Start -->
-                    <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="500">
+                    <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="300">
                         <div class="main-menu">
                             <ul>
-                                <li><a style="cursor:pointer" id="nav-home" href="/index.php#home">Trang Chủ</a></li>
-                                <li><a style="cursor:pointer" id="nav-about" href="/index.php#about">Giới Thiệu</a></li>
-                                <li><a style="cursor:pointer" id="nav-shop" href="/index.php#shop">Shop</a></li>
-                                <li><a style="cursor:pointer" id="nav-contact" href="/index.php#contact">Liên Hệ</a></li>
+                                <li><a style="cursor:pointer" id="nav-home" href="./index.php#home">Trang Chủ</a></li>
+                                <li><a style="cursor:pointer" id="nav-about" href="./index.php#about">Giới Thiệu</a></li>
+                                <li><a style="cursor:pointer" id="nav-shop" href="./index.php#shop">Shop</a></li>
+                                <li><a style="cursor:pointer" id="nav-contact" href="./index.php#contact">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -67,10 +51,10 @@ include "./config/connect.php";
                             <!-- account login -->
                             <?php
                             if (isset($_SESSION['user'])) {
-                                echo "<a href='/index.php#account' id='account' class='header-action-btn header-action-btn-wishlist'>
+                                echo "<a href='./index.php#account' id='account' class='header-action-btn header-action-btn-wishlist'>
                                     <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
                             } else {
-                                echo "<a href='#login' id='login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                                echo "<a href='./index.php#login' id='login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
                             }
                             ?>
                             <?php include "./frontend/cart.php" ?>

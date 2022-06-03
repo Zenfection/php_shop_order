@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require_once ('./vendor/autoload.php');
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
+    require ('../vendor/autoload.php');
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../../');
     $dotenv->load();
     
     $DB_HOST = $_ENV['DB_HOST'];
@@ -12,4 +12,5 @@
     
     $conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT)
         or die("Lỗi kết nối mySQL : " . mysqli_error($connect));
+
 ?>

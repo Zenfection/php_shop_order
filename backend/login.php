@@ -1,5 +1,5 @@
 <?php
-    include "../config/connect.php";
+    include "./config/connect.php";
     if (isset($_POST['submit'])) {
         $user = mysqli_real_escape_string($conn, $_POST['user']);
         $password = mysqli_real_escape_string($conn, md5($_POST['pass']));
@@ -9,16 +9,20 @@
                     OR (email = '$user' AND password = '$password')";
         $result = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($result);
+        mysqli_close($conn);
         if ($count == 1) {
-            $row = mysqli_fetch_assoc($result);
-            $_SESSION['user'] = $row['username'];
+            $_SESSION['user'] = $_POST['user'];
             $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
-            echo "<script>window.location.href='/index.php'</script>";
+            //echo "<script>window.location.href='../index.php'</script>";
+            header("Location: ../index.php");
+            exit();
         } else {
             $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
             // xoá session user và id
             unset($_SESSION['user']);
-            echo "<script>window.location.href = '/index.php#login';</script>";
+            //echo "<script>window.location.href='../index.php#login'</script>";
+            header("Location: ../index.php#login");
+            exit();
         }
     }
 ?>

@@ -1,14 +1,14 @@
 <?php include "./config/connect.php" ?>
 <?php 
 if (!isset($_SESSION['user'])) {
-    echo "<script>window.location.href='/index.php#login';</script>";
+    echo "<script>window.location.href='./index.php#login';</script>";
 }
 ?>
 <!-- Shopping Cart Section Start -->
 <div class="section section-margin">
     <div class="container">
 
-        <div class="row">
+        <div class="row" data-aos="fade-down">
             <div class="col-12">
 
                 <!-- Cart Table Start -->
@@ -55,10 +55,10 @@ if (!isset($_SESSION['user'])) {
                             ?>
                                     <tr id="view_cart_product<?php echo $id ?>">
                                         <td class="pro-thumbnail">
-                                            <img class="fit-image rounded" src="assets/images/products/<?php echo $image ?>" alt="Product" />
+                                            <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                                         </td>
                                         <td class="pro-title">
-                                            <a href="/detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
+                                            <a href="./detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                                         </td>
                                         <td class="pro-price"><span><?php echo $price ?>$</span></td>
                                         <td class="pro-quantity">
@@ -77,7 +77,7 @@ if (!isset($_SESSION['user'])) {
                                             let id = <?php echo $id ?>;
                                             $.ajax({
                                             type: 'post',
-                                            url: '/backend/delete_product_cart.php',
+                                            url: './backend/delete_product_cart.php',
                                             data: { delete_id: id },
                                             success: function(){
                                             let money = parseFloat($('#product_id' + id + ' .price .new').text().replace('$', ''));
@@ -120,7 +120,7 @@ if (!isset($_SESSION['user'])) {
 
                     <!-- Cart Button left Side Start -->
                     <div class="cart-btn-lef-side m-b-20">
-                        <a href="/index.php" class="btn btn btn-gray-deep btn-hover-primary">Tiếp tục mua</a>
+                        <a href="./index.php" class="btn btn btn-gray-deep btn-hover-primary">Tiếp tục mua</a>
                     </div>
                     <!-- Cart Button left Side End -->
 
@@ -136,7 +136,7 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
 
-        <div class="row m-t-50">
+        <div class="row m-t-50" data-aos="fade-up">
             <div class="col-lg-6 me-0 ms-auto">
 
                 <!-- Cart Calculation Area Start -->
@@ -172,7 +172,7 @@ if (!isset($_SESSION['user'])) {
                     <!-- Cart Calculate Items End -->
 
                     <!-- Cart Checktout Button Start -->
-                    <a href="/index.php#checkout" id="nav-checkout" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
+                    <a href="./index.php#checkout" id="nav-checkout" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
                     <!-- Cart Checktout Button End -->
 
                 </div>

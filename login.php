@@ -1,12 +1,12 @@
-<!-- Login Section Start -->
 <?php 
-    echo "<script>window.location.href='/index.php#login'</script>"
+    require "./config/connect.php";
+    echo "<script>window.location.href='./index.php#login'</script>";
 ?>
-<div class="section section-margin login">
+<!-- Login Section Start -->
+<div class="section section-margin login" data-aos="zoom-in">
     <?php
-    session_start();
     if (isset($_SESSION['user'])) {
-        echo "<script>window.location.href='/index.php'</script>";
+        echo "<script>window.location.href='./index.php'</script>";
     }
     if (isset($_SESSION['no-login-message'])) {
         echo $_SESSION['no-login-message'];
@@ -53,8 +53,9 @@
                         <!-- Button/Forget Password End -->
 
                         <!-- Lost Password & Creat New Account Start -->
-                        <div class="register">
-                            <a href="/index.php#register" id="register-account">Tạo tài khoản</a>
+                        
+                        <div class="register cursor-pointer">
+                            <a href="./index.php#register" id="register-account">Tạo tài khoản</a>
                         </div>
                         <!-- Lost Password & Creat New Account End -->
 

@@ -3,7 +3,7 @@
 <div class="section section-margin">
     <div class="container">
         <div class="row m-b-n20">
-            <div class="col-lg-6 col-12 m-b-20">
+            <div class="col-lg-6 col-12 m-b-20" data-aos="fade-right">
 
                 <!-- Checkbox Form Start -->
                 <div class="checkbox-form">
@@ -87,7 +87,7 @@
                 <!-- Checkbox Form End -->
             </div>
 
-            <div class="col-lg-6 col-12 m-b-20">
+            <div class="col-lg-6 col-12 m-b-20" data-aos="fade-left">
 
                 <!-- Your Order Area Start -->
                 <div class="your-order-area border">

@@ -1,6 +1,6 @@
-<?php include "./config/connect.php" ;
+<?php include "./frontend/header.php";
 $statusVie = ["Đang xử lý", "Đang giao hàng", "Đã giao hàng", "Đã hủy"];
-$id_order =$_GET['id_order'];
+$id_order = $_GET['order'];
 ?>
 
 <!-- Shopping Cart Section Start -->
@@ -29,7 +29,6 @@ $id_order =$_GET['id_order'];
                         <!-- Table Body Start -->
                         <tbody>
                             <?php
-                            $id_order = $_GET['id_order'];
                             $user = $_SESSION['user'];
                             $sql = "SELECT * 
                                         FROM `tb_user` as u, `tb_order` as o, `tb_order_details` as od, `tb_product` as p
@@ -48,7 +47,7 @@ $id_order =$_GET['id_order'];
                                     $image = $row['image'];
                                     $amount = (int)$row['amount'];
                                     $total_price = $price * $amount;
-                                    $total_money = $row['total_money'];
+                                    $total_money = (float)$row['total_money'];
                                     $order_date = $row['order_date'];
                                     $status = $row['status'];
                             ?>
@@ -125,7 +124,7 @@ $id_order =$_GET['id_order'];
                     </div>
                     <?php if($status == 'pending'){
                         ?>
-                        <a href="/backend/cancel_order.php?id=<?php echo $id_order?>" class="btn btn btn-gray-deep btn-hover-primary m-t-30 cursor-pointer">Huỷ Hàng</a>";
+                        <a href="./backend/cancel_order.php?id=<?php echo $id_order?>" class="btn btn btn-gray-deep btn-hover-primary m-t-30 cursor-pointer">Huỷ Hàng</a>";
                         <?php
                     }
                     ?>
@@ -136,3 +135,5 @@ $id_order =$_GET['id_order'];
     </div>
 </div>
 <!-- Shopping Cart Section End -->
+
+<?php include "./frontend/footer.php"?>

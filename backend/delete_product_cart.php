@@ -1,5 +1,5 @@
 <?php 
-        include "../config/connect.php";
+        include "./config/connect.php";
         if(isset($_POST['delete_id'])){
                 $user = $_SESSION['user'];
                 $id = $_POST['delete_id'];

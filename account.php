@@ -8,8 +8,11 @@ if(isset($_SESSION['cancel_order'])){
     echo $_SESSION['cancel_order'];
     unset ($_SESSION['cancel_order']);
 }
-
-echo "<script>window.location.href = '/index.php#account'</script>";
+if(isset($_SESSION['change_info'])){
+    echo $_SESSION['change_info'];
+    unset ($_SESSION['change_info']);
+}
+echo "<script>window.location.href = './index.php#account'</script>";
 ?>
 <!-- My Account Section Start -->
 <div class="section section-margin">
@@ -22,12 +25,12 @@ echo "<script>window.location.href = '/index.php#account'</script>";
                         <!-- My Account Tab Menu Start -->
                         <div class="col-lg-3 col-md-4">
                             <div class="myaccount-tab-menu nav" role="tablist">
-                                <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
+                                <a href="./index.php#dashboard" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
                                     Dashboard</a>
-                                <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Đơn Hàng</a>
-                                <a href="#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Thanh Toán</a>
-                                <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Chi Tiết</a>
-                                <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-key"></i> Mật Khẩu</a>
+                                <a href="./index.php#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Đơn Hàng</a>
+                                <a href="./index.php#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Thanh Toán</a>
+                                <a href="./index.php#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Chi Tiết</a>
+                                <a href="./index.php#address-edit" data-bs-toggle="tab"><i class="fa fa-key"></i> Mật Khẩu</a>
                                 <a href="./backend/logout.php"><i class="fa fa-sign-out"></i> Đăng Xuất</a>
                             </div>
                         </div>
@@ -99,7 +102,7 @@ echo "<script>window.location.href = '/index.php#account'</script>";
                                                                 <td><?php echo $order_date?></td>
                                                                 <td><?php echo $status?></td>
                                                                 <td><?php echo $total_money?>$</td>
-                                                                <td><a href="/index.php#account" id="nav-order-view" class="btn btn btn-dark btn-hover-primary btn-sm rounded">Xem</a></td>
+                                                                <td><a href="./order_view.php?order=<?php echo $id_order?>" class="btn btn btn-dark btn-hover-primary btn-sm rounded">Xem</a></td>
                                                             </tr>
                                                     <?php
                                                         }

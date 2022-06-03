@@ -1,5 +1,5 @@
 <?php
-include "../config/connect.php";
+include "./config/connect.php";
 if (isset($_POST['submit'])) {
     $fullname = $_POST['fullname'];
     $phone = $_POST['phone'];
@@ -46,6 +46,6 @@ if (isset($_POST['submit'])) {
         $conn->query("DELETE FROM `tb_cart` WHERE username = '$user'");
         $_SESSION['order'] = "<div class='alert-success text-center'>Đặt hàng thành công, vui lòng kiểm tra tại dashboard</div>";
     }  
-    echo "<script>window.location.href='/index.php';</script>";
+    echo "<script>window.location.href='../index.php';</script>";
 }
 ?>
