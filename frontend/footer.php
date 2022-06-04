@@ -23,8 +23,8 @@
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Tính Năng</h2>
                             <ul class="widget-list">
-                                <li><a href="./index.php#shop" id="nav-shop">Mua Hàng</a></li>
-                                <li><a href="./index.php#account" id="account">Dashboard</a></li>
+                                <li><a class="cursor-pointer nav-content" id="shop">Mua Hàng</a></li>
+                                <li><a class="nav-content cursor-pointer" id="account">Dashboard</a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,10 +42,10 @@
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Thao Tác Nhanh</h2>
                             <ul class="widget-list">
-                                <li><a href="./index.php#login" id="login">Đăng nhập</a></li>
-                                <li><a href="./index.php#register" id="register-account">Đăng ký</a></li>
-                                <li><a href="./index.php#viewcart" id="nav-viewcart">Xem Giỏ Hàng</a></li>
-                                <li><a href="./index.php#checkout" id="nav-checkout">Thanh Toán</a></li>
+                                <li><a class="cursor-pointer nav-content" id="login">Đăng nhập</a></li>
+                                <li><a class="cursor-pointer nav-content" id="register">Đăng ký</a></li>
+                                <li><a class="cursor-pointer nav-content" id="viewcart">Xem Giỏ Hàng</a></li>
+                                <li><a class="cursor-pointer nav-content" id="checkout">Thanh Toán</a></li>
                             </ul>
                         </div>
                     </div>

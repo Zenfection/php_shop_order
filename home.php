@@ -24,7 +24,7 @@ if (isset($_SESSION['order'])) {
                         <h5 class="sub-title">Thực phẩm đa dạng.</h5>
                         <h2 class="title m-0">KHÔNG CHẤT BẢO QUẢN</h2>
                         <p class="ms-0">Tất cả được làm bằng 100% thiên nhiên không chất phụ gia.</p>
-                        <a href="./index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a id="shop" class="nav-content cursor-pointer btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@ if (isset($_SESSION['order'])) {
                         <h5 class="sub-title">Giao nhận nhanh chóng.</h5>
                         <h2 class="title m-0">FREESHIP TOÀN HÀNG</h2>
                         <p>Các đơn hàng có giá trị trên 200k sẽ được freeship.</p>
-                        <a href="./index.php#shop" id="nav-shop" class="btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a id="shop" class="nav-content cursor-pointer btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>

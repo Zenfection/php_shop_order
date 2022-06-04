@@ -1,13 +1,109 @@
 $(function () {
+    /*-------------------------
+        Ajax Load Data Nagivation
+    ---------------------------*/
+    function loadContent(pathUrl) {
+        $.ajax({
+            url: pathUrl,
+            success: function (data) {
+                window.scrollTo(0, 0);
+                $('#content').html(data);
+                AOS.init();
+            }
+        });
+    }
     function checkURL() {
         let href = window.location.href;
         let origin = window.location.origin;
-        let path = href.replace(origin, "").replace("#", "");
-        if (path.indexOf("index.php") == -1 && path.indexOf("detail_product.php") == -1 && path.indexOf("order_view.php") == -1) {
-            window.location.href = path + "index.php";
+        let path = href.replace(origin, "");
+        let root = path.split('/')[path.split('/').length - 2];
+        let loadPage = ['', 'about', 'account', `checkout`, 'contact', 'login', 'register', `shop`, 'viewcart'];
+
+        if(!loadPage.includes(path.replaceAll('/', '').replace(root, ''))) {
+            return;
         }
+        if(path.indexOf('detail') > -1 || path.indexOf('order_view') > -1){
+            return;
+        }
+        if(path.indexOf('.php') > -1){
+            if(path.indexOf('index') > -1){
+                path = path.replace('index.php', '');
+                loadContent('./home.php');
+                window.history.pushState('home', 'HOME', path);
+            }
+            else{
+                let url = path.split('/')[path.split('/').length - 1];
+                loadContent('./' + url + '.php');
+            }
+        } else{
+            url = path.split('/')[path.split('/').length - 1];
+            (url == '') ? loadContent('./home.php') : loadContent('./' + url + '.php');
+        }
+        
     }
     checkURL();
+
+    function nav() {
+        let pathURL = window.location.href.replace(window.location.origin, '');
+        if (pathURL.indexOf('#') == -1) {
+            $.ajax({
+                url: './home.php',
+                success: function (data) {
+                    $('#content').html(data);
+                    AOS.init();
+                }
+            })
+        } else {
+            let tempPath = pathURL.split('/');
+            let tempPath2 = tempPath[tempPath.length - 1].split('#');
+            let path = tempPath2[tempPath2.length - 1];
+            path = './' + path + '.php';
+            $.ajax({
+                url: path,
+                success: function (data) {
+                    $('#content').html(data);
+                    AOS.init();
+                }
+            });
+        }
+    }
+    //nav();
+
+    $(document).on('click', '.nav-content', function () {
+        let id = $(this).attr('id');
+        let path = window.location.href.replace(window.location.origin, '').split('/');
+        path = path[path.length - 2];
+        if(path == ''){
+            if(id == 'home') path = '/';
+            else path = '/' + id;
+        } else{
+            if(id == 'home') path = '/' + path + '/';
+            else if(id == 'account' || id == "viewcart" || id == "checkout"){
+                let check = $('.header-actions #login').text().trim().toLowerCase();
+                if (check == 'login') {
+                    path = '/' + path + '/' + 'login';
+                    id = 'login';
+                } 
+                else if(check == 'viewcart'){
+                    path = '/' + path + '/' + 'viewcart';
+                    id = 'viewcart';
+                }
+                else if(check == 'checkout'){
+                    path = '/' + path + '/' + 'checkout';
+                    id = 'checkout';
+                }
+                else {
+                    path = '/' + path + '/' + 'account';
+                    id = 'account';
+                }
+            }
+            else path = '/' + path + '/' + id;
+        }
+
+        window.history.pushState(id, id.toUpperCase(), path);
+        loadContent('./' + id + '.php');
+    });
+
 
     // search Product
     $(document).on("keypress", "#searchProduct", function (e) {
@@ -356,102 +452,4 @@ $(function () {
         addProduct(parseInt(id), add_qty);
     });
 
-    /*-------------------------
-        Ajax Load Data Nagivation
-    ---------------------------*/
-    function loadContent(pathUrl) {
-        $.ajax({
-            url: pathUrl,
-            success: function (data) {
-                window.scrollTo(0, 0);
-                $('#content').html(data);
-                AOS.init();
-            }
-        });
-    }
-
-    $(document).on('click', '#nav-home', function () {
-        loadContent('./home.php');
-    });
-    $(document).on('click', '#nav-about', function () {
-        loadContent('./about.php');
-    });
-    $(document).on('click', '#nav-contact', function () {
-        loadContent('./contact.php');
-    });
-    $(document).on('click', '#nav-shop', function () {
-        loadContent('./shop.php');
-    });
-    $(document).on('click', '#nav-viewcart', function () {
-        let check = $('.header-actions #login').text().trim().toLowerCase();
-        if (check == 'login') {
-            loadContent('./login.php');
-        } else {
-            loadContent('./viewcart.php');
-        }
-    });
-    $(document).on("click", '#nav-checkout', function () {
-        let check = $('.header-actions #login').text().trim().toLowerCase();
-        if (check == 'login') {
-            loadContent('./login.php');
-        } else {
-            loadContent('./checkout.php');
-        }
-    });
-    $(document).on('click', '#login', function (e) {
-        loadContent('./login.php');
-    });
-    $(document).on('click', '#account', function () {
-        let check = $('.header-actions #login').text().trim().toLowerCase();
-        if (check == 'login') {
-            loadContent('./login.php');
-        } else {
-            loadContent('./account.php');
-        }
-    });
-    $(document).on('click', '#register-account', function () {
-        loadContent('./register.php');
-    });
-
-    // $(document).on('click', '#nav-order-view', function () {
-    //     let id_order = $(this).closest('tr').attr('id').replace('id_order=', '');
-    //     console.log(id_order);
-    //     $.ajax({
-    //         url: './order_view.php',
-    //         data: {
-    //             id_order: id_order
-    //         },
-    //         success: function (data) {
-    //             $('#content').html(data);
-    //             AOS.init();
-    //         }
-    //     })
-    // });
-
-
-    function nav() {
-        let pathURL = window.location.href;
-        if (pathURL.indexOf('#') == -1) {
-            $.ajax({
-                url: './home.php',
-                success: function (data) {
-                    $('#content').html(data);
-                    AOS.init();
-                }
-            })
-        } else {
-            let tempPath = pathURL.split('/');
-            let tempPath2 = tempPath[tempPath.length - 1].split('#');
-            let path = tempPath2[tempPath2.length - 1];
-            path = './' + path + '.php';
-            $.ajax({
-                url: path,
-                success: function (data) {
-                    $('#content').html(data);
-                    AOS.init();
-                }
-            });
-        }
-    }
-    nav();
 });

@@ -35,10 +35,10 @@
                     <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="300">
                         <div class="main-menu">
                             <ul>
-                                <li><a style="cursor:pointer" id="nav-home" href="./index.php#home">Trang Chủ</a></li>
-                                <li><a style="cursor:pointer" id="nav-about" href="./index.php#about">Giới Thiệu</a></li>
-                                <li><a style="cursor:pointer" id="nav-shop" href="./index.php#shop">Shop</a></li>
-                                <li><a style="cursor:pointer" id="nav-contact" href="./index.php#contact">Liên Hệ</a></li>
+                                <li><a style="cursor:pointer" id="home" class="nav-content">Trang Chủ</a></li>
+                                <li><a style="cursor:pointer" id="about" class="nav-content">Giới Thiệu</a></li>
+                                <li><a style="cursor:pointer" id="shop" class="nav-content">Shop</a></li>
+                                <li><a style="cursor:pointer" id="contact" class="nav-content">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,10 +51,10 @@
                             <!-- account login -->
                             <?php
                             if (isset($_SESSION['user'])) {
-                                echo "<a href='./index.php#account' id='account' class='header-action-btn header-action-btn-wishlist'>
+                                echo "<a id='account' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'>
                                     <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
                             } else {
-                                echo "<a href='./index.php#login' id='login' class='header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                                echo "<a  id='login' class='nav-content cursor:pointer header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
                             }
                             ?>
                             <?php include "./frontend/cart.php" ?>

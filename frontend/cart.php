@@ -112,8 +112,8 @@
 
         <!-- Cart Product Button Start -->
         <div class="cart-product-btn m-t-20">
-            <a href="./index.php#viewcart" id="nav-viewcart" class="btn btn-outline-light btn-hover-primary w-100">Giỏ Hàng</a>
-            <a href="./index.php#checkout" id="nav-checkout" class="btn btn-outline-light btn-hover-primary w-100 m-t-20">Thanh Toán</a>
+            <a id="viewcart" class="nav-content cursor-pointer btn btn-outline-light btn-hover-primary w-100">Giỏ Hàng</a>
+            <a id="checkout" class="nav-content cursor-pointer btn btn-outline-light btn-hover-primary w-100 m-t-20">Thanh Toán</a>
         </div>
         <!-- Cart Product Button End -->
     </div>
@@ -122,7 +122,7 @@
 
 <!-- Mobile -->
 <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-    <a href="./index.php#viewcart" id="nav-viewcart">
+    <a id="viewcart" class="nav-content cursor-pointer">
         <i class="icon-handbag icons"></i>
             <?php 
             if($user){

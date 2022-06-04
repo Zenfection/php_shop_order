@@ -45,8 +45,8 @@ if (isset($_SESSION['register'])) {
                                 </div>
                             </div>
                             <!-- Button/Forget Password End -->
-                                <div class="login cursor-pointer">
-                                    <a href="./index.php#login" id="login">Đăng Nhập</a>
+                                <div class="cursor-pointer">
+                                    <a class="nav-content" id="login">Đăng Nhập</a>
                                 </div>
                         </form>
                         <!-- Form Action End -->

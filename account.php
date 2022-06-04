@@ -12,7 +12,7 @@ if(isset($_SESSION['change_info'])){
     echo $_SESSION['change_info'];
     unset ($_SESSION['change_info']);
 }
-echo "<script>window.location.href = './index.php#account'</script>";
+// echo "<script>window.location.href = './account'</script>";
 ?>
 <!-- My Account Section Start -->
 <div class="section section-margin">
@@ -25,12 +25,12 @@ echo "<script>window.location.href = './index.php#account'</script>";
                         <!-- My Account Tab Menu Start -->
                         <div class="col-lg-3 col-md-4">
                             <div class="myaccount-tab-menu nav" role="tablist">
-                                <a href="./index.php#dashboard" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
+                                <a href="#dashboard" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
                                     Dashboard</a>
-                                <a href="./index.php#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Đơn Hàng</a>
-                                <a href="./index.php#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Thanh Toán</a>
-                                <a href="./index.php#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Chi Tiết</a>
-                                <a href="./index.php#address-edit" data-bs-toggle="tab"><i class="fa fa-key"></i> Mật Khẩu</a>
+                                <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Đơn Hàng</a>
+                                <a href="#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Thanh Toán</a>
+                                <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Chi Tiết</a>
+                                <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-key"></i> Mật Khẩu</a>
                                 <a href="./backend/logout.php"><i class="fa fa-sign-out"></i> Đăng Xuất</a>
                             </div>
                         </div>

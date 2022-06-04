@@ -1,6 +1,5 @@
 <?php 
     require "./config/connect.php";
-    echo "<script>window.location.href='./index.php#login'</script>";
 ?>
 <!-- Login Section Start -->
 <div class="section section-margin login" data-aos="zoom-in">
@@ -55,7 +54,7 @@
                         <!-- Lost Password & Creat New Account Start -->
                         
                         <div class="register cursor-pointer">
-                            <a href="./index.php#register" id="register-account">Tạo tài khoản</a>
+                            <a class="nav-content" id="register">Tạo tài khoản</a>
                         </div>
                         <!-- Lost Password & Creat New Account End -->
 

@@ -75,15 +75,9 @@
                                         }
                                         ?>
                                         <div class="action-wrapper" id="wrapper<?php echo $id?>">
-                                            <a href="./index.php#shop" class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
+                                            <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
                                             <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="./index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
-                                                type: 'post',
-                                                url: './viewcart.php',
-                                                success: function(data){
-                                                    $('#content').html(data);
-                                                }
-                                            });"><i class="ti-shopping-cart"></i></a>
+                                            <a class="nav-content cursor-pointer action cart" id="viewcart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
                                     <div class="content">

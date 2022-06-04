@@ -3,6 +3,7 @@ $statusVie = ["Đang xử lý", "Đang giao hàng", "Đã giao hàng", "Đã h�
 $id_order = $_GET['order'];
 ?>
 
+<div id="content">
 <!-- Shopping Cart Section Start -->
 <div class="section section-margin">
     <div class="container">
@@ -135,5 +136,6 @@ $id_order = $_GET['order'];
     </div>
 </div>
 <!-- Shopping Cart Section End -->
+</div>
 
 <?php include "./frontend/footer.php"?>

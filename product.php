@@ -15,9 +15,9 @@
             }
             ?>
             <div class="action-wrapper" id="wrapper<?php echo $id ?>">
-                <a href="./index.php#shop" class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
+                <a class="nav-content cursor-pointer action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
                 <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                <a href="./index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
+                <a id="viewcart" class="nav-content cursor-pointer action cart" title="Cart" onclick="$.ajax({
                                                 type: 'post',
                                                 url: './viewcart.php',
                                                 success: function(data){

@@ -26,10 +26,10 @@
             <div class="mobile-navigation">
                 <nav>
                     <ul class="mobile-menu">
-                        <li><a style="cursor:pointer" id="nav-home" href="./index.php#home">Trang Chủ</a></li>
-                        <li><a style="cursor:pointer" id="nav-about" href="./index.php#about">Giới Thiệu</a></li>
-                        <li><a style="cursor:pointer" id="nav-shop" href="./index.php#shop">Shop</a></li>
-                        <li><a style="cursor:pointer" id="nav-contact" href="./index.php#contact">Liên Hệ</a></li>
+                        <li><a class="nav-content cursor:pointer" id="home">Trang Chủ</a></li>
+                        <li><a class="nav-content cursor:pointer" id="about">Giới Thiệu</a></li>
+                        <li><a class="nav-content cursor:pointer" id="shop">Shop</a></li>
+                        <li><a class="nav-content cursor:pointer" id="contact">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>

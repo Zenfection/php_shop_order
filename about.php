@@ -19,7 +19,7 @@
                         <li><span><i class="ti-angle-double-right"></i></span> Jquery Ajax</li>
                         <li><span><i class="ti-angle-double-right"></i></span> PHP Composer</li>
                     </ul>
-                    <a href="./index.php#contact" id="nav-contact" class="btn btn-primary btn-hover-dark">Liên Hệ</a>
+                    <a id="contact" class="nav-content cursor-pointer btn btn-primary btn-hover-dark">Liên Hệ</a>
                 </div>
                 <!-- About Content End -->
             </div>
@@ -37,7 +37,7 @@
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
-                        <a href="./index.php#contact" id="nav-contact">
+                        <a  class="nav-content cursor-pointer" id="contact">
                             <img class="fit-image" src="./assets/images/team/1.jpg" alt="Team Image" style="height: 270px;">
                         </a>
                         <!-- Social Shear Start -->

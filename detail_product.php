@@ -1,6 +1,7 @@
 <?php include "./frontend/header.php" ?>
 
 <!-- Single Product Section Start -->
+<div id="content">
 <div class="section section-margin">
     <div class="container">
         <div class="row">
@@ -277,7 +278,7 @@
                                                     <div class="action-wrapper" id="wrapper<?php echo $id ?>">
                                                         <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
                                                         <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                                        <a href="./index.php#viewcart" class="action cart" title="Cart" onclick="$.ajax({
+                                                        <a  class="nav-content cursor-pointer action cart" id="viewcart" title="Cart" onclick="$.ajax({
                                                 type: 'post',
                                                 url: './viewcart.php',
                                                 success: function(data){
@@ -344,6 +345,7 @@
 
         </div>
     </div>
+</div>
 </div>
 <!-- Product Section End -->
 <?php include "./frontend/footer.php" ?>

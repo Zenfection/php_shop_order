@@ -20,7 +20,6 @@
             $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
             // xoá session user và id
             unset($_SESSION['user']);
-            //echo "<script>window.location.href='../index.php#login'</script>";
             header("Location: ../index.php#login");
             exit();
         }
