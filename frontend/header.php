@@ -43,7 +43,7 @@
                     <!-- Header Menu End -->
 
                     <!-- Header Action Start -->
-                    <div class="col-lg-4 col-md-8 col-6" data-aos="fade-in" data-aos-duration="1000">
+                    <div class="col-lg-4 col-md-8 col-6">
                         <div class="header-actions">
                             <?php include "./frontend/search.php" ?>
                             <!-- account login -->

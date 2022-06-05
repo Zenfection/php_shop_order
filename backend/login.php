@@ -14,13 +14,13 @@
             $_SESSION['user'] = $_POST['user'];
             $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
             //echo "<script>window.location.href='../index.php'</script>";
-            header("Location: ../index.php");
+            header("Location: ../");
             exit();
         } else {
             $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
             // xoá session user và id
             unset($_SESSION['user']);
-            header("Location: ../index.php#login");
+            header("Location: ../login");
             exit();
         }
     }
