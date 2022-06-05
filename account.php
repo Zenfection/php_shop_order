@@ -83,8 +83,9 @@ if(isset($_SESSION['change_info'])){
                                                 <tbody>
                                                     <?php
                                                     $sql = "SELECT * 
-                                                    FROM `tb_order` as d
-                                                    WHERE username = '$user'";
+                                                        FROM `tb_order` 
+                                                        WHERE username = '$user' 
+                                                        ORDER BY `tb_order`.`order_date` DESC;";
                                                     $result = mysqli_query($conn, $sql);
                                                     $count = mysqli_num_rows($result);
                                                     if($count == 0){
