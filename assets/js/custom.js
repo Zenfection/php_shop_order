@@ -62,26 +62,24 @@ $(function () {
 
     $(document).on('click', '.nav-content', function () {
         let id = $(this).attr('id');
-        let path = window.location.href.replace(window.location.origin, '').split('/');
-        path = path[path.length - 2];
-        let loged = ['account', 'viewcart', 'checkout'];
-        let notLoged = ['login', 'register'];
-        if (path == '') {
-            if (id == 'home') path = '/';
-            else path = '/' + id;
-        } else {
-            if (id == 'home') path = '/' + path + '/';
-            else if (loged.includes(id) || notLoged.includes(id)) {
-                if(checkLoged()){
-                    if(notLoged.includes(id)){
-                        path = '/' + path + '/' + 'account';
-                        id = 'account';
-                    }
-                } else {
-                    if(loged.includes(id)) path = '/' + path + '/' + 'login';
+        let url = new URL(window.location.href);
+        //let path = url.pathname;
+        //path = path.replace(/[^a-zA-Z0-9 ]/g, '');
+        let path;
+        if(id == 'home'){
+            path = '';
+        } else{
+            if(checkLoged()){ //đã đăng nhập
+                if(id == 'login' || id == 'register'){
+                    path = '/account';
+                    id = 'account';
+                } else path = '/' + id;
+            }else {
+                if(id == 'account' || id == 'viewcart' || id == 'checkout'){
+                    path = '/login';
                     id = 'login';
-                }
-            } else path = '/' + path + '/' + id;
+                } else path = '/' + id;
+            }
         }
 
         window.history.pushState(id, id.toUpperCase(), path);

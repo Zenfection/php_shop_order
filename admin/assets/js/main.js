@@ -67,6 +67,7 @@ $(function () {
 	$(document).on('keypress', '#searchProduct', function(e) {
 		if(e.which == 13) {
 			let search = $(this).val();
+			search.toLowerCase();
 			$.ajax({
 				type: 'POST',
 				url: '/admin/product.php',

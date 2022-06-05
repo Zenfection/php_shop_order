@@ -122,8 +122,8 @@ DELIMITER ;
 
 
 -- Hàm tính tổng tiền trong đơn hàng
-DELIMITER //
 DROP FUNCTION IF EXISTS totalMoney;
+DELIMITER //
 CREATE FUNCTION `totalMoney`(id char(10)) RETURNS FLOAT DETERMINISTIC
 BEGIN
     DECLARE result FLOAT DEFAULT -1;

@@ -8,6 +8,7 @@ if (isset($_POST['submit'])) {
 
     // username, fullname, email, password
     $query = mysqli_query($conn, "CALL ADD_USER('$username', '$fullname', '$email', '$password')");
+    $conn->close();
     if ($query) {
         $_SESSION['register'] = "<div class='alert-success text-center'>Đăng ký thành công, vui lòng đăng nhập</div>";
         header("Location: ../login");
@@ -17,5 +18,4 @@ if (isset($_POST['submit'])) {
         header("Location: ../register");
         exit();
     }
-    $conn->close();
 }
