@@ -14,6 +14,6 @@ if(isset($_POST['submit'])){
         $_SESSION['change_pwd'] = "<div class='alert-danger text-center'>Đổi mật khẩu thất bại</div>";
     }
     mysqli_close($conn);
-    header("Location: ../index.php#account");
+    header("Location: ../account");
     exit();
 }

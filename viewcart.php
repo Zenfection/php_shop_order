@@ -115,7 +115,7 @@
 
                     <!-- Cart Button left Side Start -->
                     <div class="cart-btn-lef-side m-b-20">
-                        <a href="./index.php" class="btn btn btn-gray-deep btn-hover-primary">Tiếp tục mua</a>
+                        <a href="./" class="btn btn btn-gray-deep btn-hover-primary">Tiếp tục mua</a>
                     </div>
                     <!-- Cart Button left Side End -->
 
@@ -167,7 +167,7 @@
                     <!-- Cart Calculate Items End -->
 
                     <!-- Cart Checktout Button Start -->
-                    <a href="./index.php#checkout" id="nav-checkout" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
+                    <a href="./checkout" id="checkout" class="nav-content cursor-pointer btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
                     <!-- Cart Checktout Button End -->
 
                 </div>

@@ -1,3 +1,4 @@
+<?php include "./config/connect.php"?>
 <?php include "./frontend/header.php" ?>
 
     <div id="content">

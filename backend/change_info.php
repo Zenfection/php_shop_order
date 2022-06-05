@@ -15,8 +15,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['change_info'] = "<div class='alert-danger text-center'>Đổi thông tin thất bại</div>";
     }
     mysqli_close($conn);
-    //header("Location: ../account");
-    echo "<script>window.location.href = '../account';</script>";
+    header("Location: ../account");
     exit();
 }
 ?>

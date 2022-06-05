@@ -1,5 +1,3 @@
-<?php require "./config/connect.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,28 +22,28 @@
             <div class="container">
                 <div class="row align-items-center position-relative">
                     <!-- Header Logo Start -->
-                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-in" data-aos-duration="300">
+                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-in" data-aos-duration="1000">
                         <div class="header-logo">
-                            <a href="./index.php"><img src="./assets/images/logo.png" alt="Site Logo" /></a>
+                            <a href="./"><img src="./assets/images/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
 
                     <!-- Header Menu Start -->
-                    <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="300">
+                    <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="1000">
                         <div class="main-menu">
                             <ul>
-                                <li><a style="cursor:pointer" id="home" class="nav-content">Trang Chủ</a></li>
-                                <li><a style="cursor:pointer" id="about" class="nav-content">Giới Thiệu</a></li>
-                                <li><a style="cursor:pointer" id="shop" class="nav-content">Shop</a></li>
-                                <li><a style="cursor:pointer" id="contact" class="nav-content">Liên Hệ</a></li>
+                                <li><a id="home" class="nav-content cursor-pointer">Trang Chủ</a></li>
+                                <li><a id="about" class="nav-content cursor-pointer">Giới Thiệu</a></li>
+                                <li><a id="shop" class="nav-content cursor-pointer">Shop</a></li>
+                                <li><a id="contact" class="nav-content cursor-pointer">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
                     <!-- Header Menu End -->
 
                     <!-- Header Action Start -->
-                    <div class="col-lg-4 col-md-8 col-6">
+                    <div class="col-lg-4 col-md-8 col-6" data-aos="fade-in" data-aos-duration="1000">
                         <div class="header-actions">
                             <?php include "./frontend/search.php" ?>
                             <!-- account login -->
@@ -54,7 +52,7 @@
                                 echo "<a id='account' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'>
                                     <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
                             } else {
-                                echo "<a  id='login' class='nav-content cursor:pointer header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                                echo "<a  id='login' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
                             }
                             ?>
                             <?php include "./frontend/cart.php" ?>

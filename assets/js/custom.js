@@ -12,92 +12,76 @@ $(function () {
             }
         });
     }
+    function checkLoged(){
+        let check = $('.header-actions #login').text().trim().toLowerCase();
+        if(check == 'login') return false;
+        else return true;
+    }
     function checkURL() {
         let href = window.location.href;
         let origin = window.location.origin;
         let path = href.replace(origin, "");
         let root = path.split('/')[path.split('/').length - 2];
-        let loadPage = ['', 'about', 'account', `checkout`, 'contact', 'login', 'register', `shop`, 'viewcart'];
+        let loadPage = ['', 'index.php', 'about', 'account', `checkout`, 'contact', 'login', 'register', `shop`, 'viewcart'];
 
-        if(!loadPage.includes(path.replaceAll('/', '').replace(root, ''))) {
+        if (loadPage.includes(path.replaceAll('/', '').replace(root, '')) === false) {
             return;
         }
-        if(path.indexOf('detail') > -1 || path.indexOf('order_view') > -1){
+        if (path.indexOf('detail') > -1 || path.indexOf('order_view') > -1) {
             return;
         }
-        if(path.indexOf('.php') > -1){
-            if(path.indexOf('index') > -1){
+        if (path.indexOf('.php') > -1) {
+            if (path.indexOf('index') > -1) {
                 path = path.replace('index.php', '');
                 loadContent('./home.php');
                 window.history.pushState('home', 'HOME', path);
-            }
-            else{
+            } else {
                 let url = path.split('/')[path.split('/').length - 1];
                 loadContent('./' + url + '.php');
             }
-        } else{
+        } else {
             url = path.split('/')[path.split('/').length - 1];
-            (url == '') ? loadContent('./home.php') : loadContent('./' + url + '.php');
+            // check if url is login: viewcart, account, login, register, checkout
+            if(checkLoged()){
+                if(url == 'login' || url == 'regsiter'){
+                    url = 'account';
+                    window.history.pushState('account', 'ACCOUNT', './account');
+                }
+            }else {
+                if(url == 'account' || url == 'viewcart' || url == 'checkout'){
+                    url = 'login';
+                    window.history.pushState('login', 'LOGIN', './login');
+                }
+            }
+            (url == '') ? loadContent('./home.php'): loadContent('./' + url + '.php');
+            
         }
-        
+
     }
     checkURL();
-
-    function nav() {
-        let pathURL = window.location.href.replace(window.location.origin, '');
-        if (pathURL.indexOf('#') == -1) {
-            $.ajax({
-                url: './home.php',
-                success: function (data) {
-                    $('#content').html(data);
-                    AOS.init();
-                }
-            })
-        } else {
-            let tempPath = pathURL.split('/');
-            let tempPath2 = tempPath[tempPath.length - 1].split('#');
-            let path = tempPath2[tempPath2.length - 1];
-            path = './' + path + '.php';
-            $.ajax({
-                url: path,
-                success: function (data) {
-                    $('#content').html(data);
-                    AOS.init();
-                }
-            });
-        }
-    }
-    //nav();
 
     $(document).on('click', '.nav-content', function () {
         let id = $(this).attr('id');
         let path = window.location.href.replace(window.location.origin, '').split('/');
         path = path[path.length - 2];
-        if(path == ''){
-            if(id == 'home') path = '/';
+        let loged = ['account', 'viewcart', 'checkout'];
+        let notLoged = ['login', 'register'];
+        if (path == '') {
+            if (id == 'home') path = '/';
             else path = '/' + id;
-        } else{
-            if(id == 'home') path = '/' + path + '/';
-            else if(id == 'account' || id == "viewcart" || id == "checkout"){
-                let check = $('.header-actions #login').text().trim().toLowerCase();
-                if (check == 'login') {
-                    path = '/' + path + '/' + 'login';
+        } else {
+            if (id == 'home') path = '/' + path + '/';
+            else if (loged.includes(id) || notLoged.includes(id)) {
+                if(checkLoged()){
+                    if(notLoged.includes(id)){
+                        path = '/' + path + '/' + 'account';
+                        id = 'account';
+                    }
+                } else {
+                    if(loged.includes(id)) path = '/' + path + '/' + 'login';
                     id = 'login';
-                } 
-                else if(check == 'viewcart'){
-                    path = '/' + path + '/' + 'viewcart';
-                    id = 'viewcart';
                 }
-                else if(check == 'checkout'){
-                    path = '/' + path + '/' + 'checkout';
-                    id = 'checkout';
-                }
-                else {
-                    path = '/' + path + '/' + 'account';
-                    id = 'account';
-                }
-            }
-            else path = '/' + path + '/' + id;
+            } else path = '/' + path + '/' + id;
         }
 
         window.history.pushState(id, id.toUpperCase(), path);

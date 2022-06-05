@@ -10,11 +10,11 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($conn, "CALL ADD_USER('$username', '$fullname', '$email', '$password')");
     if ($query) {
         $_SESSION['register'] = "<div class='alert-success text-center'>Đăng ký thành công, vui lòng đăng nhập</div>";
-        header("Location: ../index.php#login");
+        header("Location: ../login");
         exit();
     } else {
         $_SESSION['register'] = "<div class='alert-warning text-center'>Đăng ký thất bại</div>";
-        header("Location: ../index.php#register");
+        header("Location: ../register");
         exit();
     }
     $conn->close();

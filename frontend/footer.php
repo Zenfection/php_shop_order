@@ -1,5 +1,5 @@
 <!-- Footer Section Start -->
-<footer class="section footer-section">
+<footer class="section footer-section" data-aos="fade-in" data-aos-duration="1000">
         <!-- Footer Top Start -->
         <div class="footer-top bg-name-bright section-padding">
             <div class="container">

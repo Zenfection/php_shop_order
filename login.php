@@ -4,9 +4,6 @@
 <!-- Login Section Start -->
 <div class="section section-margin login" data-aos="zoom-in">
     <?php
-    if (isset($_SESSION['user'])) {
-        echo "<script>window.location.href='./index.php'</script>";
-    }
     if (isset($_SESSION['no-login-message'])) {
         echo $_SESSION['no-login-message'];
         unset($_SESSION['no-login-message']);

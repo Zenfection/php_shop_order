@@ -1,3 +1,4 @@
+<?php include "./config/connect.php"?>
 <?php include "./frontend/header.php";
 $statusVie = ["Đang xử lý", "Đang giao hàng", "Đã giao hàng", "Đã hủy"];
 $id_order = $_GET['order'];
