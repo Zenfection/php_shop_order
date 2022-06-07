@@ -29,11 +29,8 @@
                             $quantity = $row['quantity'];
                             $id_category = $row['id_category'];
                             ?>
-                            <a class='swiper-slide w-100'>
-                                <img class='w-100 rounded' id="img-product<?php echo $id ?>" src='./assets/images/products/<?php echo $image ?>' alt='Product'>
-                            </a>";
-                            ?>
-
+                                
+                            <img class='w-100' id="img-product<?php echo $id ?>" src='./assets/images/products/<?php echo $image ?>' alt='Product' style="padding-right: 25%;">
                         </div>
                     </div>
                     <!-- Single Product Image End -->
