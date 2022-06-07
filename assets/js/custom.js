@@ -1,7 +1,57 @@
 $(function () {
-    /*-------------------------
-        Ajax Load Data Nagivation
-    ---------------------------*/
+    /* Function
+    ------------------------- */
+
+    //* Check loged in
+    function checkLoged() {
+        let check = $('.header-actions #login').text().trim().toLowerCase();
+        if (check == 'login') return false;
+        else return true;
+    }
+
+    //* Load Content when refresh page
+    function checkURL() {
+        let url = new URL(window.location.href);
+        let path = url.pathname;
+        let id = path.replace('/', '');
+        let loadPage = ['', 'about', 'account', `checkout`, 'contact', 'login', 'register', `shop`, 'viewcart'];
+
+        if (id.indexOf('detail') > -1 || id.indexOf('order_view') > -1) {
+            return;
+        }
+        if (!loadPage.includes(id)) {
+            $('body').html('<h1>404 Page Not Found</h1>');
+            return;
+        }
+
+        if (id == '') {
+            id = 'home';
+        } else {
+            if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
+                id = 'account';
+            } else if (!checkLoged() && (id == 'account' || id == 'viewcart' || id == 'checkout')) {
+                id = 'login';
+            }
+        }
+        loadContent('./' + id + '.php');
+    }
+
+    //* choose num page paginator page
+    function choosePage(id) {
+        $.ajax({
+            type: "get",
+            url: "./shop.php",
+            data: {
+                page: id,
+            },
+            success: function (data) {
+                $("#content").html(data);
+                AOS.init();
+            },
+        });
+    }
+
+    //* Load Content
     function loadContent(pathUrl) {
         $.ajax({
             url: pathUrl,
@@ -12,82 +62,49 @@ $(function () {
             }
         });
     }
-    function checkLoged(){
-        let check = $('.header-actions #login').text().trim().toLowerCase();
-        if(check == 'login') return false;
-        else return true;
-    }
-    function checkURL() {
-        let href = window.location.href;
-        let origin = window.location.origin;
-        let path = href.replace(origin, "");
-        let root = path.split('/')[path.split('/').length - 2];
-        let loadPage = ['', 'index.php', 'about', 'account', `checkout`, 'contact', 'login', 'register', `shop`, 'viewcart'];
 
-        if (loadPage.includes(path.replaceAll('/', '').replace(root, '')) === false) {
-            return;
+    //* Check product exist or not in cart by id
+    function checkProductExistCart(id) {
+        let check = $(".cart-product-wrapper .cart-product-inner");
+        for (let i = 0; i < check.length; i++) {
+            if (check[i].id == "product_id" + id) return true;
         }
-        if (path.indexOf('detail') > -1 || path.indexOf('order_view') > -1) {
-            return;
-        }
-        if (path.indexOf('.php') > -1) {
-            if (path.indexOf('index') > -1) {
-                path = path.replace('index.php', '');
-                loadContent('./home.php');
-                window.history.pushState('home', 'HOME', path);
-            } else {
-                let url = path.split('/')[path.split('/').length - 1];
-                loadContent('./' + url + '.php');
-            }
-        } else {
-            url = path.split('/')[path.split('/').length - 1];
-            // check if url is login: viewcart, account, login, register, checkout
-            if(checkLoged()){
-                if(url == 'login' || url == 'regsiter'){
-                    url = 'account';
-                    window.history.pushState('account', 'ACCOUNT', './account');
-                }
-            }else {
-                if(url == 'account' || url == 'viewcart' || url == 'checkout'){
-                    url = 'login';
-                    window.history.pushState('login', 'LOGIN', './login');
-                }
-            }
-            (url == '') ? loadContent('./home.php'): loadContent('./' + url + '.php');
-            
-        }
-
+        return false;
     }
+
+    /*-------------------------
+        Ajax Load Data Nagivation
+    ---------------------------*/
     checkURL();
 
+    //* Listen back & forward button to load content
+    window.addEventListener('popstate', function () {
+        checkURL();
+    }, false);
+
+    //* Listen click to load content
     $(document).on('click', '.nav-content', function () {
         let id = $(this).attr('id');
-        let url = new URL(window.location.href);
-        //let path = url.pathname;
-        //path = path.replace(/[^a-zA-Z0-9 ]/g, '');
         let path;
-        if(id == 'home'){
-            path = '';
-        } else{
-            if(checkLoged()){ //đã đăng nhập
-                if(id == 'login' || id == 'register'){
-                    path = '/account';
-                    id = 'account';
-                } else path = '/' + id;
-            }else {
-                if(id == 'account' || id == 'viewcart' || id == 'checkout'){
-                    path = '/login';
-                    id = 'login';
-                } else path = '/' + id;
+        if (id == 'home') {
+            path = '/';
+        } else {
+            if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
+                path = '/account';
+                id = 'account';
+            } else if (!checkLoged() && (id == 'account' || id == 'viewcart' || id == 'checkout')) {
+                path = '/login';
+                id = 'login';
+            } else {
+                path = '/' + id;
             }
         }
-
         window.history.pushState(id, id.toUpperCase(), path);
         loadContent('./' + id + '.php');
     });
 
 
-    // search Product
+    //* search Product by name, listener via Enter
     $(document).on("keypress", "#searchProduct", function (e) {
         if (e.which == 13) {
             let search = $("#searchProduct input").val();
@@ -106,97 +123,44 @@ $(function () {
         }
     });
 
-    /*-------------------------
-        Ajax Function
-    ---------------------------*/
-    function choosePage(id) {
-        $.ajax({
-            type: "get",
-            url: "./shop.php",
-            data: {
-                page: id,
-            },
-            success: function (data) {
-                $("#content").html(data);
-                AOS.init();
-            },
-        });
-    }
 
-    function checkProductCart(id) {
-        let check = $(".cart-product-wrapper .cart-product-inner");
-        for (let i = 0; i < check.length; i++) {
-            if (check[i].id == "product_id" + id) return true;
-        }
-        return false;
-    }
 
-    function deleteProductCart(id, newprice) {
-        $.ajax({
-            type: "post",
-            url: "./backend/delete_product_cart.php",
-            data: {
-                delete_id: id,
-            },
-            success: function () {
-                let total = parseFloat($("#totalmoney").text().replace("$", ""));
-                let amount = parseInt($("#count-cart").text());
-                let qty = $("#quantity".id).text().replace(/\\D/g, "");
-                c;
-                let money = parseFloat(newprice.replace("$", ""));
-                let totalMoney = parseFloat(total - money * qty).toFixed(2);
-                console.log(money);
-                console.log(total);
-                console.log(qty);
-                console.log(totalMoney);
-                $("#product_id".id).hide("normal", function () {
-                    $(this).remove();
-                });
-                $("#count-cart").text(amount - 1);
-                $("#totalmoney").text(totalMoney + "$");
-            },
-        });
-    }
-
+    function getQtyProductCart(id) {
+        let amount = parseInt(
+            $("#quantity" + id)
+            .text()
+            .replace(/\D/g, "")
+        );
+        return amount;
+    };
+    
     function addProduct(id, qty) {
-        $.ajax({
-            type: "post",
-            url: "./backend/add_product_cart.php",
-            data: {
-                add_id: id,
-                qty: qty,
-            },
-            success: function () {
-                let product = $(".cart-product-wrapper");
-                if (checkProductCart(id)) {
-                    // có hàng trong giỏ chỉ cần tăng số lượng
-                    let add_qty = parseInt(
-                        $("#quantity" + id)
-                        .text()
-                        .replace(/\D/g, "")
-                    );
-                    let money = parseFloat(
-                        $("#product_id" + id + " .price .new")
-                        .text()
-                        .replace("$", "")
-                    );
-                    let total_qty = add_qty + qty;
-                    let total = parseFloat($("#totalmoney").text().replace("$", ""));
-                    let totalMoney = parseFloat(total + money * qty).toFixed(2);
-                    $("#quantity" + id + " > strong").text(total_qty);
-                    $("#totalmoney").text(totalMoney + "$");
-                } else {
-                    // không có hàng trong giỏ thì thêm mới
-                    let amount = $("#count-cart").text();
-                    let image = $("#img-product" + id).attr("src");
-                    let name = $("#product" + id + " .product-title").text();
-                    let newprice = $("#product" + id + " .price .new").text();
-                    let oldprice = $("#product" + id + " .price .old").text();
-                    let total = parseFloat($("#totalmoney").text().replace("$", ""));
-                    let totalMoney = parseFloat(newprice.replace("$", "")) * qty + total;
-                    $("#count-cart").text(parseInt(amount) + 1);
+        if (checkProductExistCart(id)) {
+            // có hàng trong giỏ chỉ cần tăng số lượng
+            let add_qty = getQtyProductCart(id);
+            let money = parseFloat(
+                $("#product_id" + id + " .price .new")
+                .text()
+                .replace("$", "")
+            );
+            let total_qty = add_qty + qty;
+            let total = parseFloat($("#totalmoney").text().replace("$", ""));
+            let totalMoney = parseFloat(total + money * qty).toFixed(2);
+            $("#quantity" + id + " > strong").text(total_qty);
+            $("#totalmoney").text(totalMoney + "$");
+        } else {
+            // không có hàng trong giỏ thì thêm mới
+            let amount = $("#count-cart").text();
+            $("#count-cart").text(parseInt(amount) + 1);
 
-                    let html = `<div class="cart-product-inner p-b-20 m-b-20 border-bottom" id="product_id${id}">
+            let image = $("#img-product" + id).attr("src");
+            let name = $("#product" + id + " .product-title").text();
+            let newprice = $("#product" + id + " .price .new").text();
+            let oldprice = $("#product" + id + " .price .old").text();
+            let total = parseFloat($("#totalmoney").text().replace("$", ""));
+            let totalMoney = parseFloat(newprice.replace("$", "")) * qty + total;
+
+            let html = `<div class="cart-product-inner p-b-20 m-b-20 border-bottom" id="product_id${id}">
                     <div class="single-cart-product">
                   <div class="cart-product-thumb">
                       <a href="./frontend/detail_product.php"><img src="${image}" alt="Cart Product" class="rounded"></a>
@@ -208,33 +172,38 @@ $(function () {
                           <span class="price">
                             `;
 
-                    if (oldprice != "") {
-                        html += `
+            if (oldprice != "") {
+                html += `
               <span class="new">${newprice}</span>
               <span class="old" style="text-decoration: line-through;color: #DC3545;opacity: 0.5;">${oldprice}</span>
               </span>
             `;
-                    } else {
-                        html += `<span class='new'>${newprice}</span>
+            } else {
+                html += `<span class='new'>${newprice}</span>
             </span>`;
-                    }
-                    html += `
+            }
+            html += `
                       </div>
                   </div>
               </div>
-
               <div class="cart-product-remove">
-                  <a class="remove-cart" id="product${id}" onclick="deleteProductCart(id, ${newprice})">
+                  <a class="remove-cart" id="product${id}">
                     <i class="fa fa-trash-o"></i>
                   </a>
               </div>
           </div>`;
-                    $(".cart-product-wrapper").append(html);
-                    $("#product_id" + id)
-                        .hide()
-                        .fadeIn();
-                    $("#totalmoney").text(parseFloat(totalMoney).toFixed(2) + "$");
-                }
+
+            $(".cart-product-wrapper").prepend(html);
+            $("#product_id" + id).hide().fadeIn();
+            $("#totalmoney").text(parseFloat(totalMoney).toFixed(2) + "$");
+        }
+        
+        $.ajax({
+            type: "post",
+            url: "./backend/add_product_cart.php",
+            data: {
+                add_id: id,
+                qty: qty,
             },
         });
     }
@@ -253,96 +222,7 @@ $(function () {
                 qty: qty,
             },
             success: function () {
-                let product = $(".cart-product-wrapper");
-                if (checkProductCart(id)) {
-                    // có hàng trong giỏ chỉ cần tăng số lượng
-                    let add_qty = parseInt(
-                        $("#quantity" + id)
-                        .text()
-                        .replace(/\D/g, "")
-                    );
-                    let money = parseFloat(
-                        $("#product_id" + id + " .price .new")
-                        .text()
-                        .replace("$", "")
-                    );
-                    let total_qty = add_qty + qty;
-                    let total = parseFloat($("#totalmoney").text().replace("$", ""));
-                    let totalMoney = parseFloat(total + money * qty).toFixed(2);
-                    $("#quantity" + id + " > strong").text(total_qty);
-                    $("#totalmoney").text(totalMoney + "$");
-                } else {
-                    // không có hàng trong giỏ thì thêm mới
-                    let amount = $("#count-cart").text();
-                    let image = $("#img-product" + id).attr("src");
-                    let name = $(".product-title").text();
-                    let newprice = $(".regular-price").text();
-                    let oldprice = $(".old-price").text();
-                    let total = parseFloat($("#totalmoney").text().replace("$", ""));
-                    let totalMoney = parseFloat(newprice.replace("$", "")) * qty + total;
-                    $("#count-cart").text(parseInt(amount) + 1);
-
-                    let html = `<div class="cart-product-inner p-b-20 m-b-20 border-bottom" id="product_id${id}">
-              <div class="single-cart-product">
-                  <div class="cart-product-thumb">
-                      <a href="./frontend/detail_product.php"><img src="${image}" alt="Cart Product" class="rounded"></a>
-                  </div>
-                  <div class="cart-product-content">
-                      <h3 class="title"><a href="./frontend/detail_product.php">${name}</a></h3>
-                      <div class="product-quty-price">
-                          <span class="cart-quantity" id="quantity${id}">Số lượng: <strong> ${qty} </strong></span>
-                          <span class="price">
-                            `;
-
-                    if (oldprice != "") {
-                        html += `
-              <span class="new">${newprice}</span>
-              <span class="old" style="text-decoration: line-through;color: #DC3545;opacity: 0.5;">${oldprice}</span>
-              </span>
-            `;
-                    } else {
-                        html += `<span class='new'>${newprice}</span>
-            </span>`;
-                    }
-                    html += `
-                      </div>
-                  </div>
-              </div>
-
-              <div class="cart-product-remove">
-                  <a class="remove-cart" id="product${id}" onclick="
-                    $.ajax({
-                      type: 'post',
-                      url: './backend/delete_product_cart.php',
-                      data: { delete_id: ${id} },
-                      success: function () {
-                        let total = parseFloat($('#totalmoney').text().replace('$', ''));
-                        let amount = parseInt($('#count-cart').text());
-                        let qty = $('#quantity${id}').text().replace(/\\D/g, '');c
-                        let money = parseFloat('${newprice}'.replace('$', ''));
-                        let totalMoney = parseFloat(total - money * qty).toFixed(2);
-                        console.log(money);
-                        console.log(total);
-                        console.log(qty);
-                        console.log(totalMoney);
-                        $('#product_id${id}').hide('normal', function () {
-                          $(this).remove();
-                        });
-                        $('#count-cart').text(amount - 1);
-                        $('#totalmoney').text(totalMoney + '$');
-                      }
-                    });
-                  ">
-                    <i class="fa fa-trash-o"></i>
-                  </a>
-              </div>
-          </div>`;
-                    $(".cart-product-wrapper").append(html);
-                    $("#product_id" + id)
-                        .hide()
-                        .fadeIn();
-                    $("#totalmoney").text(parseFloat(totalMoney).toFixed(2) + "$");
-                }
+                addProduct(id, qty);
             },
         });
     });
@@ -378,6 +258,8 @@ $(function () {
         let id = parseInt($(this).attr('name').split('page=')[1]);
         choosePage(id);
     });
+
+
     /*-------------------------
         Ajax Cart View
     ---------------------------*/
@@ -404,6 +286,7 @@ $(function () {
     ---------------------------*/
     $(document).on('click', '.remove-cart', function () {
         let id = $(this).attr('id').replace('product', '');
+        $('#product_id' + id).hide('normal');
         $.ajax({
             type: 'post',
             url: './backend/delete_product_cart.php',
@@ -418,9 +301,8 @@ $(function () {
                 let totalMoney = (total - money * qty).toFixed(2);
                 $('#totalmoney').text(totalMoney + '$');
                 $('#count-cart').text(amount - 1);
-                $('#product_id' + id).hide('normal', function () {
-                    $(this).remove();
-                });
+
+                $('#product_id' + id).remove();
             }
         });
     });

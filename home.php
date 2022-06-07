@@ -1,5 +1,5 @@
-<?php include "./config/connect.php" ?>
 <?php
+include "./config/connect.php";
 if (isset($_SESSION['login'])) {
     echo $_SESSION['login'];
     unset($_SESSION['login']);
