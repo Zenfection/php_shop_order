@@ -154,9 +154,9 @@
                                 if ($page > 1) {
                                 ?>
                                     <li class="page-item">
-                                        <a class="page-link rounded-0" href="./index.php#shop" name="page=<?php echo $page?>" aria-label="Prev">
+                                        <a class="page-link rounded-0 cursor-pointer" name="page=<?php echo $page?>" aria-label="Prev">
                                             <span aria-hidden="true">
-                                                <i class="fa fa-arrow-left"></i>
+                                                <i class="fa fa-arrow-left" style="padding-top: 5px"></i>
                                             </span>
                                         </a>
                                     </li>
@@ -167,14 +167,14 @@
                                         echo "<li class='page-item'><a class='page-link active'>$i</a></li>";
                                         continue;
                                     }
-                                    echo "<li class='page-item'><a class='page-link' id='page-choose' href='./index.php#shop' name='page=$i' >$i</a></li>'";
+                                    echo "<li class='page-item'><a class='page-link cursor-pointer' id='page-choose' name='page=$i' >$i</a></li>'";
                                 }
                                 if ($page < $numPage) {
                                 ?>
                                     <li class="page-item">
-                                        <a class="page-link rounded-0" href="./index.php#shop" name="page=<?php echo $page?>" aria-label="Next">
+                                        <a class="page-link rounded-0 cursor-pointer" name="page=<?php echo $page?>" aria-label="Next">
                                             <span aria-hidden="true">
-                                                <i class="fa fa-arrow-right"></i>
+                                                <i class="fa fa-arrow-right" style="padding-top: 5px"></i>
                                             </span>
                                         </a>
                                     </li>

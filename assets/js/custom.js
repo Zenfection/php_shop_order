@@ -1,6 +1,18 @@
 $(function () {
     /* Function
     ------------------------- */
+    var historyPage = new Array();
+    //* Load Content
+    function loadContent(pathUrl) {
+        window.scrollTo(0, 0);
+        $.ajax({
+            url: pathUrl,
+            success: function (data) {
+                $('#content').html(data);
+                AOS.init();
+            }
+        });
+    }
 
     //* Check loged in
     function checkLoged() {
@@ -35,6 +47,15 @@ $(function () {
         }
         loadContent('./' + id + '.php');
     }
+    checkURL();
+    //* Listen back & forward button to load content
+    window.addEventListener('popstate', function () {
+        let path = new URL(window.location.href).pathname;
+        let id = path.replace('/', '');
+        if(id == '') id = 'home';
+
+        loadContent('/' + id + '.php');
+    });
 
     //* choose num page paginator page
     function choosePage(id) {
@@ -51,18 +72,6 @@ $(function () {
         });
     }
 
-    //* Load Content
-    function loadContent(pathUrl) {
-        $.ajax({
-            url: pathUrl,
-            success: function (data) {
-                window.scrollTo(0, 0);
-                $('#content').html(data);
-                AOS.init();
-            }
-        });
-    }
-
     //* Check product exist or not in cart by id
     function checkProductExistCart(id) {
         let check = $(".cart-product-wrapper .cart-product-inner");
@@ -75,32 +84,28 @@ $(function () {
     /*-------------------------
         Ajax Load Data Nagivation
     ---------------------------*/
-    checkURL();
 
-    //* Listen back & forward button to load content
-    window.addEventListener('popstate', function () {
-        checkURL();
-    }, false);
 
     //* Listen click to load content
     $(document).on('click', '.nav-content', function () {
+        let url = new URL(window.location.href).pathname;
         let id = $(this).attr('id');
         let path;
-        if (id == 'home') {
-            path = '/';
+
+        if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
+            path = '/account';
+            id = 'account';
+        } else if (!checkLoged() && (id == 'account' || id == 'viewcart' || id == 'checkout')) {
+            path = '/login';
+            id = 'login';
         } else {
-            if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
-                path = '/account';
-                id = 'account';
-            } else if (!checkLoged() && (id == 'account' || id == 'viewcart' || id == 'checkout')) {
-                path = '/login';
-                id = 'login';
-            } else {
-                path = '/' + id;
-            }
+            if(id == 'home') path = '/';
+            else path = '/' + id;
         }
-        window.history.pushState(id, id.toUpperCase(), path);
         loadContent('./' + id + '.php');
+        if(url != path){ 
+            window.history.pushState(id, id.toUpperCase(), path);
+        }
     });
 
 
@@ -115,7 +120,6 @@ $(function () {
                     search: search,
                 },
                 success: function (data) {
-                    window.scrollTo(0, 0);
                     $("#content").html(data);
                     AOS.init();
                 },

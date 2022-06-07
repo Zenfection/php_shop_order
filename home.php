@@ -1,5 +1,5 @@
+<?php include "./config/connect.php" ?>
 <?php
-include "./config/connect.php";
 if (isset($_SESSION['login'])) {
     echo $_SESSION['login'];
     unset($_SESSION['login']);
@@ -13,7 +13,7 @@ if (isset($_SESSION['order'])) {
 <!-- Hero/Intro Slider Start -->
 <div class="section">
     <div class="hero-slider swiper-container">
-        <div class="swiper-wrapper" data-aos="fade-in" data-aos-duration="1000">
+        <div class="swiper-wrapper">
 
             <div class="hero-slide-item swiper-slide">
                 <div class="hero-slide-bg">
@@ -29,7 +29,7 @@ if (isset($_SESSION['order'])) {
                 </div>
             </div>
 
-            <div class="hero-slide-item swiper-slide" data-aos="fade-up" data-aos-duration="1500">
+            <div class="hero-slide-item swiper-slide">
                 <div class="hero-slide-bg">
                     <img src="./assets/images/slider/2.png" alt="Slider Image" />
                 </div>
@@ -44,13 +44,14 @@ if (isset($_SESSION['order'])) {
             </div>
         </div>
 
-        <!-- Swiper Pagination Start -->
-        <div class="swiper-pagination d-lg-none"></div>
-        <!-- Swiper Pagination End -->
 
         <!-- Swiper Navigation Start -->
         <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-left"></i></div>
         <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-right"></i></div>
+
+         <!-- Swiper Pagination Start -->
+         <div class="swiper-pagination d-lg-none"></div>
+        <!-- Swiper Pagination End -->
         <!-- Swiper Navigation End -->
 
 

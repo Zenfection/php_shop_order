@@ -9,8 +9,8 @@
     <link rel="shortcut icon" href="./assets/images/favicon.ico">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="./assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="./assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="./assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/custom.css">
     <title>Shop Order</title>
