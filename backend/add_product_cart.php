@@ -1,8 +1,8 @@
 <?php
 include "./config/connect.php";
-if (isset($_POST['add_id']) && isset($_POST['qty'])) {
+if (isset($_POST['id']) && isset($_POST['qty'])) {
         $user = $_SESSION['user'];
-        $id = $_POST['add_id'];
+        $id = $_POST['id'];
         $qty = $_POST['qty'];
         $count = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `tb_cart` WHERE username = '$user' AND id_product = '$id'"));
         if ($count == 0) {

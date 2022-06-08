@@ -125,7 +125,7 @@
                                 <div class="add-to_cart" id="product<?php echo $id ?>">
                                     <a class="btn btn-primary btn-hover-dark rounded" style="width: 110%">Thêm Vào Giỏ</a>
                                 </div>
-                                <a href="#" title="Wishlist" class="action"><i class="ti-heart"></i></a>
+                                <a href="#" title="Wishlist" class="action" style="padding-top: 10px;"><i class="ti-heart"></i></a>
                             </div>
                         </div>
                         <!-- Cart Button End -->
@@ -234,20 +234,19 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <?php
-                                $sql = "SELECT * FROM `tb_product` WHERE id_category = '$id_category'";
+                                $sql = "SELECT * FROM `tb_product` 
+                                        WHERE id_category = '$id_category'
+                                        AND id_product != $id";
                                 $result = mysqli_query($conn, $sql);
                                 $count = mysqli_num_rows($result);
                                 for ($i = 0; $i < $count; $i++) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        $id = $row['id_product'];
-                                        $name = $row['name'];
-                                        $price = $row['price'];
-                                        $discount = $row['discount'];
-                                        $ranking = $row['ranking'];
-                                        $image = $row['image'];
-                                        if ($id == $_GET['id']) {
-                                            continue;
-                                        }
+                                    $row = mysqli_fetch_assoc($result);
+                                    $id = $row['id_product'];
+                                    $name = $row['name'];
+                                    $price = $row['price'];
+                                    $discount = $row['discount'];
+                                    $ranking = $row['ranking'];
+                                    $image = $row['image'];
                                 ?>
                                         <div class="swiper-slide">
                                             <!-- Product Start -->
@@ -316,7 +315,6 @@
                                         </div>
                                 <?php
                                     }
-                                }
                                 ?>
                             </div>
                             <div class="swiper-pagination d-block d-md-none"></div>
