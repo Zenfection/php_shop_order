@@ -347,30 +347,6 @@
     }
   }
 
-  // $(document).keydown(function(e){
-  //   switch (e.which){
-  //   // case 37:    //left arrow key
-  //   //     console.log(123)
-  //   //     break;
-  //   // case 38:    //up arrow key
-  //   //   console.log(123)
-  //   //     break;
-  //   // case 39:    //right arrow key
-  //   //     $(".box").finish().animate({
-  //   //         left: "+=50"
-  //   //     });
-  //   //     break;
-  //   // case 40:    //bottom arrow key
-  //   //     $(".box").finish().animate({
-  //   //         top: "+=50"
-  //   //     });
-  //   //     break;
-  //   // case 27:    //esc key
-  //   //   console.log(123);
-  //   //   break;
-  //   // }
-  // });
-
   
   /*-------------------------
       Ajax Contact Form 

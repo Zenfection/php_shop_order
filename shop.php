@@ -18,7 +18,10 @@
                             <?php
                             if(isset($_POST['search'])){
                                 $search = $_POST['search'];
-                                $sql = "SELECT * FROM `tb_product` WHERE LOWER(name) LIKE CONCAT('%', LOWER(CONVERT('$search', BINARY)), '%')";
+                                $sql = "SELECT * FROM `tb_product` 
+                                        WHERE LOWER(name) 
+                                        COLLATE UTF8_GENERAL_CI 
+                                        LIKE CONCAT('%', LOWER(CONVERT('$search', BINARY)), '%')";
                             }else{
                                 $sql = "SELECT * FROM `tb_product`";
                             }
@@ -61,7 +64,7 @@
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product">
                                 <div class="product-inner" id="product<?php echo $id?>">
                                     <div class="thumb">                                  
-                                        <a href="./detail_product.php?id=<?php echo $id ?>" class="image">
+                                        <a class="nav-content cursor-pointer image" id="detail_product">
                                             <img class="fit-image p-10" id="img-product<?php echo $id?>" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                                         </a>
                                         <?php
@@ -81,7 +84,7 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title"><a class="product-title" href="./detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h5>
+                                        <h5 class="title"><a class="nav-content cursor-pointer product-title" id="detail_product"><?php echo $name ?></a></h5>
                                         <span class="rating">
                                             <?php
                                             for ($j = 0; $j < 5; $j++) {

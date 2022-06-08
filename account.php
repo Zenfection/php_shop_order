@@ -98,12 +98,12 @@ if(isset($_SESSION['change_info'])){
                                                             $status = $row['status'];
                                                             $total_money = $row['total_money'];
                                                     ?>
-                                                            <tr id="id_order=<?php echo $id_order?>">
+                                                            <tr id="id_order<?php echo $id_order?>">
                                                                 <td><?php echo $id_order?></td>
                                                                 <td><?php echo $order_date?></td>
                                                                 <td><?php echo $status?></td>
                                                                 <td><?php echo $total_money?>$</td>
-                                                                <td><a href="./order_view.php?order=<?php echo $id_order?>" class="btn btn btn-dark btn-hover-primary btn-sm rounded">Xem</a></td>
+                                                                <td><a class="nav-content cursor-pointer btn btn btn-dark btn-hover-primary btn-sm rounded" id="order_view">Xem</a></td>
                                                             </tr>
                                                     <?php
                                                         }

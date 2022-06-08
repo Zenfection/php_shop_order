@@ -90,6 +90,19 @@ $(function () {
     $(document).on('click', '.nav-content', function () {
         let url = new URL(window.location.href).pathname;
         let id = $(this).attr('id');
+
+        if(id == 'detail_product'){
+            let id_product = $(this).closest('.product-inner').attr('id').replace('product', '');
+            loadContent('/detail_product.php?id=' + id_product);
+            window.history.pushState(id, id.toUpperCase(), '/detail_product?id=' + id_product);
+            return;
+        }
+        if(id == 'order_view'){
+            let id_order = $(this).closest('tr').attr('id').replace('id_order', '');
+            loadContent('/order_view.php?id=' + id_order);
+            window.history.pushState(id, id.toUpperCase(), '/order_view?id=' + id_order);
+            return;
+        }
         let path;
 
         if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
@@ -159,8 +172,11 @@ $(function () {
 
             let image = $("#img-product" + id).attr("src");
             let name = $("#product" + id + " .product-title").text();
+                if(name == '') name = $(".product-title").text();
             let newprice = $("#product" + id + " .price .new").text();
+                if(newprice == '') newprice = $(".regular-price").text();
             let oldprice = $("#product" + id + " .price .old").text();
+                if(oldprice == '') oldprice = $(".old-price").text();
             let total = parseFloat($("#totalmoney").text().replace("$", ""));
             let totalMoney = parseFloat(newprice.replace("$", "")) * qty + total;
 
@@ -218,15 +234,13 @@ $(function () {
     $(document).on("click", ".add-to_cart", function () {
         let qty = parseInt($(".cart-plus-minus-box").val());
         let id = $(this).attr("id").replace("product", "");
+        addProduct(id, qty);
         $.ajax({
             type: "post",
             url: "./backend/add_product_cart.php",
             data: {
                 add_id: id,
                 qty: qty,
-            },
-            success: function () {
-                addProduct(id, qty);
             },
         });
     });
@@ -309,15 +323,6 @@ $(function () {
                 $('#product_id' + id).remove();
             }
         });
-    });
-
-    /*-------------------------
-        Ajax Plus Product
-    ---------------------------*/
-    $(document).on('click', 'a#plus_product', function () {
-        let id = $(this).parent().attr('id').replace('wrapper', '');
-        let add_qty = 1;
-        addProduct(parseInt(id), add_qty);
     });
 
 });

@@ -53,7 +53,7 @@
                                             <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                                         </td>
                                         <td class="pro-title">
-                                            <a href="./detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
+                                            <a><?php echo $name ?></a>
                                         </td>
                                         <td class="pro-price"><span><?php echo $price ?>$</span></td>
                                         <td class="pro-quantity">

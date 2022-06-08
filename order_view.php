@@ -1,7 +1,7 @@
-<?php include "./config/connect.php"?>
-<?php include "./frontend/header.php";
-$statusVie = ["Đang xử lý", "Đang giao hàng", "Đã giao hàng", "Đã hủy"];
-$id_order = $_GET['order'];
+<?php 
+    include "./config/connect.php";
+    $statusVie = ["Đang xử lý", "Đang giao hàng", "Đã giao hàng", "Đã hủy"];
+    $id_order = $_GET['id'];
 ?>
 
 <div id="content">
@@ -9,7 +9,7 @@ $id_order = $_GET['order'];
 <div class="section section-margin">
     <div class="container">
 
-        <div class="row">
+        <div class="row" data-aos="fade-down">
             <div class="col-12">
 
                 <!-- Cart Table Start -->
@@ -84,7 +84,7 @@ $id_order = $_GET['order'];
             </div>
         </div>
 
-        <div class="row m-t-50">
+        <div class="row m-t-50" data-aos="fade-up">
             <div class="col-lg-6 me-0 ms-auto">
 
                 <!-- Cart Calculation Area Start -->
@@ -138,5 +138,3 @@ $id_order = $_GET['order'];
 </div>
 <!-- Shopping Cart Section End -->
 </div>
-
-<?php include "./frontend/footer.php"?>
