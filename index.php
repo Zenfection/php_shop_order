@@ -4,10 +4,20 @@
     $path = preg_replace('/[^a-zA-Z0-9 ?=_]/i', '', $root);
     echo "<script>window.history.replaceState('$path', '$path'.toUpperCase(), '/$path');</script>";
 ?>
+
 <?php include "./frontend/header.php" ?>
 
-<div id="content">
+<script src="./assets/js/vendor.min.js"></script>
+<script src="./assets/js/custom.js"></script>
+<script src="./assets/js/plugins.min.js"></script>
+<script src="./assets/js/plugins/jquery.validate.js"></script>
+<script src="./assets/js/main.js"></script>
 
+<div id="content">
+    <?php 
+        if($path == '') 
+            include "./home.php";
+    ?>
 </div>
 
 <?php include "./frontend/footer.php" ?>

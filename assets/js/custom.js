@@ -33,7 +33,7 @@ $(function () {
         }
 
         if (id == '') {
-            id = 'home';
+            return;
         } else if(id == 'detail_product' || id == 'order_view') {
             loadContent('/' + id + '.php' + url.search);
             return;  
