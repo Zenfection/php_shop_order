@@ -4,10 +4,6 @@ if (isset($_SESSION['login'])) {
     echo $_SESSION['login'];
     unset($_SESSION['login']);
 }
-if (isset($_SESSION['order'])) {
-    echo $_SESSION['order'];
-    unset($_SESSION['order']);
-}
 ?>
 
 <!-- Hero/Intro Slider Start -->
@@ -44,13 +40,12 @@ if (isset($_SESSION['order'])) {
             </div>
         </div>
 
-
         <!-- Swiper Navigation Start -->
         <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-left"></i></div>
         <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-right"></i></div>
 
-         <!-- Swiper Pagination Start -->
-         <div class="swiper-pagination d-lg-none"></div>
+        <!-- Swiper Pagination Start -->
+        <div class="swiper-pagination d-lg-none"></div>
         <!-- Swiper Pagination End -->
         <!-- Swiper Navigation End -->
 
@@ -69,15 +64,10 @@ if (isset($_SESSION['order'])) {
                     <div class="cta-icon">
                         <i class="ti-truck"></i>
                     </div>
-
-
-                    <!-- CTA Content Start -->
                     <div class="cta-content">
                         <h4 class="title">Miễn phí vận chuyển</h4>
                         <p>Áp dụng cho tất cả đơn hàng</p>
                     </div>
-                    <!-- CTA Content End -->
-
                 </div>
                 <!-- Single CTA Wrapper End -->
             </div>
@@ -85,20 +75,13 @@ if (isset($_SESSION['order'])) {
             <div class="col m-b-30">
                 <!-- Single CTA Wrapper Start -->
                 <div class="single-cta-wrapper">
-
-                    <!-- CTA Icon Start -->
                     <div class="cta-icon">
                         <i class="ti-headphone-alt"></i>
                     </div>
-                    <!-- CTA Icon End -->
-
-                    <!-- CTA Content Start -->
                     <div class="cta-content">
                         <h4 class="title">Hỗ trợ 24/7</h4>
                         <p>Gọi Hotline hoặc Email</p>
                     </div>
-                    <!-- CTA Content End -->
-
                 </div>
                 <!-- Single CTA Wrapper End -->
             </div>
@@ -106,20 +89,13 @@ if (isset($_SESSION['order'])) {
             <div class="col m-b-30">
                 <!-- Single CTA Wrapper Start -->
                 <div class="single-cta-wrapper">
-
-                    <!-- CTA Icon Start -->
                     <div class="cta-icon">
                         <i class="ti-bar-chart"></i>
                     </div>
-                    <!-- CTA Icon End -->
-
-                    <!-- CTA Content Start -->
                     <div class="cta-content">
                         <h4 class="title">Hoàn tiền</h4>
                         <p>Hoàn tiền nếu bạn chưa nhận</p>
                     </div>
-                    <!-- CTA Content End -->
-
                 </div>
                 <!-- Single CTA Wrapper End -->
             </div>

@@ -13,7 +13,6 @@
         if ($count == 1) {
             $_SESSION['user'] = $_POST['user'];
             $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
-            //echo "<script>window.location.href='../index.php'</script>";
             header("Location: ../");
             exit();
         } else {

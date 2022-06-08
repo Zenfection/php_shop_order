@@ -6,7 +6,7 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($conn, $sql);
     if($result){
         $_SESSION['cancel_order'] = "<div class='alert-success text-center'>Đã huỷ thành công đơn ${id}</div>";
-        echo "<script>window.location.href='../index.php#account'</script>";
+        echo "<script>window.location.href='../'</script>";
     }
     mysqli_close($conn);
     exit();
