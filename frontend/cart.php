@@ -36,14 +36,14 @@
                         $discount_price = $price - ($price * $discount / 100);
             ?>
                         <!-- Cart Product/Price Start -->
-                        <div class="cart-product-inner p-b-20 m-b-20 border-bottom product-inner" id="product<?php echo $id ?>">
+                        <div class="cart-product-inner p-b-20 m-b-20 border-bottom" id="product_id<?php echo $id ?>">
                             <!-- Single Cart Product Start -->
                             <div class="single-cart-product">
                                 <div class="cart-product-thumb">
-                                    <a class="nav-content cursor-pointer" id="detail_product"><img src="./assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
+                                    <a href="./detail_product.php?id=<?php echo $id ?>"><img src="./assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
                                 </div>
                                 <div class="cart-product-content">
-                                    <h3 class="title"><a class="nav-content cursor-pointer" id="detail_product"><?php echo $name ?></a></h3>
+                                    <h3 class="title"><a href="./detail_product.php?id=<?php echo $id ?>"><?php echo $name ?></a></h3>
                                     <div class="product-quty-price">
                                         <span class="cart-quantity" id="quantity<?php echo $id ?>">Số lượng: <strong> <?php echo $amount ?> </strong></span>
                                         <span class="price">

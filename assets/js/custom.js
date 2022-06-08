@@ -325,4 +325,13 @@ $(function () {
         });
     });
 
+    /*-------------------------
+        Ajax Plus Product
+    ---------------------------*/
+    $(document).on('click', 'a#plus_product', function () {
+        let id = $(this).parent().attr('id').replace('wrapper', '');
+        let add_qty = 1;
+        addProduct(parseInt(id), add_qty);
+    });
+
 });
