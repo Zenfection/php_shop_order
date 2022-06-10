@@ -126,7 +126,7 @@
                     </div>
                     <?php if($status == 'pending'){
                         ?>
-                        <a href="./backend/cancel_order.php?id=<?php echo $id_order?>" class="btn btn btn-gray-deep btn-hover-primary m-t-30 cursor-pointer">Huỷ Hàng</a>";
+                        <a href="./backend/cancel_order.php?id=<?php echo $id_order?>" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Huỷ Hàng</a>
                         <?php
                     }
                     ?>

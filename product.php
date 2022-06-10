@@ -15,24 +15,23 @@
             }
             ?>
             <div class="action-wrapper" id="wrapper<?php echo $id ?>">
-                <a class="nav-content cursor-pointer action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
-                <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                <a id="viewcart" class="nav-content cursor-pointer action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="fa-regular fa-plus-large"></i></a>
+                <a class="action wishlist" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a class="nav-content cursor-pointer action cart" id="viewcart" title="Cart"><i class="fa-regular fa-cart-circle-plus"></i></a>
             </div>
         </div>
         <div class="content">
             <h5 class="title"><a class="product-title"><?php echo $name ?></a></h5>
             <span class="rating">
                 <?php
+                $temp = $ranking;
                 for ($j = 0; $j < 5; $j++) {
-                    if ($ranking > 2) {
-                        echo "<i class='fa fa-star'></i>";
-                        $ranking -= 2;
-                    } else if ($ranking > 0) {
-                        echo "<i class='fa fa-star-half-o'></i>";
-                        $ranking = 0;
-                    } else {
-                        echo "<i class='fa fa-star-o'></i>";
+                    if ($temp > 2) {
+                        echo "<i class='fa-solid fa-star' style='color: #ffad42'></i>";
+                        $temp -= 2;
+                    } else if ($temp > 0) {
+                        echo "<i class='fa-solid fa-star-half' style='color: #ffad42'></i>";
+                        $temp = 0;
                     }
                 }
                 ?>

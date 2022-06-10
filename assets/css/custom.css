@@ -4,7 +4,7 @@
     left: -11px;
     z-index: 999;
     display: inline-block;
-    font-family: "HK Grotesk",sans-serif;
+    font-family: "HK Grotesk", sans-serif;
     font-size: .8rem;
     text-transform: uppercase;
     letter-spacing: .3em;
@@ -13,7 +13,8 @@
     text-align: center;
     border-top-left-radius: 10px;
 }
-.ribbon::before{
+
+.ribbon::before {
     content: '';
     border-left: 12px solid transparent;
     border-right: 0 solid transparent;
@@ -23,3 +24,49 @@
     left: 0;
 }
 
+.social-footer a {
+    font-size: 18px;
+    padding: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.social-footer a[title=Facebook]:hover {
+    color: #0f8bf1;
+    opacity: 1;
+}
+.social-footer a[title=Github]:hover{
+    color: #c9d1d9;
+    opacity: 1;
+}
+.social-footer a[title=Linkedin]:hover{
+    color: #1c6eaa;
+    opacity: 1;
+}
+.social-footer a[title=Pinterest]:hover{
+    color: #e4442e;
+    opacity: 1;
+}
+.social-footer a[title=Instagram]:hover{
+    color: #dd2a7b;
+    opacity: 1;
+}
+
+.social-share a[title=Facebook]:hover {
+    background: #0f8bf1 !important;
+}
+.social-share a[title=Github]:hover{
+    background: #c9d1d9 !important;
+}
+.social-share a[title=Linkedin]:hover{
+    background: #1c6eaa !important;
+}
+.social-share a[title=Pinterest]:hover{
+    background: #e4442e !important;
+}
+.social-share a[title=Instagram]:hover{
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)!important; 
+}

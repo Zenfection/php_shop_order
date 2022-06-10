@@ -34,8 +34,8 @@
                         <!-- Single Product Thumb Start -->
                         <div class="single-product-thumb swiper-container product-gallery-thumbs">
                             <!-- Next Previous Button Start -->
-                            <div class="swiper-button-next swiper-nav-button"><i class="ti-arrow-right"></i></div>
-                            <div class="swiper-button-prev swiper-nav-button"><i class="ti-arrow-left"></i></div>
+                            <div class="swiper-button-next swiper-nav-button"><i class="fa-duotone fa-angle-right fa-xl"></i></div>
+                            <div class="swiper-button-prev swiper-nav-button"><i class="fa-duotone fa-angle-left fa-xl"></i></div>
                             <!-- Next Previous Button End -->
                         </div>
                         <!-- Single Product Thumb End -->
@@ -60,16 +60,15 @@
                         <!-- Rating Start -->
                         <span class="rating justify-content-start m-b-10">
                             <?php
+                            $temp = $ranking;
                             for ($j = 0; $j < 5; $j++) {
-                                if ($ranking > 2) {
-                                    echo "<i class='fa fa-star'></i>";
-                                    $ranking -= 2;
-                                } else if ($ranking > 0) {
-                                    echo "<i class='fa fa-star-half-o'></i>";
-                                    $ranking = 0;
-                                } else {
-                                    echo "<i class='fa fa-star-o'></i>";
-                                }
+                                if ($temp > 2) {
+                                    echo "<i class='fa-solid fa-star' style='color: #ffad42'></i>";
+                                    $temp -= 2;
+                                } else if ($temp > 0) {
+                                    echo "<i class='fa-solid fa-star-half' style='color: #ffad42'></i>";
+                                    $temp = 0;
+                                } 
                             }
                             ?>
                         </span>
@@ -125,7 +124,7 @@
                                 <div class="add-to_cart" id="product<?php echo $id ?>">
                                     <a class="btn btn-primary btn-hover-dark rounded" style="width: 110%">Thêm Vào Giỏ</a>
                                 </div>
-                                <a href="#" title="Wishlist" class="action" style="padding-top: 10px;"><i class="ti-heart"></i></a>
+                                <a href="#" title="Wishlist" class="action" style="padding-top: 10px;"><i class="fa-regular fa-heart"></i></a>
                             </div>
                         </div>
                         <!-- Cart Button End -->
@@ -133,11 +132,10 @@
                         <!-- Social Shear Start -->
                         <div class="social-share">
                             <div class="widget-social justify-content-start m-b-30">
-                                <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
-                                <a title="Instagram" href="#/"><i class="icon-social-instagram"></i></a>
-                                <a title="Linkedin" href="#/"><i class="icon-social-linkedin"></i></a>
-                                <a title="Skype" href="#/"><i class="icon-social-skype"></i></a>
-                                <a title="Dribble" href="#/"><i class="icon-social-dribbble"></i></a>
+                            <a title="Facebook" href="#"><i class="fa-brands fa-facebook-f" style="padding-top: 7px;"></i></a>
+                            <a title="Pinterest" href="#"><i class="fa-brands fa-pinterest-p" style="padding-top: 7px;"></i></a>
+                            <a title="Twitter" href="#"><i class="fa-brands fa-twitter" style="padding-top: 7px;"></i></a>
+                            <a title="Instagram" href="#"><i class="fa-brands fa-instagram" style="padding-top: 7px;"></i></a>
                             </div>
                         </div>
                         <!-- Social Shear End -->
@@ -268,9 +266,9 @@
                                                         }
                                                         ?>
                                                         <div class="action-wrapper" id="wrapper<?php echo $id ?>">
-                                                            <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="ti-plus"></i></a>
-                                                            <a class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
-                                                            <a class="nav-content cursor-pointer action cart" id="viewcart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                                                            <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="fa-regular fa-plus-large"></i></a>
+                                                            <a class="action wishlist" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                                                            <a class="nav-content cursor-pointer action cart" id="viewcart" title="Cart"><i class="fa-regular fa-cart-circle-plus"></i></a>
                                                         </div>
                                                     </div>
                                                     <!-- Thumb End  -->
@@ -280,16 +278,15 @@
                                                         <h5 class="title"><?php echo $name ?></a></h5>
                                                         <span class="rating">
                                                             <?php
+                                                            $temp = $ranking;
                                                             for ($j = 0; $j < 5; $j++) {
-                                                                if ($ranking > 2) {
-                                                                    echo "<i class='fa fa-star'></i>";
-                                                                    $ranking -= 2;
-                                                                } else if ($ranking > 0) {
-                                                                    echo "<i class='fa fa-star-half-o'></i>";
-                                                                    $ranking = 0;
-                                                                } else {
-                                                                    echo "<i class='fa fa-star-o'></i>";
-                                                                }
+                                                                if ($temp > 2) {
+                                                                    echo "<i class='fa-solid fa-star' style='color: #ffad42'></i>";
+                                                                    $temp -= 2;
+                                                                } else if ($temp > 0) {
+                                                                    echo "<i class='fa-solid fa-star-half' style='color: #ffad42'></i>";
+                                                                    $temp = 0;
+                                                                } 
                                                             }
                                                             ?>
                                                         </span>
@@ -318,8 +315,8 @@
                                 ?>
                             </div>
                             <div class="swiper-pagination d-block d-md-none"></div>
-                            <div class="swiper-button-prev swiper-nav-button d-none d-md-flex"><i class="ti-angle-left"></i></div>
-                            <div class="swiper-button-next swiper-nav-button d-none d-md-flex"><i class="ti-angle-right"></i></div>
+                            <div class="swiper-button-prev swiper-nav-button d-none d-md-flex"><i class="fa-duotone fa-angle-left fa-xl"></i></div>
+                            <div class="swiper-button-next swiper-nav-button d-none d-md-flex"><i class="fa-duotone fa-angle-right fa-xl"></i></div>
                         </div>
                     </div>
                 </div>

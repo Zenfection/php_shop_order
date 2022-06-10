@@ -7,7 +7,7 @@
 
         <!-- Button Close Start -->
         <div class="offcanvas-btn-close">
-            <i class="fa fa-times"></i>
+            <i class="fa-duotone fa-xmark"></i>
         </div>
         <!-- Button Close End -->
 
@@ -17,7 +17,7 @@
             <div class="search-box-offcanvas">
                 <form>
                     <input class="search-input-offcanvas" type="text" placeholder="Search product...">
-                    <button class="search-btn"><i class="icon-magnifier"></i></button>
+                    <button class="search-btn"><i class="fa-duotone fa-magnifying-glass"></i></button>
                 </form>
             </div>
             <!-- Mobile Menu Search Box End -->
@@ -40,19 +40,30 @@
 
                 <!-- Contact Links Start -->
                 <ul class="contact-links">
-                    <li><i class="fa fa-phone"></i><a href="#"> +84 856511258</a></li>
-                    <li><i class="fa fa-envelope-o"></i><a href="#"> kietgolx65234@gmail.com</a></li>
-                    <li><i class="fa fa-clock-o"></i> <span>Thứ 2 - Chủ Nhật 9.00 - 22.00 H</span> </li>
+                    <li><i class="fa-duotone fa-phone-arrow-down-left"></i><a href="#"> +84 856511258</a></li>
+                    <li><i class="fa-duotone fa-envelope-open-text"></i><a href="#"> kietgolx65234@gmail.com</a></li>
+                    <li><i class="fa-duotone fa-calendar-clock"></i> <span>Thứ 2 - Chủ Nhật 9.00 - 22.00 H</span> </li>
                 </ul>
                 <!-- Contact Links End -->
 
                 <!-- Social Widget Start -->
-                <div class="widget-social">
-                    <a title="Facebook" href="#"><i class="fa fa-facebook-f"></i></a>
-                    <a title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                    <a title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                    <a title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
-                    <a title="Vimeo" href="#"><i class="fa fa-vimeo"></i></a>
+
+                <div class="social-footer">
+                    <a title="Facebook" href="https://facebook.com/zenfection" target="_blank">
+                        <i class="fa-brands fa-facebook fa-xl"></i>
+                    </a>
+                    <a title="Github" href="https://github.com/zenfection1412" target="_blank">
+                        <i class="fa-brands fa-github fa-xl"></i>
+                    </a>
+                    <a title="Linkedin" href="https://linkedin.com/in/zenfection" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-xl"></i>
+                    </a>
+                    <a title="Pinterest" href="https://pinterest.com/zenfection" target="_blank">
+                        <i class="fa-brands fa-pinterest fa-xl"></i>
+                    </a>
+                    <a title="Instagram" href="https://instagram.com/zenfection" target="_blank">
+                        <i class="fa-brands fa-instagram fa-xl"></i>
+                    </a>
                 </div>
                 <!-- Social Widget Ende -->
             </div>

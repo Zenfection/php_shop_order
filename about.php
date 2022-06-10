@@ -15,11 +15,11 @@
                     <h2 class="title">Dự án Web bán thức ăn vặt</h2>
                     <p>Đây là dự web cơ bản được viết bằng PHP thuần, chủ yếu là để học tập và các công nghệ dùng dưới đây.</p>
                     <ul class="about-content-list">
-                        <li><span><i class="ti-angle-double-right"></i></span> Bootstrap 5</li>
-                        <li><span><i class="ti-angle-double-right"></i></span> Jquery Ajax</li>
-                        <li><span><i class="ti-angle-double-right"></i></span> PHP Composer</li>
+                        <li><span><i class="fa-duotone fa-angles-right"></i></span> Bootstrap 5</li>
+                        <li><span><i class="fa-duotone fa-angles-right"></i></span> Jquery Ajax</li>
+                        <li><span><i class="fa-duotone fa-angles-right"></i></span> PHP Composer</li>
                     </ul>
-                    <a id="contact" class="nav-content cursor-pointer btn btn-primary btn-hover-dark">Liên Hệ</a>
+                    <a id="contact" class="nav-content btn btn-primary btn-hover-dark">Liên Hệ</a>
                 </div>
                 <!-- About Content End -->
             </div>
@@ -37,15 +37,26 @@
                 <!-- Single Team Wrapper Start -->
                 <div class="single-team-wrapper">
                     <div class="thumb">
-                        <a  class="nav-content cursor-pointer" id="contact">
+                        <a class="nav-content cursor-pointer" id="contact">
                             <img class="fit-image" src="./assets/images/team/1.jpg" alt="Team Image" style="height: 270px;">
                         </a>
                         <!-- Social Shear Start -->
                         <div class="social-share">
-                            <a title="Twitter" href="#"><i class="ti-facebook"></i></a>
-                            <a title="Instagram" href="#"><i class="ti-pinterest"></i></a>
-                            <a title="Linkedin" href="#"><i class="ti-twitter-alt"></i></a>
-                            <a title="Skype" href="#"><i class="ti-instagram"></i></a>
+                            <a title="Facebook" href="https://facebook.com/zenfection" target="_blank">
+                                <i class="fa-brands fa-facebook fa-xl" style="padding-top: 4px"></i>
+                            </a>
+                            <a title="Github" href="https://github.com/zenfection1412" target="_blank">
+                                <i class="fa-brands fa-github fa-xl" style="padding-top: 4px"></i>
+                            </a>
+                            <a title="Linkedin" href="https://linkedin.com/in/zenfection" target="_blank">
+                                <i class="fa-brands fa-linkedin fa-xl" style="padding-top: 4px"></i>
+                            </a>
+                            <a title="Pinterest" href="https://pinterest.com/zenfection" target="_blank">
+                                <i class="fa-brands fa-pinterest fa-xl" style="padding-top: 4px"></i>
+                            </a>
+                            <a title="Instagram" href="https://instagram.com/zenfection" target="_blank">
+                                <i class="fa-brands fa-instagram fa-xl" style="padding-top: 4px"></i>
+                            </a>
                         </div>
                         <!-- Social Shear End -->
                     </div>

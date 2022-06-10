@@ -20,7 +20,7 @@ if (isset($_SESSION['login'])) {
                         <h5 class="sub-title">Thực phẩm đa dạng.</h5>
                         <h2 class="title m-0">KHÔNG CHẤT BẢO QUẢN</h2>
                         <p class="ms-0">Tất cả được làm bằng 100% thiên nhiên không chất phụ gia.</p>
-                        <a id="shop" class="nav-content cursor-pointer btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a id="shop" class="nav-content btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>
@@ -34,15 +34,15 @@ if (isset($_SESSION['login'])) {
                         <h5 class="sub-title">Giao nhận nhanh chóng.</h5>
                         <h2 class="title m-0">FREESHIP TOÀN HÀNG</h2>
                         <p>Các đơn hàng có giá trị trên 200k sẽ được freeship.</p>
-                        <a id="shop" class="nav-content cursor-pointer btn btn-dark btn-hover-primary">Mua Ngay</a>
+                        <a id="shop" class="nav-content btn btn-dark btn-hover-primary">Mua Ngay</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Swiper Navigation Start -->
-        <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-left"></i></div>
-        <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none rounded"><i class="icon-arrow-right"></i></div>
+        <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none rounded"><i class="fa-duotone fa-angle-left fa-xl"></i></div>
+        <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none rounded"><i class="fa-duotone fa-angle-right fa-xl"></i></div>
 
         <!-- Swiper Pagination Start -->
         <div class="swiper-pagination d-lg-none"></div>
@@ -62,7 +62,7 @@ if (isset($_SESSION['login'])) {
                 <!-- Single CTA Wrapper Start -->
                 <div class="single-cta-wrapper">
                     <div class="cta-icon">
-                        <i class="ti-truck"></i>
+                        <i class="fa-duotone fa-truck-fast"></i>
                     </div>
                     <div class="cta-content">
                         <h4 class="title">Miễn phí vận chuyển</h4>
@@ -76,7 +76,7 @@ if (isset($_SESSION['login'])) {
                 <!-- Single CTA Wrapper Start -->
                 <div class="single-cta-wrapper">
                     <div class="cta-icon">
-                        <i class="ti-headphone-alt"></i>
+                        <i class="fa-duotone fa-headset"></i>
                     </div>
                     <div class="cta-content">
                         <h4 class="title">Hỗ trợ 24/7</h4>
@@ -90,7 +90,7 @@ if (isset($_SESSION['login'])) {
                 <!-- Single CTA Wrapper Start -->
                 <div class="single-cta-wrapper">
                     <div class="cta-icon">
-                        <i class="ti-bar-chart"></i>
+                        <i class="fa-duotone fa-money-bill-transfer"></i>
                     </div>
                     <div class="cta-content">
                         <h4 class="title">Hoàn tiền</h4>

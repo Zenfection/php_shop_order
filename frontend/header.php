@@ -9,8 +9,15 @@
     <link rel="shortcut icon" href="./assets/images/favicon.ico">
 
     <!-- Main Style CSS -->
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <script src="./assets/js/all.min.js"></script>
+    
     <link rel="stylesheet" href="./assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/vendor.min.css">
+
+    <!-- <link rel="stylesheet" href="./assets/css/vendor/simple-line-icons.min.css" /> -->
+    <link rel="stylesheet" href="./assets/css/vendor/themify-icons-min.css" />
+
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/custom.css">
     <title>Shop Order</title>
@@ -50,15 +57,15 @@
                             <?php
                             if (isset($_SESSION['user'])) {
                                 echo "<a id='account' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'>
-                                    <i class='icon-user icons'></i> " . $_SESSION['user'] . "</a>";
+                                    <i class='fa-duotone fa-user-gear fa-xl'></i></a>";
                             } else {
-                                echo "<a  id='login' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'><i class='icon-user icons'></i> Login</a>";
+                                echo "<a  id='login' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'><i class='fa-duotone fa-user fa-xl'></i></a>";
                             }
                             ?>
                             <?php include "./frontend/cart.php" ?>
                             <!-- Mobile Menu Hambarger Action Button Start -->
                             <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
-                                <i class="icon-menu"></i>
+                                <i class="fa-duotone fa-bars fa-xl"></i>
                             </a>
                             <!-- Mobile Menu Hambarger Action Button End -->
                         </div>

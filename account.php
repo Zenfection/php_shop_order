@@ -25,13 +25,13 @@ if(isset($_SESSION['change_info'])){
                         <!-- My Account Tab Menu Start -->
                         <div class="col-lg-3 col-md-4">
                             <div class="myaccount-tab-menu nav" role="tablist">
-                                <a href="#dashboard" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
+                                <a href="#dashboard" class="active" data-bs-toggle="tab"><i class="fa-duotone fa-grid-horizontal"></i>
                                     Dashboard</a>
-                                <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Đơn Hàng</a>
-                                <a href="#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i> Thanh Toán</a>
-                                <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Chi Tiết</a>
-                                <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-key"></i> Mật Khẩu</a>
-                                <a href="./backend/logout.php"><i class="fa fa-sign-out"></i> Đăng Xuất</a>
+                                <a href="#orders" data-bs-toggle="tab"><i class="fa-duotone fa-cart-flatbed-boxes"></i> Đơn Hàng</a>
+                                <a href="#payment-method" data-bs-toggle="tab"><i class="fa-duotone fa-credit-card"></i> Thanh Toán</a>
+                                <a href="#account-info" data-bs-toggle="tab"><i class="fa-duotone fa-user-pen"></i> Chi Tiết</a>
+                                <a href="#address-edit" data-bs-toggle="tab"><i class="fa-duotone fa-key-skeleton"></i> Mật Khẩu</a>
+                                <a href="./backend/logout.php"><i class="fa-duotone fa-arrow-right-from-bracket"></i> Đăng Xuất</a>
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->
@@ -41,7 +41,7 @@ if(isset($_SESSION['change_info'])){
                             <div class="tab-content" id="myaccountContent">
 
                                 <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
                                     <div class="myaccount-content">
                                         <h3 class="title">Dashboard</h3>
                                         <div class="welcome">
@@ -66,7 +66,6 @@ if(isset($_SESSION['change_info'])){
                                 <div class="tab-pane fade" id="orders" role="tabpanel">
                                     <div class="myaccount-content">
                                         <h3 class="title">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                             Đơn Hàng
                                         </h3>
                                         <div class="myaccount-table table-responsive text-center">
@@ -103,7 +102,7 @@ if(isset($_SESSION['change_info'])){
                                                                 <td><?php echo $order_date?></td>
                                                                 <td><?php echo $status?></td>
                                                                 <td><?php echo $total_money?>$</td>
-                                                                <td><a class="nav-content cursor-pointer btn btn btn-dark btn-hover-primary btn-sm rounded" id="order_view">Xem</a></td>
+                                                                <td><a class="nav-content btn btn btn-dark btn-hover-primary btn-sm rounded" id="order_view">Xem</a></td>
                                                             </tr>
                                                     <?php
                                                         }
@@ -128,7 +127,7 @@ if(isset($_SESSION['change_info'])){
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade" id="account-info" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3 class="title"><i class="fa fa-user-circle" aria-hidden="true"></i> Chi Tiết Tài Khoản</h3>
+                                        <h3 class="title"> Chi Tiết Tài Khoản</h3>
                                         <div class="account-details-form">
                                             <form action="./backend/change_info.php" method="POST" id="changeInfoForm" class="has-validation">
                                                 <div class="single-input-item m-b-15">
@@ -166,7 +165,7 @@ if(isset($_SESSION['change_info'])){
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade" id="address-edit" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3 class="title"><i class="fa fa-key" aria-hidden="true"></i> Thay đổi mật khẩu</h3>
+                                        <h3 class="title"> Thay đổi mật khẩu</h3>
                                         <div class="account-details-form">
                                             <form action="/backend/change_password.php" method="POST" id="changePassForm"  class="form-control">
                                                 <fieldset>

@@ -15,9 +15,9 @@ $(function () {
 
     //* Check loged in
     function checkLoged() {
-        let check = $('.header-actions #login').text().trim().toLowerCase();
-        if (check == 'login') return false;
-        else return true;
+        let check = $('svg.svg-inline--fa.fa-user.fa-xl').length;
+        if(check == 0) return true;
+        else return false;
     }
 
     //* Load Content when refresh page
@@ -211,7 +211,7 @@ $(function () {
               </div>
               <div class="cart-product-remove">
                   <a class="remove-cart" id="product${id}">
-                    <i class="fa fa-trash-o"></i>
+                    <i class="fa-duotone fa-trash-can"></i>
                   </a>
               </div>
           </div>`;

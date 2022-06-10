@@ -94,7 +94,7 @@
                                         });
                                         ">
                                             <a>
-                                                <i class="ti-trash"></i>
+                                                <i class="fa-duotone fa-trash-xmark"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -115,13 +115,13 @@
 
                     <!-- Cart Button left Side Start -->
                     <div class="cart-btn-lef-side m-b-20">
-                        <a href="./" class="btn btn btn-gray-deep btn-hover-primary">Tiếp tục mua</a>
+                        <a class="nav-content btn btn btn-gray-deep btn-hover-primary" id="home">Tiếp tục mua</a>
                     </div>
                     <!-- Cart Button left Side End -->
 
                     <!-- Cart Button Right Side Start -->
                     <div class="cart-btn-right-right m-b-20" id="clear-cart">
-                        <a href="#" class="btn btn btn-gray-deep btn-hover-primary">Xoá Hết Giỏ Hàng</a>
+                        <a class="btn btn btn-gray-deep btn-hover-primary">Xoá Hết Giỏ Hàng</a>
                     </div>
                     <!-- Cart Button Right Side End -->
 
@@ -167,7 +167,7 @@
                     <!-- Cart Calculate Items End -->
 
                     <!-- Cart Checktout Button Start -->
-                    <a href="./checkout" id="checkout" class="nav-content cursor-pointer btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
+                    <a href="./checkout" id="checkout" class="nav-content btn btn btn-gray-deep btn-hover-primary m-t-30">Tiến Hành Thanh Toán</a>
                     <!-- Cart Checktout Button End -->
 
                 </div>

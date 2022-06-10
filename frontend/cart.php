@@ -1,7 +1,7 @@
 <!-- Header Action Button Start -->
 <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
     <a class="cart-visible" href="javascript:void(0)">
-        <i class="icon-handbag icons"></i>
+        <i class="fa-duotone fa-bag-shopping fa-xl"></i>
         <?php
         if (isset($_SESSION['user'])) {
             $user = $_SESSION['user'];
@@ -67,7 +67,7 @@
 
                             <!-- Product Remove Start -->
                             <div class="cart-product-remove">
-                                <a class="remove-cart" id="product<?php echo $id ?>"><i class="fa fa-trash-o"></i></a>
+                                <a class="remove-cart" id="product<?php echo $id ?>"><i class="fa-duotone fa-trash-can"></i></a>
                             </div>
                             <!-- Product Remove End -->
 
@@ -123,7 +123,7 @@
 <!-- Mobile -->
 <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
     <a id="viewcart" class="nav-content cursor-pointer">
-        <i class="icon-handbag icons"></i>
+        <i class="fa-duotone fa-bag-shopping fa-xl"></i>
             <?php 
             if($user){
                 echo "<span class='header-action-num'>" . $countCart . "</span>";

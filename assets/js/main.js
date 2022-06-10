@@ -425,7 +425,7 @@
     $scrollUp.on('click', function (evt) {
       $('html, body').animate({
         scrollTop: 0
-      }, 600);
+      }, 500);
       evt.preventDefault();
     });
   }
