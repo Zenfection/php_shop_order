@@ -86,6 +86,7 @@
     color: #263b5e;
     background: #ffffff;
 }
+
 .hero-1 {
     height: 100vh;
     width: 100%;
@@ -272,4 +273,136 @@
 .tns-outer .tns-nav button.tns-nav-active {
     background-color: #50C594 !important;
     width: 18px !important;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes up-dawn {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes up-dawn {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}
+
+.shape-1 {
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    right: 15%;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.shape-2 {
+    position: absolute;
+    width: 30px;
+    top: 20%;
+    right: 10%;
+    animation: up-dawn 5s infinite ease-in-out;
+}
+
+.shape-3 {
+    position: absolute;
+    width: 15px;
+    bottom: 10%;
+    right: 20%;
+    animation: up-dawn 5s infinite ease-in-out 1s;
+}
+
+.shape-4 {
+    position: absolute;
+    width: 25px;
+    top: 20%;
+    left: 20%;
+    animation: pulse 3s infinite ease-in-out 1.5s;
+}
+
+.shape-5 {
+    position: absolute;
+    width: 20px;
+    top: 30%;
+    left: 50%;
+    animation: up-dawn 5s infinite ease-in-out 1.7s;
+}
+
+.shape-6 {
+    position: absolute;
+    width: 15px;
+    bottom: 30%;
+    left: 40%;
+    animation: up-dawn 5s infinite ease-in-out 2.3s;
+}
+
+.shape-7 {
+    position: absolute;
+    width: 25px;
+    bottom: 15%;
+    left: 20%;
+    animation: pulse 3s infinite ease-in-out 1s;
+}
+
+.shape-8 {
+    position: absolute;
+    width: 25px;
+    bottom: 50%;
+    left: 10%;
+    animation: up-dawn 5s infinite ease-in-out 3s;
 }

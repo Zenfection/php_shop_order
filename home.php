@@ -15,10 +15,20 @@ if (isset($_SESSION['logout'])) {
 
 <!-- start hero -->
 <section class="hero-1 bg-white position-relative d-flex align-items-center justify-content-center overflow-hidden">
+    <div class="shapes">
+        <div class="shape-1"><img src="./assets/images/shapes/shape-1.svg" alt="shape"></div>
+        <div class="shape-2"><img src="./assets/images/shapes/shape-2.svg" alt="shape"></div>
+        <div class="shape-3"><img src="./assets/images/shapes/shape-3.svg" alt="shape"></div>
+        <div class="shape-4"><img src="./assets/images/shapes/shape-4.svg" alt="shape"></div>
+        <div class="shape-5"><img src="./assets/images/shapes/shape-5.svg" alt="shape"></div>
+        <div class="shape-6"><img src="./assets/images/shapes/shape-6.svg" alt="shape"></div>
+        <div class="shape-7"><img src="./assets/images/shapes/shape-7.svg" alt="shape"></div>
+        <div class="shape-8"><img src="./assets/images/shapes/shape-8.svg" alt="shape"></div>
+    </div>
     <div class="container">
         <div class="row align-items-center text-center text-lg-start">
             <div class="col-lg-6 mt-4 pt-2" data-aos="fade-in">
-                <h6 class="text-primary mb-3 fw-hero">Được phát triển bởi 
+                <h6 class="text-primary mb-3 fw-hero">Được phát triển bởi
                     <a href="https://facebook.com/zenfection" target="_blank">
                         <u><i class="fa-duotone fa-at"></i>Zenfection</u>
                     </a>
@@ -32,24 +42,24 @@ if (isset($_SESSION['logout'])) {
                 <h5 class="my-4 fw-hero"><i class="fa-duotone fa-phone-volume"></i> Liên hệ với tôi nếu bạn có ý tưởng</h5>
 
                 <p class="text-muted mb-2 fw-hero">Sản phẩm được phát triển cả nhân nên có rất nhiều lỗi <br> nếu bạn phát hiện hãy liên hệ với tôi bên trên.</p>
-                <?php 
-                if(isset($_SESSION['user'])){
-                    ?>
-                <a class="nav-content btn btn-primary mt-4" id="shop">Mua Hàng  
-                    <i class="fa-duotone fa-cart-shopping-fast fa-xl"></i>
-                </a>
-                    <?php
+                <?php
+                if (isset($_SESSION['user'])) {
+                ?>
+                    <a class="nav-content btn btn-primary mt-4" id="shop">Mua Hàng
+                        <i class="fa-duotone fa-cart-shopping-fast fa-xl"></i>
+                    </a>
+                <?php
                 } else {
-                    ?>
-                <a class="nav-content btn btn-primary mt-4" id="login">Đăng Nhập  
-                    <i class="fa-duotone fa-arrow-right-to-bracket fa-xl"></i> 
-                </a>
-                    <?php
+                ?>
+                    <a class="nav-content btn btn-primary mt-4" id="login">Đăng Nhập
+                        <i class="fa-duotone fa-arrow-right-to-bracket fa-xl"></i>
+                    </a>
+                <?php
                 }
                 ?>
             </div>
             <div class="col-lg-6 mt-lg-4 pt-2 mt-5 d-lg-flex d-none" data-aos="fade-left">
-                <img class="fit-image" src="./assets/images/background.png">
+                <img class="fit-image" src="./assets/images/home.png">
             </div>
 
         </div>
@@ -316,30 +326,6 @@ if (isset($_SESSION['logout'])) {
 <!-- Product Section End -->
 
 <script>
-    /* Hero Slider Activation */
-    var swiper = new Swiper('.hero-slider.swiper-container', {
-        loop: true,
-        speed: 1150,
-        spaceBetween: 30,
-        slidesPerView: 1,
-        effect: 'fade',
-        pagination: true,
-        navigation: true,
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.hero-slider .home-slider-next',
-            prevEl: '.hero-slider .home-slider-prev'
-        },
-        pagination: {
-            el: '.hero-slider .swiper-pagination',
-            type: 'bullets',
-            clickable: 'true'
-        },
-    });
-
-
-
     // feature-slidier
     if (document.getElementsByClassName('feature-slider')[0] != undefined) {
         var slider = tns({
@@ -365,37 +351,6 @@ if (isset($_SESSION['logout'])) {
                 900: {
                     edgePadding: 20,
                     items: 4
-                }
-            }
-        });
-    }
-
-    // testi-slider
-    if (document.getElementsByClassName('testi-slider')[0] != undefined) {
-        var slider = tns({
-            container: '.testi-slider',
-            loop: true,
-            navPosition: "bottom",
-            speed: 400,
-            center: true,
-            mouseDrag: true,
-            controls: false,
-            autoplay: true,
-            autoplayButtonOutput: false,
-            responsive: {
-                640: {
-                    edgePadding: 20,
-                    gutter: 20,
-                    items: 1
-                },
-                700: {
-                    edgePadding: 20,
-                    gutter: 30,
-                    items: 1
-                },
-                900: {
-                    edgePadding: 20,
-                    items: 1
                 }
             }
         });
