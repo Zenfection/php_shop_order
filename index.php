@@ -9,6 +9,8 @@
 
 <script src="./assets/js/vendor.min.js"></script>
 <script src="./assets/js/plugins.min.js"></script>
+<script src="./assets/js/tiny-slider.js"></script>
+<script src="./assets/js/feather.js"></script>
 <!--  -->
 
 <script src="./assets/js/custom.js"></script>

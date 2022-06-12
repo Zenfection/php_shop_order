@@ -5,7 +5,7 @@
             <div class="col-md-6 pe-lg-5 p-r-15 m-b-30" data-aos="fade-right" data-aos-duration="1000">
                 <!-- About Thumb Start -->
                 <div class="about-thumb">
-                    <img class="fit-image" src="./assets/images/about/1.png" alt="About Image">
+                    <img class="fit-image" src="./assets/images/about.png" alt="About Image">
                 </div>
                 <!-- About Thumb End -->
             </div>

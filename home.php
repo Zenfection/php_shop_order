@@ -1,115 +1,169 @@
 <?php
-if(session_status() != 2){
+if (session_status() != 2) {
     include "./config/connect.php";
 }
 if (isset($_SESSION['login'])) {
     echo $_SESSION['login'];
     unset($_SESSION['login']);
 }
-if (isset($_SESSION['logout'])){
+if (isset($_SESSION['logout'])) {
     echo $_SESSION['logout'];
     unset($_SESSION['logout']);
 }
 
 ?>
 
-<!-- Hero/Intro Slider Start -->
-<div class="section">
-    <div class="hero-slider swiper-container">
-        <div class="swiper-wrapper">
-
-            <div class="hero-slide-item swiper-slide">
-                <div class="hero-slide-bg">
-                    <img src="./assets/images/slider/1.png" alt="Slider Image" />
-                </div>
-                <div class="container">
-                    <div class="hero-slide-content text-start">
-                        <h5 class="sub-title">Thực phẩm đa dạng.</h5>
-                        <h2 class="title m-0">KHÔNG CHẤT BẢO QUẢN</h2>
-                        <p class="ms-0">Tất cả được làm bằng 100% thiên nhiên không chất phụ gia.</p>
-                        <a id="shop" class="nav-content btn btn-dark btn-hover-primary">Mua Ngay</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-slide-item swiper-slide">
-                <div class="hero-slide-bg">
-                    <img src="./assets/images/slider/2.png" alt="Slider Image" />
-                </div>
-                <div class="container">
-                    <div class="hero-slide-content text-center text-md-end">
-                        <h5 class="sub-title">Giao nhận nhanh chóng.</h5>
-                        <h2 class="title m-0">FREESHIP TOÀN HÀNG</h2>
-                        <p>Các đơn hàng có giá trị trên 200k sẽ được freeship.</p>
-                        <a id="shop" class="nav-content btn btn-dark btn-hover-primary">Mua Ngay</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Swiper Navigation Start -->
-        <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none rounded"><i class="fa-duotone fa-angle-left fa-xl"></i></div>
-        <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none rounded"><i class="fa-duotone fa-angle-right fa-xl"></i></div>
-
-        <!-- Swiper Pagination Start -->
-        <div class="swiper-pagination d-lg-none"></div>
-        <!-- Swiper Pagination End -->
-        <!-- Swiper Navigation End -->
-
-
-    </div>
-</div>
-<!-- Hero/Intro Slider End -->
-
-<div class="section section-padding">
+<!-- start hero -->
+<section class="hero-1 bg-white position-relative d-flex align-items-center justify-content-center overflow-hidden">
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 m-b-n30" data-aos="fade-out" data-aos-duration="600">
+        <div class="row align-items-center text-center text-lg-start">
+            <div class="col-lg-6 mt-4 pt-2" data-aos="fade-in">
+                <h6 class="text-primary mb-3 fw-hero">Được phát triển bởi 
+                    <a href="https://facebook.com/zenfection" target="_blank">
+                        <u><i class="fa-duotone fa-at"></i>Zenfection</u>
+                    </a>
+                </h6>
+                <h1 class="ml11 mb-2">
+                    <span class="text-wrapper">
+                        <span class="line line1"></span>
+                        <span class="letters pb-0 fw-hero">Zen Shop Order</span>
+                    </span>
+                </h1>
+                <h5 class="my-4 fw-hero"><i class="fa-duotone fa-phone-volume"></i> Liên hệ với tôi nếu bạn có ý tưởng</h5>
 
-            <div class="col m-b-30">
-                <!-- Single CTA Wrapper Start -->
-                <div class="single-cta-wrapper">
-                    <div class="cta-icon">
-                        <i class="fa-duotone fa-truck-fast"></i>
-                    </div>
-                    <div class="cta-content">
-                        <h4 class="title">Miễn phí vận chuyển</h4>
-                        <p>Áp dụng cho tất cả đơn hàng</p>
-                    </div>
-                </div>
-                <!-- Single CTA Wrapper End -->
+                <p class="text-muted mb-2 fw-hero">Sản phẩm được phát triển cả nhân nên có rất nhiều lỗi <br> nếu bạn phát hiện hãy liên hệ với tôi bên trên.</p>
+                <?php 
+                if(isset($_SESSION['user'])){
+                    ?>
+                <a class="nav-content btn btn-primary mt-4" id="shop">Mua Hàng  
+                    <i class="fa-duotone fa-cart-shopping-fast fa-xl"></i>
+                </a>
+                    <?php
+                } else {
+                    ?>
+                <a class="nav-content btn btn-primary mt-4" id="login">Đăng Nhập  
+                    <i class="fa-duotone fa-arrow-right-to-bracket fa-xl"></i> 
+                </a>
+                    <?php
+                }
+                ?>
             </div>
-
-            <div class="col m-b-30">
-                <!-- Single CTA Wrapper Start -->
-                <div class="single-cta-wrapper">
-                    <div class="cta-icon">
-                        <i class="fa-duotone fa-headset"></i>
-                    </div>
-                    <div class="cta-content">
-                        <h4 class="title">Hỗ trợ 24/7</h4>
-                        <p>Gọi Hotline hoặc Email</p>
-                    </div>
-                </div>
-                <!-- Single CTA Wrapper End -->
-            </div>
-
-            <div class="col m-b-30">
-                <!-- Single CTA Wrapper Start -->
-                <div class="single-cta-wrapper">
-                    <div class="cta-icon">
-                        <i class="fa-duotone fa-money-bill-transfer"></i>
-                    </div>
-                    <div class="cta-content">
-                        <h4 class="title">Hoàn tiền</h4>
-                        <p>Hoàn tiền nếu bạn chưa nhận</p>
-                    </div>
-                </div>
-                <!-- Single CTA Wrapper End -->
+            <div class="col-lg-6 mt-lg-4 pt-2 mt-5 d-lg-flex d-none" data-aos="fade-left">
+                <img class="fit-image" src="./assets/images/background.png">
             </div>
 
         </div>
     </div>
-</div>
+    <!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start solution -->
+<section class="service-section">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 mb-4">
+                <h4 class="fw-semibold mb-3">Chức Năng Nổi Bật</h4>
+                <h5 class="text-muted fw-normal">Liệt kê các nổi bật trong trang web </h5>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <div class="feature-slider">
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5 ">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-rabbit-running fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Tốc độ ưu việt</h5>
+                                <a class="text-muted">Không cần phải <span class="fw-semibold fs-15 text-dark">refresh</span> lại trang khi sử dụng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-users-viewfinder fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Sử dụng đơn giản</h5>
+                                <a class="text-muted">Thiết kế sử dụng dựa trên<span class="fw-semibold fs-15 text-dark"> trải nghiệm thực tế</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-binary-lock fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Mã hóa mật khẩu</h5>
+                                <a class="text-muted">Sử dụng hàm băm<span class="fw-semibold fs-15 text-dark"> SHA516</span> để mã hóa mật khẩu của người dùng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-fork-knife fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Hàng hóa đa dạng</h5>
+                                <a class="text-muted">Mua bán nhiều sản phẩm và có thể<span class="fw-semibold fs-15 text-dark"> thêm mới</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-filters fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Bộ lọc thông minh</h5>
+                                <a class="text-muted">Bộ lọc sản phẩm do chính <span class="fw-semibold fs-15 text-dark"> Zen</span> phát triển</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-box-circle-check fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Xem lại đơn hàng</h5>
+                                <a class="text-muted">Theo dõi <span class="fw-semibold fs-15 text-dark"> đơn hàng</span> cá nhân vừa đặt dễ dàng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-basket-shopping fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Giỏ hàng thông minh</h5>
+                                <a class="text-muted"><span class="fw-semibold fs-15 text-dark">Thêm, sửa, xóa</span> sản phẩm với hiệu suất nhanh chóng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4 pt-2">
+                            <div class="solution border rounded position-relative px-4 py-5">
+                                <div class="sw-1 mb-4 sol-icon">
+                                    <i class="fa-duotone fa-eye-low-vision fa-3x"></i>
+                                </div>
+                                <h5 class="lh-base fs-16 mb-2">Không lấy dữ diệu</h5>
+                                <a class="text-muted">Cam kết không lấy bất cứ<span class="fw-semibold fs-15 text-dark"> dữ liệu</span> của người dùng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end solution -->
 
 <!-- Category Section Start -->
 <div class="section section-margin">
@@ -134,7 +188,7 @@ if (isset($_SESSION['logout'])){
                                 echo "<div class='error'>Image not Available</div>";
                             } else {
                             ?>
-                                <img class="fit-image p-10" src="./assets/images/category/<?php echo $image; ?>" alt="Banner Image"/>
+                                <img class="fit-image p-10" src="./assets/images/category/<?php echo $image; ?>" alt="Banner Image" />
                             <?php
                             }
                             ?>
@@ -262,26 +316,88 @@ if (isset($_SESSION['logout'])){
 <!-- Product Section End -->
 
 <script>
-/* Hero Slider Activation */
-var swiper = new Swiper('.hero-slider.swiper-container', {
-    loop: true,
-    speed: 1150,
-    spaceBetween: 30,
-    slidesPerView: 1,
-    effect: 'fade',
-    pagination: true,
-    navigation: true,
+    /* Hero Slider Activation */
+    var swiper = new Swiper('.hero-slider.swiper-container', {
+        loop: true,
+        speed: 1150,
+        spaceBetween: 30,
+        slidesPerView: 1,
+        effect: 'fade',
+        pagination: true,
+        navigation: true,
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.hero-slider .home-slider-next',
-        prevEl: '.hero-slider .home-slider-prev'
-    },
-    pagination: {
-        el: '.hero-slider .swiper-pagination',
-        type: 'bullets',
-        clickable: 'true'
-    },
-});
+        // Navigation arrows
+        navigation: {
+            nextEl: '.hero-slider .home-slider-next',
+            prevEl: '.hero-slider .home-slider-prev'
+        },
+        pagination: {
+            el: '.hero-slider .swiper-pagination',
+            type: 'bullets',
+            clickable: 'true'
+        },
+    });
 
+
+
+    // feature-slidier
+    if (document.getElementsByClassName('feature-slider')[0] != undefined) {
+        var slider = tns({
+            container: '.feature-slider',
+            loop: true,
+            navPosition: "bottom",
+            speed: 400,
+            mouseDrag: true,
+            controls: false,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            responsive: {
+                640: {
+                    edgePadding: 20,
+                    gutter: 20,
+                    items: 1
+                },
+                700: {
+                    edgePadding: 20,
+                    gutter: 30,
+                    items: 2
+                },
+                900: {
+                    edgePadding: 20,
+                    items: 4
+                }
+            }
+        });
+    }
+
+    // testi-slider
+    if (document.getElementsByClassName('testi-slider')[0] != undefined) {
+        var slider = tns({
+            container: '.testi-slider',
+            loop: true,
+            navPosition: "bottom",
+            speed: 400,
+            center: true,
+            mouseDrag: true,
+            controls: false,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            responsive: {
+                640: {
+                    edgePadding: 20,
+                    gutter: 20,
+                    items: 1
+                },
+                700: {
+                    edgePadding: 20,
+                    gutter: 30,
+                    items: 1
+                },
+                900: {
+                    edgePadding: 20,
+                    items: 1
+                }
+            }
+        });
+    }
 </script>

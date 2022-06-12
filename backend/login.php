@@ -18,7 +18,7 @@
             rounded: true,
             icon: 'fa-duotone fa-user-check',
             continueDelayOnInactiveTab: false,
-            position: 'right',
+            position: 'bottom left',
             width: 300,
             msg: 'Đăng nhập thành công'
             });</script>";
@@ -31,7 +31,7 @@
             rounded: true,
             icon: 'fa-duotone fa-user-xmark',
             continueDelayOnInactiveTab: false,
-            position: 'right',
+            position: 'bottom left',
             msg: 'Đăng nhập thất bại, vui lòng đăng nhập lại'
             });</script>";
             // xoá session user và id

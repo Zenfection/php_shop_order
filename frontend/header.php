@@ -13,7 +13,8 @@
     <script src="./assets/js/all.min.js"></script>
     
     <link rel="stylesheet" href="./assets/css/plugins.min.css">
-    <link rel="stylesheet" href="./assets/css/lobibox.min.css">
+    <link rel="stylesheet" href="./assets/css/plugins/lobibox.min.css">
+    <link rel="stylesheet" href="./assets/css/plugins/tiny-slider.css">
     <link rel="stylesheet" href="./assets/css/vendor/themify-icons-min.css" />
 
     <link rel="stylesheet" href="./assets/css/style.css">

@@ -8,7 +8,7 @@
             rounded: true,
             icon: 'fa-duotone fa-right-from-bracket',
             continueDelayOnInactiveTab: false,
-            position: 'right',
+            position: 'bottom left',
             width: 300,
             msg: 'Đăng Xuất Thành Công'
             });</script>";  
