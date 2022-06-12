@@ -2,7 +2,7 @@
     require "./config/connect.php";
 ?>
 <!-- Login Section Start -->
-<div class="section section-margin login" data-aos="zoom-in">
+<div class="section section-margin login" data-aos="fade-right">
     <?php
     if (isset($_SESSION['no-login-message'])) {
         echo $_SESSION['no-login-message'];

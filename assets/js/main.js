@@ -31,7 +31,7 @@
       Header Cart Toggle
   --------------------- */
 
-  $(document).on('click','.cart-visible', function () {
+  $(document).on('click', '.cart-visible', function () {
     $(".header-cart-content").slideToggle();
   });
 
@@ -39,7 +39,7 @@
     Off Canvas Mobile Menu
   -------------------------------------------*/
 
-  $(document).on('click','.header-action-btn-menu', function () {
+  $(document).on('click', '.header-action-btn-menu', function () {
     $("body").addClass('fix');
     $(".mobile-menu-wrapper").addClass('open');
   });
@@ -49,30 +49,30 @@
     $(".mobile-menu-wrapper").removeClass('open');
   });
 
-    
+
   /*----------------------------------------*/
   /* Toggle Function Active
   /*----------------------------------------*/
 
   // showlogin toggle
-  $(document).on('click','#showlogin', function () {
+  $(document).on('click', '#showlogin', function () {
     $('#checkout-login').slideToggle(500);
   });
   // showlogin toggle
-  $(document).on('click','#showcoupon', function () {
+  $(document).on('click', '#showcoupon', function () {
     $('#checkout_coupon').slideToggle(500);
   });
   // showlogin toggle
-  $(document).on('click','#cbox', function () {
+  $(document).on('click', '#cbox', function () {
     $('#cbox-info').slideToggle(500);
   });
 
   // Ship box toggle
-  $(document).on('click','#ship-box', function () {
+  $(document).on('click', '#ship-box', function () {
     $('#ship-box-info').slideToggle(1000);
   });
 
-  $(document).on('click', '#incQtyProduct', function(){
+  $(document).on('click', '#incQtyProduct', function () {
     let id = $(this).parents('tr').attr('id').replace('view_cart_product', '');
     addProduct(parseInt(id), 1);
   });
@@ -298,7 +298,7 @@
   $('.cart-plus-minus').append(
     '<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>'
   );
-  $(document).on('click','.qtybutton', function () {
+  $(document).on('click', '.qtybutton', function () {
     var $button = $(this);
     var oldValue = $button.parent().find('input').val();
     if ($button.hasClass('inc')) {
@@ -347,7 +347,7 @@
     }
   }
 
-  
+
   /*-------------------------
       Ajax Contact Form 
   ---------------------------*/
@@ -403,13 +403,15 @@
   /*----------------------------------------*/
   /*  Scroll to top
   /*----------------------------------------*/
+
+
+  $('#scroll-top').removeClass('show');
   function scrollToTop() {
-    var $scrollUp = $('#scroll-top'),
+    let $scrollUp = $('#scroll-top'),
       $lastScrollTop = 0,
       $window = $(window);
-
     $window.on('scroll', function () {
-      var st = $(this).scrollTop();
+      let st = $(this).scrollTop();
       if (st > $lastScrollTop) {
         $scrollUp.removeClass('show');
       } else {
@@ -423,10 +425,7 @@
     });
 
     $scrollUp.on('click', function (evt) {
-      $('html, body').animate({
-        scrollTop: 0
-      }, 500);
-      evt.preventDefault();
+      window.scrollTo(0, 0);
     });
   }
   scrollToTop();

@@ -1,9 +1,16 @@
-<?php include "./config/connect.php" ?>
 <?php
+if(session_status() != 2){
+    include "./config/connect.php";
+}
 if (isset($_SESSION['login'])) {
     echo $_SESSION['login'];
     unset($_SESSION['login']);
 }
+if (isset($_SESSION['logout'])){
+    echo $_SESSION['logout'];
+    unset($_SESSION['logout']);
+}
+
 ?>
 
 <!-- Hero/Intro Slider Start -->

@@ -5,7 +5,7 @@
         <a class="action-search-close" href="javascript:void(0)"><i class="fa-duotone fa-xmark fa-xl"></i></a>
     </div>
     <!-- Search Form and Button Start -->
-    <div class="header-search-form" id="searchProduct" action="">
+    <div class="header-search-form" id="searchProduct">
         <input type="text" class="header-search-input" placeholder="Tìm kiếm" style="width: 200px !important">
         <button class="header-search-button"><i class="fa-duotone fa-magnifying-glass"></i></button>
     </div>

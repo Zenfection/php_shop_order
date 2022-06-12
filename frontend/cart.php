@@ -36,14 +36,14 @@
                         $discount_price = $price - ($price * $discount / 100);
             ?>
                         <!-- Cart Product/Price Start -->
-                        <div class="cart-product-inner p-b-20 m-b-20 border-bottom product-inner" id="product_id<?php echo $id ?>">
+                        <div class="cart-product-inner p-b-20 m-b-20 border-bottom product-inner">
                             <!-- Single Cart Product Start -->
                             <div class="single-cart-product">
                                 <div class="cart-product-thumb">
-                                    <a class="nav-content cursor-pointer" id="detail_product"><img src="./assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
+                                    <a class="load-product cursor-pointer" id="<?php echo $id?>"><img src="./assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
                                 </div>
                                 <div class="cart-product-content">
-                                    <h3 class="title"><a class="nav-content cursor-pointer" id="detail_product"><?php echo $name ?></a></h3>
+                                    <h3 class="title"><a class="load-content cursor-pointer" id="<?php echo $id?>"><?php echo $name ?></a></h3>
                                     <div class="product-quty-price">
                                         <span class="cart-quantity" id="quantity<?php echo $id ?>">Số lượng: <strong> <?php echo $amount ?> </strong></span>
                                         <span class="price">
@@ -112,8 +112,8 @@
 
         <!-- Cart Product Button Start -->
         <div class="cart-product-btn m-t-20">
-            <a id="viewcart" class="nav-content cursor-pointer btn btn-outline-light btn-hover-primary w-100">Giỏ Hàng</a>
-            <a id="checkout" class="nav-content cursor-pointer btn btn-outline-light btn-hover-primary w-100 m-t-20">Thanh Toán</a>
+            <a id="viewcart" class="nav-content btn btn-outline-light btn-hover-primary w-100">Giỏ Hàng</a>
+            <a class="load-checkout btn btn-outline-light btn-hover-primary w-100 m-t-20">Thanh Toán</a>
         </div>
         <!-- Cart Product Button End -->
     </div>

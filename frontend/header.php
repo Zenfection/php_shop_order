@@ -10,12 +10,10 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/all.min.css">
     <script src="./assets/js/all.min.js"></script>
     
-    <link rel="stylesheet" href="./assets/css/plugins/plugins.min.css">
-
-    <!-- <link rel="stylesheet" href="./assets/css/vendor/simple-line-icons.min.css" /> -->
+    <link rel="stylesheet" href="./assets/css/plugins.min.css">
+    <link rel="stylesheet" href="./assets/css/lobibox.min.css">
     <link rel="stylesheet" href="./assets/css/vendor/themify-icons-min.css" />
 
     <link rel="stylesheet" href="./assets/css/style.css">

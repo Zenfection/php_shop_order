@@ -16,7 +16,7 @@ $(function () {
     //* Check loged in
     function checkLoged() {
         let check = $('svg.svg-inline--fa.fa-user.fa-xl').length;
-        if(check == 0) return true;
+        if (check == 0) return true;
         else return false;
     }
 
@@ -28,15 +28,15 @@ $(function () {
         let loadPage = ['', 'about', 'account', `checkout`, 'contact', 'login', 'register', `shop`, 'viewcart', 'detail_product', 'order_view'];
 
         if (!loadPage.includes(id)) {
-            $('body').html('<h1>404 Page Not Found</h1>');
+            loadContent('./404.php');
             return;
         }
 
         if (id == '') {
             return;
-        } else if(id == 'detail_product' || id == 'order_view') {
+        } else if (id == 'detail_product' || id == 'order_view') {
             loadContent('/' + id + '.php' + url.search);
-            return;  
+            return;
         } else {
             if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
                 id = 'account';
@@ -58,17 +58,35 @@ $(function () {
 
     //* choose num page paginator page
     function choosePage(id) {
-        $.ajax({
-            type: "get",
-            url: "./shop.php",
-            data: {
-                page: id,
-            },
-            success: function (data) {
-                $("#content").html(data);
-                AOS.init();
-            },
-        });
+        let short_by = $("option:selected", '.nice-select').val();
+        if (short_by != 'default') {
+            let total = parseInt($('.shop-top-show').text().trim().replace(/[^0-9\.]+/g, ''));
+            $.ajax({
+                type: 'post',
+                url: './content/short-by-shop.php',
+                data: {
+                    page: id,
+                    short_by: short_by,
+                    total: total
+                },
+                success: function (data) {
+                    $('#product-content').html(data);
+                    AOS.init();
+                }
+            });
+        } else {
+            $.ajax({
+                type: "get",
+                url: './content/filter-shop.php',
+                data: {
+                    page: id
+                },
+                success: function (data) {
+                    $("#shop-content").html(data);
+                    AOS.init();
+                },
+            });
+        }
     }
 
     //* Check product exist or not in cart by id
@@ -83,37 +101,52 @@ $(function () {
     /*-------------------------
         Ajax Load Data Nagivation
     ---------------------------*/
+    function notify(type, icon, position, msg){
+        Lobibox.notify(type, {
+            pauseDelayOnHover: true,
+            size: 'mini',
+            rounded: true,
+            icon: icon,
+            continueDelayOnInactiveTab: false,
+            position: position,
+            msg: msg
+        });
+    }
+    $(document).on('click', '.load-product', function(){
+        let id = 'detail_product';
+        let id_product = $(this).attr('id');
+        window.history.pushState(id, id.toUpperCase(), '/detail_product?id=' + id_product);
+        loadContent('./detail_product.php?id=' + id_product);
+    });
+    $(document).on('click', '.load-order', function(){
+        let id = 'order_view';
+        let id_order = $(this).attr('id');
+        window.history.pushState(id, id.toUpperCase(), '/order_view?id=' + id_order);
+        loadContent('./order_view.php?id=' + id_order);
+    });
+    $(document).on('click', '.load-checkout', function(){
+        let count_cart = parseInt($('#count-cart').text());
+        if(count_cart > 0){
+            let id = 'checkout';
+            window.history.pushState(id, id.toUpperCase(), '/checkout');
+            loadContent('./checkout.php');
+        } else {
+            notify('warning', 'fa-duotone fa-right-to-bracket', 'right', 'Bạn chưa đăng nhập, hãy đăng nhập');
+        }
+    });
 
     //* Listen click to load content
     $(document).on('click', '.nav-content', function () {
         let url = new URL(window.location.href).pathname;
         let id = $(this).attr('id');
-
-        if (id == 'detail_product') {
-            let id_product = $(this)
-                .closest('.product-inner')
-                .attr('id')
-                .replace('product', '')
-                .replace('_id', '');
-
-            loadContent('/detail_product.php?id=' + id_product);
-            window.history.pushState(id, id.toUpperCase(), '/detail_product?id=' + id_product);
-            return;
-        }
-        if (id == 'order_view') {
-            let id_order = $(this).closest('tr').attr('id').replace('id_order', '');
-            loadContent('/order_view.php?id=' + id_order);
-            window.history.pushState(id, id.toUpperCase(), '/order_view?id=' + id_order);
-            return;
-        }
         let path;
 
         if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
-            path = '/account';
-            id = 'account';
-        } else if (!checkLoged() && (id == 'account' || id == 'viewcart' || id == 'checkout')) {
-            path = '/login';
-            id = 'login';
+            notify('error', 'fa-duotone fa-hexagon-xmark', 'right', 'Bạn đã đăng nhập, không thể sử dụng chức năng này');
+            return;
+        } else if (!checkLoged() && (id == 'account' || id == 'viewcart')) {
+            notify('warning', 'fa-duotone fa-right-to-bracket', 'right', 'Bạn chưa đăng nhập, hãy đăng nhập');
+            return;
         } else {
             if (id == 'home') path = '/';
             else path = '/' + id;
@@ -124,7 +157,73 @@ $(function () {
         }
     });
 
+    $(document).on('click', '.category-filter', function () {
+        let category_filter = $(this).attr('id');
+        let active = $(this).parent();
+        active.addClass('active').siblings().removeClass('active');
+        $.ajax({
+            type: "post",
+            url: "./content/filter-shop.php",
+            data: {
+                category_filter: category_filter,
+            },
+            success: function (data) {
+                $("#shop-content").html(data);
+                AOS.init();
+            },
+        });
+    });
 
+    // SHOP
+    $(document).on("keypress", "#searchFilterProduct", function (e) {
+        if (e.which == 13) {
+            let search_filter = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "./content/filter-shop.php",
+                data: {
+                    search_filter: search_filter
+                },
+                success: function (data) {
+                    $("#shop-content").html(data);
+                    AOS.init();
+                }
+            });
+        }
+    });
+
+    $(document).on("click", ".search-box button", function () {
+        let search_filter = $(this).siblings('input').val();
+        $.ajax({
+            type: "post",
+            url: "./content/filter-shop.php",
+            data: {
+                search_filter: search_filter
+            },
+            success: function (data) {
+                $("#shop-content").html(data);
+                AOS.init();
+            }
+        });
+    });
+    $(document).on("change", ".nice-select", function () {
+        let short_by = $("option:selected", this).val();
+        let total = parseInt($('.shop-top-show').text().trim().replace(/[^0-9\.]+/g, ''));
+        let category = $('.sidebar-list li.active a').attr('id');
+        $.ajax({
+            type: "post",
+            url: "./content/short-by-shop.php",
+            data: {
+                short_by: short_by,
+                total: total,
+                category: category
+            },
+            success: function (data) {
+                $("#product-content").html(data);
+                AOS.init();
+            }
+        });
+    });
     //* search Product by name, listener via Enter
     $(document).on("keypress", "#searchProduct", function (e) {
         if (e.which == 13) {
@@ -244,7 +343,7 @@ $(function () {
         let qty = 1;
         addProduct(id, qty);
     });
-    
+
     $(document).keydown('.shop_wrapper grid_4', function (e) {
         let next = $('.page-item a[aria-label="Next"]');
         let prev = $('.page-item a[aria-label="Prev"]');

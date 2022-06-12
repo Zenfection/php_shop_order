@@ -55,7 +55,7 @@
                             <li><a class="cursor-pointer nav-content" id="login">Đăng nhập</a></li>
                             <li><a class="cursor-pointer nav-content" id="register">Đăng ký</a></li>
                             <li><a class="cursor-pointer nav-content" id="viewcart">Xem Giỏ Hàng</a></li>
-                            <li><a class="cursor-pointer nav-content" id="checkout">Thanh Toán</a></li>
+                            <li><a class="cursor-pointer load-checkout">Thanh Toán</a></li>
                         </ul>
                     </div>
                 </div>

@@ -9,7 +9,8 @@
 
 <script src="./assets/js/vendor.min.js"></script>
 <script src="./assets/js/plugins.min.js"></script>
-<script src="./assets/js/plugins/jquery.validate.js"></script>
+<!--  -->
+
 <script src="./assets/js/custom.js"></script>
 <script src="./assets/js/main.js"></script>
 

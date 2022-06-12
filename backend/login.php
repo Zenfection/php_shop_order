@@ -12,11 +12,28 @@
         $conn->close();
         if ($count == 1) {
             $_SESSION['user'] = $_POST['user'];
-            $_SESSION['login'] = "<div class='alert-success text-center'>Chào mừng đã đăng nhập</div>";
+            $_SESSION['login'] = "<script>Lobibox.notify('success', {
+            pauseDelayOnHover: true,
+            size: 'mini',
+            rounded: true,
+            icon: 'fa-duotone fa-user-check',
+            continueDelayOnInactiveTab: false,
+            position: 'right',
+            width: 300,
+            msg: 'Đăng nhập thành công'
+            });</script>";
             header("Location: ../");
             exit();
         } else {
-            $_SESSION['no-login-message'] = "<div class='alert-danger text-center'>Tài khoản hoặc mật khẩu không đúng</div>";
+            $_SESSION['no-login-message'] = "<script>Lobibox.notify('error', {
+            pauseDelayOnHover: true,
+            size: 'mini',
+            rounded: true,
+            icon: 'fa-duotone fa-user-xmark',
+            continueDelayOnInactiveTab: false,
+            position: 'right',
+            msg: 'Đăng nhập thất bại, vui lòng đăng nhập lại'
+            });</script>";
             // xoá session user và id
             unset($_SESSION['user']);
             header("Location: ../login");

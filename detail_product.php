@@ -1,5 +1,15 @@
 <?php include "./config/connect.php" ?>
-
+<?php 
+    $id = $_GET['id'];
+    if(isset($_SESSION['user'])){
+        $user = $_SESSION['user'];
+        $check = $conn->query("SELECT * FROM `tb_recent_product` WHERE username = '$user' AND id_product = $id")->num_rows;
+        if($check != 0){
+            $conn->query("DELETE FROM `tb_recent_product` WHERE username = '$user' AND id_product  = $id");
+        }
+        $conn->query("INSERT INTO `tb_recent_product`(username, id_product) VALUES ('$user', $id)");
+    }
+?>
 <!-- Single Product Section Start -->
 <div id="content">
     <div class="section section-margin">
@@ -12,7 +22,6 @@
                         <div class="single-product-img swiper-container product-gallery-top">
                             <div class="swiper-wrapper popup-gallery">
                                 <?php
-                                $id = $_GET['id'];
                                 $sql = "SELECT * FROM `tb_product` WHERE id_product = $id";
                                 $result = $conn->query($sql);
                                 $row = $result->fetch_assoc();
@@ -252,7 +261,7 @@
                                                 <div class="product">
                                                     <!-- Thumb Start  -->
                                                     <div class="thumb product-inner" id="product<?php echo $id ?>">
-                                                        <a class="nav-content cursor-pointer image" id="detail_product">
+                                                        <a class="load-product cursor-pointer image" id="<?php echo $id?>">
                                                             <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                                                         </a>
                                                         <?php

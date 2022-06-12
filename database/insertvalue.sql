@@ -7,49 +7,6 @@ VALUES
 ('fruit', 'Trái Cây', 'fruit.png', 1),
 ('icecream', 'Kem', 'icecream.png', 1);
 
--- order
-INSERT INTO `tb_order` (`id_order`, `username`, `name_customer`, `phone_customer`, `address_customer`, `email_customer`, `city_customer`, `province_customer`, `status`, `order_date`, `shipped_date`, `process_date`, `total_money`) VALUES
-('1GL0AKKUML', 'user1', 'Nguyễn Văn A', '0123456789', 'Hẻm 1, Nguyễn Văn Linh', 'user1@gmail.com', 'Long Xuyên', 'An GIang', 'delivered', '2022-05-10', NULL, NULL, 31.84),
-('62TLUPCNFQ', 'kietgolx65234', 'Lê Tuấn Kiệt', '0123456789', '3/2 Đại học Cần Thơ', 'kietgolx65234@gmail.com', 'Ninh Kieu', 'Can Tho', 'shipping', '2022-05-11', NULL, NULL, 10.4),
-('MXO0I9Q2PJ', 'user2', 'Nguyễn Văn B', '1123456789', 'Hẻm 100, đường thích quảng đức', 'user2@gmail.com', 'Quận Phú Nhuận', 'Sài gòn ', 'delivered', '2022-05-10', NULL, NULL, 16.7),
-('NFO31Q7DSW', 'user2', 'Nguyễn Văn B', '1123456789', 'Hẻm 2, Nguyễn Văn Linh', 'user2@gmail.com', 'Ninh Kieu', 'Can Tho', 'shipping', '2022-05-11', NULL, NULL, 1.53),
-('P3NIEFZRDB', 'kietgolx65234', 'Lê Tuấn Kiệt', '0123456789', '3/2 Đại học Cần Thơ', 'kietgolx65234@gmail.com', 'Ninh Kieu', 'Can Tho', 'canceled', '2022-05-11', NULL, NULL, 2.5),
-('QUYUMHJ1OM', 'kietgolx65234', 'Lê Tuấn Kiệt', '0123456789', '3/2 Đại học Cần Thơ', 'kietgolx65234@gmail.com', 'Ninh Kieu', 'Can Tho', 'shipping', '2022-05-10', NULL, NULL, 5.97),
-('T7HBS9WLVE', 'kietgolx65234', 'Lê Tuấn Kiệt', '0123456789', '3/2 Đại học Cần Thơ', 'kietgolx65234@gmail.com', 'Ninh Kieu', 'Can Tho', 'canceled', '2022-05-09', NULL, NULL, 49.11)
-
-
--- order details
-INSERT INTO `tb_order_details` (`id_order`, `id_product`, `amount`) VALUES
-('T7HBS9WLVE', 19, 1),
-('T7HBS9WLVE', 26, 2),
-('T7HBS9WLVE', 32, 2),
-('T7HBS9WLVE', 33, 2),
-('T7HBS9WLVE', 24, 3),
-('T7HBS9WLVE', 22, 2),
-('T7HBS9WLVE', 41, 3),
-('T7HBS9WLVE', 35, 2),
-('T7HBS9WLVE', 42, 2),
-('QUYUMHJ1OM', 17, 1),
-('QUYUMHJ1OM', 19, 1),
-('QUYUMHJ1OM', 21, 1),
-('QUYUMHJ1OM', 22, 1),
-('1GL0AKKUML', 49, 2),
-('1GL0AKKUML', 32, 2),
-('1GL0AKKUML', 26, 2),
-('1GL0AKKUML', 24, 2),
-('1GL0AKKUML', 19, 2),
-('MXO0I9Q2PJ', 19, 1),
-('MXO0I9Q2PJ', 26, 1),
-('MXO0I9Q2PJ', 24, 1),
-('MXO0I9Q2PJ', 32, 1),
-('MXO0I9Q2PJ', 33, 1),
-('NFO31Q7DSW', 17, 1),
-('62TLUPCNFQ', 19, 5),
-('62TLUPCNFQ', 44, 4),
-('P3NIEFZRDB', 19, 1),
-('P3NIEFZRDB', 32, 1);
-
-
 -- product
 INSERT INTO `tb_product` (`name`, `description`, `price`, `ranking`, `image`, `discount`, `quantity`, `id_category`) VALUES
 ('Bánh HotDog', 'Bánh được làm từ xúc xích chiên trong ngọn lửa hồng', 1.8, 7, 'hot dog.png', '15.00', 17, 'cake'),
@@ -71,6 +28,7 @@ INSERT INTO `tb_product` (`name`, `description`, `price`, `ranking`, `image`, `d
 ('Cá tra chiên', 'Đây là 1 loại món ăn đặc trưng của miền tây', 3, 8, 'salmon steak.png', '10.00', 54, 'fastfood'),
 ('Cà rốt trắng', 'Ăn chung với cà rốt đỏ thì siêu ngon luôn nha ', 1.2, 7, 'daikon white.png', '15.00', 0, 'fruit'),
 ('Quả dâu tây', 'Quả dâu tây rất ngon', 2, 7, 'strawberry pink.png', '10.00', 100, 'fruit');
+
 
 -- user
 INSERT INTO `tb_user` (`username`, `fullname`, `email`, `password`, `phone`, `address`) VALUES

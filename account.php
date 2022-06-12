@@ -102,7 +102,7 @@ if(isset($_SESSION['change_info'])){
                                                                 <td><?php echo $order_date?></td>
                                                                 <td><?php echo $status?></td>
                                                                 <td><?php echo $total_money?>$</td>
-                                                                <td><a class="nav-content btn btn btn-dark btn-hover-primary btn-sm rounded" id="order_view">Xem</a></td>
+                                                                <td><a class="load-order btn btn btn-dark btn-hover-primary btn-sm rounded" id="<?php echo $id_order?>">Xem</a></td>
                                                             </tr>
                                                     <?php
                                                         }
