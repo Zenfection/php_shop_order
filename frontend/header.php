@@ -10,12 +10,14 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/vendor/themify-icons-min.css" />
     <script src="./assets/js/all.min.js"></script>
-    
-    <link rel="stylesheet" href="./assets/css/plugins.min.css">
+
+    <link rel="stylesheet" href="./assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/plugins/aos.min.css">
+    <link rel="stylesheet" href="./assets/css/plugins/nice-select.min.css">
     <link rel="stylesheet" href="./assets/css/plugins/lobibox.min.css">
     <link rel="stylesheet" href="./assets/css/plugins/tiny-slider.css">
-    <link rel="stylesheet" href="./assets/css/vendor/themify-icons-min.css" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/custom.css">

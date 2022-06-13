@@ -15,7 +15,7 @@ if (isset($_SESSION['logout'])) {
 
 <!-- start hero -->
 <section class="hero-1 bg-white position-relative d-flex align-items-center justify-content-center overflow-hidden">
-    <div class="shapes">
+    <div class="shapes" data-aos-duration="1000">
         <div class="shape-1"><img src="./assets/images/shapes/shape-1.svg" alt="shape"></div>
         <div class="shape-2"><img src="./assets/images/shapes/shape-2.svg" alt="shape"></div>
         <div class="shape-3"><img src="./assets/images/shapes/shape-3.svg" alt="shape"></div>
@@ -73,8 +73,8 @@ if (isset($_SESSION['logout'])) {
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-12 mb-4">
-                <h4 class="fw-semibold mb-3">Chức Năng Nổi Bật</h4>
-                <h5 class="text-muted fw-normal">Liệt kê các nổi bật trong trang web </h5>
+                <h4 class="fw-semibold mb-3 fw-hero">Chức Năng Nổi Bật</h4>
+                <h5 class="text-muted fw-normal fw-hero">Liệt kê các nổi bật trong trang web </h5>
             </div>
         </div>
         <div class="row text-center">

@@ -1,14 +1,14 @@
 <?php include "./config/connect.php" ?>
-<?php 
-    $id = $_GET['id'];
-    if(isset($_SESSION['user'])){
-        $user = $_SESSION['user'];
-        $check = $conn->query("SELECT * FROM `tb_recent_product` WHERE username = '$user' AND id_product = $id")->num_rows;
-        if($check != 0){
-            $conn->query("DELETE FROM `tb_recent_product` WHERE username = '$user' AND id_product  = $id");
-        }
-        $conn->query("INSERT INTO `tb_recent_product`(username, id_product) VALUES ('$user', $id)");
+<?php
+$id = $_GET['id'];
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+    $check = $conn->query("SELECT * FROM `tb_recent_product` WHERE username = '$user' AND id_product = $id")->num_rows;
+    if ($check != 0) {
+        $conn->query("DELETE FROM `tb_recent_product` WHERE username = '$user' AND id_product  = $id");
     }
+    $conn->query("INSERT INTO `tb_recent_product`(username, id_product) VALUES ('$user', $id)");
+}
 ?>
 <!-- Single Product Section Start -->
 <div id="content">
@@ -77,7 +77,7 @@
                                 } else if ($temp > 0) {
                                     echo "<i class='fa-solid fa-star-half' style='color: #ffad42'></i>";
                                     $temp = 0;
-                                } 
+                                }
                             }
                             ?>
                         </span>
@@ -141,10 +141,10 @@
                         <!-- Social Shear Start -->
                         <div class="social-share">
                             <div class="widget-social justify-content-start m-b-30">
-                            <a title="Facebook" href="#"><i class="fa-brands fa-facebook-f" style="padding-top: 7px;"></i></a>
-                            <a title="Pinterest" href="#"><i class="fa-brands fa-pinterest-p" style="padding-top: 7px;"></i></a>
-                            <a title="Twitter" href="#"><i class="fa-brands fa-twitter" style="padding-top: 7px;"></i></a>
-                            <a title="Instagram" href="#"><i class="fa-brands fa-instagram" style="padding-top: 7px;"></i></a>
+                                <a title="Facebook" href="#"><i class="fa-brands fa-facebook-f" style="padding-top: 7px;"></i></a>
+                                <a title="Pinterest" href="#"><i class="fa-brands fa-pinterest-p" style="padding-top: 7px;"></i></a>
+                                <a title="Twitter" href="#"><i class="fa-brands fa-twitter" style="padding-top: 7px;"></i></a>
+                                <a title="Instagram" href="#"><i class="fa-brands fa-instagram" style="padding-top: 7px;"></i></a>
                             </div>
                         </div>
                         <!-- Social Shear End -->
@@ -226,107 +226,101 @@
     <!-- Single Product Tab End -->
 
     <!-- Product Section Start -->
-    <div class="section section-margin">
+    <div class="service-section section section-margin">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center text-center">
                 <div class="col-12">
                     <div class="section-title text-center">
-                        <h2 class="title">Sản phẩm tương tự</h2>
+                        <h3 class="title">Sản phẩm tương tự</h3>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="product-carousel arrow-outside-container" data-aos="fade-in" data-aos-duration="500">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <?php
-                                $sql = "SELECT * FROM `tb_product` 
-                                        WHERE id_category = '$id_category'
-                                        AND id_product != $id";
-                                $result = mysqli_query($conn, $sql);
-                                $count = mysqli_num_rows($result);
-                                for ($i = 0; $i < $count; $i++) {
-                                    $row = mysqli_fetch_assoc($result);
-                                    $id = $row['id_product'];
-                                    $name = $row['name'];
-                                    $price = $row['price'];
-                                    $discount = $row['discount'];
-                                    $ranking = $row['ranking'];
-                                    $image = $row['image'];
-                                ?>
-                                        <div class="swiper-slide">
-                                            <!-- Product Start -->
-                                            <div class="product-wrapper">
-                                                <div class="product">
-                                                    <!-- Thumb Start  -->
-                                                    <div class="thumb product-inner" id="product<?php echo $id ?>">
-                                                        <a class="load-product cursor-pointer image" id="<?php echo $id?>">
-                                                            <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
-                                                        </a>
-                                                        <?php
-                                                        if ($discount > 0) {
-                                                            $discount_price = $price - ($price * $discount / 100);
-                                                        ?>
-                                                            <span class="badges">
-                                                                <span class='sale'>-<?php echo (int)$discount ?>%</span>
-                                                            </span>
-                                                        <?php
-                                                        }
-                                                        ?>
-                                                        <div class="action-wrapper" id="wrapper<?php echo $id ?>">
-                                                            <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="fa-regular fa-plus-large"></i></a>
-                                                            <a class="action wishlist" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
-                                                            <a class="nav-content cursor-pointer action cart" id="viewcart" title="Cart"><i class="fa-regular fa-cart-circle-plus"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Thumb End  -->
-
-                                                    <!-- Content Start  -->
-                                                    <div class="content">
-                                                        <h5 class="title"><?php echo $name ?></a></h5>
-                                                        <span class="rating">
-                                                            <?php
-                                                            $temp = $ranking;
-                                                            for ($j = 0; $j < 5; $j++) {
-                                                                if ($temp > 2) {
-                                                                    echo "<i class='fa-solid fa-star' style='color: #ffad42'></i>";
-                                                                    $temp -= 2;
-                                                                } else if ($temp > 0) {
-                                                                    echo "<i class='fa-solid fa-star-half' style='color: #ffad42'></i>";
-                                                                    $temp = 0;
-                                                                } 
-                                                            }
-                                                            ?>
-                                                        </span>
-                                                        <span class="price">
-                                                            <?php
-                                                            if ($discount > 0) {
-                                                            ?>
-                                                                <span class="new">$<?php echo $discount_price ?></span>
-                                                                <span class="old">$<?php echo $price ?></span>
-                                                            <?php
-                                                            } else {
-                                                            ?>
-                                                                <span class='new'>$<?php echo $price ?></span>
-                                                            <?php
-                                                            }
-                                                            ?>
-                                                        </span>
-                                                    </div>
-                                                    <!-- Content End  -->
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="feature-slider">
+                        <?php
+                        $sql = "SELECT * FROM `tb_product` 
+                                WHERE id_category = '$id_category'
+                                AND id_product != $id";
+                        $result = mysqli_query($conn, $sql);
+                        $count = mysqli_num_rows($result);
+                        for ($i = 0; $i < $count; $i++) {
+                            $row = mysqli_fetch_assoc($result);
+                            $id = $row['id_product'];
+                            $name = $row['name'];
+                            $price = $row['price'];
+                            $discount = $row['discount'];
+                            $ranking = $row['ranking'];
+                            $image = $row['image'];
+                        ?>
+                            <div class="mt-4 pt-2">
+                                <div class="solution border rounded position-relative px-4 py-5 ">
+                                    <div class="product-wrapper">
+                                        <div class="product">
+                                            <!-- Thumb Start  -->
+                                            <div class="thumb product-inner" id="product<?php echo $id ?>">
+                                                <a class="load-product cursor-pointer image" id="<?php echo $id ?>">
+                                                    <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" />
+                                                </a>
+                                                <?php
+                                                if ($discount > 0) {
+                                                    $discount_price = $price - ($price * $discount / 100);
+                                                ?>
+                                                    <span class="badges">
+                                                        <span class='sale'>-<?php echo (int)$discount ?>%</span>
+                                                    </span>
+                                                <?php
+                                                }
+                                                ?>
+                                                <div class="action-wrapper" id="wrapper<?php echo $id ?>">
+                                                    <a class="action" id="plus_product" title="Thêm sản phẩm"><i class="fa-regular fa-plus-large"></i></a>
+                                                    <a class="action wishlist" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                                                    <a class="nav-content cursor-pointer action cart" id="viewcart" title="Cart"><i class="fa-regular fa-cart-circle-plus"></i></a>
                                                 </div>
                                             </div>
-                                            <!-- Product End -->
+                                            <!-- Thumb End  -->
+
+                                            <!-- Content Start  -->
+                                            <div class="content">
+                                                <h5 class="title"><?php echo $name ?></a></h5>
+                                                <span class="rating">
+                                                    <?php
+                                                    $temp = $ranking;
+                                                    for ($j = 0; $j < 5; $j++) {
+                                                        if ($temp > 2) {
+                                                            echo "<i class='fa-solid fa-star' style='color: #ffad42'></i>";
+                                                            $temp -= 2;
+                                                        } else if ($temp > 0) {
+                                                            echo "<i class='fa-solid fa-star-half' style='color: #ffad42'></i>";
+                                                            $temp = 0;
+                                                        }
+                                                    }
+                                                    ?>
+                                                </span>
+                                                <span class="price">
+                                                    <?php
+                                                    if ($discount > 0) {
+                                                    ?>
+                                                        <span class="new">$<?php echo $discount_price ?></span>
+                                                        <span class="old">$<?php echo $price ?></span>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                        <span class='new'>$<?php echo $price ?></span>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </span>
+                                            </div>
+                                            <!-- Content End  -->
                                         </div>
-                                <?php
-                                    }
-                                ?>
+                                    </div>
+                                    <!-- Product End -->
+                                </div>
                             </div>
-                            <div class="swiper-pagination d-block d-md-none"></div>
-                            <div class="swiper-button-prev swiper-nav-button d-none d-md-flex"><i class="fa-duotone fa-angle-left fa-xl"></i></div>
-                            <div class="swiper-button-next swiper-nav-button d-none d-md-flex"><i class="fa-duotone fa-angle-right fa-xl"></i></div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -338,57 +332,33 @@
 
 
 <script>
-
-    /* Pruduct Carousel Activation */
-    var productCarousel = new Swiper('.product-carousel .swiper-container', {
-        loop: true,
-        slidesPerView: 4,
-        spaceBetween: 20,
-        slideVisibleClass: 'swiper-slide-visible',
-        watchSlidesVisibility: true,
-        observer: true,
-        observeParents: true,
-
-        pagination: {
-            el: '.product-carousel .swiper-pagination',
-            type: 'bullets',
-            clickable: 'true'
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.product-carousel .swiper-button-next',
-            prevEl: '.product-carousel .swiper-button-prev',
-        },
-        // Responsive breakpoints
-        breakpoints: {
-            // when window width is >= 320px
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10
-            },
-            // when window width is >= 480px
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            // when window width is >= 768px
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 20
-            },
-            // when window width is >= 992px
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 20
-            },
-            // when window width is >= 1200px
-            1200: {
-                slidesPerView: 4,
-                spaceBetween: 20
+    // feature-slidier
+    if (document.getElementsByClassName('feature-slider')[0] != undefined) {
+        var slider = tns({
+            container: '.feature-slider',
+            loop: true,
+            navPosition: "bottom",
+            speed: 400,
+            mouseDrag: true,
+            controls: false,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            responsive: {
+                640: {
+                    edgePadding: 20,
+                    gutter: 20,
+                    items: 1
+                },
+                700: {
+                    edgePadding: 20,
+                    gutter: 30,
+                    items: 2
+                },
+                900: {
+                    edgePadding: 20,
+                    items: 4
+                }
             }
-        }
-    });
-
-
+        });
+    }
 </script>

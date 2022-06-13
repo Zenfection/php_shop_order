@@ -101,7 +101,7 @@ $(function () {
     /*-------------------------
         Ajax Load Data Nagivation
     ---------------------------*/
-    function notify(type, icon, position, msg){
+    function notify(type, icon, position, msg) {
         Lobibox.notify(type, {
             pauseDelayOnHover: true,
             size: 'mini',
@@ -112,21 +112,21 @@ $(function () {
             msg: msg
         });
     }
-    $(document).on('click', '.load-product', function(){
+    $(document).on('click', '.load-product', function () {
         let id = 'detail_product';
         let id_product = $(this).attr('id');
         window.history.pushState(id, id.toUpperCase(), '/detail_product?id=' + id_product);
         loadContent('./detail_product.php?id=' + id_product);
     });
-    $(document).on('click', '.load-order', function(){
+    $(document).on('click', '.load-order', function () {
         let id = 'order_view';
         let id_order = $(this).attr('id');
         window.history.pushState(id, id.toUpperCase(), '/order_view?id=' + id_order);
         loadContent('./order_view.php?id=' + id_order);
     });
-    $(document).on('click', '.load-checkout', function(){
+    $(document).on('click', '.load-checkout', function () {
         let count_cart = parseInt($('#count-cart').text());
-        if(count_cart > 0){
+        if (count_cart > 0) {
             let id = 'checkout';
             window.history.pushState(id, id.toUpperCase(), '/checkout');
             loadContent('./checkout.php');
