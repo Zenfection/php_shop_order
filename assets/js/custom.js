@@ -131,7 +131,7 @@ $(function () {
             window.history.pushState(id, id.toUpperCase(), '/checkout');
             loadContent('./checkout.php');
         } else {
-            notify('warning', 'fa-duotone fa-right-to-bracket', 'right', 'Bạn chưa đăng nhập, hãy đăng nhập');
+            notify('warning', 'fa-duotone fa-right-to-bracket', 'bottom', 'Bạn chưa đăng nhập, hãy đăng nhập');
         }
     });
 
@@ -142,10 +142,10 @@ $(function () {
         let path;
 
         if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
-            notify('error', 'fa-duotone fa-hexagon-xmark', 'right', 'Bạn đã đăng nhập, không thể sử dụng chức năng này');
+            notify('error', 'fa-duotone fa-hexagon-xmark', 'bottom', 'Bạn đã đăng nhập, không thể sử dụng chức năng này');
             return;
         } else if (!checkLoged() && (id == 'account' || id == 'viewcart')) {
-            notify('warning', 'fa-duotone fa-right-to-bracket', 'right', 'Bạn chưa đăng nhập, hãy đăng nhập');
+            notify('warning', 'fa-duotone fa-right-to-bracket', 'bottom', 'Bạn chưa đăng nhập, hãy đăng nhập');
             return;
         } else {
             if (id == 'home') path = '/';

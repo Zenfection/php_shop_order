@@ -21,7 +21,7 @@
 <script src="./assets/js/vendor/jquery-migrate-3.4.0.min.js"></script>
 <script src="./assets/js/vendor/modernizr-3.11.2.min.js"></script>   
 
-
+<script src="./assets/js/plugins/anime.min.js"></script>
 <script src="./assets/js/plugins/aos.min.js"></script>
 <script src="./assets/js/plugins/jquery.validate.js"></script>
 <script src="./assets/js/plugins/jquery-ui.min.js"></script>
