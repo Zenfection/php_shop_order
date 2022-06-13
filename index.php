@@ -15,11 +15,11 @@
 5. modernizr.min.js       : 3.11.2
 -->
 
-<script src="assets/js/vendor/popper.min.js"></script>
-<script src="assets/js/vendor/bootstrap.min.js"></script>
-<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-migrate-3.4.0.min.js"></script>
-<script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>   
+<script src="./assets/js/vendor/popper.min.js"></script>
+<script src="./assets/js/vendor/bootstrap.min.js"></script>
+<script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="./assets/js/vendor/jquery-migrate-3.4.0.min.js"></script>
+<script src="./assets/js/vendor/modernizr-3.11.2.min.js"></script>   
 
 
 <script src="./assets/js/plugins/aos.min.js"></script>
@@ -29,7 +29,7 @@
 <script src="./assets/js/plugins/lobibox.min.js"></script>  
 <script src="./assets/js/plugins/notifications.min.js"></script>  
 <script src="./assets/js/plugins/tiny-slider.js"></script>
-<script src="./assets/js/plugins/feather.js"></script>
+<script src="./assets/js/plugins/feather.min.js"></script>
 
 <!--  -->
 
