@@ -125,6 +125,8 @@ $(function () {
     var callLogin = function(){
         let user = $('#loginForm input[name=user]').val();
         let pass = $('#loginForm input[name=pass]').val();
+
+        if($('.is-invalid').length > 0) return;
         if (user == '' || pass == '') {
             notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập tài khoản hoặc mật khẩu');
             return;
@@ -167,6 +169,8 @@ $(function () {
         let username = $('#registerForm input[name=username]').val();
         let email = $('#registerForm input[name=email]').val();
         let password = $('#registerForm input[name=password]').val();
+
+        if($('.is-invalid').length > 0) return;
         if (fullname == '' || username == '' || email == '' || password == '') {
             notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập đầy đủ thông tin');
             return;
@@ -223,6 +227,8 @@ $(function () {
         let fullname = $('#changeInfoForm input[name=fullname]').val();
         let phone = $('#changeInfoForm input[name=phone]').val();
         let email = $('#changeInfoForm input[name=email]').val();
+        
+        if($('.is-invalid').length > 0) return;
         if(fullname == '' || phone == '' || email == ''){
             notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập đầy đủ thông tin');
             return;
@@ -261,7 +267,7 @@ $(function () {
             notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập đầy đủ thông tin');
             return;
         }
-        if($('.invalid-feedback').length > 0) return;
+        if($('.is-invalid').length > 0) return;
         $.ajax({
             type: 'POST',
             url: './backend/change_password.php',
