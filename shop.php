@@ -219,7 +219,7 @@ if(isset($_SESSION['user'])){
                             <h3 class="widget-title m-b-30">Danh Mục</h3>
                             <div class="sidebar-body justify-content-start">
                                 <ul class="sidebar-list">
-                                    <li><a class="cursor-pointer category-filter" id="all">
+                                    <li><a class="nav-content cursor-pointer" id="shop">
                                             <i class="fa-duotone fa-border-all fa-xl"></i> Tất cả sản phẩm</a>
                                     </li>
                                     <li><a class="cursor-pointer category-filter" id="cake">

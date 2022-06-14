@@ -118,7 +118,6 @@ BEGIN
 END //
 DELIMITER ;
 
--- *SELECT countPendingOrder();
 
 
 -- Hàm tính tổng tiền trong đơn hàng

@@ -23,13 +23,13 @@
 
 <script src="./assets/js/plugins/anime.min.js"></script>
 <script src="./assets/js/plugins/aos.min.js"></script>
+<script src="./assets/js/plugins/tiny-slider.js"></script>
+<script src="./assets/js/plugins/feather.min.js"></script>
 <script src="./assets/js/plugins/jquery.validate.js"></script>
 <script src="./assets/js/plugins/jquery-ui.min.js"></script>
 <script src="./assets/js/plugins/nice-select.min.js"></script>
 <script src="./assets/js/plugins/lobibox.min.js"></script>  
 <script src="./assets/js/plugins/notifications.min.js"></script>  
-<script src="./assets/js/plugins/tiny-slider.js"></script>
-<script src="./assets/js/plugins/feather.min.js"></script>
 
 <!--  -->
 

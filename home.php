@@ -15,7 +15,7 @@ if (isset($_SESSION['logout'])) {
 
 <!-- start hero -->
 <section class="hero-1 bg-white position-relative d-flex align-items-center justify-content-center overflow-hidden">
-    <div class="shapes" data-aos-duration="1000">
+    <div class="shapes">
         <div class="shape-1"><img src="./assets/images/shapes/shape-1.svg" alt="shape"></div>
         <div class="shape-2"><img src="./assets/images/shapes/shape-2.svg" alt="shape"></div>
         <div class="shape-3"><img src="./assets/images/shapes/shape-3.svg" alt="shape"></div>

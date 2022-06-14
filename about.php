@@ -15,9 +15,9 @@
                     <h2 class="title">Dự án Web bán thức ăn vặt</h2>
                     <p>Đây là dự web cơ bản được viết bằng PHP thuần, chủ yếu là để học tập và các công nghệ dùng dưới đây.</p>
                     <ul class="about-content-list">
-                        <li><span><i class="fa-duotone fa-angles-right"></i></span> Bootstrap 5</li>
-                        <li><span><i class="fa-duotone fa-angles-right"></i></span> Jquery Ajax</li>
-                        <li><span><i class="fa-duotone fa-angles-right"></i></span> PHP Composer</li>
+                        <li><span><i class="fa-brands fa-bootstrap fa-xl"></i></span> Bootstrap 5</li>
+                        <li><span><i class="fa-brands fa-js fa-xl"></i></span> Jquery Ajax</li>
+                        <li><span><i class="fa-brands fa-php fa-xl"></i></span> PHP Composer</li>
                     </ul>
                     <a id="contact" class="nav-content btn btn-primary btn-hover-dark">Liên Hệ</a>
                 </div>
