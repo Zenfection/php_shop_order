@@ -1,77 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+if (session_status() != 2) {
+    include "connect.php";
+}
+?>
+<!-- Header Action Start -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" href="./assets/images/favicon.ico">
-
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/vendor/themify-icons-min.css" />
-    <script src="./assets/js/all.min.js"></script>
-
-    <link rel="stylesheet" href="./assets/css/plugins/animate.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/aos.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/nice-select.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/lobibox.min.css">
-    <link rel="stylesheet" href="./assets/css/plugins/tiny-slider.css">
-
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/custom.css">
-    <title>Shop Order</title>
-</head>
-
-<body>
-    <div class="header-bottom">
-        <div class="header-sticky">
-            <div class="container">
-                <div class="row align-items-center position-relative">
-                    <!-- Header Logo Start -->
-                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-in" data-aos-duration="1000">
-                        <div class="header-logo">
-                            <a href="./"><img src="./assets/images/logo.png" alt="Site Logo" /></a>
-                        </div>
-                    </div>
-                    <!-- Header Logo End -->
-
-                    <!-- Header Menu Start -->
-                    <div class="col-lg-5 d-none d-lg-block" data-aos="fade-in" data-aos-duration="1000">
-                        <div class="main-menu">
-                            <ul>
-                                <li><a id="home" class="nav-content cursor-pointer">Trang Chủ</a></li>
-                                <li><a id="about" class="nav-content cursor-pointer">Giới Thiệu</a></li>
-                                <li><a id="shop" class="nav-content cursor-pointer">Shop</a></li>
-                                <li><a id="contact" class="nav-content cursor-pointer">Liên Hệ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Header Menu End -->
-
-                    <!-- Header Action Start -->
-                    <div class="col-lg-4 col-md-8 col-6">
-                        <div class="header-actions">
-                            <?php include "./frontend/search.php" ?>
-                            <!-- account login -->
-                            <?php
-                            if (isset($_SESSION['user'])) {
-                                echo "<a id='account' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'>
-                                    <i class='fa-duotone fa-user-gear fa-xl'></i></a>";
-                            } else {
-                                echo "<a  id='login' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'><i class='fa-duotone fa-user fa-xl'></i></a>";
-                            }
-                            ?>
-                            <?php include "./frontend/cart.php" ?>
-                            <!-- Mobile Menu Hambarger Action Button Start -->
-                            <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
-                                <i class="fa-duotone fa-bars fa-xl"></i>
-                            </a>
-                            <!-- Mobile Menu Hambarger Action Button End -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Header Action Search Button Start -->
+<div class="header-action-btn header-action-btn-search d-none d-md-flex">
+    <div class="action-execute">
+        <a class="action-search-open" href="javascript:void(0)"><i class="fa-duotone fa-magnifying-glass fa-xl"></i></a>
+        <a class="action-search-close" href="javascript:void(0)"><i class="fa-duotone fa-xmark fa-xl"></i></a>
     </div>
+    <!-- Search Form and Button Start -->
+    <div class="header-search-form" id="searchProduct">
+        <input type="text" class="header-search-input" placeholder="Tìm kiếm" style="width: 200px !important">
+        <button class="header-search-button"><i class="fa-duotone fa-magnifying-glass"></i></button>
+    </div>
+    <!-- Search Form and Button End -->
+</div>
+<!-- Header Action Search Button End -->
+
+<!-- account login -->
+<?php
+if (isset($_SESSION['user'])) {
+    echo "<a id='account' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'>
+                                    <i class='fa-duotone fa-user-gear fa-xl'></i></a>";
+} else {
+    echo "<a  id='login' class='nav-content cursor-pointer header-action-btn header-action-btn-wishlist'><i class='fa-duotone fa-user fa-xl'></i></a>";
+}
+?>
+
+<?php include "cart.php" ?>
+
+<!-- Mobile Menu Hambarger Action Button Start -->
+<a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
+    <i class="fa-duotone fa-bars fa-xl"></i>
+</a>
+<!-- Mobile Menu Hambarger Action Button End -->

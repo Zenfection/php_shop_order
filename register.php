@@ -6,7 +6,7 @@ if (isset($_SESSION['register'])) {
     unset($_SESSION['register']);
 }
 ?>
-<form method="POST" action="./backend/register.php" id="registerForm" class="has-validation" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+<form id="registerForm" class="has-validation" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
     <div class="section section-margin">
         <div class="container">
             <div class="row">
@@ -20,7 +20,7 @@ if (isset($_SESSION['register'])) {
                         <!-- Register Title & Content End -->
 
                         <!-- Form Action Start -->
-                        <form action="#" method="post" autocomplete="">
+                        <form autocomplete>
 
                             <div class="single-input-item m-b-10">
                                 <input type="text" placeholder="Họ và Tên" name="fullname" class="form-control">
@@ -41,7 +41,7 @@ if (isset($_SESSION['register'])) {
                             <!-- Button/Forget Password Start -->
                             <div class="single-input-item single-input-item m-b-15">
                                 <div class="login-reg-form-meta m-b-n15">
-                                    <button type="submit" name="submit" class="btn btn btn-gray-deep btn-hover-primary m-b-15">Đăng ký</button>
+                                    <button type="button" name="submit" class="btn btn btn-gray-deep btn-hover-primary m-b-15">Đăng ký</button>
                                 </div>
                             </div>
                             <!-- Button/Forget Password End -->

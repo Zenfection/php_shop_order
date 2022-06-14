@@ -10,12 +10,12 @@ if (isset($_POST['submit'])) {
             WHERE username = '$user'";
     $query = mysqli_query($conn, $sql);
     if ($query) {
-        $_SESSION['change_info'] = "<div class='alert-success text-center'>Đổi thông tin thành công</div>";
+        $valid = true;
     } else {
-        $_SESSION['change_info'] = "<div class='alert-danger text-center'>Đổi thông tin thất bại</div>";
+        $valid = false;
     }
     mysqli_close($conn);
-    header("Location: ../account");
+    echo json_encode($valid);
     exit();
 }
 ?>

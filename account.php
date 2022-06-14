@@ -1,18 +1,9 @@
 <?php
 include "./config/connect.php";
-if (isset($_SESSION['change_pwd'])) {
-    echo $_SESSION['change_pwd'];
-    unset($_SESSION['change_pwd']);
-}
 if(isset($_SESSION['cancel_order'])){
     echo $_SESSION['cancel_order'];
     unset ($_SESSION['cancel_order']);
 }
-if(isset($_SESSION['change_info'])){
-    echo $_SESSION['change_info'];
-    unset ($_SESSION['change_info']);
-}
-// echo "<script>window.location.href = './account'</script>";
 ?>
 <!-- My Account Section Start -->
 <div class="section section-margin">
@@ -31,7 +22,7 @@ if(isset($_SESSION['change_info'])){
                                 <a href="#payment-method" data-bs-toggle="tab"><i class="fa-duotone fa-credit-card"></i> Thanh Toán</a>
                                 <a href="#account-info" data-bs-toggle="tab"><i class="fa-duotone fa-user-pen"></i> Chi Tiết</a>
                                 <a href="#address-edit" data-bs-toggle="tab"><i class="fa-duotone fa-key-skeleton"></i> Mật Khẩu</a>
-                                <a href="./backend/logout.php"><i class="fa-duotone fa-arrow-right-from-bracket"></i> Đăng Xuất</a>
+                                <a id="logout"><i class="fa-duotone fa-arrow-right-from-bracket"></i> Đăng Xuất</a>
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->
@@ -129,7 +120,7 @@ if(isset($_SESSION['change_info'])){
                                     <div class="myaccount-content">
                                         <h3 class="title"> Chi Tiết Tài Khoản</h3>
                                         <div class="account-details-form">
-                                            <form action="./backend/change_info.php" method="POST" id="changeInfoForm" class="has-validation">
+                                            <form id="changeInfoForm" class="has-validation">
                                                 <div class="single-input-item m-b-15">
                                                     <div class="row">
                                                         <div class="col-lg-6">
@@ -156,7 +147,7 @@ if(isset($_SESSION['change_info'])){
                                                     <input type="email" name="email" id="email" placeholder="Nhập Email" value="<?php echo $email ?>"  class="form-control"/>
                                                 </div>
                                                 <div class="single-input-item single-item-button m-t-30">
-                                                    <button type="submit" name="submit" class="btn btn btn-primary btn-hover-dark rounded-0">Lưu Thay Đổi</button>
+                                                    <button type="button" name="submit" class="btn btn btn-primary btn-hover-dark rounded-0">Lưu Thay Đổi</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -167,7 +158,7 @@ if(isset($_SESSION['change_info'])){
                                     <div class="myaccount-content">
                                         <h3 class="title"> Thay đổi mật khẩu</h3>
                                         <div class="account-details-form">
-                                            <form action="/backend/change_password.php" method="POST" id="changePassForm"  class="form-control">
+                                            <form id="changePassForm">
                                                 <fieldset>
                                                     <div class="single-input-item m-b-15">
                                                         <label for="current_pwd" class="required m-b-10">Mật Khẩu Hiện tại</label>
@@ -177,7 +168,7 @@ if(isset($_SESSION['change_info'])){
                                                         <div class="col-lg-6">
                                                             <div class="single-input-item m-b-15">
                                                                 <label for="new_pwd" class="required m-b-10">Mật khẩu mới</label>
-                                                                <input type="password" id="new-pwd" name="new-pwd" placeholder="Nhập Mật Khẩu" class="form-control"/>
+                                                                <input type="password" id="new_pwd" name="new_pwd" placeholder="Nhập Mật Khẩu" class="form-control"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -189,7 +180,7 @@ if(isset($_SESSION['change_info'])){
                                                     </div>
                                                 </fieldset>
                                                 <div class="single-input-item single-item-button m-t-30">
-                                                    <button type="submit" name="submit" class="btn btn btn-primary btn-hover-dark rounded-0">Lưu Thay Đổi</button>
+                                                    <button type="button" name="submit" class="btn btn btn-primary btn-hover-dark rounded-0">Lưu Thay Đổi</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -211,7 +202,7 @@ if(isset($_SESSION['change_info'])){
 </div>
 <!-- My Account Section End -->
 
-<script type="text/javascript">
+<script>
     $(document).ready(() => {
         $('#changeInfoForm').validate({
             rules: {
@@ -278,7 +269,7 @@ if(isset($_SESSION['change_info'])){
                     required: true,
                     minlength: 6,
                     maxlength: 50,
-                    equalTo: "#new-pwd"
+                    equalTo: "#new_pwd"
                 }
             },
             messages: {

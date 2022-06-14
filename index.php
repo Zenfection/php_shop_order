@@ -5,7 +5,7 @@
     echo "<script>window.history.replaceState('$path', '$path'.toUpperCase(), '/$path');</script>";
 ?>
 
-<?php include "./frontend/header.php" ?>
+<?php include "./frontend/nav.php" ?>
 
 <!-- vendor: 
 1. popper.min.js          : 2.11.5

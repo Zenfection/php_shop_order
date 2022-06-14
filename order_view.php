@@ -19,11 +19,10 @@
                         <!-- Table Head Start -->
                         <thead>
                             <tr>
-                                <th class="pro-thumbnail">Ảnh</th>
-                                <th class="pro-title">Sản Phẩm</th>
-                                <th class="pro-price">Giá</th>
-                                <th class="pro-quantity">Số lượng</th>
-                                <th class="pro-subtotal">Tổng tiền</th>
+                                <th scope="col" class="pro-thumbnail">Ảnh</th>
+                                <th scope="col" class="pro-title">Sản Phẩm</th>
+                                <th scope="col" class="pro-price">Giá</th>
+                                <th scope="col" class="pro-subtotal">Tổng tiền</th>
                             </tr>
                         </thead>
                         <!-- Table Head End -->
@@ -62,11 +61,8 @@
                                         <td class="pro-title">
                                             <a href="#"><?php echo $name ?></a>
                                         </td>
-                                        <td class="pro-price"><span><?php echo $price ?>$</span></td>
-                                        <td class="pro-quantity">
-                                            <div class="quantity">
-                                                <?php echo $amount ?>
-                                            </div>
+                                        <td class="pro-price">
+                                            <span><?php echo $price ?>$ x <?php echo $amount?></span>
                                         </td>
                                         <td class="pro-subtotal"><span><?php echo $total_price ?>$</span></td>
                                     </tr>

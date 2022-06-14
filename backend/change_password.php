@@ -2,18 +2,19 @@
 include "./config/connect.php";
 if(isset($_POST['submit'])){
     $user = $_SESSION['user'];
-    $current_pwd = mysqli_real_escape_string($conn, md5($_POST['current-pwd']));
-    $new_pwd = mysqli_real_escape_string($conn, md5($_POST['new-pwd']));
+    $current_pwd = mysqli_real_escape_string($conn, md5($_POST['current_pwd']));
+    $new_pwd = mysqli_real_escape_string($conn, md5($_POST['new_pwd']));
+    
     $sql = "UPDATE `tb_user`
             SET password = '$new_pwd'
             WHERE username = '$user'";
     $result = mysqli_query($conn, $sql);
     if($result){
-        $_SESSION['change_pwd'] = "<div class='alert-success text-center'>Đổi mật khẩu thành công</div>";
+        $valid = true;
     }else{
-        $_SESSION['change_pwd'] = "<div class='alert-danger text-center'>Đổi mật khẩu thất bại</div>";
+        $valid = false;
     }
     mysqli_close($conn);
-    header("Location: ../account");
+    echo json_encode($valid);
     exit();
 }
