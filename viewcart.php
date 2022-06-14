@@ -149,7 +149,7 @@
                             <table class="table">
                                 <tr>
                                     <td>Tổng Tiền</td>
-                                    <td><?php echo $totalMoney ?>$</td>
+                                    <td id="total-money"><?php echo $totalMoney ?>$</td>
                                 </tr>
                                 <tr>
                                     <td>Phí Ship</td>
@@ -157,7 +157,7 @@
                                 </tr>
                                 <tr class="total">
                                     <td>Tổng</td>
-                                    <td class="total-amount"><?php echo $totalMoney ?>$</td>
+                                    <td id="total-bill"><?php echo $totalMoney ?>$</td>
                                 </tr>
                             </table>
                         </div>

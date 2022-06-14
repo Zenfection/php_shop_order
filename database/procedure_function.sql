@@ -151,8 +151,6 @@ BEGIN
 END //
 DELIMITER ;
 
-CALL PROCEDURE `TOP_SELLER_PRODUCT`()
-
 -- * Trigger khi thêm đơn hàng sẽ tự động trừ vào sản phẩm
 DROP TRIGGER IF EXISTS tb_order_details_insert;
 DELIMITER //
