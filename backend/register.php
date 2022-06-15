@@ -11,14 +11,8 @@ if (isset($_POST['submit'])) {
     $conn->close();
     if ($query) {
         $valid = true;
-        // $_SESSION['register'] = "<div class='alert-success text-center'>Đăng ký thành công, vui lòng đăng nhập</div>";
-        // header("Location: ../login");
-        // exit();
     } else {
         $valid = false;
-        // $_SESSION['register'] = "<div class='alert-warning text-center'>Đăng ký thất bại</div>";
-        // header("Location: ../register");
-        // exit();
     }
     echo json_encode($valid);
     exit();

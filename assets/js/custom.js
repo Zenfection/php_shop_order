@@ -1,5 +1,4 @@
 $(function () {
-
     /* Function
     ------------------------- */
     //* Load Content
@@ -14,25 +13,20 @@ $(function () {
         });
     }
 
-    //* Load Content
-    function reLoadHeader() {
-        $.ajax({
-            url: './frontend/header.php',
-            success: function (data) {
-                $('#header').html(data);
-            }
-        });
-    }
-
     //* Check loged in
     function checkLoged() {
-        let check = $('svg.svg-inline--fa.fa-user.fa-xl').length;
-        if (check == 0) return true;
-        else return false;
+        let result;
+        $.ajax({
+            url: './backend/check_logged.php',
+            async: false,
+            success: function (data) {
+                data == 'true' ? result = true : result = false;
+            }
+        });
+        return result;
     }
-
     //* Load Content when refresh page
-    function checkURL() {
+    window.addEventListener('load', function(){
         let url = new URL(window.location.href);
         let path = url.pathname;
         let id = path.replace('/', '');
@@ -55,8 +49,7 @@ $(function () {
             }
         }
         loadContent('./' + id + '.php');
-    }
-    checkURL();
+    })
 
     //* Listen back & forward button to load content
     window.addEventListener('popstate', function () {
@@ -111,6 +104,7 @@ $(function () {
     /*-------------------------
         Ajax Load Data Nagivation
     ---------------------------*/
+    // *Popup Notification
     function notify(type, icon, position, msg) {
         Lobibox.notify(type, {
             pauseDelayOnHover: true,
@@ -122,177 +116,6 @@ $(function () {
             msg: msg
         });
     }
-    var callLogin = function(){
-        let user = $('#loginForm input[name=user]').val();
-        let pass = $('#loginForm input[name=pass]').val();
-
-        if($('.is-invalid').length > 0) return;
-        if (user == '' || pass == '') {
-            notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập tài khoản hoặc mật khẩu');
-            return;
-        }
-        $.ajax({
-            type: 'POST',
-            url: './backend/login.php',
-            async: false,
-            data: {
-                user: user,
-                pass: pass,
-                submit: true,
-            },
-            success: function (data) {
-                if (data == 'true') {
-                    window.history.pushState('home', 'HOME', './');
-                    setTimeout(function () {
-                        loadContent('./home.php');
-                        notify('success', 'fa-duotone fa-user-check', 'bottom', 'Đăng Nhập Thành Công');
-                    }, 300);
-                    reLoadHeader();
-                } else {
-                    notify('error', 'fa-duotone fa-user-xmark', 'center', 'Sai tài khoản & mật khẩu');
-                }
-            }
-        });
-    }
-    // Sign in
-    $(document).on('click', '#loginForm button[name=submit]', function () {
-        callLogin();
-    });
-
-    $(document).on('keypress', '#loginForm', function (e) {
-        if (e.which == 13) { callLogin() }
-    });
-    
-    // Register
-    var callRegister = function(){
-        let fullname = $('#registerForm input[name=fullname]').val();
-        let username = $('#registerForm input[name=username]').val();
-        let email = $('#registerForm input[name=email]').val();
-        let password = $('#registerForm input[name=password]').val();
-
-        if($('.is-invalid').length > 0) return;
-        if (fullname == '' || username == '' || email == '' || password == '') {
-            notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập đầy đủ thông tin');
-            return;
-        }
-        $.ajax({
-            type: 'POST',
-            url: './backend/register.php',
-            async: false,
-            data: {
-                fullname: fullname,
-                username: username,
-                email: email,
-                password: password,
-                submit: true,
-            },
-            success: function (data) {
-                if (data == 'true') {
-                    window.history.pushState('login', 'LOGIN', './login');
-                    setTimeout(function () {
-                        loadContent('./login.php');
-                        notify('success', 'fa-duotone fa-user-plus', 'bottom', 'Đăng Ký Thành Công');
-                    }, 300);
-                    reLoadHeader();
-                } else {
-                    notify('error', 'fa-duotone fa-person-walking-arrow-right', 'center', 'Tài khoản đã tồn tại');
-                }
-            }
-        });
-    }
-    $(document).on('click', '#registerForm button[name=submit]', function () {
-        callRegister();
-    });
-    $(document).on('keypress', '#registerForm', function(){
-        if (e.which == 13) { callRegister() }
-    })
-
-    // Logout
-    $(document).on('click', '#logout', function () {
-        $.ajax({
-            url: './backend/logout.php',
-            success: function () {
-                reLoadHeader();
-            }
-        });
-        setTimeout(function () {
-            window.history.pushState('home', 'HOME', './');
-            loadContent('./home.php');
-            notify('success', 'fa-duotone fa-right-from-bracket', 'bottom left', 'Đăng Xuất Thành Công');
-        }, 300);
-    })
-
-    //Change Info
-    var callChangeInfo = function(){
-        let fullname = $('#changeInfoForm input[name=fullname]').val();
-        let phone = $('#changeInfoForm input[name=phone]').val();
-        let email = $('#changeInfoForm input[name=email]').val();
-        
-        if($('.is-invalid').length > 0) return;
-        if(fullname == '' || phone == '' || email == ''){
-            notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập đầy đủ thông tin');
-            return;
-        }
-        $.ajax({
-            type: 'POST',
-            url: './backend/change_info.php',
-            data: {
-                fullname: fullname,
-                phone: phone,
-                email: email,
-                submit: true,
-            },  
-            async: false,
-            success: function(data){
-                if(data == 'true'){
-                    notify('success', 'fa-duotone fa-user-check', 'center', 'Thay Đổi Thành Công');
-                } else {
-                    notify('error', 'fa-duotone fa-user-xmark', 'center', 'Thay Đổi Thất Bại');
-                }
-            }
-        });
-    }
-    $(document).on('click', '#changeInfoForm button[name=submit]', function(){
-        callChangeInfo();
-    })
-    $(document).on('keypress', '#changeInfoForm', function(e){
-        if (e.which == 13) { callChangeInfo() }
-    })
-
-    var callChangePass = function(){
-        let current_pwd = $('#changePassForm input[name=current_pwd]').val(); 
-        let new_pwd = $('#changePassForm input[name=new_pwd]').val();
-        let confirm_pwd = $('#changePassForm input[name=confirm_pwd]').val();
-        if(current_pwd == '' || new_pwd == '' || confirm_pwd == ''){
-            notify('warning', 'fa-duotone fa-pen-field', 'center', 'Bạn chưa nhập đầy đủ thông tin');
-            return;
-        }
-        if($('.is-invalid').length > 0) return;
-        $.ajax({
-            type: 'POST',
-            url: './backend/change_password.php',
-            data: {
-                current_pwd: current_pwd,
-                new_pwd: new_pwd,
-                submit: true,
-            },
-            async: false,
-            success: function(data){
-                if(data == 'true'){
-                    notify('success', 'fa-duotone fa-user-check', 'center', 'Thay Đổi Thành Công');
-                } else{
-                    notify('error', 'fa-duotone fa-user-xmark', 'center', 'Thay Đổi Thất Bại');
-                }
-            }
-        });
-    }
-    
-    $(document).on('click', '#changePassForm button[name=submit]', function(){
-        callChangePass();
-    })
-    $(document).on('keypress', '#changePassForm', function(e){
-        if (e.which == 13) { callChangePass() }
-    })
 
     $(document).on('click', '.load-product', function () {
         let id = 'detail_product';
@@ -306,12 +129,15 @@ $(function () {
         window.history.pushState(id, id.toUpperCase(), '/order_view?id=' + id_order);
         loadContent('./order_view.php?id=' + id_order);
     });
+    
     $(document).on('click', '.load-checkout', function () {
         let count_cart = parseInt($('#count-cart').text());
         if (count_cart > 0) {
             let id = 'checkout';
             window.history.pushState(id, id.toUpperCase(), '/checkout');
             loadContent('./checkout.php');
+        } else if(count_cart == 0){
+            notify('info', 'fa-duotone fa-bags-shopping', 'right', 'Bạn chưa có sản phẩm nào trong giỏ hàng');
         } else {
             notify('warning', 'fa-duotone fa-right-to-bracket', 'bottom', 'Bạn chưa đăng nhập, hãy đăng nhập');
         }
@@ -324,10 +150,10 @@ $(function () {
         let path;
 
         if (checkLoged() && (id == 'login' || id == 'register')) { //đã đăng nhập
-            notify('error', 'fa-duotone fa-hexagon-xmark', 'bottom', 'Bạn đã đăng nhập, không thể sử dụng chức năng này');
+            notify('info', 'fa-duotone fa-info', 'bottom right', 'Bạn đã đăng nhập rồi');
             return;
         } else if (!checkLoged() && (id == 'account' || id == 'viewcart')) {
-            notify('warning', 'fa-duotone fa-right-to-bracket', 'bottom', 'Bạn chưa đăng nhập, hãy đăng nhập');
+            notify('warning', 'fa-duotone fa-right-to-bracket', 'bottom right', 'Bạn chưa đăng nhập, hãy đăng nhập');
             return;
         } else {
             if (id == 'home') path = '/';
@@ -557,7 +383,6 @@ $(function () {
         let id = parseInt($(this).attr('name').split('page=')[1]);
         choosePage(id);
     });
-
 
     /*-------------------------
         Ajax Cart View

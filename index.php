@@ -32,8 +32,8 @@
 <script src="./assets/js/plugins/notifications.min.js"></script>  
 
 <!--  -->
-
 <script src="./assets/js/custom.js"></script>
+<script src="./assets/js/backend.js"></script> 
 <script src="./assets/js/main.js"></script>
 
 <div id="content">

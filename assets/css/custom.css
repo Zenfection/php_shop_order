@@ -238,11 +238,11 @@
 .tns-outer .tns-nav button:active,
 .tns-outer .tns-nav button.active {
     outline: none;
-    background-color: #50C594 !important;
+    background-color: #ffad42 !important;
 }
 
 .tns-outer .tns-nav button.tns-nav-active {
-    background-color: #50C594 !important;
+    background-color: #ffad42 !important;
     width: 22px !important;
 }
 
@@ -255,7 +255,7 @@
     width: 6px !important;
     height: 6px !important;
     border: none;
-    background-color: rgba(80, 197, 148, 0.4) !important;
+    background-color: rgba(197, 162, 56, 0.4) !important;
     padding: 0px;
     margin: 0px 4px;
     transition: all 0.3s;
@@ -267,11 +267,11 @@
 .tns-outer .tns-nav button:active,
 .tns-outer .tns-nav button.active {
     outline: none;
-    background-color: #50C594 !important;
+    background-color: #ffad42 !important;
 }
 
 .tns-outer .tns-nav button.tns-nav-active {
-    background-color: #50C594 !important;
+    background-color: #ffad42 !important;
     width: 18px !important;
 }
 

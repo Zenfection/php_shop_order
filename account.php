@@ -1,9 +1,5 @@
 <?php
-include "./config/connect.php";
-if(isset($_SESSION['cancel_order'])){
-    echo $_SESSION['cancel_order'];
-    unset ($_SESSION['cancel_order']);
-}
+    include "./config/connect.php";
 ?>
 <!-- My Account Section Start -->
 <div class="section section-margin">
@@ -22,7 +18,7 @@ if(isset($_SESSION['cancel_order'])){
                                 <a href="#payment-method" data-bs-toggle="tab"><i class="fa-duotone fa-credit-card"></i> Thanh Toán</a>
                                 <a href="#account-info" data-bs-toggle="tab"><i class="fa-duotone fa-user-pen"></i> Chi Tiết</a>
                                 <a href="#address-edit" data-bs-toggle="tab"><i class="fa-duotone fa-key-skeleton"></i> Mật Khẩu</a>
-                                <a id="logout"><i class="fa-duotone fa-arrow-right-from-bracket"></i> Đăng Xuất</a>
+                                <a class="cursor-pointer" id="logout"><i class="fa-duotone fa-arrow-right-from-bracket"></i> Đăng Xuất</a>
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->

@@ -122,7 +122,7 @@
                     </div>
                     <?php if($status == 'pending'){
                         ?>
-                        <a href="./backend/cancel_order.php?id=<?php echo $id_order?>" class="btn btn btn-gray-deep btn-hover-primary m-t-30">Huỷ Hàng</a>
+                        <a id="cancelOrder" class="btn btn btn-gray-deep btn-hover-primary m-t-30" id_order="<?php echo $id_order?>">Huỷ Hàng</a>
                         <?php
                     }
                     ?>

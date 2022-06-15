@@ -100,7 +100,7 @@ if (session_status() != 2) {
                                     <i class="fa-duotone fa-binary-lock fa-3x"></i>
                                 </div>
                                 <h5 class="lh-base fs-16 mb-2">Mã hóa mật khẩu</h5>
-                                <a class="text-muted">Sử dụng hàm băm<span class="fw-semibold fs-15 text-dark"> SHA516</span> để mã hóa mật khẩu của người dùng</a>
+                                <a class="text-muted">Sử dụng <span class="fw-semibold fs-15 text-dark"> SHA516</span> để mã hóa mật khẩu của người dùng</a>
                             </div>
                         </div>
                     </div>
@@ -315,4 +315,66 @@ if (session_status() != 2) {
     </div>
 </div>
 <!-- Product Section End -->
-<script src='./assets/js/page/home.js'></script>
+<script>
+document.querySelector('.ml11 .letters').innerHTML = document.querySelector('.ml11 .letters').textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({
+        loop: true
+    })
+    .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700
+    })
+    .add({
+        targets: '.ml11 .line',
+        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+        easing: "easeOutExpo",
+        duration: 700,
+        delay: 100
+    }).add({
+        targets: '.ml11 .letter',
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=775',
+        delay: (el, i) => 34 * (i + 1)
+    }).add({
+        targets: '.ml11',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
+// feature-slidier
+if (document.getElementsByClassName('feature-slider')[0] != undefined) {
+    var slider = tns({
+        container: '.feature-slider',
+        loop: true,
+        navPosition: "bottom",
+        speed: 400,
+        mouseDrag: true,
+        controls: false,
+        autoplay: true,
+        autoplayButtonOutput: false,
+        responsive: {
+            640: {
+                edgePadding: 20,
+                gutter: 20,
+                items: 1
+            },
+            700: {
+                edgePadding: 20,
+                gutter: 30,
+                items: 2
+            },
+            900: {
+                edgePadding: 20,
+                items: 4
+            }
+        }
+    });
+}
+</script>

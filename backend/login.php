@@ -5,8 +5,8 @@
         $password = mysqli_real_escape_string($conn, md5($_POST['pass']));
     
         $sql = "SELECT * FROM `tb_user` 
-                    WHERE (username = '$user' AND password = '$password')
-                    OR (email = '$user' AND password = '$password')";
+                WHERE (username = '$user' AND password = '$password')
+                OR (email = '$user' AND password = '$password')";
         $result = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($result);
         $conn->close();
@@ -15,8 +15,8 @@
             $valid = true;
         } else {
             // xoá session user và id
-            $valid = false;
             unset($_SESSION['user']);
+            $valid = false;
         }
     }
     echo json_encode($valid);
