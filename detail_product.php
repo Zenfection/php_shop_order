@@ -259,7 +259,7 @@ if (isset($_SESSION['user'])) {
                                         <div class="product">
                                             <!-- Thumb Start  -->
                                             <div class="thumb product-inner" id="product<?php echo $id ?>">
-                                                <a class="load-product cursor-pointer image" id="<?php echo $id ?>">
+                                                <a class="load-product cursor-pointer image" id_product="<?php echo $id ?>">
                                                     <img class="fit-image rounded" src="./assets/images/products/<?php echo $image ?>" />
                                                 </a>
                                                 <?php
@@ -282,7 +282,9 @@ if (isset($_SESSION['user'])) {
 
                                             <!-- Content Start  -->
                                             <div class="content">
-                                                <h5 class="title"><?php echo $name ?></a></h5>
+                                                <h5 class="title">
+                                                <a class="load-product cursor-pointer" id_product=<?php echo $id?>><?php echo $name ?></a>
+                                                </h5>
                                                 <span class="rating">
                                                     <?php
                                                     $temp = $ranking;

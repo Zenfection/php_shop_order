@@ -36,9 +36,7 @@ $(function () {
             loadContent('./404.php');
             return;
         }
-        if (id == '') {
-            return;
-        } else if (id == 'detail_product' || id == 'order_view') {
+        if (id == 'detail_product' || id == 'order_view') {
             loadContent('/' + id + '.php' + url.search);
             return;
         } else {
@@ -53,10 +51,12 @@ $(function () {
 
     //* Listen back & forward button to load content
     window.addEventListener('popstate', function () {
-        let path = new URL(window.location.href).pathname;
+        let url = new URL(window.location.href);
+        let path = url.pathname;
         let id = path.replace('/', '');
-        if (id == '') id = 'home';
-        loadContent('/' + id + '.php');
+
+        if (id == '') id = 'home'; 
+        loadContent('/' + id + '.php' + url.search);
     });
 
     //* choose num page paginator page
@@ -119,7 +119,7 @@ $(function () {
 
     $(document).on('click', '.load-product', function () {
         let id = 'detail_product';
-        let id_product = $(this).attr('id');
+        let id_product = $(this).attr('id_product');
         window.history.pushState(id, id.toUpperCase(), '/detail_product?id=' + id_product);
         loadContent('./detail_product.php?id=' + id_product);
     });

@@ -40,7 +40,7 @@
                             <!-- Single Cart Product Start -->
                             <div class="single-cart-product">
                                 <div class="cart-product-thumb">
-                                    <a class="load-product cursor-pointer" id="<?php echo $id?>"><img src="./assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
+                                    <a class="load-product cursor-pointer" id_product="<?php echo $id?>"><img src="./assets/images/products/<?php echo $image ?>" alt="Cart Product" class="rounded"></a>
                                 </div>
                                 <div class="cart-product-content">
                                     <h3 class="title"><a class="load-content cursor-pointer" id="<?php echo $id?>"><?php echo $name ?></a></h3>

@@ -67,7 +67,7 @@ else if ($short_by == 'best_discount'){
     ?>
             <div class="col-lg-4 col-md-4 col-sm-6 product product-inner" id="product<?php echo $id ?>">
                 <div class="thumb" style="padding-right: 10%;">
-                    <a class="load-product cursor-pointer image" id="<?php echo $id?>">
+                    <a class="load-product cursor-pointer image" id_product="<?php echo $id?>">
                         <img class="fit-image p-10" id="img-product<?php echo $id ?>" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                     </a>
                     <?php
@@ -87,7 +87,7 @@ else if ($short_by == 'best_discount'){
                     </div>
                 </div>
                 <div class="content">
-                    <h5 class="title"><a class="load-product cursor-pointer product-title" id="<?php echo $id?>"><?php echo $name ?></a></h5>
+                    <h5 class="title"><a class="load-product cursor-pointer product-title" id_product="<?php echo $id?>"><?php echo $name ?></a></h5>
                     <span class="rating">
                         <?php
                         $temp = $ranking;

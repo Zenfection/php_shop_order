@@ -77,7 +77,7 @@ if(isset($_SESSION['user'])){
                         ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 product product-inner" id="product<?php echo $id ?>">
                                         <div class="thumb">
-                                            <a class="load-product cursor-pointer image" id="<?php echo $id?>">
+                                            <a class="load-product cursor-pointer image" id_product="<?php echo $id?>">
                                                 <img class="fit-image p-10" id="img-product<?php echo $id ?>" src="./assets/images/products/<?php echo $image ?>" alt="Product" />
                                             </a>
                                             <?php
@@ -97,7 +97,7 @@ if(isset($_SESSION['user'])){
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <h5 class="title"><a class="load-product cursor-pointer product-title" id="<?php echo $id?>"><?php echo $name ?></a></h5>
+                                            <h5 class="title"><a class="load-product cursor-pointer product-title" id_product="<?php echo $id?>"><?php echo $name ?></a></h5>
                                             <span class="rating">
                                                 <?php
                                                 $temp = $ranking;
@@ -298,7 +298,7 @@ if(isset($_SESSION['user'])){
                                         <!-- Product List Thumb Start -->
                                         <div class="product">
                                             <div class="thumb">
-                                                <a class="load-product cursor-pointer image" id="<?php echo $id?>">
+                                                <a class="load-product cursor-pointer image" id_product="<?php echo $id?>">
                                                     <img class="fit-image first-image p-10" src="./assets/images/products/<?php echo $image?>" id="img-product<?php echo $id ?>">
                                                 </a>
                                             </div>
@@ -307,7 +307,7 @@ if(isset($_SESSION['user'])){
                                         <!-- Product List Content Start -->
                                         <div class="product-list-content">
                                             <h6 class="product-name">
-                                                <a class="load-product cursor-pointer" id="<?php echo $id?>"><?php echo $name?></a>
+                                                <a class="load-product cursor-pointer" id_product="<?php echo $id?>"><?php echo $name?></a>
                                             </h6>
                                             <span class="price">
                                                 <span class="new"><i class="fa-duotone fa-dollar-sign"></i><?php echo $new_price?></span>
